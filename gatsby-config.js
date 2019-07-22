@@ -1,15 +1,16 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Tailwind`,
-    description: `Gatsby starter styled with Tailwind`,
-    author: `@taylorbryant`
+    title: `Sukoon`,
+    description: `Psychotherapy Center`,
+    author: `@Deepak`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    {
+    `gatsby-plugin-styled-components`,
+      {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-tailwind`,
+        name: `Sukoon`,
         short_name: `starter`,
         start_url: `/`,
         background_color: `#ffffff`,
