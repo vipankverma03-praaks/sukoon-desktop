@@ -60,3 +60,59 @@
  * @import "utilities/background-patterns";
  * @import "utilities/skew-transforms";
  */
+
+#menu-hamburger-icon::before{
+    top: 24px;
+    left:12px;
+    position: absolute;
+    content: '';
+    background: #12443e;
+    width: 32px;
+    height: 1px;
+
+}
+#menu-hamburger-icon::after{
+    left: 12px;
+    top: 28px;
+    position: absolute;
+    content: '';
+    background: #12443e;
+    width: 22px;
+    height: 1px;
+
+}
+#header-intro{
+    height: 100%;
+    background-image: url("../../static/mobile_header.jpg");
+    background-position: 29%;
+}
+.card-container{
+    background-image: url("../../static/green-leaves-waterdrops-4k-wallpaper-3840x2400@3x.jpg");
+}
+
+.appointment-type{
+    color: #12443e;
+    border-bottom: 1px solid #12443e;
+}
+input{
+    border-bottom: 1px solid #12443e;
+}
+.customer-contact-info::placeholder{
+    color: #12443e;
+    opacity: 1;
+}
+.book-now-inner-container{
+    width: fit-content;
+    border: 1px solid #12443e;
+}
+.carousel-container{
+    height: fit-content;
+    width: fit-content;
+}
+
+.show{
+    display: block;
+}
+.hide{
+    display: none;
+}
