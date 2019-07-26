@@ -8,27 +8,27 @@ const Title = (props) =>{
  `
 
 const Explore = styled.div`
-    border-left: 3px solid #ffc300;
+    ${props => props.borderRight ? 'border-right' : 'border-left'}: 3px solid #ffc300;
     color: #12443d;
-    padding-left: 8px;
+     ${props => props.borderRight ? 'padding-right' : 'padding-left'}: 8px;
 `
 
 const HeadingWrapper = styled.div`
     
 `
 const HeadingLight = styled.span`
-     display: ${props => props.display || 'inline'};
+     display: ${props => props.display };
 `
 const HeadingBold = styled.span`
-     display: ${props => props.display || 'inline'};
+     display: ${props => props.display };
 `
 
     return(
-        <Wrapper className={props.wrapperClass}>
-            <Explore>Explore</Explore>
+        <Wrapper className={props.wrapperClass} {...props}>
+            <Explore borderRight={props.borderRight}>Explore</Explore>
             <HeadingWrapper className="text-sukoon inline text-4xl w-full">
                 <HeadingLight className="font-light mr-2" display={props.display}>{props.titleLight || ''}</HeadingLight>
-                <HeadingBold className="font-semibold" display={props.display}>{props.titleBold || ''}</HeadingBold>
+                <HeadingBold className={`font-semibold ${props.addClass}`} display={props.display}>{props.titleBold || ''}</HeadingBold>
             </HeadingWrapper>
         </Wrapper>
     )

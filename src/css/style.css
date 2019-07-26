@@ -60,7 +60,10 @@
  * @import "utilities/background-patterns";
  * @import "utilities/skew-transforms";
  */
-
+.sukoon-infra-section{
+    background-size: cover;
+ background-image: url("../../static/WhatsApp Image 2019-07-06 at 11.21.21 AM@3x.jpg");
+}
 #menu-hamburger-icon::before{
     top: 24px;
     left:12px;
@@ -109,10 +112,49 @@ input{
     height: fit-content;
     width: fit-content;
 }
-
 .show{
     display: block;
 }
 .hide{
     display: none;
+}
+
+@media screen and (min-width: 1024px){
+    .sukoon-bg{
+        background-position: top 497vh left -27rem;
+        background-image: url("../../static/logo@3x.jpg");
+        background-repeat: no-repeat;
+        background-size: 58vw;
+    }
+    #out-patient-services{
+        background-position: top right -46rem;
+        background-image: url("../../static/logo@3x.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    #inpatient-services{
+        background-position: top left -47rem;
+        background-image: url("../../static/logo@3x.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    #header-intro{
+        background-image: none;
+    }
+    .customer-contact-info::placeholder{
+        color: #fff;
+        opacity: 1;
+    }
+    .appointment-type{
+        color: #fff;
+        border-bottom: 1px solid #fff;
+    }
+    #email-address{
+        border-bottom: 1px solid #1a202c;
+    }
+    input{
+        border-bottom: 1px solid #ffffff;
+    }
 }
