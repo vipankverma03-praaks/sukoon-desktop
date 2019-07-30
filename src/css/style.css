@@ -1,3 +1,5 @@
+
+
 /**
  * This injects Tailwind's base styles, which is a combination of
  * Normalize.css and some additional base styles.
@@ -46,27 +48,49 @@
  */
 @tailwind utilities;
 
-/**
- * Here you would add any custom utilities you need that don't come out of the
- * box with Tailwind.
- *
- * Example :
- *
- * .bg-pattern-graph-paper { ... }
- * .skew-45 { ... }
- *
- * Or if using a preprocessor or `postcss-import`:
- *
- * @import "utilities/background-patterns";
- * @import "utilities/skew-transforms";
- */
-.sukoon-infra-section{
-    background-size: cover;
- background-image: url("../../static/WhatsApp Image 2019-07-06 at 11.21.21 AM@3x.jpg");
+@tailwind screen;
+
+
+/*body styles*/
+body{
+    overflow-x: hidden;
 }
-#menu-hamburger-icon::before{
+#inpatient-services::before {
+    content: '';
+    background-image: url("../../static/logo@3x.jpg");
+    background-size: 58vw;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: -27vw;
+    background-repeat: no-repeat;
+}
+#out-patient-services::before{
+    content: '';
+    background-image: url("../../static/logo@3x.jpg");
+    background-size: 58vw;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: -69vw;
+    background-repeat: no-repeat;
+}
+
+.sukoon-infra-section {
+    margin: 1vw 0;
+    background-size: cover;
+    height: 40vw;
+    background-position: center;
+    background-image: url("../../static/WhatsApp Image 2019-07-06 at 11.21.21 AM@3x.jpg");
+}
+
+#menu-hamburger-icon::before {
     top: 24px;
-    left:12px;
+    left: 12px;
     position: absolute;
     content: '';
     background: #12443e;
@@ -74,7 +98,8 @@
     height: 1px;
 
 }
-#menu-hamburger-icon::after{
+
+#menu-hamburger-icon::after {
     left: 12px;
     top: 28px;
     position: absolute;
@@ -84,77 +109,116 @@
     height: 1px;
 
 }
-#header-intro{
-    height: 100%;
-    background-image: url("../../static/mobile_header.jpg");
-    background-position: 29%;
-}
-.card-container{
+
+.card-container {
     background-image: url("../../static/green-leaves-waterdrops-4k-wallpaper-3840x2400@3x.jpg");
 }
 
-.appointment-type{
+.appointment-type {
     color: #12443e;
     border-bottom: 1px solid #12443e;
 }
-input{
+
+input {
     border-bottom: 1px solid #12443e;
 }
-.customer-contact-info::placeholder{
+
+.customer-contact-info::placeholder {
     color: #12443e;
     opacity: 1;
 }
-.book-now-inner-container{
+
+.book-now-inner-container {
     width: fit-content;
     border: 1px solid #12443e;
 }
-.carousel-container{
+
+.carousel-container {
     height: fit-content;
     width: fit-content;
 }
-.show{
+
+.show {
     display: block;
 }
-.hide{
+
+.hide {
     display: none;
 }
 
-@media screen and (min-width: 1024px){
-    .sukoon-bg{
-        background-position: top 497vh left -27rem;
+.slick-center {
+    z-index: 3;
+    position: relative;
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+    transform: scale(1.08);
+    height: 23vw;
+}
+
+.slick-center .ovarlay {
+    display: none;
+}
+
+.slick-center .CarouselImgWrapper img {
+    margin: 0;
+    background: rgba(0, 0, 0, 0.61);
+    opacity: 1;
+    padding: 7px;
+}
+@media screen and (min-width: 1280px){
+    .sukoon-bg {
+        background-position: top 497vh left -28vw;
+    }
+}
+
+@media screen and (min-width: 1360px){
+    .sukoon-bg {
+        background-position: top 497vh left -28vw;
+    }
+}
+@media screen and (min-width: 1439px){
+    .sukoon-bg {
+        background-position: top 497vh left -28vw;
+    }
+}
+@media screen and (min-width: 1599px){
+    .sukoon-bg {
+        background-position: top 497vh left -28vw;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .sukoon-bg {
+        background-position: top 497vh left -28vw;
         background-image: url("../../static/logo@3x.jpg");
         background-repeat: no-repeat;
         background-size: 58vw;
     }
-    #out-patient-services{
-        background-position: top right -46rem;
-        background-image: url("../../static/logo@3x.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-attachment: fixed;
-    }
-    #inpatient-services{
-        background-position: top left -47rem;
-        background-image: url("../../static/logo@3x.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-attachment: fixed;
-    }
-    #header-intro{
+
+    #header-intro {
         background-image: none;
     }
-    .customer-contact-info::placeholder{
+
+    .customer-contact-info::placeholder {
         color: #fff;
         opacity: 1;
     }
-    .appointment-type{
+
+    .appointment-type {
         color: #fff;
         border-bottom: 1px solid #fff;
     }
-    #email-address{
+
+    #email-address {
         border-bottom: 1px solid #1a202c;
     }
-    input{
+
+    input {
         border-bottom: 1px solid #ffffff;
     }
 }
+
+
+
+
+

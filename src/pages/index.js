@@ -1,16 +1,29 @@
 import React ,{useState} from "react";
+import {Link} from "gatsby"
+import "../css/style.css";
+
+// Slick CSS files
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+// Components
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import {Link} from "gatsby"
 import Title from "../elements/Heading"
 import styled from "styled-components";
 import Para from "../elements/Para"
+import ArrowIcon from "../elements/ArrowButton";
+
+// Images
 import BlogImg  from "../images/iStock-968194620_2019-07-17/iStock-968194620@3x.jpg";
 import HeaderImg from "../images/Desktop-Header/DesktopHeader.jpg"
+import Slider from "react-slick";
+import Physician from "../images/physician_retail_web_2019-07-29/physician_retail_web@3x.jpg";
 
+// Intro Section
 const Heading = () => {
     return (
-        <div className="text-sukoon text-5xl lg:text-6xl">
+        <div className="text-sukoon text-v6xl">
             <span className="font-light block">
                 Don't Just Stay,
             </span>
@@ -21,93 +34,73 @@ const Heading = () => {
     )
 };
 
+const HeaderIntroLeft = styled.div`
+        top:  10vw;
+        left: -18vw;
+       
+       @media screen and (max-width: 1600px){
+       left: -16vw;
+       }
+       @media screen and (max-width: 1400px){
+       left: -14vw;
+       }
+       @media screen and (max-width: 1200px){
+       left: -10vw;
+       }
+       
+   
+    `;
+const HeaderIntroRight = styled.div`
+    
+    `;
 
 const HeaderIntro = () => {
 
-    const HeaderIntroLeft = styled.div`
-        top:135px;
-        left:-265px;
-    `
-    const HeaderIntroRight = styled.div`
-    
-    `
-
     return (
-        <section id="header-intro" className="w-full lg:mb-20">
-            <div id="header-intro-container" className="lg:flex lg:relative">
-                <div className="lg:w-11/12">
-
+        <section id="header-intro" className="w-full">
+            <div id="header-intro-container" className="flex relative">
+                <div className="w-2/5">
                 </div>
-                <HeaderIntroRight id="header-intro-right" className="relative ">
-                    <HeaderIntroLeft id="header-intro-left" className="lg:absolute lg:w-fit">
-                        <div className="p-4 lg:p-0">
-                            <Heading/>
-                        </div>
-                        <div id="contact-info-container" className="p-6 lg:bg-sukoon lg:w-full lg:flex">
+                <HeaderIntroRight id="header-intro-right" className="relative">
+                    <HeaderIntroLeft id="header-intro-left" className="absolute w-fit">
+                        <Heading/>
+                        <div id="contact-info-container" className="p-4 bg-sukoon w-full flex">
                             <select name="appointment" id="appointment-type"
-                                    className="block p-2 bg-transparent lg:bg-sukoon lg:text-white outline-none lg:w-1/2 appointment-type mb-2 lg:mx-2 w-full font-medium"
+                                    className="block p-2 bg-transparent bg-sukoon text-white outline-none w-1/2 appointment-type mx-2 font-medium"
                                     value="">
                                 <option value="" selected>Appointment Type</option>
                                 <option value="">In House</option>
                                 <option value="">Online Consulting</option>
                             </select>
                             <input type="text" placeholder="Email / Phone"
-                                   className="block bg-transparent outline-none customer-contact-info lg:w-1/2 w-full p-2 text-sukoon lg:ml-4 lg:text-white"/>
+                                   className="block bg-transparent outline-none customer-contact-info w-1/2 p-2 text-sukoon ml-4 text-white"/>
                         </div>
-                        <div className="p-6 lg:pl-0 book-now-container flex">
+                        <div className="book-now-container mt-4">
                             <div className="book-now-inner-container p-1">
                                 <button
                                     className="block relative outline-none  items-center py-2 px-4 bg-sukoon text-white">
                                     <span className="text-sm font-normal">Book Now</span>
                                 </button>
                             </div>
-                            <div className="my-auto mx-2">
+                            <div className="my-4">
                                 <span>Or Call Us  +91 9876543210</span>
                             </div>
                         </div>
-                        <div className="p-6">
-                            <Link to="/" className="underline">Discover more!</Link>
-                        </div>
+                        <Link to="/" className="underline">Discover more!</Link>
                     </HeaderIntroLeft>
-                    <img src={HeaderImg} className="hidden lg:block" alt="Header"/>
+                    <img src={HeaderImg} className="block" alt="Header"/>
                 </HeaderIntroRight>
             </div>
         </section>
     )
 };
 
-const Carousel = (props) => {
 
-    let item = props.content.map(item => {
-        return (
-            <div className="card-container p-4 mx-2">
-                <div className="bg-white">
-                    <div className="p-2 px-4 w-full">
-                        <span className="text-2xl font-bold text-sukoon block">{item.titleLight}</span>
-                        <span className="text-2xl font-bold text-sukoon block">{item.titleBold}</span>
-                        <p className="text-grey-para py-1 w-56 h-24 block text-right">
-                            {item.para}
-                        </p>
-                    </div>
-                </div>
-            </div>
-        )
-    });
-
+const WhySukoon = () => {
     return (
-        <div className="overflow-y-hidden lg:hidden">
-            <div className="carousel-container overflow-y-scroll flex flex-no-wrap">
-                {item}
-            </div>
-        </div>
-    );
-};
-
-const WhySukoon = (props) => {
-    return (
-        <section id="why-sukoon" className="why-sukoon p-4 lg:p-12">
+        <section id="why-sukoon" className="why-sukoon p-12">
             <Title titleLight="Why" titleBold="Sukoon" />
-            <div className="lg:flex">
+            <div className="flex">
                 <Caption subHeading="Caption 1"
                          para="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"/>
                 <Caption subHeading="Caption 2"
@@ -115,185 +108,160 @@ const WhySukoon = (props) => {
                 <Caption subHeading="Caption 3"
                          para="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"/>
             </div>
-
         </section>
     )
 };
 
+
+const PyramidWrapper = styled.div`
+        flex-direction: ${props => props.reverse ? 'row-reverse' : 'row'};
+    `;
+
 const Pyramid = (props) =>{
 
-    const Wrapper = styled.div`
-        top: ${props.top || '-8rem'};
-        right:0;
-        flex-direction: ${props => props.reverse ? 'row-reverse' : 'row'};
-    `
-
+    const Card = styled.div`
+      width: 18vw;
+      padding: 10px;
+      
+       > div > div{
+        padding: 10px 20px;
+      }
+      
+    `;
     const Col1 = styled.div`
-        position: relative;
-        top:0;
-        right:0;
-    `
+        width: fit-content;
+    `;
     const Col2 = styled.div`
-        position: relative;
-        top:5rem;
-    `
+        width: fit-content;
+        margin-top: 10rem;
+    `;
     const Col3 = styled.div`
-        position: relative;
-        top:25rem;
-    `
+        width: fit-content;
+        margin-top: 15rem;
+    `;
     const Col4 = styled.div`
-        position: relative;
-        top:30rem;
-    `
-
-    return(
-        <Wrapper top={props.top} reverse={props.reverse} className="flex-no-wrap flex relative">
-            <Col1 className="w-fit">
-                <div className="card-container p-4 my-4 mx-2">
-                    <div className="bg-white">
-                        <div className="p-2 px-4 w-full">
-                            <span className="text-2xl font-bold text-sukoon block">Acute</span>
-                            <span className="text-2xl font-bold text-sukoon block">Psychiatric Care</span>
-                            <p className="text-grey-para py-1 w-56 h-24 block text-right">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, odit.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div className="card-container p-4 my-4 mx-2">
-                    <div className="bg-white">
-                        <div className="p-2 px-4 w-full">
-                            <span className="text-2xl font-bold text-sukoon block">Acute</span>
-                            <span className="text-2xl font-bold text-sukoon block">Psychiatric Care</span>
-                            <p className="text-grey-para py-1 w-56 h-24 block text-right">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, odit.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div className="card-container p-4 my-4 mx-2">
-                    <div className="bg-white">
-                        <div className="p-2 px-4 w-full">
-                            <span className="text-2xl font-bold text-sukoon block">Acute</span>
-                            <span className="text-2xl font-bold text-sukoon block">Psychiatric Care</span>
-                            <p className="text-grey-para py-1 w-56 h-24 block text-right">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, odit.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </Col1>
-            <Col2 className="w-fit">
-                <div className="card-container p-4 my-4 mx-2">
-                    <div className="bg-white">
-                        <div className="p-2 px-4 w-full">
-                            <span className="text-2xl font-bold text-sukoon block">Acute</span>
-                            <span className="text-2xl font-bold text-sukoon block">Psychiatric Care</span>
-                            <p className="text-grey-para py-1 w-56 h-24 block text-right">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, odit.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div className="card-container p-4 my-4 mx-2">
-                    <div className="bg-white">
-                        <div className="p-2 px-4 w-full">
-                            <span className="text-2xl font-bold text-sukoon block">Acute</span>
-                            <span className="text-2xl font-bold text-sukoon block">Psychiatric Care</span>
-                            <p className="text-grey-para py-1 w-56 h-24 block text-right">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, odit.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div className="card-container p-4 my-4 mx-2">
-                    <div className="bg-white">
-                        <div className="p-2 px-4 w-full">
-                            <span className="text-2xl font-bold text-sukoon block">Acute</span>
-                            <span className="text-2xl font-bold text-sukoon block">Psychiatric Care</span>
-                            <p className="text-grey-para py-1 w-56 h-24 block text-right">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, odit.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </Col2>
-            <Col3 className="w-fit">
-                <div className="card-container p-4 my-4 mx-2">
-                    <div className="bg-white">
-                        <div className="p-2 px-4 w-full">
-                            <span className="text-2xl font-bold text-sukoon block">Acute</span>
-                            <span className="text-2xl font-bold text-sukoon block">Psychiatric Care</span>
-                            <p className="text-grey-para py-1 w-56 h-24 block text-right">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, odit.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div className="card-container p-4 my-4 mx-2">
-                    <div className="bg-white">
-                        <div className="p-2 px-4 w-full">
-                            <span className="text-2xl font-bold text-sukoon block">Acute</span>
-                            <span className="text-2xl font-bold text-sukoon block">Psychiatric Care</span>
-                            <p className="text-grey-para py-1 w-56 h-24 block text-right">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, odit.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </Col3>
-            <Col4 className="w-fit">
-                <div className="card-container p-4 my-4 mx-2">
-                    <div className="bg-white">
-                        <div className="p-2 px-4 w-full">
-                            <span className="text-2xl font-bold text-sukoon block">Acute</span>
-                            <span className="text-2xl font-bold text-sukoon block">Psychiatric Care</span>
-                            <p className="text-grey-para py-1 w-56 h-24 block text-right">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, odit.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </Col4>
-        </Wrapper>
-    )
-
-};
-
-const InPatientServices = (props) => {
+        width: fit-content;
+        margin-top: 25rem;
+    `;
 
     let content = [
         {
             titleLight: 'Acute',
             titleBold: 'Psychiatry Care',
-            para: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+            para: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+            numberOfCards: [1,2,3],
+            col:'Col1'
         },
         {
             titleLight: 'Acute',
             titleBold: 'Psychiatry Care',
-            para: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+            para: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+            numberOfCards: [1,2,3],
+            col:'Col2'
         },
         {
             titleLight: 'Acute',
             titleBold: 'Psychiatry Care',
-            para: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+            para: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+            numberOfCards: [1,2],
+            col:'Col3'
         },
         {
             titleLight: 'Acute',
             titleBold: 'Psychiatry Care',
-            para: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+            para: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+            numberOfCards: [1],
+            col:'Col4'
         }
     ];
 
+    const CoolCards = ()=>{
+      let items = content.map((item)=>{
+          let Col = item.col;
+          let Cards = item.numberOfCards.map(()=>{
+             return(
+                 <Card className="card-container my-4 mx-2">
+                     <div className="bg-white w-full">
+                         <div className="">
+                             <span className="text-vxl font-bold text-sukoon block">{item.titleLight}</span>
+                             <span className="text-vxl font-bold text-sukoon block">{item.titleBold}</span>
+                             <p className="text-grey-para text-vsm w-full py-1">
+                                 {item.para}
+                             </p>
+                             <ArrowIcon />
+                         </div>
+                     </div>
+                 </Card>
+             )
+          });
+
+          if(Col === 'Col1'){
+              return (
+                  <Col1>
+                      {Cards}
+                  </Col1>
+              )
+          }
+          else if(Col === 'Col2'){
+              return (
+                  <Col2>
+                      {Cards}
+                  </Col2>
+              )
+          }
+          else if(Col === 'Col3'){
+              return (
+                  <Col3>
+                      {Cards}
+                  </Col3>
+              )
+          }
+          else{
+              return (
+                  <Col4>
+                      {Cards}
+                  </Col4>
+              )
+          }
+      });
+      return(items);
+    };
+
+    // Final return statement
+    return(
+        <PyramidWrapper top={props.top} reverse={props.reverse} className="flex-no-wrap flex">
+            {CoolCards()}
+        </PyramidWrapper>
+    )
+};
+
+const InPatientServicesHeading = styled.div`
+    top: -1rem;
+    left: 3rem;
+`;
+
+const InPatientServices = (props) => {
+
     return (
-        <section id="inpatient-services" className="p-6 lg:p-12">
-            <div className="w-fit">
+        <section id="inpatient-services" className="relative mt-4 p-12">
+            <InPatientServicesHeading className="w-fit absolute">
                 <Title titleLight="In Patient" titleBold="Care Services" display="block"/>
-                <p className="text-gray-600 text-right w-2/5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium commodi eligendi minima natus nemo numquam placeat quam, quod reiciendis vel.</p>
-            </div>
-            <Carousel content={content}/>
-            <Pyramid reverse={true}/>
+                <Para width="40%">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium commodi eligendi minima natus nemo numquam placeat quam, quod reiciendis vel.</Para>
+            </InPatientServicesHeading>
+            <Pyramid reverse={true} top="-12rem"/>
         </section>
+    )
+};
+
+const InfraBtnContainer = (props) =>{
+    const Wrapper = styled.div`
+            position: relative;
+            width: 20vw;        
+        `;
+    return(
+      <Wrapper>
+          {props.children}
+      </Wrapper>
     )
 };
 
@@ -306,20 +274,11 @@ const Infra = (props) =>{
     const Wrapper = styled.div`
         bottom: 2rem;
         left:4rem;
-    `
-    const InfraBtnContainer = (props) =>{
-        const Wrapper = styled.div`
-            position: relative;
-            width: 20vw;        
-        `
-        return(
-            <Wrapper>
-                {props.children}
-            </Wrapper>
-        )
-    };
+    `;
+
 
     const InfraButton = (props)=>{
+
      const Button = styled.button`
         width: 20px;
         height: 20px;
@@ -336,7 +295,7 @@ const Infra = (props) =>{
             top:7px;
             left:0;
         }
-    `
+    `;
         return(
             <Button onClick={()=>{handleToggle(props.name)}}/>
         )
@@ -378,22 +337,22 @@ const Infra = (props) =>{
     };
 
     const CardWrapper = styled.div`
-        right:100px;
-        top:180px;
-    `
+        right:10vw;
+        top:8vw;
+    `;
 
 
     const SimpleInfraButton = styled.button`
         width: 20px;
         height: 20px;
         border-radius: 50%;
-    `
+    `;
     return(
-        <section id="sukoon-infra-section" className="sukoon-infra-section my-4 lg:relative w-full h-64 lg:h-screen">
-            <CardWrapper className="hidden lg:block lg:absolute bg-white">
+        <section id="sukoon-infra-section" className="sukoon-infra-section relative w-full h-full">
+            <CardWrapper className="block absolute bg-white">
                 <InHousePharmacy />
             </CardWrapper>
-            <Wrapper className="m-4 flex lg:absolute" >
+            <Wrapper className="m-4 flex absolute" >
                 <div className="relative" >
                     <SimpleInfraButton className="bg-sukoonYellow"/>
                 </div>
@@ -412,66 +371,167 @@ const Infra = (props) =>{
             </Wrapper>
         </section>
     )
-}
-const InHousePharmacy = (props) => {
+};
 
+const InHousePharmacy = (props) => {
     return (
         <section className="p-6">
-            <Title titleLight="In-House" titleBold="Pharmacy" display="block"/>
-            <Para className="text-right text-gray-600 block" content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            <Title titleLight="In-House" className="mb-4" titleBold="Pharmacy" display="block"/>
+            <Para className="text-gray-600 block" content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                 industry's standard dummy text ever since the 1500s" />
         </section>
     )
-}
+};
+
+const CarouselParenWrapper = styled.div`
+  text-align: center;
+`;
+
+const CarouselImgWrapper = styled.div`
+  width: 18vw;
+  height: 16vw;
+  position: relative;
+  
+  > img{
+    opacity: 0.71;
+    margin: 10px 0;
+    object-fit: cover;
+    height: 100%;
+  }
+`;
+
+const Ovarlay = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,.31);
+`;
+
+const MeetExpertsCarousel = () =>{
+    const settings = {
+        slidesToScroll: true,
+        swipe: true,
+        arrow:false,
+        className: "center",
+        centerMode: true,
+        infinite: true,
+        centerPadding: "1rem",
+        slidesToShow: 3,
+        speed: 500,
+        adaptiveHeight: true,
+        variableWidth: true,
+    };
+
+  return(
+      <div>
+          <Slider {...settings}>
+              <CarouselParenWrapper>
+                  <CarouselImgWrapper className="CarouselImgWrapper">
+                      <Ovarlay className="ovarlay"/>
+                      <img src={Physician} className="w-auto" alt="Physician" />
+                  </CarouselImgWrapper>
+                  <h2 className="mt-2 text-sukoon text-sm font-bold">Sandra G. Boodman</h2>
+                  <p className="text-gray-700 text-xs">Lorem Ipsum dummy text</p>
+              </CarouselParenWrapper>
+              <CarouselParenWrapper>
+                  <CarouselImgWrapper className="CarouselImgWrapper">
+                      <Ovarlay className="ovarlay"/>
+                      <img src={Physician} className="w-auto" alt="Physician" />
+                  </CarouselImgWrapper>
+                  <h2 className="mt-2 text-sukoon text-sm font-bold">Sandra G. Boodman</h2>
+                  <p className="text-gray-700 text-xs">Lorem Ipsum dummy text</p>
+              </CarouselParenWrapper>
+              <CarouselParenWrapper>
+                  <CarouselImgWrapper className="CarouselImgWrapper">
+                      <Ovarlay className="ovarlay"/>
+                      <img src={Physician} className="w-auto" alt="Physician" />
+                  </CarouselImgWrapper>
+                  <h2 className="mt-2 text-sukoon text-sm font-bold">Sandra G. Boodman</h2>
+                  <p className="text-gray-700 text-xs">Lorem Ipsum dummy text</p>
+              </CarouselParenWrapper>
+              <CarouselParenWrapper>
+                  <CarouselImgWrapper className="CarouselImgWrapper">
+                      <Ovarlay className="ovarlay"/>
+                      <img src={Physician} className="w-auto" alt="Physician" />
+                  </CarouselImgWrapper>
+                  <h2 className="mt-2 text-sukoon text-sm font-bold">Sandra G. Boodman</h2>
+                  <p className="text-gray-700 text-xs">Lorem Ipsum dummy text</p>
+              </CarouselParenWrapper>
+              <CarouselParenWrapper>
+                  <CarouselImgWrapper className="CarouselImgWrapper">
+                      <Ovarlay className="ovarlay"/>
+                      <img src={Physician} className="w-auto" alt="Physician" />
+                  </CarouselImgWrapper>
+                  <h2 className="mt-2 text-sukoon text-sm font-bold">Sandra G. Boodman</h2>
+                  <p className="text-gray-700 text-xs">Lorem Ipsum dummy text</p>
+              </CarouselParenWrapper>
+              <CarouselParenWrapper>
+                  <CarouselImgWrapper className="CarouselImgWrapper">
+                      <Ovarlay className="ovarlay"/>
+                      <img src={Physician} className="w-auto opacity-1" alt="Physician" />
+                  </CarouselImgWrapper>
+                  <h2 className="mt-2 text-sukoon text-sm font-bold">Sandra G. Boodman</h2>
+                  <p className="text-gray-700 text-xs">Lorem Ipsum dummy text</p>
+              </CarouselParenWrapper>
+          </Slider>
+      </div>
+  )
+};
+
 const MeetExperts = (props) => {
     return (
-        <section className="p-6">
+        <section id="meet-experts" className="p-6 relative">
             <Title titleLight="Meet" titleBold="Experts"/>
-            <Para content=" Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            <Para content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                 industry's standard dummy text ever since the 1500s" />
+            <MeetExpertsCarousel />
         </section>
     )
-}
+};
 
 const Faqs = (props) => {
 
-    return (
-        <section className="p-6 lg:flex lg:flex-row-reverse lg:justify-between">
-            <div className="lg:mr-40">
-                <Title titleLight="Frequently" addClass="lg:block" titleBold="Asked Questions"/>
-            </div>
-            <div className="lg:w-3/5">
-                <div className="flex-col flex p-4 shadow-lg my-4 bg-white">
-                    <div className="flex justify-between">
-                        <details>
-                            <summary className="text-sukoon font-bold">Introduction What is the meaning of Lorem ipsum? </summary>
-                            <Para content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type." width="30vw" padding="1rem">
-                            </Para>
-                        </details>
-                    </div>
-                </div>
-                <div className="flex-col flex p-4 shadow-lg my-4 bg-white">
-                    <div className="flex justify-between">
-                        <details>
-                            <summary className="text-sukoon font-bold">Introduction What is the meaning of Lorem ipsum? </summary>
-                            <Para content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type." width="30vw" padding="1rem">
-                            </Para>
-                        </details>
-                    </div>
-                </div>
-                <div className="flex-col flex p-4 shadow-lg my-4 bg-white">
-                    <div className="flex justify-between">
-                        <details>
-                            <summary className="text-sukoon font-bold">Introduction What is the meaning of Lorem ipsum? </summary>
-                            <Para content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type." width="30vw" padding="1rem">
-                            </Para>
-                        </details>
-                    </div>
-                </div>
+    let content = [
+      {
+      summary: 'Introduction What is the meaning of Lorem ipsum?',
+      description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.",
+      },
+        {
+            summary: 'Introduction What is the meaning of Lorem ipsum?',
+            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.",
+        },
+        {
+            summary: 'Introduction What is the meaning of Lorem ipsum?',
+            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.",
+        },
 
+    ];
+
+    let items = content.map((item)=>{
+       return(
+         <div className="flex-col flex p-4 shadow-lg my-4 bg-white">
+             <div className="flex justify-between">
+                 <details>
+                     <Para width="30vw" padding="1rem">
+                         {item.description}
+                     </Para>
+                     <summary className="text-sukoon font-bold">{item.summary}</summary>
+                 </details>
+             </div>
+         </div>
+       )
+    });
+
+    return (
+        <section id="faq-section" className="p-6 flex relative flex-row-reverse justify-between">
+            <div className="mr-40">
+                <Title titleLight="Frequently" addClass="block" titleBold="Asked Questions"/>
+            </div>
+            <div className="w-3/5">
+                {items}
             </div>
         </section>
     )
@@ -480,25 +540,25 @@ const Faqs = (props) => {
 const Blogs = (props) =>{
     const Img = styled.img`
                 
-    `
+    `;
     const ImgWrapper = styled.div`
     
-    `
+    `;
     return(
         <section className="p-6">
             <div>
                 <Title titleLight="" titleBold="Blogs"/>
                 <div className="flex">
-                    <div id="blog-left" className="lg:w-1/2 flex justify-around">
+                    <div id="blog-left" className="w-1/2 flex justify-around">
                         <div className="shadow-lg m-4 flex flex-col justify-between">
-                            <ImgWrapper className="lg:h-4/5">
+                            <ImgWrapper className="h-4/5">
                                 <Img src={BlogImg} className="h-full w-full object-cover object-center" alt="Blog"/>
                             </ImgWrapper>
                             <div className="p-2 mb-4">
-                                <span className="block pt-2 text-sukoon text-xl lg:text-lg font-normal">
+                                <h2 className="block pt-2 text-sukoon text-xl text-lg font-normal">
                                         Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                 </span>
-                                <p className="text-gray-700 text-right lg:text-sm py-4">
+                                 </h2>
+                                <p className="text-gray-700  text-sm py-4">
                                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
                                     been the industry's standard dummy text ever since the 1500s,
                                 </p>
@@ -509,17 +569,17 @@ const Blogs = (props) =>{
                             </div>
                         </div>
                     </div>
-                    <div id="blog-right" className="lg:w-1/2 lg:flex">
+                    <div id="blog-right" className="w-1/2 flex">
                         <div id="blog-right-inner" className="flex-col justify-between">
                             <div className="shadow-lg m-4">
-                                <div className="lg:h-40">
+                                <div className="h-40">
                                     <img src={BlogImg} className="w-full h-full object-center object-cover" alt="Blog"/>
                                 </div>
                                 <div className="p-2 mb-4">
-                                <span className="block pt-2 text-sukoon text-xl lg:text-lg font-normal">
+                                <h2 className="block pt-2 text-sukoon text-xl text-lg font-normal">
                                         Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                 </span>
-                                    <p className="text-gray-700 text-right lg:text-sm py-4">
+                                 </h2>
+                                    <p className="text-gray-700  text-sm py-4">
                                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
                                         been the industry's standard dummy text ever since the 1500s,
                                     </p>
@@ -530,14 +590,14 @@ const Blogs = (props) =>{
                                 </div>
                             </div>
                             <div className="shadow-lg m-4">
-                                <div className="lg:h-40">
+                                <div className="h-40">
                                     <img src={BlogImg} className="w-full h-full object-center object-cover" alt="Blog"/>
                                 </div>
                                 <div className="p-2 mb-4">
-                                <span className="block pt-2 text-sukoon text-xl lg:text-lg font-normal">
+                                <h2 className="block pt-2 text-sukoon text-xl text-lg font-normal">
                                         Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                 </span>
-                                    <p className="text-gray-700 text-right lg:text-sm py-4">
+                                 </h2>
+                                    <p className="text-gray-700 text-sm py-4">
                                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
                                         been the industry's standard dummy text ever since the 1500s,
                                     </p>
@@ -550,14 +610,14 @@ const Blogs = (props) =>{
                         </div>
                         <div id="blog-right-inner-2" className="flex justify-around">
                             <div className="shadow-lg m-4 flex flex-col justify-between">
-                                <div className="lg:h-3/5">
+                                <div className="h-3/5">
                                     <img src={BlogImg} className="w-full h-full object-center object-cover" alt="Blog"/>
                                 </div>
                                 <div className="p-2 mb-4">
-                                <span className="block pt-2 text-sukoon text-xl lg:text-lg font-normal">
+                                <h2 className="block pt-2 text-sukoon text-xl text-lg font-normal">
                                         Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                 </span>
-                                    <p className="text-gray-700 text-right lg:text-sm py-4">
+                                 </h2>
+                                    <p className="text-gray-700  text-sm py-4">
                                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
                                         been the industry's standard dummy text ever since the 1500s,
                                     </p>
@@ -569,50 +629,24 @@ const Blogs = (props) =>{
                             </div>
                         </div>
                     </div>
-
                 </div>
-
             </div>
         </section>
     )
-}
+};
 
 const OutPatientServices = (props) => {
     const Wrapper = styled.div`
-        float: right;
-        
-    `
-
-    let content = [
-        {
-            titleLight: 'Acute',
-            titleBold: 'Psychiatry Care',
-            para: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
-        },
-        {
-            titleLight: 'Acute',
-            titleBold: 'Psychiatry Care',
-            para: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
-        },
-        {
-            titleLight: 'Acute',
-            titleBold: 'Psychiatry Care',
-            para: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
-        },
-        {
-            titleLight: 'Acute',
-            titleBold: 'Psychiatry Care',
-            para: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
-        }
-    ];
+        top: -1rem  ;
+        right: 3rem;
+    `;
 
     return (
-        <section id="out-patient-services" className="relative p-6 lg:mb-40">
-            <Wrapper className="w-fit relative text-right">
-                <Title titleLight="Out Patient" titleBold="Care Services" borderRight={true} display="block"/>
-                <Para className="text-gray-600 block text-right" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium commodi eligendi minima natus nemo numquam placeat quam, quod reiciendis vel." />
+        <section id="out-patient-services" className="relative p-6 mb-4">
+            <Wrapper className="w-fit absolute">
+                <Title titleLight="Out Patient" textAlign="right" titleBold="Care Services" borderRight={true} display="block"/>
+                <Para className="text-gray-600 block" textAlign="right" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium commodi eligendi minima natus nemo numquam placeat quam, quod reiciendis vel." />
             </Wrapper>
-            <Carousel content={content}/>
             <Pyramid top="0" reverse={false}/>
         </section>
     )
@@ -620,19 +654,19 @@ const OutPatientServices = (props) => {
 
 const Caption = (props) => {
     return (
-        <div className="my-2 lg:pr-4">
-            <span className="text-sukoon text-xl font-bold block">
+        <div className="my-2 pr-4">
+            <h2 className="text-sukoon text-xl font-bold block">
                 {props.subHeading || ''}
-            </span>
-            <p className="text-right py-2 lg:pr-16">
+            </h2>
+            <Para className=" py-2 pr-16">
                 {props.para || ''}
-            </p>
+            </Para>
         </div>
 
     )
 };
 
-function IndexPage() {
+function IndexPage(props) {
     return (
         <Layout>
             <SEO
@@ -644,9 +678,6 @@ function IndexPage() {
             <InPatientServices/>
             <OutPatientServices/>
             <Infra/>
-            <div className="lg:hidden">
-                <InHousePharmacy />
-            </div>
             <MeetExperts/>
             <Faqs/>
             <Blogs/>
