@@ -5,6 +5,7 @@ module.exports = {
     author: `@Deepak`
   },
   plugins: [
+    `babel-preset-gatsby`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
       {
