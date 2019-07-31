@@ -5,6 +5,7 @@ module.exports = {
     author: `@Deepak`
   },
   plugins: [
+    `babel-preset-gatsby`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
       {
@@ -23,8 +24,9 @@ module.exports = {
     {
       resolve: "gatsby-plugin-purgecss",
       options: {
-        tailwind: false,
-        purgeOnly: [""]
+        tailwind: true,
+        ignore:["node_modules/slick-carousel/slick/slick-theme.css", "node_modules/slick-carousel/slick/slick.css"],
+        purgeOnly: ["src/css/styles.css"]
       }
     }
   ]
