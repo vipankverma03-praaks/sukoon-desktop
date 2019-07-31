@@ -20,7 +20,7 @@ const HeaderIntro = () => {
                 </div>
                 <div className="mx-4 my-auto">
                     <select name="appointment" id="appointment-type"
-                            className="block p-2 mb-0 bg-sukoon outline-none appointment-type mb-2 w-full font-medium"
+                            className="block p-2 bg-sukoon outline-none appointment-type w-full font-medium"
                             value="">
                         <option value="" selected>Appointment Type</option>
                         <option value="">In House</option>
@@ -153,11 +153,11 @@ const Subscribe = (props) =>{
     `;
     return(
         <div className="p-6 flex justify-between">
-            <div>
-                <span className="text-sukoon font-bold">Subscribe</span>
-                <span className="ml-2 font-bold text-sukoonYellow">Our Newsletter</span>
+            <div className="my-auto">
+                <h3 className="text-sukoon inline font-bold">Subscribe</h3>
+                <h3 className="ml-2 inline-block font-bold text-sukoonYellow">Our Newsletter</h3>
             </div>
-            <div className="mt-4 mx-4 mt-0 flex self-end">
+            <div className="my-auto mx-4  flex self-end">
                 <Input id="email-address" type="text" placeholder="Enter Your Email Address" className="outline-none mr-4 bg-transparent"/>
                 <button className="text-sukoon text-lg">Click Me</button>
             </div>
