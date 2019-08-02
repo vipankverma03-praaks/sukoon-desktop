@@ -4,7 +4,7 @@ import React, {useState} from "react";
 import styled from "styled-components";
 
 import SukoonLogo from "../images/sukoon-logo/logo_dark@3x.png"
-import HelpIcon from "../images/helpline copy 2_2019-07-22/helpline copy 2@3x.jpg";
+import HelpIcon from "../images/helpline/helpline copy 2@3x.jpg";
 
 
 const MenuWrapper = styled.div`
