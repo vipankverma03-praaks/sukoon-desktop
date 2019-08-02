@@ -100,19 +100,19 @@ function Header() {
 
                         <NavWrapper className="flex justify-between">
                             <Link
-                                to="/"
+                                to="/services"
                                 className="block inline-block mt-0 mr-6 no-underline"
                             >
                                 Services
                             </Link>
                             <Link
-                                to="/"
+                                to="/infrastructure"
                                 className="block inline-block mt-0 mr-6 no-underline"
                             >
                                 Infrastructure
                             </Link>
                             <Link
-                                to="/"
+                                to="/experience"
                                 className="block inline-block mt-0 mr-6 no-underline"
                             >
                                 Experience Sukoon
