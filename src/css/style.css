@@ -79,6 +79,16 @@ body{
     right: -69vw;
     background-repeat: no-repeat;
 }
+.mainService{
+    background-color:#c2dcd3;
+}
+.mains{
+    background-color:#c2dcd3;
+
+}
+.colour{
+    background-color:#12443e;
+}
 
 .sukoon-infra-section {
     margin: 1vw 0;
