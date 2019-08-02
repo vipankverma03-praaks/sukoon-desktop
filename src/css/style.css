@@ -79,6 +79,9 @@ body{
     right: -69vw;
     background-repeat: no-repeat;
 }
+.mainService{
+    background-color:#c2dcd3;
+}
 
 .sukoon-infra-section {
     margin: 1vw 0;
@@ -126,11 +129,6 @@ input {
 .customer-contact-info::placeholder {
     color: #12443e;
     opacity: 1;
-}
-
-.book-now-inner-container {
-    width: fit-content;
-    border: 1px solid #12443e;
 }
 
 .carousel-container {

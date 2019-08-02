@@ -4,7 +4,7 @@ import React, {useState} from "react";
 import styled from "styled-components";
 
 import SukoonLogo from "../images/sukoon-logo/logo_dark@3x.png"
-import HelpIcon from "../images/helpline copy 2_2019-07-22/helpline copy 2@3x.jpg";
+import HelpIcon from "../images/helpline/helpline copy 2@3x.jpg";
 
 
 const MenuWrapper = styled.div`
@@ -100,19 +100,19 @@ function Header() {
 
                         <NavWrapper className="flex justify-between">
                             <Link
-                                to="/"
+                                to="/services"
                                 className="block inline-block mt-0 mr-6 no-underline"
                             >
                                 Services
                             </Link>
                             <Link
-                                to="/"
+                                to="/infrastructure"
                                 className="block inline-block mt-0 mr-6 no-underline"
                             >
                                 Infrastructure
                             </Link>
                             <Link
-                                to="/"
+                                to="/experience"
                                 className="block inline-block mt-0 mr-6 no-underline"
                             >
                                 Experience Sukoon

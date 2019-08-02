@@ -2,9 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import {StaticQuery, graphql, Link} from "gatsby";
 import styled from "styled-components";
-import HelpIcon from "../images/helpline copy 2_2019-07-22/helpline copy 2@3x.jpg"
+import HelpIcon from "../images/helpline/helpline copy 2@3x.jpg"
 
 import Header from "./header";
+import BookBtn from "../elements/BookNowBtn";
 
 const HeaderIntro = () => {
     return (
@@ -31,13 +32,10 @@ const HeaderIntro = () => {
                     <input type="text" placeholder="Email / Phone"
                            className="block bg-transparent outline-none customer-contact-info w-full p-2 text-sukoon"/>
                 </div>
-                <div className="p-6 book-now-container flex">
-                    <div className="book-now-inner-container bg-white  p-1">
-                        <button
-                            className="block relative outline-none items-center py-2 px-4 bg-sukoon text-white">
-                            <span className="text-sm font-normal">Book Now</span>
-                        </button>
-                    </div>
+                <div className="p-6 flex">
+                  <BookBtn border={true}>
+                    Book Now
+                  </BookBtn>
                 </div>
             </div>
         </section>

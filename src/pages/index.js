@@ -13,6 +13,7 @@ import Title from "../elements/Heading"
 import styled from "styled-components";
 import Para from "../elements/Para"
 import ArrowIcon from "../elements/ArrowButton";
+import BookBtn from "../elements/BookNowBtn";
 
 // Images
 import BlogImg  from "../images/iStock-968194620_2019-07-17/iStock-968194620@3x.jpg";
@@ -76,12 +77,9 @@ const HeaderIntro = () => {
                                    className="block bg-transparent outline-none customer-contact-info w-1/2 p-2 text-sukoon ml-4 text-white"/>
                         </div>
                         <div className="book-now-container mt-4">
-                            <div className="book-now-inner-container p-1">
-                                <button
-                                    className="block relative outline-none  items-center py-2 px-4 bg-sukoon text-white">
-                                    <span className="text-sm font-normal">Book Now</span>
-                                </button>
-                            </div>
+                            <BookBtn>
+                              Book Now
+                            </BookBtn>
                             <div className="my-4">
                                 <span>Or Call Us  +91 9876543210</span>
                             </div>
