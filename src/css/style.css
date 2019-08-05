@@ -264,7 +264,148 @@ input {
     }
 }
 
+/* my-css============================== */
 
+/* Summary tag arrow customization*/
+.facilities summary {
 
+    font-size: 1.15em;
+    display: flex;
+    justify-content: space-between;
+    outline: none
+}
 
+.facilities summary::-webkit-details-marker {
+    display: none;
+}
 
+.facilities summary:after {
+    content: "+";
+    color: #12443e;
+    float: right;
+    font-size: 35px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    line-height: 25px;
+    margin-top: 4px;
+}
+
+.facilities details {
+    border: 1px solid #969696;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.facilities details[open] summary:after {
+    content: "-";
+}
+
+ul.RoomBtnTab {
+    display: flex
+}
+button.globe_btn {
+    border: 1px solid #12443e;
+    margin: 0 0 0 auto;
+}
+button.globe_btn a {
+    background: #12443e;
+    padding: 10px 26px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    margin: 4px;
+    font-size: 1vw;
+    line-height: normal;
+}
+.RoomAbout {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+ul.RoomFeatures {
+    display: flex;
+    flex-flow: wrap;
+    margin: 20px 0px 10px 0px;
+}
+ul.RoomFeatures li {
+    column-count: 3;
+}
+.roomImg ul {
+    display: flex;
+}
+.roomImg li {
+    margin-right: 25px;
+    margin-top: 20px;
+}
+.roomImg li:last-child {
+    margin-right: 0px;
+}
+.ActivitySecImg {
+    display: flex;
+}
+img.block.viewOne {
+    width: 20%;
+    padding-right: 20px;
+    object-fit: cover;
+    object-position: center center;
+}
+img.block.ViewTwo {
+    width: 80%;
+    object-fit: cover;
+    object-position: center center;
+}
+.ActivityInfo {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+.HighlightSecInfo {
+    background: white;
+    padding: 2rem;
+    width: 40%;
+}
+.ExperienceServices img {
+    height: 495px;
+}
+.ExperienceServicesNav {
+    background: white;
+    margin: -30px 0 0 auto;
+    position: relative;
+    padding: 35px 25px;
+}
+.ExperienceServicesNav ul {
+    display: flex;
+    justify-content: space-evenly;
+}
+.ExperienceServicesNav ul li {
+    margin-right: 30px;
+    margin-left: 30px;
+}
+.ClearView img {
+    object-fit: cover;
+}
+.ClearView {
+    height: 100%;
+    width: 100%;
+}
+button.Circle_btn {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 72px;
+    border: 1px solid #969696;
+    margin-right: 10px;
+}
+button.Circle_btn.right {
+    transform: rotate(180deg);
+}
+.arrowSection {
+    display: flex;
+    width: auto;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
