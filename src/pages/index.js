@@ -13,6 +13,7 @@ import Title from "../elements/Heading"
 import styled from "styled-components";
 import Para from "../elements/Para"
 import ArrowIcon from "../elements/ArrowButton";
+import BookBtn from "../elements/BookNowBtn";
 
 // Images
 import BlogImg  from "../images/iStock-968194620_2019-07-17/iStock-968194620@3x.jpg";
