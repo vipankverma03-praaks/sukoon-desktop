@@ -78,7 +78,9 @@ const HeaderIntro = () => {
                         </div>
                         <div className="book-now-container mt-4">
                             <BookBtn>
-                              Book Now
+                              <Link to="/booking">
+                                Book Now
+                              </Link>
                             </BookBtn>
                             <div className="my-4">
                                 <span>Or Call Us  +91 9876543210</span>
