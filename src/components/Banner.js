@@ -44,7 +44,7 @@ const Booking = (props) =>{
                 <div className="book-now-inner-container p-1">
                     <button
                         className="block relative outline-none  items-center py-2 px-4 bg-sukoon text-white">
-                        <span className="text-sm font-normal">Book Now</span>
+                        <Link to="/booking" className="text-sm font-normal">Book Now</Link>
                     </button>
                 </div>
                 <div className="my-4">
@@ -81,7 +81,9 @@ const HeaderIntroRight = styled.div`
 const ParagraphSection = (props) =>{
     return(
         <Para>
-            Hello world
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, autem beatae, distinctio dolore eveniet
+          inventore, ipsum maxime minus modi natus nesciunt provident qui quia quibusdam quod reprehenderit sunt
+          suscipit tempore?
         </Para>
     )
 };

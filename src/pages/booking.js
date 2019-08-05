@@ -5,6 +5,7 @@ import 'react-day-picker/lib/style.css';
 import Radio from "../elements/RadioButton";
 import moment from "moment";
 import {Link} from 'gatsby';
+import BookingBtn from "../elements/BookNowBtn";
 
 
 
@@ -242,6 +243,7 @@ const Information = (props) =>{
             <input type="tel" placeholder="Phone number" className="my-2 w-full"/>
           </div>
         </div>
+        <BookingBtn type="white" padding="5px">Book and Pay</BookingBtn>
       </Form>
     </section>
   );
