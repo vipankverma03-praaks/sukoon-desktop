@@ -1,6 +1,6 @@
 import {Link} from "gatsby";
 import PropTypes from "prop-types";
-import React, {useState} from "react";
+import React from "react";
 import styled from "styled-components";
 
 import SukoonLogo from "../images/sukoon-logo/logo_dark@3x.png"
@@ -11,7 +11,8 @@ const MenuWrapper = styled.div`
     top:16vw;
     left:0;
     z-index: 1;
-    `
+    `;
+
 const PsychotherapyWrapper = styled.div`
         top: 236px;
         transform: rotate(-90deg);
@@ -26,14 +27,14 @@ const PsychotherapyWrapper = styled.div`
             right: -4rem;
             background: #ffc300;
            }
-    `
+    `;
+
 const Psychotherapy = styled.h1`
         letter-spacing: .3rem;
         font-size: 8px;
-    `
+    `;
 
 const NavWrapper = styled.div`
-
   font-size: 18px;
 
   &::before{
@@ -72,7 +73,6 @@ const NavWrapper = styled.div`
 `;
 
 function Header() {
-    const [isExpanded, toggleExpansion] = useState(false);
 
     return (
         <nav className="">
@@ -92,12 +92,9 @@ function Header() {
                     </div>
                 </div>
                 <MenuWrapper
-                    className={`${
-                        isExpanded ? `block` : `hidden`
-                        } md:block md:items-center w-full `}
+                    className={`block items-center w-full `}
                 >
                     <div className="text-sukoon h-full bg-white pr-4 text-xl pl-4">
-
                         <NavWrapper className="flex justify-between">
                             <Link
                                 to="/services"
@@ -115,7 +112,7 @@ function Header() {
                                 to="/experience"
                                 className="block inline-block mt-0 mr-6 no-underline"
                             >
-                                Experience Sukoon
+                                Experience
                             </Link>
                             <Link
                                 to="/"
