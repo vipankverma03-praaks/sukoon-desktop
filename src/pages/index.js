@@ -599,7 +599,7 @@ function IndexPage(props) {
                 title="Home"
                 keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
             />
-            <Banner/>
+            <Banner booking/>
             <WhySukoon/>
             <InPatientServices/>
             <OutPatientServices/>
