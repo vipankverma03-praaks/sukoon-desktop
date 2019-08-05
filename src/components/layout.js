@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import {StaticQuery, graphql, Link} from "gatsby";
 import styled from "styled-components";
-import HelpIcon from "../images/helpline copy 2_2019-07-22/helpline copy 2@3x.jpg"
+import HelpIcon from "../images/helpline/helpline copy 2@3x.jpg"
 
 import Header from "./header";
 
