@@ -1,10 +1,10 @@
 import React from "react";
-import {Link} from "gatsby"
 import "../css/style.css";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Title from "../elements/Heading";
-import HeaderImg from "../images/Desktop-Header/DesktopHeader.jpg";
+
+// Images
 import RoomView from "../images/exp/room.jpg";
 import RoomOne from "../images/exp/room_2.jpg";
 import RoomTwo from "../images/exp/room_3.jpg";
@@ -23,7 +23,7 @@ import Breakfast from "../images/exp/meal_1.jpg";
 import Lunch from "../images/exp/meal_2.jpg";
 import Dinner from "../images/exp/meal_3.jpg";
 
-
+// Components
 import Para from "../elements/Para"
 import styled from "styled-components";
 import Banner from "../components/Banner"
@@ -91,17 +91,17 @@ const MenuItems = styled.div`
 
 
 
-function AboutPage() {
+function ExperiencePage() {
     return (
         <Layout>
             <SEO
-                title="About"
-                keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
+                title="Experience"
+                keywords={[`sukoon`, `hospital`, `psychiatry center`, `service`]}
             />
             <Banner/>
             <section className="p-8">
                 <div className="">
-                    <Title titleLight="Why" titleBold="Sukoon" />
+                    <Title titleLight="Experience" titleBold="Sukoon" />
                     <h3 className="text-xl font-semibold text-sukoon">Let's Take a Tour</h3>
                     <Para width="100%">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged</Para>
                 </div>
@@ -109,13 +109,13 @@ function AboutPage() {
                     <div className="w-2/5">
                         <img src={RoomView} className="block min-h-full" alt=""/>
                     </div>
-                    <div className="w-3/5 pl-10 RoomAbout">
+                    <div className="w-3/5 pl-10 flex flex-col justify-evenly">
                         <ul className="RoomBtnTab mb-10">
                             <li className="mr-4"><button className="globe_btn"><a>Suite Rooms</a></button></li>
                             <li className="mr-4"><button className="globe_btn"><a>Deluxe Rooms</a></button></li>
                             <li><button className="globe_btn"><a>Intensive Care Unit</a></button></li>
                         </ul>
-                        <div className="roomDetails">
+                        <div className="">
                             <span className="block text-2xl">Rooms</span>
                             <h3 className="text-4xl text-sukoon font-bold">Suite Rooms</h3>
                             <Para width="100%">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</Para>
@@ -144,7 +144,6 @@ function AboutPage() {
                     </div>
                 </div>
             </section>
-
             <section className="p-8">
                 <div className="w-full flex">
                     <div className="w-2/5 pr-8 ActivityInfo">
@@ -283,5 +282,5 @@ function AboutPage() {
     );
 }
 
-export default AboutPage;
+export default ExperiencePage;
 
