@@ -130,10 +130,27 @@ const HeaderIntroRight = styled.div`
 
 const ParagraphSection = (props) =>{
     return(
-        <Para>
-            Hello world
-        </Para>
+        <p Class="mt-8 text-sukoon my-1 font-gilroyMedium text-vlg leading-relaxed block">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus adipisci aliquam, architecto culpa
+          deleniti doloribus dolorum ea esse est ex, expedita labore laboriosam minima neque nihil omnis perferendis
+          praesentium, rem repellendus repudiandae sequi similique tempora tenetur ut velit veritatis!
+        </p>
     )
+};
+
+const ButtonSection = (props) =>{
+  return(
+    <div>
+      <p className="mt-8 text-gray-600 my-1 font-gilroyMedium text-vlg leading-relaxed block">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus adipisci aliquam, architecto culpa
+        deleniti doloribus dolorum ea esse est ex, expedita labore laboriosam minima neque nihil omnis perferendis
+        praesentium, rem repellendus repudiandae sequi similique tempora tenetur ut velit veritatis!
+      </p>
+      <BookBtn wrapperClass="inline-block mt-8 mr-12" border>Book An Appointment</BookBtn>
+      <BookBtn wrapperClass="inline-block" border>Book a Tour</BookBtn>
+    </div>
+
+  )
 };
 
 const HeaderIntro = (props) => {

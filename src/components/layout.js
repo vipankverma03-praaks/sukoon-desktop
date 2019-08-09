@@ -175,7 +175,7 @@ const Subscribe = (props) =>{
     )
 };
 
-function Layout({ children }) {
+function Layout({children, ...props}) {
   return (
     <StaticQuery
       query={graphql`

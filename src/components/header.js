@@ -72,7 +72,7 @@ const NavWrapper = styled.div`
        }
 `;
 
-function Header() {
+function Header(props) {
 
     return (
         <nav className="">
@@ -80,9 +80,10 @@ function Header() {
                 <div className="w-full flex justify-between">
                     <Link to="/" className="flex w-20 relative  items-center no-underline ">
                         <img src={SukoonLogo} alt="Sukoon Logo"/>
+                        {props.logoHighlighter ?
                         <PsychotherapyWrapper className="absolute">
                             <Psychotherapy className="whitespace-no-wrap text-gray-250">Psychotherapy Center</Psychotherapy>
-                        </PsychotherapyWrapper>
+                        </PsychotherapyWrapper> : null }
                     </Link>
                     <div className="text-sukoon mr-2 my-auto flex justify-end px-1">
                         <div className="flex ">

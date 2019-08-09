@@ -74,14 +74,14 @@ const TopRow = styled.section`
 const WhySukoon = () => {
     return (
         <section id="why-sukoon" className="why-sukoon p-12">
-            <Title titleLight="Why" titleBold="Sukoon" />
+            <Title subHeading="About" titleLight="Why" titleBold="Sukoon" />
             <div className="flex">
-                <Caption subHeading="Caption 1"
-                         para="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"/>
-                <Caption subHeading="Caption 2"
-                         para="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"/>
-                <Caption subHeading="Caption 3"
-                         para="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"/>
+                <Caption subHeading="Consult best doctors"
+                         para=" Get expert advice from our team of experienced doctors, led by Dr. Sameer Parikh"/>
+                <Caption subHeading="Get personalised care"
+                         para="Receive customised and holistic care because of our incredible 1:1 nurse to patient ratio"/>
+                <Caption subHeading="Experience premium facilities"
+                         para="Enhance your recovery in a calming, positive, and comfortable environment "/>
             </div>
         </section>
     )
@@ -219,8 +219,9 @@ const InPatientServices = (props) => {
     return (
         <section id="inpatient-services" className="relative mt-4 p-12">
             <InPatientServicesHeading className="w-fit absolute">
-                <Title titleLight="In Patient" titleBold="Care Services" display="block"/>
-                <Para width="40%">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium commodi eligendi minima natus nemo numquam placeat quam, quod reiciendis vel.</Para>
+                <Title subHeading="IPD" titleLight="Residential" titleBold="Services" display="block"/>
+                <Para width="40%">Our residential treatment programs provide specialised care. Recover in a home-like setting - comfortable, warm, and personalised.
+                </Para>
             </InPatientServicesHeading>
             <Pyramid reverse={true} top="-12rem"/>
         </section>
@@ -357,113 +358,12 @@ const InHousePharmacy = (props) => {
     )
 };
 
-const CarouselParenWrapper = styled.div`
-  text-align: center;
-`;
-
-const CarouselImgWrapper = styled.div`
-  width: 18vw;
-  height: 16vw;
-  position: relative;
-  
-  > img{
-    opacity: 0.71;
-    margin: 10px 0;
-    object-fit: cover;
-    height: 100%;
-  }
-`;
-
-const Ovarlay = styled.div`
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    height: 100%;
-    width: 100%;
-    background: rgba(0,0,0,.31);
-`;
-
-const MeetExpertsCarousel = () =>{
-    const settings = {
-        slidesToScroll: true,
-        swipe: true,
-        arrow:false,
-        className: "center",
-        centerMode: true,
-        infinite: true,
-        centerPadding: "1rem",
-        slidesToShow: 3,
-        speed: 500,
-        adaptiveHeight: true,
-        variableWidth: true,
-    };
-
+const FaqsPara = (item) =>{
   return(
-      <div>
-          <Slider {...settings}>
-              <CarouselParenWrapper>
-                  <CarouselImgWrapper className="CarouselImgWrapper">
-                      <Ovarlay className="ovarlay"/>
-                      <img src={Physician} className="w-auto" alt="Physician" />
-                  </CarouselImgWrapper>
-                  <h2 className="mt-2 text-sukoon text-sm font-bold">Sandra G. Boodman</h2>
-                  <p className="text-gray-700 text-xs">Lorem Ipsum dummy text</p>
-              </CarouselParenWrapper>
-              <CarouselParenWrapper>
-                  <CarouselImgWrapper className="CarouselImgWrapper">
-                      <Ovarlay className="ovarlay"/>
-                      <img src={Physician} className="w-auto" alt="Physician" />
-                  </CarouselImgWrapper>
-                  <h2 className="mt-2 text-sukoon text-sm font-bold">Sandra G. Boodman</h2>
-                  <p className="text-gray-700 text-xs">Lorem Ipsum dummy text</p>
-              </CarouselParenWrapper>
-              <CarouselParenWrapper>
-                  <CarouselImgWrapper className="CarouselImgWrapper">
-                      <Ovarlay className="ovarlay"/>
-                      <img src={Physician} className="w-auto" alt="Physician" />
-                  </CarouselImgWrapper>
-                  <h2 className="mt-2 text-sukoon text-sm font-bold">Sandra G. Boodman</h2>
-                  <p className="text-gray-700 text-xs">Lorem Ipsum dummy text</p>
-              </CarouselParenWrapper>
-              <CarouselParenWrapper>
-                  <CarouselImgWrapper className="CarouselImgWrapper">
-                      <Ovarlay className="ovarlay"/>
-                      <img src={Physician} className="w-auto" alt="Physician" />
-                  </CarouselImgWrapper>
-                  <h2 className="mt-2 text-sukoon text-sm font-bold">Sandra G. Boodman</h2>
-                  <p className="text-gray-700 text-xs">Lorem Ipsum dummy text</p>
-              </CarouselParenWrapper>
-              <CarouselParenWrapper>
-                  <CarouselImgWrapper className="CarouselImgWrapper">
-                      <Ovarlay className="ovarlay"/>
-                      <img src={Physician} className="w-auto" alt="Physician" />
-                  </CarouselImgWrapper>
-                  <h2 className="mt-2 text-sukoon text-sm font-bold">Sandra G. Boodman</h2>
-                  <p className="text-gray-700 text-xs">Lorem Ipsum dummy text</p>
-              </CarouselParenWrapper>
-              <CarouselParenWrapper>
-                  <CarouselImgWrapper className="CarouselImgWrapper">
-                      <Ovarlay className="ovarlay"/>
-                      <img src={Physician} className="w-auto opacity-1" alt="Physician" />
-                  </CarouselImgWrapper>
-                  <h2 className="mt-2 text-sukoon text-sm font-bold">Sandra G. Boodman</h2>
-                  <p className="text-gray-700 text-xs">Lorem Ipsum dummy text</p>
-              </CarouselParenWrapper>
-          </Slider>
-      </div>
+    <Para width="100%" padding="1rem">
+      {item}
+    </Para>
   )
-};
-
-const MeetExperts = (props) => {
-    return (
-        <section id="meet-experts" className="p-6 relative">
-            <Title titleLight="Meet" titleBold="Experts"/>
-            <Para content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since the 1500s" />
-            <MeetExpertsCarousel />
-        </section>
-    )
 };
 
 const Faqs = (props) => {
@@ -494,9 +394,9 @@ const Faqs = (props) => {
     });
 
     return (
-        <section id="faq-section" className="p-6 flex relative flex-row-reverse justify-between">
+        <section id="faq-section" className="p-6 flex relative flex-row justify-between">
             <div className="mr-40">
-                <Title titleLight="Frequently" addClass="block" titleBold="Asked Questions"/>
+                <Title subHeading="Learn" titleLight="Frequently" addClass="block" titleBold="Asked Questions"/>
             </div>
             <div className="w-3/5">
                 {items}
@@ -515,7 +415,7 @@ const Blogs = (props) =>{
     return(
         <section className="p-6">
             <div>
-                <Title titleLight="" titleBold="Blogs"/>
+                <Title subHeading="Learn" titleLight="" titleBold="Blogs"/>
                 <div className="flex">
                     <div id="blog-left" className="w-1/2 flex justify-around">
                         <div className="shadow-lg m-4 flex flex-col justify-between">
@@ -628,7 +528,7 @@ const OutPatientServices = (props) => {
 
 function IndexPage(props) {
     return (
-        <Layout>
+        <Layout logoHighlighter bgImage >
             <SEO
                 title="Home"
                 keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
