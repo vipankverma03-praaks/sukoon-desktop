@@ -1,81 +1,131 @@
 import React from "react";
 import styled from "styled-components";
 import {Link} from "gatsby";
-import HeaderImg from "../images/Desktop-Header/DesktopHeader.jpg";
-import Para from "../elements/Para"
+
+import BookBtn from "../elements/BookNowBtn"
+import ArrowButton from "../elements/ArrowButton";
 
 // Intro Section
 const Heading = () => {
     return (
-        <div className="text-sukoon text-v6xl">
-            <h2 className="font-light block">
+        <HeadingWrapper className="text-sukoon  text-v6xl">
+            <span className="block font-gilroyLight">
                 Don't Just Stay,
-            </h2>
-            <span className="font-extrabold block">
+            </span>
+            <span className="font-gilroyBold block">
                 Live Here !
             </span>
-        </div>
+        </HeadingWrapper>
     )
 };
+
+// Header Main heading
+const HeadingWrapper = styled.div`
+  line-height: 1.1;
+`;
+
+// Header Text Container  position
+const HeaderIntroLeft = styled.div`
+        top:  5vw;
+        left: -20vw;
+        width: 35vw;
+        z-index: 100;
+       
+       @media screen and (max-width: 1600px) and (min-width: 1450px){
+        top: 7vw;
+        left: -16vw;
+       }
+       @media screen and (max-width: 1450px) and (min-width: 1370px){
+        top: 6vw;
+        left: -16vw;
+       }
+        @media screen and (max-width: 1370px) and (min-width: 1300px){
+        top: 3vw;
+        left: -14vw;
+       }
+       @media screen and (min-width: 1200px) and (max-width: 1300px){
+        top: 4vw;
+        left: -13vw;
+       }
+    `;
+
+
+// Header Image
 const Img = styled.img`
-    height: 70vh;
+    height: 71vh;
     width: 100%;
     object-fit: cover;
-    object-position: center center;
+    object-position: top -2vw left 0px;
+    position: relative;
+    display: block;
+       
+     &::before{
+     display: block;
+     content: '';
+     background: #f6e05e;
+     width: 100%;
+     height: 100px;
+     
+     }
+    @media screen and (max-width: 1600px) and (min-width: 1450px){
+       height: 72vh;
+       }
+       @media screen and (max-width: 1450px) and (min-width: 1370px){
+       height: 68vh;
+       }
+        @media screen and (max-width: 1370px) and (min-width: 1300px){
+       height: 62vh;
+       }
+       @media screen and (min-width: 1200px) and (max-width: 1300px){
+       height: 64vh;
+       }
+`;
+
+
+// Main section component
+const Header = styled.section`
+
 `;
 
 
 const Booking = (props) =>{
 
     return(
-        <div>
-            <div id="contact-info-container" className="p-4 bg-sukoon w-full flex">
+        <div className="md:mt-12 xs:mt-8 sm:mt-8 sm:text-vlg xs:text-vxl">
+            <div id="contact-info-container" className="p-4 bg-sukoon font-gilroyMedium w-full flex">
                 <select name="appointment" id="appointment-type"
-                        className="block p-2 bg-sukoon text-white outline-none w-1/2 appointment-type mx-2 font-medium"
+                        className="block p-2  bg-sukoon text-white outline-none w-2/5 appointment-type mx-2 font-medium"
                         value="">
                     <option value="" selected>Appointment Type</option>
                     <option value="">In House</option>
                     <option value="">Online Consulting</option>
                 </select>
                 <input type="text" placeholder="Email / Phone"
-                       className="block bg-transparent outline-none customer-contact-info w-1/2 p-2 text-sukoon ml-4 text-white"/>
+                       className="block bg-transparent outline-none customer-contact-info p-2 ml-4 text-white"/>
             </div>
-            <div className="book-now-container mt-4">
-                <div className="book-now-inner-container p-1">
-                    <button
-                        className="block relative outline-none  items-center py-2 px-4 bg-sukoon text-white">
-                        <span className="text-sm font-normal">Book Now</span>
-                    </button>
+            <div className="md:mt-12 xs:mt-8 sm:mt-8 font-gilroyMedium">
+                <div className="inline-block">
+                  <BookBtn border bg="transparent" wrapperClass="">
+                    Book Now
+                  </BookBtn>
                 </div>
-                <div className="my-4">
-                    <span>Or Call Us  +91 9876543210</span>
-                </div>
+                <Link to="/" className="text-sukoon ml-4">or Call at +91 9876543210</Link>
             </div>
-            <Link to="/" className="underline">Discover more!</Link>
+          { props.discover ?
+            <div className="md:mt-16 xs:mt-12 sm:mt-12 font-gilroyMedium flex">
+              <Link to="/" className="underline">Explore Appointments</Link>
+              <ArrowButton border={false} margin="0 12px"/>
+            </div> : null}
         </div>
 
 
     )
 };
 
-const HeaderIntroLeft = styled.div`
-        top:  10vw;
-        left: -18vw;
-       
-       @media screen and (max-width: 1600px){
-       left: -16vw;
-       }
-       @media screen and (max-width: 1400px){
-       left: -14vw;
-       }
-       @media screen and (max-width: 1200px){
-       left: -10vw;
-       }
-       
-   
-    `;
+
+
 const HeaderIntroRight = styled.div`
-    
+      position: relative;
     `;
 
 const ParagraphSection = (props) =>{
@@ -89,7 +139,7 @@ const ParagraphSection = (props) =>{
 const HeaderIntro = (props) => {
 
     return (
-        <section id="header-intro" className="w-full">
+        <Header id="header-intro" className="w-full">
             <div id="header-intro-container" className="flex relative">
                 <div className="w-2/5">
                 </div>
@@ -97,16 +147,15 @@ const HeaderIntro = (props) => {
                     <HeaderIntroLeft id="header-intro-left" className="absolute w-fit">
                         <Heading/>
                         {props.booking ?
-                            <Booking />
-                            : <ParagraphSection/>
+                            <Booking discover={props.discover}/>
+                            : props.para ? <ParagraphSection/> :
+                              <ButtonSection/>
                         }
-
-
                     </HeaderIntroLeft>
-                    <Img src={HeaderImg} className="block" alt="Header"/>
+                    <Img src={props.HeaderImg} className="block shadow-xl" alt="Header"/>
                 </HeaderIntroRight>
             </div>
-        </section>
+        </Header>
     )
 };
 

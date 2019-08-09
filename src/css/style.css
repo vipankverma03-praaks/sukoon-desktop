@@ -118,13 +118,13 @@ body{
 #out-patient-services::before{
     content: '';
     background-image: url("../../static/logo@3x.jpg");
-    background-size: 58vw;
+    background-size: 47vw;
     width: 100%;
     height: 100%;
     position: absolute;
     z-index: -1;
     top: 0;
-    right: -69vw;
+    right: -75vw;
     background-repeat: no-repeat;
 }
 .mainService{
@@ -139,36 +139,11 @@ body{
     background-image: url("../../static/WhatsApp Image 2019-07-06 at 11.21.21 AM@3x.jpg");
 }
 
-#menu-hamburger-icon::before {
-    top: 24px;
-    left: 12px;
-    position: absolute;
-    content: '';
-    background: #12443e;
-    width: 32px;
-    height: 1px;
-
-}
-
-#menu-hamburger-icon::after {
-    left: 12px;
-    top: 28px;
-    position: absolute;
-    content: '';
-    background: #12443e;
-    width: 22px;
-    height: 1px;
-
-}
 
 .card-container {
     background-image: url("../../static/green-leaves-waterdrops-4k-wallpaper-3840x2400@3x.jpg");
 }
 
-.appointment-type {
-    color: #12443e;
-    border-bottom: 1px solid #12443e;
-}
 
 input {
     border-bottom: 1px solid #12443e;
@@ -211,39 +186,9 @@ input {
     opacity: 1;
     padding: 7px;
 }
-@media screen and (min-width: 1280px){
-    .sukoon-bg {
-        background-position: top 497vh left -28vw;
-    }
-}
 
-@media screen and (min-width: 1360px){
-    .sukoon-bg {
-        background-position: top 497vh left -28vw;
-    }
-}
-@media screen and (min-width: 1439px){
-    .sukoon-bg {
-        background-position: top 497vh left -28vw;
-    }
-}
-@media screen and (min-width: 1599px){
-    .sukoon-bg {
-        background-position: top 497vh left -28vw;
-    }
-}
 
 @media screen and (min-width: 1024px) {
-    .sukoon-bg {
-        background-position: top 497vh left -28vw;
-        background-image: url("../../static/logo@3x.jpg");
-        background-repeat: no-repeat;
-        background-size: 58vw;
-    }
-
-    #header-intro {
-        background-image: none;
-    }
 
     .customer-contact-info::placeholder {
         color: #fff;
