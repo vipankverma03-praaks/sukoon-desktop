@@ -35,44 +35,44 @@ const Psychotherapy = styled.h1`
     `;
 
 const NavWrapper = styled.div`
-  font-size: 18px;
-
+  font-size: 1.1vw;
+  
   &::before{
     content:'';
-    width: 42%;  
+    width: 25%;  
   }
   
-  @media screen and (max-width: 1601px) and (min-width: 1504px){ 
-      font-size: 18px;
-    
-      &::before{
-        width: 42%;  
-      }
-  }
-   @media screen  and (max-width: 1500px) {
-      font-size: 15px;
-    
-      &::before{
-        width: 36%;  
-      }
-  }
-    @media screen  and (max-width: 1400px) {
-      font-size: 15px;
-    
-      &::before{
-        width: 36%;  
-      }
-  }
-  @media screen and (max-width: 1200px){
-      font-size: 13px;
-    
-      &::before{
-        width: 31vw;  
-      }
-  }
+  
+  @media screen and (max-width: 1600px) and (min-width: 1450px){
+           font-size: 1.3vw;
+        
+          &::before{
+            width: 19%;  
+          }
+       }
+       @media screen and (max-width: 1450px) and (min-width: 1370px){
+            font-size: 1.3vw;
+        
+          &::before{
+            width: 17%;  
+          }
+       }
+        @media screen and (max-width: 1370px) and (min-width: 1300px){
+           font-size: 1.2vw;
+        
+          &::before{
+            width: 15%;  
+          }
+       }
+       @media screen and (min-width: 1200px) and (max-width: 1300px){
+            font-size: 1.2vw;
+          &::before{
+            width: 14%;  
+          }
+       }
 `;
 
-function Header() {
+function Header(props) {
 
     return (
         <nav className="">
@@ -80,9 +80,10 @@ function Header() {
                 <div className="w-full flex justify-between">
                     <Link to="/" className="flex w-20 relative  items-center no-underline ">
                         <img src={SukoonLogo} alt="Sukoon Logo"/>
+                        {props.logoHighlighter ?
                         <PsychotherapyWrapper className="absolute">
                             <Psychotherapy className="whitespace-no-wrap text-gray-250">Psychotherapy Center</Psychotherapy>
-                        </PsychotherapyWrapper>
+                        </PsychotherapyWrapper> : null }
                     </Link>
                     <div className="text-sukoon mr-2 my-auto flex justify-end px-1">
                         <div className="flex ">
@@ -98,37 +99,37 @@ function Header() {
                         <NavWrapper className="flex justify-between">
                             <Link
                                 to="/services"
-                                className="block inline-block mt-0 mr-6 no-underline"
+                                className=" inline-block mt-0 mr-6 no-underline"
                             >
                                 Services
                             </Link>
                             <Link
                                 to="/infrastructure"
-                                className="block inline-block mt-0 mr-6 no-underline"
+                                className=" inline-block mt-0 mr-6 no-underline"
                             >
                                 Infrastructure
                             </Link>
                             <Link
                                 to="/experience"
-                                className="block inline-block mt-0 mr-6 no-underline"
+                                className=" inline-block mt-0 mr-6 no-underline"
                             >
                                 Experience
                             </Link>
                             <Link
                                 to="/"
-                                className="block inline-block mt-0 mr-6 no-underline"
+                                className=" inline-block mt-0 mr-6 no-underline"
                             >
                                 Doctors
                             </Link>
                             <Link
                                 to="/"
-                                className="block inline-block mt-0 mr-6 no-underline"
+                                className=" inline-block mt-0 mr-6 no-underline"
                             >
                                 International Patients
                             </Link>
                             <Link
                                 to="/"
-                                className="block inline-block mt-0 no-underline"
+                                className=" inline-block mt-0 no-underline"
                             >
                                 About
                             </Link>

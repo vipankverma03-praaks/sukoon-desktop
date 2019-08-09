@@ -27,11 +27,11 @@ const HeadingBold = styled.span`
 `;
 
     return(
-        <Wrapper className={props.wrapperClass} {...props}>
-            <Explore textAlign={props.textAlign} borderRight={props.borderRight}>{props.mainHeading || 'Explore'}</Explore>
+        <Wrapper className={props.wrapperClass} >
+            <Explore textAlign={props.textAlign} className="font-gilroyRegular" borderRight={props.borderRight}>{props.subHeading || 'Explore'}</Explore>
             <HeadingWrapper textAlign={props.textAlign} className="text-sukoon inline text-4xl w-full">
-                <HeadingLight className="font-light mt-3 mr-2" display={props.display}>{props.titleLight || ''}</HeadingLight>
-                <HeadingBold className={`font-semibold mb-3 ${props.addClass}`} display={props.display}>{props.titleBold || ''}</HeadingBold>
+                <HeadingLight className="font-gilroyLight mt-3 mr-2" display={props.display}>{props.titleLight || ''}</HeadingLight>
+                <HeadingBold className={`font-gilroyBold mb-3 ${props.addClass}`} display={props.display}>{props.titleBold || ''}</HeadingBold>
             </HeadingWrapper>
         </Wrapper>
     )

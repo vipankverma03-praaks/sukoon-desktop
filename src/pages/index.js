@@ -13,34 +13,113 @@ import Title from "../elements/Heading"
 import styled from "styled-components";
 import Para from "../elements/Para"
 import ArrowIcon from "../elements/ArrowButton";
-import BookBtn from "../elements/BookNowBtn";
+import Banner from "../components/Banner";
 
 // Images
 import BlogImg  from "../images/iStock-968194620_2019-07-17/iStock-968194620@3x.jpg";
-import HeaderImg from "../images/Desktop-Header/DesktopHeader.jpg"
-import Slider from "react-slick";
-import Physician from "../images/physician_retail_web_2019-07-29/physician_retail_web@3x.jpg";
-import Banner from "../components/Banner";
+import HeaderImg from "../images/Desktop-Header/HomeBanner.jpg";
+import SukoonBgLogo from "../images/sukoon-bg-logo/logo@2x.jpg";
+import SukoonLogo from "../images/sukoon-bg-logo/logo.jpg";
 
+
+import Details from "../elements/Details";
+import MeetExperts from "../components/MeetExperts";
+
+const Caption = (props) => {
+  return (
+    <div className="my-2 pr-4">
+      <h2 className="text-sukoon text-xl font-gilroyBold block">
+        {props.subHeading || ''}
+      </h2>
+      <Para className="py-2 pr-16">
+        {props.para || ''}
+      </Para>
+    </div>
+
+  )
+};
+
+// Meet Experts and Blog and faq wrapper
+const MFBWrapper = styled.section`
+    background-image: url(${SukoonBgLogo});
+    background-repeat: no-repeat;
+    background-position: left -23vw top 16vw;
+    background-size: 48vw;
+`;
+
+
+const TopRow = styled.section`
+    background-image: url(${SukoonLogo});
+    background-size: 20vw;
+    background-repeat: no-repeat;
+    background-position: top 26vw right -10vw;
+    
+     @media screen and (max-width: 1600px) and (min-width: 1450px){
+          background-position: top 33vw right -11vw;
+
+       }
+       @media screen and (max-width: 1450px) and (min-width: 1370px){
+          background-position: top 27vw right -11vw;
+
+       }
+        @media screen and (max-width: 1370px) and (min-width: 1300px){
+          background-position: top 19vw right -11vw;
+
+       }
+       @media screen and (min-width: 1200px) and (max-width: 1300px){
+          background-position: top 24vw right -11vw;
+
+       }
+`;
 const WhySukoon = () => {
     return (
         <section id="why-sukoon" className="why-sukoon p-12">
-            <Title titleLight="Why" titleBold="Sukoon" />
+            <Title subHeading="About" titleLight="Why" titleBold="Sukoon" />
             <div className="flex">
-                <Caption subHeading="Caption 1"
-                         para="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"/>
-                <Caption subHeading="Caption 2"
-                         para="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"/>
-                <Caption subHeading="Caption 3"
-                         para="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"/>
+                <Caption subHeading="Consult best doctors"
+                         para=" Get expert advice from our team of experienced doctors, led by Dr. Sameer Parikh"/>
+                <Caption subHeading="Get personalised care"
+                         para="Receive customised and holistic care because of our incredible 1:1 nurse to patient ratio"/>
+                <Caption subHeading="Experience premium facilities"
+                         para="Enhance your recovery in a calming, positive, and comfortable environment "/>
             </div>
         </section>
     )
 };
 
+let content = [
+  {
+    titleLight: 'Acute',
+    titleBold: 'Psychiatry Care',
+    para: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    numberOfCards: [1,2,3],
+    col:'Col1'
+  },
+  {
+    titleLight: 'Acute',
+    titleBold: 'Psychiatry Care',
+    para: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    numberOfCards: [1,2,3],
+    col:'Col2'
+  },
+  {
+    titleLight: 'Acute',
+    titleBold: 'Psychiatry Care',
+    para: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    numberOfCards: [1,2],
+    col:'Col3'
+  },
+  {
+    titleLight: 'Acute',
+    titleBold: 'Psychiatry Care',
+    para: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    numberOfCards: [1],
+    col:'Col4'
+  }
+];
 
 const PyramidWrapper = styled.div`
-        flex-direction: ${props => props.reverse ? 'row-reverse' : 'row'};
+      flex-direction: ${props => props.reverse ? 'row-reverse' : 'row'};
     `;
 
 const Pyramid = (props) =>{
@@ -70,37 +149,6 @@ const Pyramid = (props) =>{
         margin-top: 25rem;
     `;
 
-    let content = [
-        {
-            titleLight: 'Acute',
-            titleBold: 'Psychiatry Care',
-            para: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-            numberOfCards: [1,2,3],
-            col:'Col1'
-        },
-        {
-            titleLight: 'Acute',
-            titleBold: 'Psychiatry Care',
-            para: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-            numberOfCards: [1,2,3],
-            col:'Col2'
-        },
-        {
-            titleLight: 'Acute',
-            titleBold: 'Psychiatry Care',
-            para: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-            numberOfCards: [1,2],
-            col:'Col3'
-        },
-        {
-            titleLight: 'Acute',
-            titleBold: 'Psychiatry Care',
-            para: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-            numberOfCards: [1],
-            col:'Col4'
-        }
-    ];
-
     const CoolCards = ()=>{
       let items = content.map((item)=>{
           let Col = item.col;
@@ -114,7 +162,7 @@ const Pyramid = (props) =>{
                              <p className="text-grey-para text-vsm w-full py-1">
                                  {item.para}
                              </p>
-                             <ArrowIcon />
+                             <ArrowIcon border/>
                          </div>
                      </div>
                  </Card>
@@ -171,8 +219,9 @@ const InPatientServices = (props) => {
     return (
         <section id="inpatient-services" className="relative mt-4 p-12">
             <InPatientServicesHeading className="w-fit absolute">
-                <Title titleLight="In Patient" titleBold="Care Services" display="block"/>
-                <Para width="40%">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium commodi eligendi minima natus nemo numquam placeat quam, quod reiciendis vel.</Para>
+                <Title subHeading="IPD" titleLight="Residential" titleBold="Services" display="block"/>
+                <Para width="40%">Our residential treatment programs provide specialised care. Recover in a home-like setting - comfortable, warm, and personalised.
+                </Para>
             </InPatientServicesHeading>
             <Pyramid reverse={true} top="-12rem"/>
         </section>
@@ -201,7 +250,6 @@ const Infra = (props) =>{
         bottom: 2rem;
         left:4rem;
     `;
-
 
     const InfraButton = (props)=>{
 
@@ -303,119 +351,19 @@ const InHousePharmacy = (props) => {
     return (
         <section className="p-6">
             <Title titleLight="In-House" className="mb-4" titleBold="Pharmacy" display="block"/>
-            <Para className="text-gray-600 block" content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since the 1500s" />
+          <Para className="text-gray-600 block" width="23vw">
+            You can always find your prescribed medications at Sukoon. Our pharmacy is
+          </Para>
         </section>
     )
 };
 
-const CarouselParenWrapper = styled.div`
-  text-align: center;
-`;
-
-const CarouselImgWrapper = styled.div`
-  width: 18vw;
-  height: 16vw;
-  position: relative;
-  
-  > img{
-    opacity: 0.71;
-    margin: 10px 0;
-    object-fit: cover;
-    height: 100%;
-  }
-`;
-
-const Ovarlay = styled.div`
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    height: 100%;
-    width: 100%;
-    background: rgba(0,0,0,.31);
-`;
-
-const MeetExpertsCarousel = () =>{
-    const settings = {
-        slidesToScroll: true,
-        swipe: true,
-        arrow:false,
-        className: "center",
-        centerMode: true,
-        infinite: true,
-        centerPadding: "1rem",
-        slidesToShow: 3,
-        speed: 500,
-        adaptiveHeight: true,
-        variableWidth: true,
-    };
-
+const FaqsPara = (item) =>{
   return(
-      <div>
-          <Slider {...settings}>
-              <CarouselParenWrapper>
-                  <CarouselImgWrapper className="CarouselImgWrapper">
-                      <Ovarlay className="ovarlay"/>
-                      <img src={Physician} className="w-auto" alt="Physician" />
-                  </CarouselImgWrapper>
-                  <h2 className="mt-2 text-sukoon text-sm font-bold">Sandra G. Boodman</h2>
-                  <p className="text-gray-700 text-xs">Lorem Ipsum dummy text</p>
-              </CarouselParenWrapper>
-              <CarouselParenWrapper>
-                  <CarouselImgWrapper className="CarouselImgWrapper">
-                      <Ovarlay className="ovarlay"/>
-                      <img src={Physician} className="w-auto" alt="Physician" />
-                  </CarouselImgWrapper>
-                  <h2 className="mt-2 text-sukoon text-sm font-bold">Sandra G. Boodman</h2>
-                  <p className="text-gray-700 text-xs">Lorem Ipsum dummy text</p>
-              </CarouselParenWrapper>
-              <CarouselParenWrapper>
-                  <CarouselImgWrapper className="CarouselImgWrapper">
-                      <Ovarlay className="ovarlay"/>
-                      <img src={Physician} className="w-auto" alt="Physician" />
-                  </CarouselImgWrapper>
-                  <h2 className="mt-2 text-sukoon text-sm font-bold">Sandra G. Boodman</h2>
-                  <p className="text-gray-700 text-xs">Lorem Ipsum dummy text</p>
-              </CarouselParenWrapper>
-              <CarouselParenWrapper>
-                  <CarouselImgWrapper className="CarouselImgWrapper">
-                      <Ovarlay className="ovarlay"/>
-                      <img src={Physician} className="w-auto" alt="Physician" />
-                  </CarouselImgWrapper>
-                  <h2 className="mt-2 text-sukoon text-sm font-bold">Sandra G. Boodman</h2>
-                  <p className="text-gray-700 text-xs">Lorem Ipsum dummy text</p>
-              </CarouselParenWrapper>
-              <CarouselParenWrapper>
-                  <CarouselImgWrapper className="CarouselImgWrapper">
-                      <Ovarlay className="ovarlay"/>
-                      <img src={Physician} className="w-auto" alt="Physician" />
-                  </CarouselImgWrapper>
-                  <h2 className="mt-2 text-sukoon text-sm font-bold">Sandra G. Boodman</h2>
-                  <p className="text-gray-700 text-xs">Lorem Ipsum dummy text</p>
-              </CarouselParenWrapper>
-              <CarouselParenWrapper>
-                  <CarouselImgWrapper className="CarouselImgWrapper">
-                      <Ovarlay className="ovarlay"/>
-                      <img src={Physician} className="w-auto opacity-1" alt="Physician" />
-                  </CarouselImgWrapper>
-                  <h2 className="mt-2 text-sukoon text-sm font-bold">Sandra G. Boodman</h2>
-                  <p className="text-gray-700 text-xs">Lorem Ipsum dummy text</p>
-              </CarouselParenWrapper>
-          </Slider>
-      </div>
+    <Para width="100%" padding="1rem">
+      {item}
+    </Para>
   )
-};
-
-const MeetExperts = (props) => {
-    return (
-        <section id="meet-experts" className="p-6 relative">
-            <Title titleLight="Meet" titleBold="Experts"/>
-            <Para content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since the 1500s" />
-            <MeetExpertsCarousel />
-        </section>
-    )
 };
 
 const Faqs = (props) => {
@@ -438,23 +386,17 @@ const Faqs = (props) => {
 
     let items = content.map((item)=>{
        return(
-         <div className="flex-col flex p-4 shadow-lg my-4 bg-white">
-             <div className="flex justify-between">
-                 <details>
-                     <Para width="30vw" padding="1rem">
-                         {item.description}
-                     </Para>
-                     <summary className="text-sukoon font-bold">{item.summary}</summary>
-                 </details>
-             </div>
+         <div className="flex-col flex p-4 shadow-lg mb-4 bg-white">
+                 <Details summary={item.summary} content={FaqsPara} arguments={item.description}>
+                 </Details>
          </div>
        )
     });
 
     return (
-        <section id="faq-section" className="p-6 flex relative flex-row-reverse justify-between">
+        <section id="faq-section" className="p-6 flex relative flex-row justify-between">
             <div className="mr-40">
-                <Title titleLight="Frequently" addClass="block" titleBold="Asked Questions"/>
+                <Title subHeading="Learn" titleLight="Frequently" addClass="block" titleBold="Asked Questions"/>
             </div>
             <div className="w-3/5">
                 {items}
@@ -473,7 +415,7 @@ const Blogs = (props) =>{
     return(
         <section className="p-6">
             <div>
-                <Title titleLight="" titleBold="Blogs"/>
+                <Title subHeading="Learn" titleLight="" titleBold="Blogs"/>
                 <div className="flex">
                     <div id="blog-left" className="w-1/2 flex justify-around">
                         <div className="shadow-lg m-4 flex flex-col justify-between">
@@ -561,52 +503,48 @@ const Blogs = (props) =>{
     )
 };
 
-const OutPatientServices = (props) => {
-    const Wrapper = styled.div`
-        top: -1rem  ;
+const OutPatientServiceHeading = styled.div`
+        top: -1rem ;
         right: 3rem;
     `;
 
+const OutPatientServices = (props) => {
+
     return (
         <section id="out-patient-services" className="relative p-6 mb-4">
-            <Wrapper className="w-fit absolute">
-                <Title titleLight="Out Patient" textAlign="right" titleBold="Care Services" borderRight={true} display="block"/>
-                <Para className="text-gray-600 block" textAlign="right" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium commodi eligendi minima natus nemo numquam placeat quam, quod reiciendis vel." />
-            </Wrapper>
+            <OutPatientServiceHeading className="w-fit absolute">
+                <Title subHeading="OPD" titleLight="Out Patient" textAlign="right" titleBold="Care Services" borderRight={true} display="block"/>
+              <Para width="23vw" textAlign="right">
+                In addition to providing holistic care in our calming environment, we also offer effective daycare treatment programs.
+              </Para>
+
+            </OutPatientServiceHeading>
             <Pyramid top="0" reverse={false}/>
         </section>
     )
 };
 
-const Caption = (props) => {
-    return (
-        <div className="my-2 pr-4">
-            <h2 className="text-sukoon text-xl font-bold block">
-                {props.subHeading || ''}
-            </h2>
-            <Para className=" py-2 pr-16">
-                {props.para || ''}
-            </Para>
-        </div>
 
-    )
-};
 
 function IndexPage(props) {
     return (
-        <Layout>
+        <Layout logoHighlighter bgImage >
             <SEO
                 title="Home"
                 keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
             />
-            <Banner booking/>
-            <WhySukoon/>
+            <TopRow>
+              <Banner booking discover HeaderImg={HeaderImg}/>
+              <WhySukoon/>
+            </TopRow>
             <InPatientServices/>
             <OutPatientServices/>
             <Infra/>
-            <MeetExperts/>
-            <Faqs/>
-            <Blogs/>
+            <MFBWrapper>
+              <MeetExperts/>
+              <Faqs/>
+              <Blogs/>
+            </MFBWrapper>
         </Layout>
 
     );

@@ -22,6 +22,7 @@ import RoomSpaMain from "../images/exp/room_spa_main.jpg";
 import Breakfast from "../images/exp/meal_1.jpg";
 import Lunch from "../images/exp/meal_2.jpg";
 import Dinner from "../images/exp/meal_3.jpg";
+import HeaderImg from "../images/Desktop-Header/HomeBanner.jpg";
 
 // Components
 import Para from "../elements/Para"
@@ -98,7 +99,7 @@ function ExperiencePage() {
                 title="Experience"
                 keywords={[`sukoon`, `hospital`, `psychiatry center`, `service`]}
             />
-            <Banner/>
+            <Banner HeaderImg={HeaderImg}/>
             <section className="p-8">
                 <div className="">
                     <Title titleLight="Experience" titleBold="Sukoon" />
