@@ -1,26 +1,51 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
+
 
 const Wrapper = styled.div`
-  
-  padding: ${props => props.border ? '2px' : ''};
-  background: ${props => props.border ? props.bg || 'white' : '#12443e'};
-  border: ${props=> props.borderTransparent ? '1px solid transparent' : '1px solid #12443e'};
+  padding: 5px;
+  background: ${props=> props.theme.fg};
+  border: 1px solid ${props => props.theme.bg};
 
-  
-  button{
-  padding: 5px 10px;
-  }
 `;
+
+const ThemedButton = styled.button`
+  padding: 10px 20px;
+  color: ${props => props.theme.fg};
+  background: ${props => props.theme.bg};
+`;
+
+const green = {
+  bg: '#12443e',
+  fg: '#fff',
+  paleMint:'#C2DCD3',
+};
+
+const white = ({bg,fg})=>({
+    bg: fg,
+    fg: bg,
+});
+
+const mint ={
+  bg:'#C2DCD3',
+  fg: '#12443e',
+};
+
+
 const Button = (props) =>{
 
+  const theme = props.theme === 'green' ? green : props.theme === 'mint' ? mint : props.theme === 'white' ? white : green;
+
   return(
-    <Wrapper borderTransparent={props.borderTransparent} bg={props.bg} border={props.border} className={`${props.wrapperClass || ''} w-fit`}>
-      <button
-        className={`${props.buttonClass || ''} block relative font-gilroyMedium outline-none text-vsm items-center bg-sukoon text-white`}>
-        {props.children}
-      </button>
-    </Wrapper>
+    <ThemeProvider theme={theme}>
+      <Wrapper className={`${props.wrapperClass || ''} w-fit`}>
+        <ThemedButton
+          className={`${props.buttonClass || ''} block relative font-gilroyMedium outline-none text-lg items-center`}>
+          {props.children}
+        </ThemedButton>
+      </Wrapper>
+    </ThemeProvider>
+
   )
 };
 
