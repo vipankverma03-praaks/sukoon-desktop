@@ -5,21 +5,19 @@ import "../css/style.css";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Title from "../elements/Heading";
-import styled from "styled-components";
 import Para from "../elements/Para";
 import Banner from "../components/Banner";
 
 // Images
 import HeaderImg from "../images/pacientes-mejora_2019-08-02/pacientes-mejora@3x.jpg";
-import Slider from "react-slick";
-import Physician from "../images/physician_retail_web_2019-07-29/physician_retail_web@3x.jpg";
-import { Link } from "@reach/router";
+import { Link } from "gatsby";
 import ArrowButton from "../elements/ArrowButton";
 import MeetExperts from "../components/MeetExperts";
+import SVG from "../elements/SVG";
 
 const PatientCare = (props) => {
   return (
-    <section id="" className="In-patient p-12">
+    <section id="" className="In-patient mt-4 p-12">
       <div className="flex">
         <div className="w-4/5">
           <Title
@@ -28,9 +26,10 @@ const PatientCare = (props) => {
             display="block"
           />
         </div>
-        <div className="bg-sukoon text-center text-vxs text-white p-8 w-1/5">
-          <p>Sukoon Suicide Helpline</p>
-          <h2 className="text-v3xl">1800-234-6789</h2>
+        <div className="bg-sukoon text-center text-vxs text-white p-6 w-1/5">
+          <SVG display="inline-block" icon="helpline" width={'35px'} fill={'#fff'} />
+          <p className="leading-loose my-1">Sukoon Suicide Helpline</p>
+          <h2 className="text-xl tracking-widest">1800-234-6789</h2>
         </div>
       </div>
       <div className="flex mt-8 justify-between">
@@ -143,7 +142,7 @@ function ServicesPage(props) {
         title="Home"
         keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
       />
-      <Banner HeaderImg={HeaderImg}/>
+      <Banner para inner texture HeaderImg={HeaderImg}/>
       <PatientCare title="In Patient" />
       <PatientCare title="Out Patient" />
       <MeetExperts />

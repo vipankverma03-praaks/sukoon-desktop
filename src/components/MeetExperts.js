@@ -117,15 +117,17 @@ const MeetExpertsCarousel = () => {
 
 const MeetExperts = props => {
   return (
-    <section id="meet-experts" className="p-6 relative">
-      <Title subHeading="About" titleLight="Our" titleBold="Doctors" />
-      <Para width="100%">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
-        dignissimos dolore dolorum eos, fuga itaque labore laboriosam libero
-        molestiae officiis quibusdam veniam voluptates! Adipisci cum, iusto
-        laudantium molestias perferendis qui reprehenderit suscipit ullam! A
-        aliquam consectetur nisi non nostrum numquam officiis placeat
-      </Para>
+    <section id="meet-experts" className="py-12  relative">
+     <div className="pl-20">
+       <Title subHeading="About" titleLight="Our" titleBold="Doctors" />
+       <Para width="100%">
+         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
+         dignissimos dolore dolorum eos, fuga itaque labore laboriosam libero
+         molestiae officiis quibusdam veniam voluptates! Adipisci cum, iusto
+         laudantium molestias perferendis qui reprehenderit suscipit ullam! A
+         aliquam consectetur nisi non nostrum numquam officiis placeat
+       </Para>
+     </div>
       <MeetExpertsCarousel />
     </section>
   );

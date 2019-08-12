@@ -7,7 +7,7 @@ const Paragraph = styled.p`
         width: ${props=> props.width || '100%'};
         padding: ${props => props.padding || ''};
         text-align: ${props => props.textAlign || 'left'};
-        line-height: ${props => props.lineHeight || '1.4vw'};
+        line-height: ${props => props.lineHeight || '1.1vw'};
 `;
 
 

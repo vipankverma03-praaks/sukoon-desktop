@@ -131,17 +131,10 @@ body{
     background-color:#c2dcd3;
 }
 
-.sukoon-infra-section {
-    margin: 1vw 0;
-    background-size: cover;
-    height: 40vw;
-    background-position: center;
-    background-image: url("../../static/WhatsApp Image 2019-07-06 at 11.21.21 AM@3x.jpg");
-}
-
 
 .card-container {
     background-image: url("../../static/green-leaves-waterdrops-4k-wallpaper-3840x2400@3x.jpg");
+    background-position: center center;
 }
 
 
@@ -160,6 +153,7 @@ input {
 }
 
 .show {
+    transition: ease-all 1s;
     display: block;
 }
 
