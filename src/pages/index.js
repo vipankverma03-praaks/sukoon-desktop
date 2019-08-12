@@ -14,6 +14,7 @@ import styled from "styled-components";
 import Para from "../elements/Para"
 import ArrowIcon from "../elements/ArrowButton";
 import Banner from "../components/Banner";
+import Infrastructure from "../components/Infrastructure";
 
 // Images
 import BlogImg  from "../images/iStock-968194620_2019-07-17/iStock-968194620@3x.jpg";
@@ -27,8 +28,8 @@ import MeetExperts from "../components/MeetExperts";
 
 const Caption = (props) => {
   return (
-    <div className="my-2 pr-4">
-      <h2 className="text-sukoon text-xl font-gilroyBold block">
+    <div className="my-4 pr-4">
+      <h2 className="text-sukoon text-2xl font-gilroyBold block">
         {props.subHeading || ''}
       </h2>
       <Para className="py-2 pr-16">
@@ -73,7 +74,7 @@ const TopRow = styled.section`
 `;
 const WhySukoon = () => {
     return (
-        <section id="why-sukoon" className="why-sukoon p-12">
+        <section id="why-sukoon" className="why-sukoon py-8 px-20">
             <Title subHeading="About" titleLight="Why" titleBold="Sukoon" />
             <div className="flex">
                 <Caption subHeading="Consult best doctors"
@@ -87,6 +88,7 @@ const WhySukoon = () => {
     )
 };
 
+// Content for residential services & out-patient services.
 let content = [
   {
     titleLight: 'Acute',
@@ -118,6 +120,7 @@ let content = [
   }
 ];
 
+
 const PyramidWrapper = styled.div`
       flex-direction: ${props => props.reverse ? 'row-reverse' : 'row'};
     `;
@@ -125,8 +128,8 @@ const PyramidWrapper = styled.div`
 const Pyramid = (props) =>{
 
     const Card = styled.div`
-      width: 18vw;
-      padding: 10px;
+      width: 17vw;
+      padding: 13px;
       
        > div > div{
         padding: 10px 20px;
@@ -209,158 +212,27 @@ const Pyramid = (props) =>{
     )
 };
 
-const InPatientServicesHeading = styled.div`
-    top: -1rem;
-    left: 3rem;
-`;
 
 const InPatientServices = (props) => {
 
     return (
-        <section id="inpatient-services" className="relative mt-4 p-12">
-            <InPatientServicesHeading className="w-fit absolute">
+        <section id="inpatient-services" className="relative py-12">
+            <div className="w-fit absolute pl-20 pt-12">
                 <Title subHeading="IPD" titleLight="Residential" titleBold="Services" display="block"/>
                 <Para width="40%">Our residential treatment programs provide specialised care. Recover in a home-like setting - comfortable, warm, and personalised.
                 </Para>
-            </InPatientServicesHeading>
+            </div>
             <Pyramid reverse={true} top="-12rem"/>
         </section>
     )
 };
 
-const InfraBtnContainer = (props) =>{
-    const Wrapper = styled.div`
-            position: relative;
-            width: 20vw;        
-        `;
-    return(
-      <Wrapper>
-          {props.children}
-      </Wrapper>
-    )
-};
-
-const Infra = (props) =>{
-    const [yellowActive1, setColor1] = useState(false);
-    const [yellowActive2, setColor2] = useState(false);
-    const [yellowActive3, setColor3] = useState(false);
-    const [yellowActive4, setColor4] = useState(false);
-
-    const Wrapper = styled.div`
-        bottom: 2rem;
-        left:4rem;
-    `;
-
-    const InfraButton = (props)=>{
-
-     const Button = styled.button`
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        float:right;
-        background: ${props.yellow ? '#ffc300' : 'white'};
-        
-        ::before{
-            position: absolute;
-            content: '';
-            width: 100%;
-            height: 5px;
-            background: ${props.yellow ?  '#ffc300' : 'white'};
-            top:7px;
-            left:0;
-        }
-    `;
-        return(
-            <Button onClick={()=>{handleToggle(props.name)}}/>
-        )
-    };
-
-    const handleToggle = (name)=>{
-       if(name === '1'){
-           if(!yellowActive1){
-               setColor1(true);
-           }
-           else{
-               setColor1(false);
-           }
-       }
-       else if(name === '2'){
-           if(!yellowActive2){
-               setColor2(true);
-           }
-           else{
-               setColor2(false);
-           }
-       }
-       else if(name === '3'){
-           if(!yellowActive3){
-               setColor3(true);
-           }
-           else{
-               setColor3(false);
-           }
-       }
-       else{
-           if(!yellowActive4){
-               setColor4(true);
-           }
-           else{
-               setColor4(false);
-           }
-       }
-    };
-
-    const CardWrapper = styled.div`
-        right:10vw;
-        top:8vw;
-    `;
 
 
-    const SimpleInfraButton = styled.button`
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-    `;
-    return(
-        <section id="sukoon-infra-section" className="sukoon-infra-section relative w-full h-full">
-            <CardWrapper className="block absolute bg-white">
-                <InHousePharmacy />
-            </CardWrapper>
-            <Wrapper className="m-4 flex absolute" >
-                <div className="relative" >
-                    <SimpleInfraButton className="bg-sukoonYellow"/>
-                </div>
-                <InfraBtnContainer >
-                    <InfraButton  yellow={yellowActive1} name="1" className="bg-sukoonYellow"/>
-                </InfraBtnContainer>
-                <InfraBtnContainer >
-                    <InfraButton  yellow={yellowActive2} name="2" className="bg-sukoonYellow"/>
-                </InfraBtnContainer>
-                <InfraBtnContainer >
-                    <InfraButton  yellow={yellowActive3} name="3" className="bg-sukoonYellow"/>
-                </InfraBtnContainer>
-                <InfraBtnContainer >
-                    <InfraButton  yellow={yellowActive4} name="4" className="bg-sukoonYellow"/>
-                </InfraBtnContainer>
-            </Wrapper>
-        </section>
-    )
-};
-
-const InHousePharmacy = (props) => {
-    return (
-        <section className="p-6">
-            <Title titleLight="In-House" className="mb-4" titleBold="Pharmacy" display="block"/>
-          <Para className="text-gray-600 block" width="23vw">
-            You can always find your prescribed medications at Sukoon. Our pharmacy is
-          </Para>
-        </section>
-    )
-};
 
 const FaqsPara = (item) =>{
   return(
-    <Para width="100%" padding="1rem">
+    <Para width="97%" padding="1rem">
       {item}
     </Para>
   )
@@ -386,7 +258,7 @@ const Faqs = (props) => {
 
     let items = content.map((item)=>{
        return(
-         <div className="flex-col flex p-4 shadow-lg mb-4 bg-white">
+         <div className="flex-col flex shadow-lg mb-4 bg-white">
                  <Details summary={item.summary} content={FaqsPara} arguments={item.description}>
                  </Details>
          </div>
@@ -394,7 +266,7 @@ const Faqs = (props) => {
     });
 
     return (
-        <section id="faq-section" className="p-6 flex relative flex-row justify-between">
+        <section id="faq-section" className="py-12 px-20 flex relative flex-row justify-between">
             <div className="mr-40">
                 <Title subHeading="Learn" titleLight="Frequently" addClass="block" titleBold="Asked Questions"/>
             </div>
@@ -413,7 +285,7 @@ const Blogs = (props) =>{
     
     `;
     return(
-        <section className="p-6">
+        <section className="py-12 px-20">
             <div>
                 <Title subHeading="Learn" titleLight="" titleBold="Blogs"/>
                 <div className="flex">
@@ -476,7 +348,7 @@ const Blogs = (props) =>{
                                 </div>
                             </div>
                         </div>
-                        <div id="blog-right-inner-2" className="flex justify-around">
+                        <div id="blog-right-inner-2" className="flex bg-white justify-around">
                             <div className="shadow-lg m-4 flex flex-col justify-between">
                                 <div className="h-3/5">
                                     <img src={BlogImg} className="w-full h-full object-center object-cover" alt="Blog"/>
@@ -504,15 +376,16 @@ const Blogs = (props) =>{
 };
 
 const OutPatientServiceHeading = styled.div`
-        top: -1rem ;
+        top: 0;
         right: 3rem;
+        padding-left: 3vw;
     `;
 
 const OutPatientServices = (props) => {
 
     return (
-        <section id="out-patient-services" className="relative p-6 mb-4">
-            <OutPatientServiceHeading className="w-fit absolute">
+        <section id="out-patient-services" className="relative py-12 mb-4">
+            <OutPatientServiceHeading className="w-fit pt-12 absolute">
                 <Title subHeading="OPD" titleLight="Out Patient" textAlign="right" titleBold="Care Services" borderRight={true} display="block"/>
               <Para width="23vw" textAlign="right">
                 In addition to providing holistic care in our calming environment, we also offer effective daycare treatment programs.
@@ -539,7 +412,7 @@ function IndexPage(props) {
             </TopRow>
             <InPatientServices/>
             <OutPatientServices/>
-            <Infra/>
+            <Infrastructure/>
             <MFBWrapper>
               <MeetExperts/>
               <Faqs/>

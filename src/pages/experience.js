@@ -99,7 +99,7 @@ function ExperiencePage() {
                 title="Experience"
                 keywords={[`sukoon`, `hospital`, `psychiatry center`, `service`]}
             />
-            <Banner HeaderImg={HeaderImg}/>
+            <Banner inner texture HeaderImg={HeaderImg}/>
             <section className="p-8">
                 <div className="">
                     <Title titleLight="Experience" titleBold="Sukoon" />
@@ -189,9 +189,9 @@ function ExperiencePage() {
                             <h2 className="font-bold text-3xl text-sukoon">Fitness Therapy</h2>
                             <Para width="100%">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</Para>
                             <div className="arrowSection">
-                                <button className="Circle_btn"><SVG display="inline-block" icon="arrow" width={'20px'} fill={'#969696'} />
+                                <button className="Circle_btn"><SVG display="inline-block" icon="arrow" width={'20px'} rotate fill={'#969696'} />
                                 </button>
-                                <button className="Circle_btn right"><SVG display="inline-block" icon="arrow" width={'20px'} fill={'#969696'} />
+                                <button className="Circle_btn right"><SVG display="inline-block" icon="arrow" width={'20px'} rotate fill={'#969696'} />
                                 </button>
                             </div>
                         </ExperienceServicesDetails>

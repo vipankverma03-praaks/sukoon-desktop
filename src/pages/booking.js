@@ -283,7 +283,7 @@ export default class BookingPage extends React.Component{
       return(
         <BookingWrapper className="relative">
           <HomeLink className="text-gray-250 absolute mt-12  ml-8">
-            <SVG margin="0 10px 0 0" display="inline-block" icon="arrow" width={'30px'} fill={'#8e8e8e'} />
+            <SVG margin="0 10px 0 0" rotate display="inline-block" icon="arrow" width={'30px'} fill={'#8e8e8e'} />
             <Link to="/" className="text-vlg border-b border-gray-250 pb-2">Back to Home</Link>
           </HomeLink>
           <LogoRow className="flex justify-center my-auto">

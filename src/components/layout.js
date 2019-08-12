@@ -11,6 +11,7 @@ import BookBtn from "../elements/BookNowBtn";
 import Para from "../elements/Para";
 
 import SukoonLogo from "../images/sukoon-bg-logo/logo.jpg";
+import SVG from "../elements/SVG";
 
 const LayoutContainer = styled.div`
   
@@ -31,7 +32,7 @@ const HeaderIntro = () => {
                         Appointment
                     </span>
                 </div>
-                <div className="flex font-gilroyRegular items-center w-3/6 px-4">
+                <div className="flex font-gilroyRegular items-center sm:w-3/6 md:w-3/5 px-4">
                   <div className="mr-6 w-1/4">
                     <select name="appointment" id="appointment-type"
                             className="block pb-4 bg-sukoon outline-none border-b border-white border-solid  appointment-type w-full font-medium"
@@ -41,11 +42,11 @@ const HeaderIntro = () => {
                       <option value="">Online Consulting</option>
                     </select>
                   </div>
-                  <div className="mr-4 w-2/3">
+                  <div className="mr-4 w-2/3 customer-contact-info">
                     <input type="text" placeholder="Email / Phone"
-                           className="block bg-transparent outline-none customer-contact-info w-full pb-4 text-sukoon"/>
+                           className="block bg-transparent outline-none  w-full pb-4 text-white"/>
                   </div>
-                  <div className="w-1/6">
+                  <div className="w-1/6 sm:w-1/4">
                     <BookBtn wrapperClass="h-fit float-right" border={true}>
                       Book Now
                     </BookBtn>
