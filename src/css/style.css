@@ -153,6 +153,7 @@ input {
 }
 
 .show {
+    transition: ease-all 1s;
     display: block;
 }
 

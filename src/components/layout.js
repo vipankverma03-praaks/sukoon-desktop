@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import {StaticQuery, graphql, Link} from "gatsby";
 import styled from "styled-components";
@@ -14,11 +14,22 @@ import SukoonLogo from "../images/sukoon-bg-logo/logo.jpg";
 import SVG from "../elements/SVG";
 
 const LayoutContainer = styled.div`
-  
     background-image: ${props => props.bgImage ? `url(${SukoonLogo})`: ''} ;
     background-size: 51vw;
     background-repeat: no-repeat;
     background-position: bottom 16vw right -25vw;
+    
+    .hide{
+    display: none;
+    }
+    
+    .customer-contact-info{
+    width: 47%;
+    
+    }
+    .customer-contact-info input::placeholder{
+    opacity: 1;
+    }
 `;
 const HeaderIntro = () => {
     return (
@@ -176,7 +187,47 @@ const Subscribe = (props) =>{
     )
 };
 
+
+const StickyMenu = styled.section`
+  width: 100%;
+  position: fixed;
+  z-index: 1001;
+  top: 0;
+  
+`;
+
+const Nav = styled.nav`
+  
+  ul > li{
+  margin-right: 5vw;
+  }
+`;
+
+
 function Layout({children, ...props}) {
+
+  const handleScroll = () =>{
+
+    let Header = document.getElementById('header-intro');
+    let StickyMenu = document.getElementById('sticky-nav');
+    let offset =  Math.abs(Number(Header.getBoundingClientRect().top));
+
+    if(offset > 786 || offset > 666 || offset > 556){
+      StickyMenu.classList.add('show');
+      StickyMenu.classList.remove('hide');
+    }
+    else{
+      StickyMenu.classList.remove('show');
+      StickyMenu.classList.add('hide');
+    }
+
+  };
+
+  // Similar to componentDidMount and componentDidUpdate:
+  useEffect(() => {
+      window.addEventListener('scroll', handleScroll)
+  });
+
   return (
     <StaticQuery
       query={graphql`
@@ -191,7 +242,41 @@ function Layout({children, ...props}) {
       render={(data) => (
         <LayoutContainer bgImage={props.bgImage} className="flex flex-col min-h-screen sukoon-bg-1  text-gray-900">
           <Header logoHighlighter={props.logoHighlighter} siteTitle={data.site.siteMetadata.title} />
-
+          <StickyMenu  id="sticky-nav" className="hide">
+            <Nav className="bg-sukoon text-white p-4 flex">
+              <div className="w-4/5 font-gilroyMedium font-normal text-vxl">
+                <ul className="flex py-2 px-2">
+                  <li className="">
+                    <Link to="/services">Services</Link>
+                  </li>
+                  <li className="">
+                    <Link to="/infrastructure">Infrastructure</Link>
+                  </li>
+                  <li className="">
+                    <Link to="/experience">Experience</Link>
+                  </li>
+                  <li className="">
+                    <Link to="/">Doctors</Link>
+                  </li>
+                  <li className="">
+                    <Link to="/">International Patients</Link>
+                  </li>
+                  <li className="">
+                    <Link to="/">About</Link>
+                  </li>
+                </ul>
+              </div>
+              <div className="w-1/5 flex justify-around items-center">
+                <div className="w-8 h-8 mr-4">
+                  <SVG display="inline-block" icon="helpline" width={'25px'} fill={'#fff'} />
+                </div>
+                <div className="w-8 h-8 mr-4">
+                  <SVG display="inline-block" icon="landLine" width={'25px'} fill={'#fff'} />
+                </div>
+                <BookBtn theme="mint"><Link to="/booking">Book Now</Link></BookBtn>
+              </div>
+            </Nav>
+          </StickyMenu>
           <main className="flex flex-col flex-1 justify-center mx-auto m-0 w-full">
             {children}
           </main>
