@@ -232,9 +232,7 @@ ul.RoomFeatures li {
 .roomImg li:last-child {
     margin-right: 0px;
 }
-.ActivitySecImg {
-    display: flex;
-}
+
 img.block.viewOne {
     width: 20%;
     padding-right: 20px;
@@ -245,11 +243,6 @@ img.block.ViewTwo {
     width: 80%;
     object-fit: cover;
     object-position: center center;
-}
-.ActivityInfo {
-    display: flex;
-    flex-flow: column;
-    justify-content: space-between;
 }
 .HighlightSecInfo {
     background: white;

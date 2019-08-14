@@ -1,335 +1,160 @@
-import React ,{useState} from "react";
-import {Link} from "gatsby"
-import "../css/style.css";
-
-// Slick CSS files
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import React  from "react";
+import { Link } from "gatsby";
 
 // Components
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import Title from "../elements/Heading"
+import Title from "../elements/Heading";
 import styled from "styled-components";
+import Details from "../elements/Details";
+import Para from "../elements/Para";
+import Banner from "../components/Banner";
+import SVG from "../elements/SVG";
+import Enquiry from "../elements/BookNowBtn";
 
 // Images
+import HeaderImg from "../images/Desktop-Header/HomeBanner.jpg";
+import TherapyView from "../images/exp/bg_2.jpg";
+import PartyTwo from "../images/iStock-968194620_2019-07-17/work-yoga.png";
+import PartyOne from "../images/iStock-968194620_2019-07-17/yoga_for_runners.png";
 
-import HeaderImg from "../images/Desktop-Header/001@3x.png"
-import BlogImg  from "../images/iStock-968194620_2019-07-17/yoga_for_runners.png";
-import BlogImg1  from "../images/iStock-968194620_2019-07-17/work-yoga.png";
-import Para from "../elements/Para";
-
-
-
-// Intro Section
-const Heading = () => {
-    return (
-        <div className="text-sukoon text-v6xl">
-            <h2 className="font-light block">
-                Lorem Ipsum Text
-
-            </h2>
-            <span className="font-extrabold block">
-               Dummy Text !
-
-            </span>
-        </div>
-    )
-};
-
-const HeaderIntroLeft = styled.div`
-        top:  10vw;
-        left: -18vw;
-       
-       @media screen and (max-width: 1600px){
-       left: -16vw;
-       }
-       @media screen and (max-width: 1400px){
-       left: -14vw;
-       }
-       @media screen and (max-width: 1200px){
-       left: -10vw;
-       }
-       
-   
-    `;
-const HeaderIntroRight = styled.div`
-    
-    `;
-
-const HeaderIntro = () => {
-
-    return (
-        <section id="header-intro" className="w-full">
-            <div id="header-intro-container" className="flex relative">
-                <div className="w-2/5">
-                </div>
-                <HeaderIntroRight id="header-intro-right" className="relative">
-                    <HeaderIntroLeft id="header-intro-left" className="absolute w-fit">
-                        <Heading/>
-
-                        <div className="book-now-container mt-4">
-                            <div className="my-4">
-                                <ul>
-                                    <li>Lorem Ipsum is simply dummy text of the printing and</li>
-                                    <li>    typesetting industry Lorem Ipsum.</li></ul>
-                            </div>
-
-                            <div className="flex justify-between p-6">
-                                <div className="  book-now-inner-container p-1">
-
-                                    <button
-                                        className="block relative outline-none  items-center py-2 px-4 bg-sukoon text-white">
-                                        <span className="text-sm font-normal">Book on Appointment</span>
-                                    </button></div>
-                                <div className=" book-now-inner-container p-1">
-
-                                    <button
-                                        className="block relative outline-none  items-center py-2 px-4 bg-sukoon text-white">
-                                        <span className="text-sm font-normal">Book on Tour</span>
-                                    </button>
-
-
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </HeaderIntroLeft>
-                    <img src={HeaderImg} className="block" alt="Header"/>
-                </HeaderIntroRight>
-            </div>
-        </section>
-    )
-};
 //SQUARE FEET SECTION
 const Feet = () => {
-    return (
-
-        <section id="Feet" className="Sq-Feet p-12">
-
-            <div>
-                <div >
-                    <Title titleLight="1500" titleBold="Sq.Feet"  />
-                    <span className="text-sukoon text-2xl ">
-                        <p className="font-black  text-3xl">Spread Across 6 Floors</p>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                        </span></div>
-                <div className="build">
-
-                </div>
-            </div>
-        </section>
-    )
+  return (
+    <section id="Feet" className="pl-20 py-12">
+        <div>
+          <Title titleLight="1500" titleBold="Sq.Feet" />
+          <h2 className="text-sukoon text-2xl mt-8">
+            Spread Across 6 Floors
+          </h2>
+          <Para>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of
+            type and scrambled it to make a type specimen book.
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of
+            type and scrambled it to make a type specimen book.
+          </Para>
+        </div>
+    </section>
+  );
 };
-//ABSOLUTE AND RELATIVE POSITION BLOCK
-const Infra = (props) =>{
-    const Wrapper = styled.div`
+
+const ExperienceServicesDetails = styled.div`
+    background: white;
+    top: 20%;
+    right: 50px;
+    padding: 50px;
 `;
-    const CardWrapper = styled.div`
-        left:60vw;
-        top:8vw;
-    `;
-    const CardWrapper1 = styled.div`
-        right:20vw;
-        bottom:-4vw;
-       width:50%;
-       
-    `;
 
-    return(
-        <section id="sukoon-infra-section" className="sukoon-infra-section relative w-full h-full">
-
-            <CardWrapper className="block absolute bg-white">
-                <InHousePharmacy />
-            </CardWrapper>
-            <CardWrapper1 className="block absolute bg-white">
-                <InHousePharmacychild/>
-            </CardWrapper1>
-            <Wrapper className="m-4 flex absolute" >
-                <div className="relative" >
-
-                </div>
-
-            </Wrapper>
-        </section>
-    )
-};
-//position for parent
-const InHousePharmacy = (props) => {
-    return (
-        <section className="p-6">
-            <Title titleLight="In-House" className="mb-4" titleBold="Pharmacy" display="block"/>
-            <Para className="text-gray-600 block" content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since the 1500s" />
-        </section>
-    )
-};
-//position for child block
-const InHousePharmacychild = (props) => {
-    return (
-        <section className="p-6">
-            <Para className="text-gray-600 block"/>
-            <ul className="flex">
-                <li className="mr-6">
-                    <a className="text-blue-500 hover:text-blue-800" href="#">Consulting
-                        </a>
-                </li>
-                <li className="mr-6">
-                    <a className="text-blue-500 hover:text-blue-800" href="#">Pharmacy</a>
-                </li>
-                <li className="mr-6">
-                    <a className="text-blue-500 hover:text-blue-800" href="#">RTMS</a>
-                </li>
-                <li className="mr-6">
-                    <a className="text-blue-500 hover:text-blue-800" href="#">Virtual</a>
-                </li>
-            </ul>
-        </section>
-    )
-};
-//Medium section which divides into 3 division
-const Faqs = (props) => {
-
-    let content = [
-        {
-            summary: 'Fitness Studio',
-            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.",
-        },
-        {
-            summary: 'Art Studio',
-            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.",
-        },
-        {
-            summary: 'Terrace garden',
-            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.",
-        },
-
-    ];
-
-    let items = content.map((item)=>{
-        return(
-            <div>
-                <div className="flex-col flex p-4 shadow-lg my-4 bg-white">
-                    <div className="flex justify-between">
-                        <details>
-                            <Para width="30vw" padding="1rem">
-                                {item.description}
-                            </Para>
-                            <summary className="text-sukoon font-bold">{item.summary}</summary>
-                        </details>
-                    </div>
-
-                </div>
-
-            </div>
-        )
-    });
-
-    return (
-        <section id="faq-section" className="p-6 flex relative flex-row-reverse justify-between">
-            <div className=" flex mr-40">
-                <img src={BlogImg1} className="w-full h-100 w-32 object-center object-cover" alt="Blog"/>
-                <img src={BlogImg} className="w-full h-full object-center object-cover" alt="Blog"/>
-            </div>
+function InfrastructurePage(props) {
+  return (
+    <Layout>
+      <SEO
+        title="Home"
+        keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
+      />
+      <Banner inner texture HeaderImg={HeaderImg} />
+      <Feet />
+      <section className="my-8">
+        <div className="ExperienceServices w-full">
+          <div className="w-full flex relative">
             <div className="w-3/5">
-                {items}
-
+              <img src={TherapyView} className="block object-cover w-full object-center" alt="Header"/>
             </div>
-        </section>
-    )
-};
-//last section  below footer portion
-const Infra1 = (props) =>{
-    const Wrapper = styled.div`
-    
-`;
-    const CardWrapper = styled.div`
-        left:60vw;
-        top:8vw;
-    `;
-    const CardWrapper1 = styled.div`
-        right:20vw;
-        bottom:-4vw;
-       width:50%;
-       
-    `;
-    return(
-        <section id="sukoon-infra-section" className="sukoon-infra-section relative w-full h-full">
-            <CardWrapper className="block absolute bg-white">
-                <InHousePharmacyy />
-            </CardWrapper>
-            <CardWrapper1 className="block absolute bg-white">
-                <InHousePharmacychildblock />
-            </CardWrapper1>
-            <Wrapper className="m-4 flex absolute" >
-                <div className="relative" >
-
-                </div>
-
-            </Wrapper>
-        </section>
-    )
-};
-
-const InHousePharmacyy = (props) => {
-    return (
-        <section className="p-6">
-            <Title titleLight="In-House" className="mb-4" titleBold="Pharmacy" display="block"/>
-            <Para className="text-gray-600 block" content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since the 1500s" />
-        </section>
-    )
-};
-const InHousePharmacychildblock = (props) => {
-    return (
-        <section className="p-6">
-
-            <Para className="text-gray-600 block"/>
-            <ul className="flex">
-                <li className="mr-6">
-                    <a className="text-blue-500 hover:text-blue-800" href="#">Consulting
-                    </a>
-                </li>
-                <li className="mr-6">
-                    <a className="text-blue-500 hover:text-blue-800" href="#">Pharmacy</a>
-                </li>
-                <li className="mr-6">
-                    <a className="text-blue-500 hover:text-blue-800" href="#">RTMS</a>
-                </li>
-                <li className="mr-6">
-                    <a className="text-blue-500 hover:text-blue-800" href="#">Virtual</a>
-                </li>
-
-
-
-
-
-
+            <div className="w-2/5">
+            </div>
+            <ExperienceServicesDetails className="w-2/5 absolute shadow-lg">
+              <span className="font-semibold text-lg text-sukoon">OPD</span>
+              <h2 className="font-bold text-3xl text-sukoon">Consulting Chambers</h2>
+              <Para width="100%">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</Para>
+              <div className="arrowSection">
+                <button className="Circle_btn"><SVG display="inline-block" icon="arrow" width={'20px'} rotate fill={'#969696'} />
+                </button>
+                <button className="Circle_btn right"><SVG display="inline-block" icon="arrow" width={'20px'} rotate fill={'#969696'} />
+                </button>
+              </div>
+            </ExperienceServicesDetails>
+          </div>
+          <div className="ExperienceServicesNav w-10/12 shadow-lg">
+            <ul>
+              <li className="font-medium text-base text-sukoon">Consulting Chambers</li>
+              <li className="font-medium text-base text-sukoon">Pharmacy</li>
+              <li className="font-medium text-base text-sukoon">RTMS</li>
+              <li className="font-medium text-base text-sukoon">VIRTUAL THERAPY ROOM</li>
+              <li className="font-medium text-base text-sukoon">CAFETERIA</li>
+              <li className="font-medium text-base text-sukoon">LOUNGE</li>
+              <li className="font-medium text-base text-sukoon">ART THERAPY</li>
             </ul>
-        </section>
-    )
-};
-
-
-function IndexPage(props) {
-    return (
-        <Layout>
-            <SEO
-                title="Home"
-                keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
-            />
-            <HeaderIntro/>
-
-<Feet/>
-            <Infra/>
-
-<Faqs/>
-<Infra1/>
-
-        </Layout>
-
-    );
+          </div>
+        </div>
+      </section>
+      <section className="p-8">
+        <div className="w-full flex">
+          <div className="w-2/5 pr-8 flex flex-col justify-between">
+            <div>
+              <Details open summary="Fitness Studio">
+                <Para width="100%">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                  Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                  galley of type and scrambled it to make a type specimen book. It has survived not only five
+                  centuries</Para>
+              </Details>
+              <Details summary="Art Studio">
+                <Para width="100%">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                  Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                  galley of type and scrambled it to make a type specimen book. It has survived not only five
+                  centuries</Para>
+              </Details>
+              <Details summary="Terrace Garden">
+                <Para width="100%">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                  Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                  galley of type and scrambled it to make a type specimen book. It has survived not only five
+                  centuries</Para>
+              </Details>
+            </div>
+            <Enquiry wrapperClass="float-right"><Link to="/">Enquiry</Link></Enquiry>
+          </div>
+          <div className="w-3/5 flex">
+            <img src={PartyTwo} className="block viewOne" alt="Header"/>
+            <img src={PartyOne} className="block ViewTwo" alt="Header"/>
+          </div>
+        </div>
+      </section>
+      <section className="my-8">
+        <div className="ExperienceServices w-full">
+          <div className="w-full flex relative">
+            <div className="w-3/5">
+              <img src={TherapyView} className="block object-cover w-full object-center" alt="Header"/>
+            </div>
+            <div className="w-2/5">
+            </div>
+            <ExperienceServicesDetails className="w-2/5 absolute shadow-lg">
+              <span className="font-semibold text-lg text-sukoon">IPD</span>
+              <h2 className="font-bold text-3xl text-sukoon">Movie Lounge</h2>
+              <Para width="100%">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</Para>
+              <div className="arrowSection">
+                <button className="Circle_btn"><SVG display="inline-block" icon="arrow" width={'20px'} rotate fill={'#969696'} />
+                </button>
+                <button className="Circle_btn right"><SVG display="inline-block" icon="arrow" width={'20px'} rotate fill={'#969696'} />
+                </button>
+              </div>
+            </ExperienceServicesDetails>
+          </div>
+          <div className="ExperienceServicesNav w-10/12 shadow-lg">
+            <ul>
+              <li className="font-medium text-base text-sukoon">Rooms</li>
+              <li className="font-medium text-base text-sukoon">Intensive Care Unit</li>
+              <li className="font-medium text-base text-sukoon">Dining</li>
+              <li className="font-medium text-base text-sukoon">Movie Lounge</li>
+              <li className="font-medium text-base text-sukoon">Nursing Station</li>
+              <li className="font-medium text-base text-sukoon">Activity Area</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </Layout>
+  );
 }
 
-export default IndexPage;
+export default InfrastructurePage;
