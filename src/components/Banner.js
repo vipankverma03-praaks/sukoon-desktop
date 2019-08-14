@@ -106,7 +106,7 @@ const HeaderIntroRight = styled.div`
 
 const ParagraphSection = (props) =>{
     return(
-        <p Class="mt-8 w-1/3 text-sukoon my-1 font-gilroyMedium text-vlg leading-relaxed block">
+        <p Class="mt-8 w-3/5 text-sukoon my-1 font-gilroyMedium text-vlg leading-relaxed block">
           entium, rem repellendus repudiandae sequi similique tempora tenetur ut velit veritatis!
           entium, rem repellendus repudiandae sequi similique tempora tenetur ut velit veritatis!
         </p>
