@@ -137,7 +137,6 @@ body{
     background-position: center center;
 }
 
-
 input {
     border-bottom: 1px solid #12443e;
 }
@@ -189,56 +188,9 @@ input {
         opacity: 1;
     }
 
-    .appointment-type {
-        color: #fff;
-        border-bottom: 1px solid #fff;
-    }
-
-    #email-address {
-        border-bottom: 1px solid #1a202c;
-    }
-
-    input {
-        border-bottom: 1px solid #ffffff;
-    }
 }
 
 /* my-css============================== */
-
-/* Summary tag arrow customization*/
-.facilities summary {
-
-    font-size: 1.15em;
-    display: flex;
-    justify-content: space-between;
-    outline: none
-}
-
-.facilities summary::-webkit-details-marker {
-    display: none;
-}
-
-.facilities summary:after {
-    content: "+";
-    color: #12443e;
-    float: right;
-    font-size: 35px;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    line-height: 25px;
-    margin-top: 4px;
-}
-
-.facilities details {
-    border: 1px solid #969696;
-    padding: 10px;
-    border-radius: 4px;
-}
-
-.facilities details[open] summary:after {
-    content: "-";
-}
 
 ul.RoomBtnTab {
     display: flex
@@ -280,9 +232,7 @@ ul.RoomFeatures li {
 .roomImg li:last-child {
     margin-right: 0px;
 }
-.ActivitySecImg {
-    display: flex;
-}
+
 img.block.viewOne {
     width: 20%;
     padding-right: 20px;
@@ -293,11 +243,6 @@ img.block.ViewTwo {
     width: 80%;
     object-fit: cover;
     object-position: center center;
-}
-.ActivityInfo {
-    display: flex;
-    flex-flow: column;
-    justify-content: space-between;
 }
 .HighlightSecInfo {
     background: white;

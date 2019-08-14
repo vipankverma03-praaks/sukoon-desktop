@@ -211,17 +211,17 @@ const Information = (props) =>{
       <Form action="" className="text-white">
         <h2 className="text-white font-gilroyMedium font-medium text-v4xl">Enter Information</h2>
         <div className="flex py-4 justify-between">
-          <div className="flex flex-col w-2/4 pr-4">
-            <input type="text" className="my-2 w-full" placeholder="First Name"/>
+          <div className="flex flex-col w-1/2 pr-4">
+            <input type="text" className="my-2 w-full border-b border-white" placeholder="First Name"/>
             <div className="my-2">
               <span>Sex :</span>
               <Radio display="inline-block" handleButton={handleRadioButton} arguments={['M']} spanClass="text-white mx-4" spanText="Male"/>
               <Radio display="inline-block" handleButton={handleRadioButton} spanClass="text-white mx-4" arguments={['F']} spanText="Female"/>
             </div>
-            <input type="email" placeholder="Email address" className="my-2 w-full"/>
+            <input type="email" placeholder="Email address" className="my-2 w-full border-b border-white"/>
           </div>
-          <div className="pl-4 w-2/4">
-            <input type="text" className="my-2 w-full"  placeholder="Last Name"/>
+          <div className="pl-4 w-1/2">
+            <input type="text" className="my-2 w-full border-b border-white"  placeholder="Last Name"/>
             <div className="my-2">
               <span className="mr-2">DOB :</span>
               <select name="year" id="year">
@@ -240,7 +240,7 @@ const Information = (props) =>{
                 <option value="2">2</option>
               </select>
             </div>
-            <input type="tel" placeholder="Phone number" className="my-2 w-full"/>
+            <input type="tel" placeholder="Phone number" className="border-b border-white my-2 w-full "/>
           </div>
         </div>
         <BookingBtn type="white" padding="5px">Book and Pay</BookingBtn>

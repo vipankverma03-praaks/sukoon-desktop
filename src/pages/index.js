@@ -162,9 +162,9 @@ const Pyramid = (props) =>{
                          <div className="">
                              <span className="text-vxl font-bold text-sukoon block">{item.titleLight}</span>
                              <span className="text-vxl font-bold text-sukoon block">{item.titleBold}</span>
-                             <p className="text-grey-para text-vsm w-full py-1">
+                             <Para Class="w-full py-1">
                                  {item.para}
-                             </p>
+                             </Para>
                              <ArrowIcon border/>
                          </div>
                      </div>

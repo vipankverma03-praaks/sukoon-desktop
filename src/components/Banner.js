@@ -28,28 +28,12 @@ const HeadingWrapper = styled.div`
 
 // Header Text Container  position
 const BannerText = styled.div`
-        top:  25%;
-        left: ${props => props.inner ? '-25vw': '-20vw'};
-        width: 35vw;
+        position: relative; 
+        margin-top: ${props=> props.inner ? '-22vw' : '-30vw'};
+        margin-left: ${props=> props.inner ? '-26vw' : '-22vw'};;
         z-index: 100;
-       
-       @media screen and (max-width: 1600px) {
-        left: ${props => props.inner ? '-25vw': '-20vw'};
-       }
-       @media screen and (max-width: 1449px) and (min-width: 1370px){
-        left: ${props => props.inner ? '-25vw': '-20vw'};
-       }
-        @media screen and (max-width: 1366px) and (min-width: 1300px){
-        left: ${props => props.inner ? '-25vw': '-20vw'};
-       }
-       @media screen and (max-width: 1299px) and (min-width: 1200px){
-        left: ${props => props.inner ? '-25vw': '-13vw'};
-       }
-       @media screen and (max-width: 1200px) and (min-width: 1000px){
-        left: ${props => props.inner ? '-25vw': '-18vw'};
-       }
+        width: 40vw;
     `;
-
 
 // Header Image
 const Img = styled.img`
@@ -75,9 +59,8 @@ const Img = styled.img`
 `;
 
 
-// Main section component
+// Main Header section component
 const Header = styled.section`
-
 `;
 
 
@@ -87,14 +70,14 @@ const Booking = (props) =>{
         <div className="md:mt-12 mt-8 sm:mt-8 sm:text-vlg xs:text-vxl">
             <div id="contact-info-container" className="p-4 bg-sukoon font-gilroyMedium w-full flex">
                 <select name="appointment" id="appointment-type"
-                        className="block p-2  bg-sukoon text-white outline-none w-2/5 appointment-type mx-2 font-medium"
+                        className="block p-2  bg-sukoon text-white outline-none w-2/5 border-b border-white mx-2 font-medium"
                         value="">
                     <option value="" selected>Appointment Type</option>
                     <option value="">In House</option>
                     <option value="">Online Consulting</option>
                 </select>
                 <input type="text" placeholder="Email / Phone"
-                       className="block bg-transparent outline-none customer-contact-info p-2 ml-4 text-white"/>
+                       className="block bg-transparent border-b border-white outline-none customer-contact-info p-2 ml-4 text-white"/>
             </div>
             <div className="md:mt-12 mt-8 sm:mt-8 font-gilroyMedium">
                 <div className="inline-block">
@@ -106,7 +89,7 @@ const Booking = (props) =>{
             </div>
           { props.discover ?
             <div className="md:mt-16 mt-8 sm:mt-12 font-gilroyMedium flex">
-              <Link to="/" className="border-sukoon border-b border-soild">Explore Appointments</Link>
+              <Link to="/" className="border-sukoon border-b">Explore Appointments</Link>
               <ArrowButton border={false} margin="0 12px"/>
             </div> : null}
         </div>
@@ -114,7 +97,6 @@ const Booking = (props) =>{
 
     )
 };
-
 
 const HeaderIntroRight = styled.div`
       position: relative;
@@ -124,7 +106,7 @@ const HeaderIntroRight = styled.div`
 
 const ParagraphSection = (props) =>{
     return(
-        <p Class="mt-8 w-70% text-sukoon my-1 font-gilroyMedium text-vlg leading-relaxed block">
+        <p Class="mt-8 w-3/5 text-sukoon my-1 font-gilroyMedium text-vlg leading-relaxed block">
           entium, rem repellendus repudiandae sequi similique tempora tenetur ut velit veritatis!
           entium, rem repellendus repudiandae sequi similique tempora tenetur ut velit veritatis!
         </p>
@@ -156,48 +138,24 @@ const BannerImage = styled.div`
     &::after{
     content: '';
     ${props => props.texture ? `background-image: url(${Texture});` : ''};
-    position: absolute;
-    top: 490px;
-    right: 0;
-    z-index: -1;
-    width: 80%;
+    display: block;
+    float: right;
+    margin-top: -4rem;
+    width: 85%;
     height: 100px;
+    position: relative;
+    z-index: -1;
     }
-     -webkit-box-shadow: 0 8px 6px -6px black;
-       -moz-box-shadow: 0 8px 6px -6px black; 
-           box-shadow: 0 12px 6px -7px #7e7e7e;
+     -webkit-box-shadow: 0 10px 6px -7px rgba(134, 134, 134, 0.60);
+       -moz-box-shadow: 0 10px 6px -7px rgba(134, 134, 134, 0.60); 
+           box-shadow: 0 10px 6px -7px rgba(134, 134, 134, 0.60);
     
-    @media screen and (max-width: 1600px) and (min-width: 1440px){
-      &::after{
-      top: 499px;
-      }
-    }
-    @media screen and (max-width: 1440px) and (min-width: 1370px){
-      &::after{
-      top: 488px;
-      }
-    }
-    @media screen and (max-width: 1370px) and (min-width: 1280px){
-      &::after{
-      top: 380px;
-      }
-    }
-    @media screen and (max-width: 1280px) and (min-width: 1100px){
-      &::after{
-      top: 418px;
-      }
-    }
-    @media screen and (max-width: 1100px){
-      &::after{
-      top: 314px;
-      }
-    }
 `;
 
 const ButtonSection = (props) =>{
   return(
     <div>
-      <p className="mt-8 text-gray-600 my-1 font-gilroyMedium text-vlg leading-relaxed block">
+      <p className="mt-8 w-2/5 text-gray-600 my-1 font-gilroyMedium text-vlg leading-relaxed block">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus adipisci aliquam, architecto culpa
       </p>
       <BookBtn wrapperClass="inline-block mt-8 mr-12" border><Link to="/booking">Book An Appointment</Link></BookBtn>
@@ -215,14 +173,6 @@ const HeaderIntro = (props) => {
                 <div className="w-2/5">
                 </div>
                 <HeaderIntroRight id="header-intro-right" bannerWidth={props.bannerWidth} className="relative ">
-                    <BannerText inner={props.inner} id="header-intro-left" className="absolute w-fit">
-                        <Heading/>
-                        {props.booking ?
-                            <Booking discover={props.discover}/>
-                            : props.para ? <ParagraphSection/> :
-                              <ButtonSection/>
-                        }
-                    </BannerText>
                     <BannerImage texture={props.texture} className="relative">
                       <NavWrapper className="flex mb-4 mr-8 justify-between">
                         <Link
@@ -244,13 +194,13 @@ const HeaderIntro = (props) => {
                           Experience
                         </Link>
                         <Link
-                          to="/"
+                          to="/doctors"
                           className=" inline-block mt-0 mr-6 no-underline"
                         >
                           Doctors
                         </Link>
                         <Link
-                          to="/"
+                          to="/internationalPatient"
                           className=" inline-block mt-0 mr-6 no-underline"
                         >
                           International Patients
@@ -262,8 +212,16 @@ const HeaderIntro = (props) => {
                           About
                         </Link>
                       </NavWrapper>
-                      <Img src={props.HeaderImg} inner={props.inner} className="block shadow-xl" alt="Header"/>
+                      <Img src={props.HeaderImg} inner={props.inner} className="block" alt="Header"/>
                     </BannerImage>
+                  <BannerText inner={props.inner} id="header-intro-left" className="w-fit">
+                    <Heading/>
+                    {props.booking ?
+                      <Booking discover={props.discover}/>
+                      : props.para ? <ParagraphSection/> :
+                        <ButtonSection/>
+                    }
+                  </BannerText>
                 </HeaderIntroRight>
             </div>
         </Header>

@@ -44,7 +44,7 @@ const Details = (props) =>{
     return(
         <DetailWrapper open={props.open} padding={props.padding} border={props.border}  className="mb-3">
             <summary className={`${props.summaryClass || 'px-5'} `}><h2 className={`${props.summaryTextClass || 'text-2xl'}  text-left text-sukoon leading-none`}>{props.summary}</h2></summary>
-            {props.content(props.arguments) || props.children}
+            {props.content ?  props.content(props.arguments) : props.children}
         </DetailWrapper>
     )
 };
