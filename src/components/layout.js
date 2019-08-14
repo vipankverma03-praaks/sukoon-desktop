@@ -243,9 +243,9 @@ function Layout({children, ...props}) {
         <LayoutContainer bgImage={props.bgImage} className="flex flex-col min-h-screen sukoon-bg-1  text-gray-900">
           <Header logoHighlighter={props.logoHighlighter} siteTitle={data.site.siteMetadata.title} />
           <StickyMenu  id="sticky-nav" className="hide">
-            <Nav className="bg-sukoon text-white p-4 flex">
-              <div className="w-4/5 font-gilroyMedium font-normal text-vxl">
-                <ul className="flex py-2 px-2">
+            <Nav className="bg-sukoon text-white py-2 px-4 flex items-center">
+              <div className="w-4/5 font-gilroyMedium text-xl">
+                <ul className="flex">
                   <li className="">
                     <Link to="/services">Services</Link>
                   </li>
@@ -256,7 +256,7 @@ function Layout({children, ...props}) {
                     <Link to="/experience">Experience</Link>
                   </li>
                   <li className="">
-                    <Link to="/">Doctors</Link>
+                    <Link to="/doctors">Doctors</Link>
                   </li>
                   <li className="">
                     <Link to="/">International Patients</Link>
@@ -266,14 +266,14 @@ function Layout({children, ...props}) {
                   </li>
                 </ul>
               </div>
-              <div className="w-1/5 flex justify-around items-center">
-                <div className="w-8 h-8 mr-4">
+              <div className="w-1/5 flex justify-end items-center">
+                <div className="w-8 h-8 ml-4">
                   <SVG display="inline-block" icon="helpline" width={'25px'} fill={'#fff'} />
                 </div>
-                <div className="w-8 h-8 mr-4">
+                <div className="w-8 h-8 mx-4">
                   <SVG display="inline-block" icon="landLine" width={'25px'} fill={'#fff'} />
                 </div>
-                <BookBtn theme="mint"><Link to="/booking">Book Now</Link></BookBtn>
+                <BookBtn buttonPadding="5px 10px" theme="mint"><Link to="/booking">Book Now</Link></BookBtn>
               </div>
             </Nav>
           </StickyMenu>
