@@ -32,6 +32,7 @@ const BannerText = styled.div`
         margin-top: ${props=> props.inner ? '-22vw' : '-30vw'};
         margin-left: ${props=> props.inner ? '-26vw' : '-22vw'};;
         z-index: 100;
+        width: 40vw;
     `;
 
 // Header Image
@@ -60,7 +61,6 @@ const Img = styled.img`
 
 // Main Header section component
 const Header = styled.section`
-    margin-bottom: 4rem;
 `;
 
 
@@ -70,14 +70,14 @@ const Booking = (props) =>{
         <div className="md:mt-12 mt-8 sm:mt-8 sm:text-vlg xs:text-vxl">
             <div id="contact-info-container" className="p-4 bg-sukoon font-gilroyMedium w-full flex">
                 <select name="appointment" id="appointment-type"
-                        className="block p-2  bg-sukoon text-white outline-none w-2/5 appointment-type mx-2 font-medium"
+                        className="block p-2  bg-sukoon text-white outline-none w-2/5 border-b border-white mx-2 font-medium"
                         value="">
                     <option value="" selected>Appointment Type</option>
                     <option value="">In House</option>
                     <option value="">Online Consulting</option>
                 </select>
                 <input type="text" placeholder="Email / Phone"
-                       className="block bg-transparent outline-none customer-contact-info p-2 ml-4 text-white"/>
+                       className="block bg-transparent border-b border-white outline-none customer-contact-info p-2 ml-4 text-white"/>
             </div>
             <div className="md:mt-12 mt-8 sm:mt-8 font-gilroyMedium">
                 <div className="inline-block">
@@ -89,7 +89,7 @@ const Booking = (props) =>{
             </div>
           { props.discover ?
             <div className="md:mt-16 mt-8 sm:mt-12 font-gilroyMedium flex">
-              <Link to="/" className="border-sukoon border-b border-soild">Explore Appointments</Link>
+              <Link to="/" className="border-sukoon border-b">Explore Appointments</Link>
               <ArrowButton border={false} margin="0 12px"/>
             </div> : null}
         </div>
@@ -200,7 +200,7 @@ const HeaderIntro = (props) => {
                           Doctors
                         </Link>
                         <Link
-                          to="/"
+                          to="/internationalPatient"
                           className=" inline-block mt-0 mr-6 no-underline"
                         >
                           International Patients

@@ -3,7 +3,7 @@ import styled, { ThemeProvider } from "styled-components";
 
 
 const Wrapper = styled.div`
-  padding: 5px;
+  padding: 4px;
   background: ${props=> props.theme.fg};
   border: 1px solid ${props => props.theme.bg};
 
@@ -30,7 +30,6 @@ const mint ={
   bg:'#C2DCD3',
   fg: '#12443e',
 };
-
 
 const Button = (props) =>{
 

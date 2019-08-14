@@ -46,7 +46,7 @@ const HeaderIntro = () => {
                 <div className="flex font-gilroyRegular items-center sm:w-3/6 md:w-3/5 px-4">
                   <div className="mr-6 w-1/4">
                     <select name="appointment" id="appointment-type"
-                            className="block pb-4 bg-sukoon outline-none border-b border-white border-solid  appointment-type w-full font-medium"
+                            className="block pb-4 bg-sukoon outline-none text-white border-b border-white border-solid w-full font-medium"
                             value="">
                       <option value="" selected>Appointment Type</option>
                       <option value="">In House</option>
@@ -55,7 +55,7 @@ const HeaderIntro = () => {
                   </div>
                   <div className="mr-4 w-2/3 customer-contact-info">
                     <input type="text" placeholder="Email / Phone"
-                           className="block bg-transparent outline-none  w-full pb-4 text-white"/>
+                           className="block bg-transparent outline-none border-b border-white w-full pb-4 text-white"/>
                   </div>
                   <div className="w-1/6 sm:w-1/4">
                     <BookBtn wrapperClass="h-fit float-right" border={true}>
