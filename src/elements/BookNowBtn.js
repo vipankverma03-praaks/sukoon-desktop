@@ -4,15 +4,19 @@ import styled, { ThemeProvider } from "styled-components";
 
 const Wrapper = styled.div`
   padding: 4px;
-  background: ${props=> props.theme.fg};
-  border: 1px solid ${props => props.theme.bg};
-
+  background: ${props=> props.transparent ? '' : props.theme.fg};
+  border:  ${props => props.transparent ? '' : `1px solid ${props.theme.bg}`};
+  
+  button:focus{
+    outline: none;
+  }
 `;
 
 const ThemedButton = styled.button`
+  
   padding: ${props => props.buttonPadding || '10px 20px'};
-  color: ${props => props.theme.fg};
-  background: ${props => props.theme.bg};
+  color: ${props => props.transparent ? '#12443e' :props.theme.fg};
+  background: ${props => props.transparent ?  'transparent' : props.theme.bg};
 `;
 
 const green = {
@@ -37,8 +41,8 @@ const Button = (props) =>{
 
   return(
     <ThemeProvider theme={theme}>
-      <Wrapper className={`${props.wrapperClass || ''} w-fit`}>
-        <ThemedButton buttonPadding={props.buttonPadding}
+      <Wrapper transparent={props.transparent} className={`${props.wrapperClass || ''} w-fit`}>
+        <ThemedButton onClick={()=>{props.clickFn(...props.arguments)}} transparent={props.transparent} buttonPadding={props.buttonPadding}
           className={`${props.buttonClass || ''} block relative font-gilroyMedium outline-none text-lg items-center`}>
           {props.children}
         </ThemedButton>
