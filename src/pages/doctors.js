@@ -20,7 +20,7 @@ const Intro = styled.div`
     
     
     .director-row{
-      padding: 3vw 1vw;
+      padding: 3vw 0;
       width: 100%;
     }
 `;
@@ -29,7 +29,7 @@ const DoctorImage = styled.img`
 `;
 
 const DoctorImageContainer = styled.div`
-  width: 60%;
+  width: 100%;
 `;
 
 const DoctorProfile = styled.img`
@@ -65,9 +65,9 @@ const Content = [
   {
     doctors: [
       {
-        name: "Dr. Abhishek",
+        name: "Dr. Samir Parekh",
         image: Doctor,
-        designation: { titleLight: "Dr. Abhishek", titleBold: "Kapadia", title: 'Director, Mental Health and Behavioural Sciences' },
+        designation: { titleLight: "Medical", titleBold: "Director", title: 'Director, Mental Health and Behavioural Sciences' },
         qualification: "MBBS, DPM, MD (Psychiatry)",
         bio: {
           intro: `Dr. Pradeep Chowbey belongs to the cadre of the pioneer laparoscopic surgeons in India. One of the first
@@ -225,24 +225,24 @@ const DoctorBio = ({doctor}) =>{
           <Title titleLight={doctor.designation.titleLight} titleBold={doctor.designation.titleBold} subHeading="MEET THE"/>
           <Intro className="">
             <div className="director-row flex">
-              <div id="doctor-intro-image" className="w-1/2">
-                <DoctorImageContainer className="ml-4">
+              <div id="doctor-intro-image" className="w-30% mr-24">
+                <DoctorImageContainer className="">
                   <DoctorImage src={doctor.image} alt="doctor" className=""/>
                 </DoctorImageContainer>
               </div>
-              <div id="doctor-info" className="doctor-info pr-16 flex flex-col justify-between w-1/2">
+              <div id="doctor-info" className="doctor-info pr-16 flex flex-col justify-between w-70%">
                 <div>
                   <h2 className="text-sukoon font-gilroyBold text-v5xl">{doctor.name}</h2>
                   <h3 className='text-sukoon text-v3xl font-gilroyMedium mt-4'>{doctor.qualification}</h3>
-                  <Para Class="mt-4 text-vxl">{doctor.designation.title}</Para>
-                  <Para Class="mt-4" lineHeight="1.3" padding="15px 0 0 0">
+                  <h4 Class="mt-4 text-gray-600 text-v2xl">{doctor.designation.title}</h4>
+                  <Para Class="mt-4" padding="15px 4rem 0 0">
                     {doctor.bio.intro}
                     <br/>
                     <br/>
                     {doctor.bio.summary}
                   </Para>
                   <div className="flex mt-8">
-                    <Link to="/" className="text-lg text-sukoon font-gilroyRegular border-b border-sukoon pb-1">Know More </Link>
+                    <Link to="/" className="text-lg text-sukoon font-gilroyRegular">Know More </Link>
                     <ArrowButton border={false} margin="0 12px"/>
                   </div>
                 </div>
