@@ -252,20 +252,6 @@ img.block.ViewTwo {
 .ExperienceServices img {
     height: 495px;
 }
-.ExperienceServicesNav {
-    background: white;
-    margin: -30px 0 0 auto;
-    position: relative;
-    padding: 35px 25px;
-}
-.ExperienceServicesNav ul {
-    display: flex;
-    justify-content: space-evenly;
-}
-.ExperienceServicesNav ul li {
-    margin-right: 30px;
-    margin-left: 30px;
-}
 .ClearView img {
     object-fit: cover;
 }
@@ -286,6 +272,30 @@ button.Circle_btn {
 button.Circle_btn.right {
     transform: rotate(180deg);
 }
+input:focus{
+    outline: none;
+}
+
+.arrow-icon:hover{
+    stroke-dasharray: 5;
+    stroke-dashoffset: 10;
+    -webkit-animation: arrow-anim 700ms linear infinite;
+}
+
+@keyframes arrow-anim {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    5% {
+        transform: translateX(-0.1rem);
+    }
+    100% {
+        transform: translateX(1rem);
+        opacity: 0;
+    }
+}
+
 .arrowSection {
     display: flex;
     width: auto;

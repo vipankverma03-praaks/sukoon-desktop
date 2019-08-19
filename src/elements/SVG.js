@@ -139,7 +139,7 @@ const icons = {
   }
 };
 
-const SVG = ({ rotate,stroke, fill, width,margin, icon, left, top, position,hiddenMobile,display }) => (
+const SVG = ({ Class,rotate,stroke, fill, width,margin, icon, left, top, position,hiddenMobile,display }) => (
   <Wrapper
     position={position}
     viewBox={icons[icon].viewBox}
@@ -152,6 +152,7 @@ const SVG = ({ rotate,stroke, fill, width,margin, icon, left, top, position,hidd
     rotate={rotate}
     hiddenMobile={hiddenMobile}
     display={display}
+    className={Class}
   >
     {icons[icon].shape}
   </Wrapper>

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import  {Link} from "gatsby";
 
-import ArrowIcon from "../images/icons/arrow_right.svg";
+import SVG from "./SVG";
 
 const ButtonWrapper = styled.div`
     display: flex;
@@ -31,7 +31,7 @@ const ArrowButton = (props) =>{
   return(
     <ButtonWrapper margin={props.margin}>
       <ArrowButtonLink border={props.border}  to="/about">
-        <Img src={ArrowIcon} alt="arrow-icon"/>
+        <SVG Class="arrow-icon" display="inline-block" icon="arrow" width='50px' fill="#000"/>
       </ArrowButtonLink>
     </ButtonWrapper>
   )
