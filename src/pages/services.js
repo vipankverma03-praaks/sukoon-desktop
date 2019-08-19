@@ -28,13 +28,13 @@ const PatientCare = (props) => {
         </div>
         <div className="bg-sukoon text-center text-vxs text-white p-6 w-1/5">
           <SVG display="inline-block" icon="helpline" width={'35px'} fill={'#fff'} />
-          <p className="leading-loose my-1">Sukoon Suicide Helpline</p>
-          <h2 className="text-xl tracking-widest">1800-234-6789</h2>
+          <h4 className="leading-loose font-gilroyMedium py-2">Sukoon Suicide Helpline</h4>
+          <h2 className="text-v2xl tracking-widest">1800-234-6789</h2>
         </div>
       </div>
       <div className="flex mt-8 justify-between">
         <div className="bg-green-500 h-fit text-vxl w-2/5 p-8">
-          <ul className="mt-2 text-gray-600 leading-loose flex font-gilroyRegular flex-col justify-between text-vsm">
+          <ul className="mt-2 text-gray-600 leading-loose flex font-gilroyMedium flex-col justify-between text-vlg">
             <li className="flex justify-between items-center">
               <Link  to="/" className="active text-sukoon font-gilroyMedium">
                 Acute Psychiatry Care Intensive Care Unit
@@ -64,11 +64,11 @@ const PatientCare = (props) => {
             </li>
           </ul>
         </div>
-        <div className="w-3/5 px-8">
+        <div id="right-section-services" className="w-3/5 px-8">
           <div className="text-sukoon">
             <ul>
               <li>
-                <h2 className="text-v3xl font-bold">
+                <h2 className="text-v3xl pb-4 font-gilroyBold">
                   Acute Psychiatry Services
                 </h2>
                 <Para width="100%">
@@ -78,7 +78,7 @@ const PatientCare = (props) => {
                 </Para>
               </li>
               <li className="mt-4">
-                <h2 className="text-v3xl font-bold">Services</h2>
+                <h2 className="text-v3xl pb-4 font-gilroyBold">Services</h2>
                 <Para width="100%">
                   Hennepin Healthcare's Acute Psychiatric Services (APS) center
                   serves those in emotional crisis with 24-hour,
@@ -96,7 +96,7 @@ const PatientCare = (props) => {
                 </Para>
               </li>
               <li className="mt-4">
-                <h2 className="text-v3xl font-bold">Our Treatment Team</h2>
+                <h2 className="text-v3xl pb-4 font-gilroyBold">Our Treatment Team</h2>
                 <Para width="100%">
                   Hennepin Healthcare's Acute Psychiatric Services (APS) center
                   serves those in emotional crisis with 24-hour,
@@ -104,7 +104,7 @@ const PatientCare = (props) => {
                 </Para>
               </li>
               <li className="mt-4">
-                <h2 className="text-v3xl font-bold">Treatment Goals</h2>
+                <h2 className="text-v3xl pb-4 font-gilroyBold">Treatment Goals</h2>
                 <Para width="100%">
                   Hennepin Healthcare's Acute Psychiatric Services (APS) center
                   serves those in emotional crisis with 24-hour,
