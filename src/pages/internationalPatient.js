@@ -1,5 +1,4 @@
 import React from "react";
-import "../css/style.css";
 
 // Components
 import Layout from "../components/layout";
@@ -9,6 +8,7 @@ import styled from "styled-components";
 import Para from "../elements/Para";
 import Banner from "../components/Banner";
 import BookBtn from "../elements/BookNowBtn";
+import PageIntro from "../components/Intro";
 
 // Images
 import HeaderImg from "../images/Desktop-Header/HomeBanner.jpg";
@@ -19,17 +19,7 @@ import PartnerHotel from "../images/internationalpatient/partner_hotel.png";
 import SukoonBullets from "../images/internationalpatient/sukoon_bullet.svg";
 
 import MeetExperts from "../components/MeetExperts";
-
-const Caption = props => {
-  return (
-    <div className="my-4 pr-4">
-      <h2 className="text-sukoon text-2xl font-gilroyBold block">
-        {props.subHeading || ""}
-      </h2>
-      <Para className="py-2 pr-16">{props.para || ""}</Para>
-    </div>
-  );
-};
+import Input from "../elements/Input";
 
 // Meet Experts and Blog and faq wrapper
 const MFBWrapper = styled.section`
@@ -39,58 +29,17 @@ const MFBWrapper = styled.section`
   background-size: 48vw;
 `;
 
-const TopRow = styled.section`
-  background-image: url(${SukoonLogo});
-  background-size: 20vw;
-  background-repeat: no-repeat;
-  background-position: top 26vw right -10vw;
-
-  @media screen and (max-width: 1600px) and (min-width: 1450px) {
-    background-position: top 33vw right -11vw;
-  }
-  @media screen and (max-width: 1450px) and (min-width: 1370px) {
-    background-position: top 27vw right -11vw;
-  }
-  @media screen and (max-width: 1370px) and (min-width: 1300px) {
-    background-position: top 19vw right -11vw;
-  }
-  @media screen and (min-width: 1200px) and (max-width: 1300px) {
-    background-position: top 24vw right -11vw;
-  }
-`;
-const TopIntro = () => {
-  return (
-    <section id="why-sukoon" className="why-sukoon py-8 px-20">
-      <Title subHeading="Explore" titleLight="Plan a" titleBold=" Trip" />
-      <div className="flex">
-        <Caption
-          subHeading="Consult best doctors"
-          para=" Get expert advice from our team of experienced doctors, led by Dr. Sameer Parikh"
-        />
-        <Caption
-          subHeading="Get personalised care"
-          para="Receive customised and holistic care because of our incredible 1:1 nurse to patient ratio"
-        />
-        <Caption
-          subHeading="Experience premium facilities"
-          para="Enhance your recovery in a calming, positive, and comfortable environment "
-        />
-      </div>
-    </section>
-  );
-};
-
-const MainForm = styled.div`
+const MainForm = styled.form`
   background-image: url(${VirtualFormBg});
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
   
+  
   input::placeholder, textarea::placeholder{
     opacity: 1;
     font-family: gilroy-regular;
   }
-  
   textarea{
     min-height: 100px;
     max-height: 200px;
@@ -111,28 +60,42 @@ const PartnerHotelInfo = styled.div`
   background-repeat: no-repeat;
 `;
 
+const IntroContent = {
+  Heading: { titleLight: 'Plan', titleBold: 'Trip'},
+  Caption: [
+    {
+      heading: "Consult best doctors",
+      para: "Get expert advice from our team of experienced doctors, led by Dr. Sameer Parikh"
+    }, {
+      heading: "Get personalised care",
+      para: "Receive customised and holistic care because of our incredible 1:1 nurse to patient ratio"
+    },
+    { heading: "Experience premium facilities", para: "Enhance your recovery in a calming, positive, and comfortable environment" }
+  ]
+};
+
+
 function InternationalPatient(props) {
+
   return (
-    <Layout logoHighlighter bgImage>
+    <Layout bgImage>
       <SEO
         title="Home"
         keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
       />
-      <TopRow>
-        <Banner booking discover HeaderImg={HeaderImg} />
-        <TopIntro />
-      </TopRow>
-      <div className="flex px-16">
+        <Banner booking inner texture HeaderImg={HeaderImg} />
+        <PageIntro content={IntroContent}/>
+      <div className="flex px-20 py-8">
         <div className="w-3/5 pr-6">
-          <section className="" id="InternationalPatientInfo">
-            <h2 className="text-sukoon text-3xl font-gilroyBold">
+          <section className="text-v3xl" id="InternationalPatientInfo">
+            <h2 className="text-sukoon text-v3xl font-gilroyBold">
               Facilities For International Patient
             </h2>
-            <Para width="100%">
+            <h3 className="py-4 pr-16 text-gray-600 font-gilroyMedium text-vlg block" >
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Accusamus at, deleniti dolor dolorem doloribus ducimus, ex
               excepturi illo illum ipsa quas, quos sapiente totam.
-            </Para>
+            </h3>
             <ul className="text-xl font-gilroyMedium text-gray-600">
               <li className="mt-6">
                 1. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -162,70 +125,26 @@ function InternationalPatient(props) {
           </section>
         </div>
         <div className="w-2/5 pl-6">
-          <form className="VirtualConsForm">
-            <div className="FormHead border-b border-yellow-500 bg-sukoon px-8 py-2">
-              <h2 className="text-white text-xl">Free Virtual Consultation</h2>
+          <MainForm className="px-8 py-6 text-white font-gilroyMedium">
+            <div className="bg-transparent pb-4 ">
+              <h2 className="text-white text-vxl">Free Virtual Consultation</h2>
             </div>
-            <MainForm className="px-8 py-4 text-white">
-              <input
-                className="bg-transparent border-b border-gray-100 w-full py-1 mb-2"
-                type="text"
-                placeholder="Patient Name"
-              />
-              <input
-                className="bg-transparent border-b border-gray-100 w-full py-1 mb-2"
-                type="text"
-                placeholder="Age"
-              />
-              <input
-                className="bg-transparent border-b border-gray-100 w-full py-1 mb-2"
-                type="text"
-                placeholder="Email Address"
-              />
-              <input
-                className="bg-transparent border-b border-gray-100 w-full py-1 mb-2"
-                type="text"
-                placeholder="Contact No."
-              />
-              <select
-                className="bg-transparent border-b border-gray-100 w-full py-1 mb-2"
-                placeholder="Select Your Country"
-              >
-                <option>Country List</option>
-                <option>Country List</option>
-                <option>Country List</option>
-              </select>
-              <select
-                className="bg-transparent border-b border-gray-100 w-full py-1 mb-2"
-                placeholder="Medical Concern"
-              >
-                <option>Country List</option>
-                <option>Country List</option>
-                <option>Country List</option>
-              </select>
-              <input
-                className="bg-transparent border-b border-gray-100 w-full py-1 mb-2"
-                type="text"
-                placeholder="Upload Your Doc."
-              />
-              <input
-                className="bg-transparent border-b border-gray-100 w-full py-1 mb-2"
-                type="text"
-                placeholder="Upload Your Medical Pres.."
-              />
-              <textarea
-                className="bg-transparent border-b border-gray-100 w-full py-1 mb-2"
-                placeholder="Comments"
-              > </textarea>
+            <div className="font-gilroyMedium">
+              <Input type="name" defaultValue={``} placeholder="Patient Name"/>
+              <Input type="name" defaultValue={`Age Name`}/>
+              <Input type="name" defaultValue={`Contact Number`}/>
+              <Input type="select"/>
+              <Input type="select"/>
+              <Input type="name" defaultValue={`Comments`} textarea/>
               <BookBtn theme="green" buttonPadding="5px 10px" wrapperClass="">
                 Get An Estimate
               </BookBtn>
-            </MainForm>
-            <Para>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut hic
-              recusandae vero.
-            </Para>
-          </form>
+            </div>
+          </MainForm>
+          <Para>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut hic
+            recusandae vero.
+          </Para>
         </div>
       </div>
       <PartnerHotelInfo className="my-16 p-16 mb-0" id="">

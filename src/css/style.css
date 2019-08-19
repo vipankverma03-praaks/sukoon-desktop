@@ -99,10 +99,25 @@
     font-family: accanthis-regular;
     src: url("../../static/fonts/accanthis-adf-std.regular.ttf");
 }
-/*body styles*/
+/*Global styles*/
 body{
-    overflow-x: hidden;
+    /*overflow-x: hidden;*/
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    /* Font varient */
+    font-variant-ligatures: none;
+    -webkit-font-variant-ligatures: none;
+    /* Smoothing */
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
 }
+
+h3{
+    line-height: 1.2;
+}
+
 #inpatient-services::before {
     content: '';
     background-image: url("../../static/logo@3x.jpg");
