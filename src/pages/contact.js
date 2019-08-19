@@ -2,75 +2,113 @@ import React from "react";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import Title from "../elements/Heading";
+
+import Para from "../elements/Para"
+import styled from "styled-components";
+import BannerBg from "../images/Desktop-Header/pacientes-mejora.png";
+import PhoneContact from "../images/contact/phone_contact.svg";
+import HelpContact from "../images/contact/help_contact.svg";
+
+import Banner from "../components/Banner";
+import BookBtn from "../elements/BookNowBtn";
+
+const ServiceType = styled.div`
+`;
+
+const PhContact = styled.img`
+    width:55px;
+    margin-bottom:10px;
+`;
+
+const HpContact = styled.img`
+    width:55px;
+    margin-bottom:10px;
+`;
+
+const InfoSection = (props) =>{
+
+  return(
+    <div className={`${props.wrapperClass || ''}`}>
+      <h2 className="text-2xl text-left text-sukoon leading-none">{props.title}</h2>
+      <Para>
+        {props.content}</Para>
+    </div>
+  )
+};
+
+const CareService = (props) =>{
+
+  return(
+    <section id={props.titleLight} className="p-4">
+      <Title titleLight={props.titleLight} titleBold={props.titleBold} display="inline-block"/>
+      <div className="flex flex-wrap overflow-x-hidden ">
+        <ServiceType className="service_content mt-2 overflow-x-hidden text-justify">
+          <InfoSection content="Hennepin Healthcare's Acute Psychiatric Services (APS) center serves those in emotional
+                        crisis with 24-hour, seven-day-a-week." />
+        </ServiceType>
+        <ul className="flex mt-6 w-full justify-between">
+          <li>
+            <div className="text-center">
+              <HpContact src={HelpContact} />
+              <h2 className="text-xl text-sukoon">Helpine No.</h2>
+              <Para width="100%">+91 9818273797</Para>
+            </div>
+          </li>
+          <li>
+            <div>
+              <PhContact src={PhoneContact} />
+              <h2 className="text-xl text-sukoon">Contact No.</h2>
+              <Para width="100%">+91 9818273797</Para>
+            </div>
+          </li>
+        </ul>
+        <div className="w-full my-6">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11802.296595422606!2d77.09405926095575!3d28.423970582311863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d220169f5e215%3A0x995dcf81cbb6d65e!2sSector+56%2C+Gurugram%2C+Haryana!5e0!3m2!1sen!2sin!4v1565343630794!5m2!1sen!2sin"
+            width="100%" height="350" allowFullScreen>
+          </iframe>
+        </div>
+        <form className="ContactForm w-full">
+          <h2 className="text-sukoon text-2xl">Contact Us</h2>
+          <div className="flex w-full my-3">
+            <input className="mx-1 w-1/2" type="text" placeholder="First Name" />
+            <input className="mx-1 w-1/2" type="text" placeholder="Last Name" />
+          </div>
+          <div className="flex w-full my-3">
+            <input className="mx-1 w-full" type="text" placeholder="Email Address" />
+          </div>
+          <div className="flex w-full my-3">
+            <input className="mx-1 w-full" type="text" placeholder="Phone Number" />
+          </div>
+          <div className="flex w-full my-3">
+            <select className="mx-1 w-full h-8 bg-transparent border-b border-gray-600">
+              <option>Subject 01</option>
+              <option>Subject 02</option>
+              <option>Subject 03</option>
+            </select>
+          </div>
+          <div className="flex w-full my-3">
+            <textarea className="mx-1 w-full border-b border-gray-600" placeholder="Message" />
+          </div>
+          <BookBtn border wrapperClass="float-right">
+            Send Us
+          </BookBtn>
+        </form>
+      </div>
+    </section>
+  )
+};
 
 function ContactPage() {
   return (
     <Layout>
       <SEO
-        title="Contact"
+        title="About"
         keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
       />
-      <section>
-
-        <form className="mx-auto md:w-1/2">
-          <p className="leading-loose mb-8">
-            Here is an example of a form built using Tailwind.{" "}
-            More form examples are available <a
-              href="https://tailwindcss.com/docs/examples/forms"
-              className="font-bold no-underline text-gray-700"
-            >here</a>.
-
-          </p>
-
-          <label
-            className="block font-bold mb-2 text-xs uppercase"
-            htmlFor="first-name"
-          >
-            First Name
-          </label>
-
-          <input
-            className="appearance-none block bg-gray-200 mb-6 px-3 py-2 rounded-md text-gray-700 w-full"
-            id="first-name"
-            type="text"
-            placeholder="Bill"
-          />
-
-          <label
-            className="block font-bold mb-2 text-xs uppercase"
-            htmlFor="last-name"
-          >
-            Last Name
-          </label>
-
-          <input
-            className="appearance-none block bg-gray-200 mb-6 px-3 py-2 rounded-md text-gray-700 w-full"
-            id="last-name"
-            type="text"
-            placeholder="Murray"
-          />
-
-          <label
-            className="block font-bold mb-2 text-xs uppercase"
-            htmlFor="message"
-          >
-            Message
-          </label>
-
-          <textarea
-            className="appearance-none bg-gray-200 mb-6 px-3 py-2 rounded-md text-gray-700 w-full"
-            id="message"
-            placeholder="Say something..."
-            rows="8"
-          />
-
-          <button
-            className="border-b-4 border-gray-800 hover:border-gray-700 bg-gray-700 hover:bg-gray-600 font-bold px-4 py-2 rounded text-sm text-white">
-            Submit
-          </button>
-        </form>
-
-      </section>
+      <Banner HeaderImg={BannerBg}/>
+      <CareService titleLight="Contact" titleBold=" Sukoon"/>
     </Layout>
   );
 }
