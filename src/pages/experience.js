@@ -103,7 +103,7 @@ function ExperiencePage() {
             <section className="p-8">
                 <div className="">
                     <Title titleLight="Experience" titleBold="Sukoon" />
-                    <h3 className="text-xl font-semibold text-sukoon">Let's Take a Tour</h3>
+                    <h3 className="text-xl font-gilroyMedium text-sukoon">Let's Take a Tour</h3>
                     <Para width="100%">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged</Para>
                 </div>
                 <div className="w-full flex mt-10">
