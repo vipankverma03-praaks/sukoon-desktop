@@ -2,7 +2,57 @@ import React from "react";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import dogIllustration from "../images/dog-illustration.svg";
+import Title from "../elements/Heading";
+
+import Para from "../elements/Para"
+import styled from "styled-components";
+import BannerBg from "../images/Desktop-Header/pacientes-mejora.png";
+
+import Banner from "../components/Banner";
+
+const ServiceType = styled.div`
+`;
+
+const InfoSection = (props) =>{
+
+  return(
+    <div className={`${props.wrapperClass || ''}`}>
+      <h2 className="text-2xl text-left text-sukoon leading-none mt-2">{props.title}</h2>
+      <Para>{props.content}</Para>
+    </div>
+  )
+};
+
+const CareService = (props) =>{
+
+  return(
+    <section id={props.titleLight} className="p-4">
+      <Title titleLight={props.titleLight} titleBold={props.titleBold} display="inline-block"/>
+      <div className="flex flex-wrap overflow-x-hidden ">
+        <ServiceType className="service_content mt-2 overflow-x-hidden text-justify">
+          <InfoSection content="Hennepin Healthcare's Acute Psychiatric Services (APS) center serves those in emotional
+                        crisis with 24-hour, seven-day-a-week crisis counseling, assessment, and referral. More than
+                        42,000 calls and drop-in visits each year are handled by the Acute Psychiatric Services
+                        staff of psychiatrists, social workers, and psychiatric nurses. The APS is supported by
+                        Hennepin County funds and state grants, provides these services to any person in need. Hennepin Healthcare's Acute Psychiatric Services (APS) center serves those in emotional
+                        crisis with 24-hour, seven-day-a-week crisis counseling, assessment, and referral. More than
+                        42,000 calls and drop-in visits each year are handled by the Acute Psychiatric Services
+                        staff of psychiatrists, social workers, and psychiatric nurses. The APS is supported by
+                        Hennepin County funds and state grants, provides these services to any person in need." />
+          <InfoSection title="Our Mission" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus magni sapiente
+                        veritatis."/>
+          <InfoSection title="Our Vision" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus magni sapiente
+                        veritatis."/>
+          <InfoSection content="Hennepin Healthcare's Acute Psychiatric Services (APS) center serves those in emotional
+                        crisis with 24-hour, seven-day-a-week crisis counseling, assessment, and referral. More than
+                        42,000 calls and drop-in visits each year are handled by the Acute Psychiatric Services
+                        staff of psychiatrists, social workers, and psychiatric nurses. The APS is supported by
+                        Hennepin County funds and state grants, provides these services to any person in need."/>
+        </ServiceType>
+      </div>
+    </section>
+  )
+};
 
 function AboutPage() {
   return (
@@ -11,26 +61,8 @@ function AboutPage() {
         title="About"
         keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
       />
-
-      <section className="flex flex-col md:flex-row items-center">
-        <div className="md:w-2/3 md:mr-8">
-          <blockquote className="border-l-4 border-gray-900 font-serif leading-loose pl-4 text-justify">
-            The point is... to live one's life in the full complexity of what
-            one is, which is something much darker, more contradictory, more of
-            a maelstrom of impulses and passions, of cruelty, ecstacy, and
-            madness, than is apparent to the civilized being who glides on the
-            surface and fits smoothly into the world.
-          </blockquote>
-
-          <cite className="font-bold mt-4 text-right text-xs uppercase block">
-            – Thomas Nagel
-          </cite>
-        </div>
-
-        <figure className="w-2/3 md:w-1/3">
-          <img src={dogIllustration} alt="A dog relaxing" />
-        </figure>
-      </section>
+      <Banner HeaderImg={BannerBg}/>
+      <CareService titleLight="About" titleBold=" Sukoon"/>
     </Layout>
   );
 }
