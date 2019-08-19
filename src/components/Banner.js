@@ -10,8 +10,8 @@ import Texture from "../images/texture.png";
 // Intro Section
 const Heading = () => {
     return (
-        <HeadingWrapper className="text-sukoon  text-v6xl">
-            <span className="block font-gilroyLight">
+        <HeadingWrapper className="text-sukoon  sm:text-v5xl md:text-v6xl">
+            <span className="block font-gilroyMedium">
                 Don't Just Stay,
             </span>
             <span className="font-gilroyBold block">
@@ -29,45 +29,22 @@ const HeadingWrapper = styled.div`
 // Header Text Container  position
 const BannerText = styled.div`
         position: relative; 
-        margin-top: ${props=> props.inner ? '-22vw' : '-30vw'};
-        margin-left: ${props=> props.inner ? '-26vw' : '-22vw'};;
+        //padding: 4vw 0;
+        margin-left: -25vw;
+        //margin-top: ${props=> props.inner ? '-22vw' : '-30vw'};
+        // margin-left: ${props=> props.inner ? '-26vw' : '-22vw'};;
         z-index: 100;
         width: 40vw;
     `;
-
-// Header Image
-const Img = styled.img`
-    height: ${props => props.inner ? '52vh': '71vh'};
-    width: 100%;
-    object-fit: cover;
-    object-position: top -2vw left 0px;
-    position: relative;
-    display: block;
-       
-    @media screen and (max-width: 1600px) and (min-width: 1450px){
-       height:  ${props => props.inner ? '51vh': '72vh'};
-       }
-       @media screen and (max-width: 1450px) and (min-width: 1370px){
-       height:  ${props => props.inner ? '50vh': '68vh'};
-       }
-        @media screen and (max-width: 1370px) and (min-width: 1300px){
-       height:  ${props => props.inner ? '53vh': '62vh'};
-       }
-       @media screen and (min-width: 1200px) and (max-width: 1300px){
-       height:  ${props => props.inner ? '48vh': '64vh'};
-       }
-`;
-
 
 // Main Header section component
 const Header = styled.section`
 `;
 
-
 const Booking = (props) =>{
 
     return(
-        <div className="md:mt-12 mt-8 sm:mt-8 sm:text-vlg xs:text-vxl">
+        <div className="mt-12 sm:text-vlg xs:text-vxl">
             <div id="contact-info-container" className="p-4 bg-sukoon font-gilroyMedium w-full flex">
                 <select name="appointment" id="appointment-type"
                         className="block p-2  bg-sukoon text-white outline-none w-2/5 border-b border-white mx-2 font-medium"
@@ -79,17 +56,17 @@ const Booking = (props) =>{
                 <input type="text" placeholder="Email / Phone"
                        className="block bg-transparent border-b border-white outline-none customer-contact-info p-2 ml-4 text-white"/>
             </div>
-            <div className="md:mt-12 mt-8 sm:mt-8 font-gilroyMedium">
+            <div className="mt-8 font-gilroyMedium">
                 <div className="inline-block">
                   <BookBtn theme="green" wrapperClass="">
                     <Link to="/booking">Book Now</Link>
                   </BookBtn>
                 </div>
-                <Link to="/" className="text-sukoon ml-4">or Call at +91 9876543210</Link>
+                <Link to="/" className="text-sukoon ml-4 underline text-lg">or Call at +91 9876543210</Link>
             </div>
           { props.discover ?
-            <div className="md:mt-16 mt-8 sm:mt-12 font-gilroyMedium flex">
-              <Link to="/" className="border-sukoon border-b">Explore Appointments</Link>
+            <div className="font-gilroyMedium absolute bottom-0 flex">
+              <Link to="/" className="border-sukoon border-b text-lg">Explore Appointments</Link>
               <ArrowButton border={false} margin="0 12px"/>
             </div> : null}
         </div>
@@ -100,7 +77,7 @@ const Booking = (props) =>{
 
 const HeaderIntroRight = styled.div`
       position: relative;
-      width: ${props => props.bannerWidth || '80%'};
+      width: ${props => props.bannerWidth || '65%'};
      
     `;
 
@@ -112,7 +89,6 @@ const ParagraphSection = (props) =>{
         </p>
     )
 };
-
 
 const NavWrapper = styled.div`
   font-size: 1.1vw;
@@ -134,11 +110,16 @@ const NavWrapper = styled.div`
        }
 `;
 
+// Banner Image Component
 const BannerImage = styled.div`
+    background-image: url(${props=> props.HeaderImg});
+    background-position: center center;
+    background-size: cover;
+
     &::after{
     content: '';
     ${props => props.texture ? `background-image: url(${Texture});` : ''};
-    display: block;
+    display: ${props => props.texture ? 'block' : 'none'};
     float: right;
     margin-top: -4rem;
     width: 85%;
@@ -149,7 +130,6 @@ const BannerImage = styled.div`
      -webkit-box-shadow: 0 10px 6px -7px rgba(134, 134, 134, 0.60);
        -moz-box-shadow: 0 10px 6px -7px rgba(134, 134, 134, 0.60); 
            box-shadow: 0 10px 6px -7px rgba(134, 134, 134, 0.60);
-    
 `;
 
 const ButtonSection = (props) =>{
@@ -165,63 +145,66 @@ const ButtonSection = (props) =>{
   )
 };
 
+const LeftSpace = styled.div`
+  width: 35%;
+`;
+
 const HeaderIntro = (props) => {
 
     return (
-        <Header id="header-intro" className="w-full">
+        <Header id="header-intro" className="w-full mb-12">
             <div id="header-intro-container" className="flex relative">
-                <div className="w-2/5">
-                </div>
+                <LeftSpace className="">
+                </LeftSpace>
                 <HeaderIntroRight id="header-intro-right" bannerWidth={props.bannerWidth} className="relative ">
-                    <BannerImage texture={props.texture} className="relative">
-                      <NavWrapper className="flex mb-4 mr-8 justify-between">
-                        <Link
-                          to="/services"
-                          className=" inline-block mt-0 mr-6 no-underline"
-                        >
-                          Services
-                        </Link>
-                        <Link
-                          to="/infrastructure"
-                          className=" inline-block mt-0 mr-6 no-underline"
-                        >
-                          Infrastructure
-                        </Link>
-                        <Link
-                          to="/experience"
-                          className=" inline-block mt-0 mr-6 no-underline"
-                        >
-                          Experience
-                        </Link>
-                        <Link
-                          to="/doctors"
-                          className=" inline-block mt-0 mr-6 no-underline"
-                        >
-                          Doctors
-                        </Link>
-                        <Link
-                          to="/internationalPatient"
-                          className=" inline-block mt-0 mr-6 no-underline"
-                        >
-                          International Patients
-                        </Link>
-                        <Link
-                          to="/"
-                          className=" inline-block mt-0 no-underline"
-                        >
-                          About
-                        </Link>
-                      </NavWrapper>
-                      <Img src={props.HeaderImg} inner={props.inner} className="block" alt="Header"/>
+                  <NavWrapper className="flex mb-4 mr-8 font-gilroyMedium  justify-between">
+                    <Link
+                      to="/services"
+                      className=" inline-block mt-0 mr-6 no-underline"
+                    >
+                      Services
+                    </Link>
+                    <Link
+                      to="/infrastructure"
+                      className=" inline-block mt-0 mr-6 no-underline"
+                    >
+                      Infrastructure
+                    </Link>
+                    <Link
+                      to="/experience"
+                      className=" inline-block mt-0 mr-6 no-underline"
+                    >
+                      Experience
+                    </Link>
+                    <Link
+                      to="/doctors"
+                      className=" inline-block mt-0 mr-6 no-underline"
+                    >
+                      Doctors
+                    </Link>
+                    <Link
+                      to="/internationalPatient"
+                      className=" inline-block mt-0 mr-6 no-underline"
+                    >
+                      International Patients
+                    </Link>
+                    <Link
+                      to="/about"
+                      className=" inline-block mt-0 no-underline"
+                    >
+                      About
+                    </Link>
+                  </NavWrapper>
+                  <BannerImage HeaderImg={props.HeaderImg} texture={props.texture} className="relative">
+                    <BannerText inner={props.inner} id="header-intro-left" className="py-12">
+                      <Heading/>
+                      {props.booking ?
+                        <Booking discover={props.discover}/>
+                        : props.para ? <ParagraphSection/> :
+                          <ButtonSection/>
+                      }
+                    </BannerText>
                     </BannerImage>
-                  <BannerText inner={props.inner} id="header-intro-left" className="w-fit">
-                    <Heading/>
-                    {props.booking ?
-                      <Booking discover={props.discover}/>
-                      : props.para ? <ParagraphSection/> :
-                        <ButtonSection/>
-                    }
-                  </BannerText>
                 </HeaderIntroRight>
             </div>
         </Header>

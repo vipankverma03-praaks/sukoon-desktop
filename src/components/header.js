@@ -6,30 +6,6 @@ import styled from "styled-components";
 import SukoonLogo from "../images/sukoon-logo/logo_dark@3x.png"
 import HelpIcon from "../images/helpline/helpline copy 2@3x.jpg";
 
-
-const PsychotherapyWrapper = styled.div`
-        top: 260px;
-        transform: rotate(-90deg);
-        left: -100%;
-        z-index: 10;
-        
-        &::before{
-            content: '';
-            position:  absolute;
-            top: 50%;
-            width: 50px;
-            height: 2px;
-            right: -60px;
-            background: #ffc300;
-           }
-    `;
-
-const Psychotherapy = styled.h1`
-        letter-spacing: .3rem;
-        font-size: 14px;
-    `;
-
-
 const NavItem = styled.nav`
   
   .sukoon-top-logo {
@@ -37,20 +13,57 @@ const NavItem = styled.nav`
   }
 `;
 
+
+const LogoLink = styled(Link)((props)=>{
+
+    // for inner pages
+    if(props.logoHighlighter){
+        return`
+         &::after{
+            content: '';
+            position: absolute;
+            background: #f6e05e;
+            height: 2px;
+            width: 90px;
+            transform: rotate(90deg);
+            top: 110px;
+            right: -22px; 
+              
+          }
+          
+          &::before{
+               content: 'Psychotherapy Center';
+            position: absolute;
+            font-size: 14px;
+            transform: rotate(-90deg);
+            letter-spacing: 5px;
+            top: 280px;
+            width: 250px;
+            font-family: gilroy-regular;
+            right: -100px;
+            color: #8E8E8D;
+            
+          }
+    `
+    }
+    // for home page.
+    else{
+                return `
+                `
+    }
+
+});
+
 function Header(props) {
 
     return (
         <NavItem className="">
             <div className="flex flex-wrap items-center justify-between mx-auto p-4 ">
                 <div className="w-full sukoon-top-logo flex justify-between">
-                    <Link to="/" className="flex w-20 relative  items-center no-underline ">
+                    <LogoLink to="/" logoHighlighter={props.logoHighlighter} className="flex w-12 relative  items-center no-underline ">
                         <img src={SukoonLogo} className="" alt="Sukoon Logo"/>
                         <h2 className="text-sukoon text-v3xl font-accanthisRegular ml-4">Sukoon</h2>
-                        {props.logoHighlighter ?
-                        <PsychotherapyWrapper className="absolute font-gilroyRegular">
-                            <Psychotherapy className="whitespace-no-wrap text-gray-250">Psychotherapy Center</Psychotherapy>
-                        </PsychotherapyWrapper> : null }
-                    </Link>
+                    </LogoLink>
                     <div className="text-sukoon my-auto flex justify-end px-1">
                         <div className="flex ">
                             <div className="fit"><img src={HelpIcon} className="w-8" alt="Help Icon"/></div>
