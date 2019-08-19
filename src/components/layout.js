@@ -141,25 +141,25 @@ const QuickLinks = (props) =>{
                 <div className="w-fit font-gilroyMedium flex">
                           <ul className="mt-4 inline-block mr-12">
                             <li className="text-gray-600 text-lg my-1 list-none">
-                              <Link to="/">About Us</Link></li>
+                              <Link to="/about">About Us</Link></li>
                             <li className="text-gray-600 text-lg my-1 list-none">
-                              <Link to="/">Services</Link></li>
+                              <Link to="/services">Services</Link></li>
                             <li className="text-gray-600 text-lg my-1 list-none">
-                              <Link to="/">Infrastructure</Link></li>
+                              <Link to="/infrastructure">Infrastructure</Link></li>
                             <li className="text-gray-600 text-lg my-1 list-none">
                               <Link to="/">Amenities</Link></li>
                             <li className="text-gray-600 text-lg my-1 list-none">
-                              <Link to="/">Doctors</Link></li>
+                              <Link to="/doctors">Doctors</Link></li>
                           </ul>
                           <ul className="mt-4 inline-block">
                             <li className="text-gray-600 text-lg list-none">
-                              <Link to="/">International Patients</Link></li>
+                              <Link to="/internationalPatient">International Patients</Link></li>
                             <li className="text-gray-600 text-lg list-none">
-                              <Link to="/">FAQs</Link></li>
+                              <Link to="/faqs">FAQs</Link></li>
                             <li className="text-gray-600 text-lg list-none">
                               <Link to="/">Blogs</Link></li>
                             <li className="text-gray-600 text-lg list-none">
-                              <Link to="/">Contacts</Link></li>
+                              <Link to="/contact">Contacts</Link></li>
                           </ul>
                 </div>
             </div>
@@ -259,10 +259,10 @@ function Layout({children, ...props}) {
                     <Link to="/doctors">Doctors</Link>
                   </li>
                   <li className="">
-                    <Link to="/">International Patients</Link>
+                    <Link to="/internationalPatient">International Patients</Link>
                   </li>
                   <li className="">
-                    <Link to="/">About</Link>
+                    <Link to="/about">About</Link>
                   </li>
                 </ul>
               </div>
@@ -277,7 +277,7 @@ function Layout({children, ...props}) {
               </div>
             </Nav>
           </StickyMenu>
-          <main className="flex flex-col flex-1 justify-center mx-auto m-0 w-full">
+          <main className="flex flex-col flex-1 justify-center overflow-hidden mx-auto m-0 w-full">
             {children}
           </main>
           <footer className="">
