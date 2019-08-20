@@ -5,13 +5,7 @@ import  {Link} from "gatsby";
 import SVG from "./SVG";
 
 const ButtonWrapper = styled.div`
-    display: flex;
     margin: ${props => props.margin || '10px 0'};
-`;
-
-const Img = styled.img`
-    width: 24px;
-    height: 24px;
 `;
 
 const ArrowButtonLink = styled(Link)`
@@ -29,7 +23,7 @@ const ArrowButtonLink = styled(Link)`
 const ArrowButton = (props) =>{
 
   return(
-    <ButtonWrapper margin={props.margin}>
+    <ButtonWrapper margin={props.margin} className={`${props.wrapperClass || 'flex'} `}>
       <ArrowButtonLink border={props.border}  to="/about">
         <SVG Class="arrow-icon" display="inline-block" icon="arrow" width='50px' fill="#000"/>
       </ArrowButtonLink>
