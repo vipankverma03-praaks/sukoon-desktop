@@ -11,9 +11,10 @@ import Para from "../elements/Para";
 
 import SukoonLogo from "../images/sukoon-bg-logo/logo.jpg";
 import SVG from "../elements/SVG";
+import Loader from "./loader";
 
 const LayoutContainer = styled.div`
-    background-image: ${props => props.bgImage ? `url(${SukoonLogo})`: ''} ;
+    background-image: ${props => props.bgImage && (props.loading === 'false') ? `url(${SukoonLogo})`: ''} ;
     background-size: 51vw;
     background-repeat: no-repeat;
     background-position: bottom 16vw right -25vw;
@@ -206,6 +207,9 @@ const Nav = styled.nav`
 export default class Layout extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      loading: 'true',
+    }
 
   }
 
@@ -225,12 +229,18 @@ export default class Layout extends React.Component {
 
   };
 
-  componentWillMount() {
+
+
+  // Renders after render function.
+  componentDidMount() {
 
     // To redirect desktop site to mobile domain on mobile devices of max-width 760px.
     if (window && window.matchMedia("(max-device-width: 760px)").matches) {
       // Mobile domain
       window.location = "https://m.sukoonhealth.com";
+    }
+    else{
+      this.setState({loading: 'false'});
     }
     // Sticky menu event
     window.addEventListener('scroll', this.handleScroll);
@@ -248,9 +258,11 @@ export default class Layout extends React.Component {
           }
         }
       `}
-        render={(data, {...props}) => (
-          <LayoutContainer bgImage={this.props.bgImage} className="flex flex-col min-h-screen sukoon-bg-1  text-gray-900">
-            <Header logoHighlighter={this.props.logoHighlighter} siteTitle={data.site.siteMetadata.title}/>
+        render={(data) => (
+          <LayoutContainer bgImage={this.props.bgImage} loading={this.state.loading} className="flex flex-col min-h-screen sukoon-bg-1  text-gray-900">
+            {this.state.loading === 'true' ? <Loader/> :
+            <div>
+              <Header logoHighlighter={this.props.logoHighlighter} siteTitle={data.site.siteMetadata.title}/>
             <StickyMenu id="sticky-nav" className="hide">
               <Nav className="bg-sukoon text-white py-2 px-4 flex items-center">
                 <div className="w-4/5 font-gilroyMedium text-xl">
@@ -303,6 +315,9 @@ export default class Layout extends React.Component {
               </div>
               <CopyRight/>
             </footer>
+              </div>
+              }
+
           </LayoutContainer>
         )}
       />
