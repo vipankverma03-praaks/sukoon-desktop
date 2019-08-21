@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
+import React from "react";
 import {StaticQuery, graphql, Link} from "gatsby";
 import styled from "styled-components";
 import Help from "../images/helpline/helpline copy 2@3x.jpg"
@@ -204,40 +203,43 @@ const Nav = styled.nav`
 `;
 
 
-function Layout({children, ...props}) {
+export default class Layout extends React.Component {
+  constructor(props) {
+    super(props);
 
-  const handleScroll = () =>{
+  }
+
+  handleScroll = () => {
 
     let Header = document.getElementById('header-intro');
     let StickyMenu = document.getElementById('sticky-nav');
-    let offset =  Math.abs(Number(Header.getBoundingClientRect().top));
+    let offset = Math.abs(Number(Header.getBoundingClientRect().top));
 
-    if(offset > 786 || offset > 666 || offset > 556){
+    if (offset > 786 || offset > 666 || offset > 556) {
       StickyMenu.classList.add('show');
       StickyMenu.classList.remove('hide');
-    }
-    else{
+    } else {
       StickyMenu.classList.remove('show');
       StickyMenu.classList.add('hide');
     }
 
   };
 
-  // Similar to componentDidMount and componentDidUpdate:
-  useEffect(() => {
+  componentWillMount() {
 
-      // To redirect desktop site to mobile domain on mobile devices of max-width 760px.
-      if(window && window.matchMedia("(max-width: 760px)clear")){
-        // Mobile domain
-        window.location = "https://m.sukoonhealth.com";
-      }
-      // Sticky menu event
-      window.addEventListener('scroll', handleScroll)
-  });
+    // To redirect desktop site to mobile domain on mobile devices of max-width 760px.
+    if (window && window.matchMedia("(max-device-width: 760px)").matches) {
+      // Mobile domain
+      window.location = "https://m.sukoonhealth.com";
+    }
+    // Sticky menu event
+    window.addEventListener('scroll', this.handleScroll);
+  }
 
-  return (
-    <StaticQuery
-      query={graphql`
+  render() {
+    return (
+      <StaticQuery
+        query={graphql`
         query SiteTitleQuery {
           site {
             siteMetadata {
@@ -246,69 +248,142 @@ function Layout({children, ...props}) {
           }
         }
       `}
-      render={(data) => (
-        <LayoutContainer bgImage={props.bgImage} className="flex flex-col min-h-screen sukoon-bg-1  text-gray-900">
-          <Header logoHighlighter={props.logoHighlighter} siteTitle={data.site.siteMetadata.title} />
-          <StickyMenu  id="sticky-nav" className="hide">
-            <Nav className="bg-sukoon text-white py-2 px-4 flex items-center">
-              <div className="w-4/5 font-gilroyMedium text-xl">
-                <ul className="flex">
-                  <li className="">
-                    <Link to="/services">Services</Link>
-                  </li>
-                  <li className="">
-                    <Link to="/infrastructure">Infrastructure</Link>
-                  </li>
-                  <li className="">
-                    <Link to="/experience">Experience</Link>
-                  </li>
-                  <li className="">
-                    <Link to="/doctors">Doctors</Link>
-                  </li>
-                  <li className="">
-                    <Link to="/internationalPatient">International Patients</Link>
-                  </li>
-                  <li className="">
-                    <Link to="/about">About</Link>
-                  </li>
-                </ul>
-              </div>
-              <div className="w-1/5 flex justify-end items-center">
-                <div className="w-8 h-8 ml-4">
-                  <SVG display="inline-block" icon="helpline" width={'25px'} fill={'#fff'} />
+        render={(data, {...props}) => (
+          <LayoutContainer bgImage={this.props.bgImage} className="flex flex-col min-h-screen sukoon-bg-1  text-gray-900">
+            <Header logoHighlighter={this.props.logoHighlighter} siteTitle={data.site.siteMetadata.title}/>
+            <StickyMenu id="sticky-nav" className="hide">
+              <Nav className="bg-sukoon text-white py-2 px-4 flex items-center">
+                <div className="w-4/5 font-gilroyMedium text-xl">
+                  <ul className="flex">
+                    <li className="">
+                      <Link to="/services">Services</Link>
+                    </li>
+                    <li className="">
+                      <Link to="/infrastructure">Infrastructure</Link>
+                    </li>
+                    <li className="">
+                      <Link to="/experience">Experience</Link>
+                    </li>
+                    <li className="">
+                      <Link to="/doctors">Doctors</Link>
+                    </li>
+                    <li className="">
+                      <Link to="/internationalPatient">International Patients</Link>
+                    </li>
+                    <li className="">
+                      <Link to="/about">About</Link>
+                    </li>
+                  </ul>
                 </div>
-                <div className="w-8 h-8 mx-4">
-                  <SVG display="inline-block" icon="landLine" width={'25px'} fill={'#fff'} />
+                <div className="w-1/5 flex justify-end items-center">
+                  <div className="w-8 h-8 ml-4">
+                    <SVG display="inline-block" icon="helpline" width={'25px'} fill={'#fff'}/>
+                  </div>
+                  <div className="w-8 h-8 mx-4">
+                    <SVG display="inline-block" icon="landLine" width={'25px'} fill={'#fff'}/>
+                  </div>
+                  <BookBtn buttonPadding="5px 10px" theme="mint"><Link to="/booking">Book Now</Link></BookBtn>
                 </div>
-                <BookBtn buttonPadding="5px 10px" theme="mint"><Link to="/booking">Book Now</Link></BookBtn>
-              </div>
-            </Nav>
-          </StickyMenu>
-          <main className="flex flex-col flex-1 justify-center overflow-hidden mx-auto m-0 w-full">
-            {children}
-          </main>
-          <footer className="">
-            <HeaderIntro/>
-            <div className="px-8 pt-4">
-              <Subscribe/>
-              <div className="flex">
-                <QuickLinks/>
-                <div className="flex flex-col">
-                  <ReachUs/>
-                  <FollowUs/>
+              </Nav>
+            </StickyMenu>
+            <main className="flex flex-col flex-1 justify-center overflow-hidden mx-auto m-0 w-full">
+              {this.props.children}
+            </main>
+            <footer className="">
+              <HeaderIntro/>
+              <div className="px-8 pt-4">
+                <Subscribe/>
+                <div className="flex">
+                  <QuickLinks/>
+                  <div className="flex flex-col">
+                    <ReachUs/>
+                    <FollowUs/>
+                  </div>
                 </div>
               </div>
-            </div>
-            <CopyRight/>
-          </footer>
-        </LayoutContainer>
-      )}
-    />
-  );
+              <CopyRight/>
+            </footer>
+          </LayoutContainer>
+        )}
+      />
+    );
+  }
+
 }
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired
-};
+  // return (
+  //   <StaticQuery
+  //     query={graphql`
+  //       query SiteTitleQuery {
+  //         site {
+  //           siteMetadata {
+  //             title
+  //           }
+  //         }
+  //       }
+  //     `}
+  //     render={(data) => (
+  //       <LayoutContainer bgImage={props.bgImage} className="flex flex-col min-h-screen sukoon-bg-1  text-gray-900">
+  //         <Header logoHighlighter={props.logoHighlighter} siteTitle={data.site.siteMetadata.title} />
+  //         <StickyMenu  id="sticky-nav" className="hide">
+  //           <Nav className="bg-sukoon text-white py-2 px-4 flex items-center">
+  //             <div className="w-4/5 font-gilroyMedium text-xl">
+  //               <ul className="flex">
+  //                 <li className="">
+  //                   <Link to="/services">Services</Link>
+  //                 </li>
+  //                 <li className="">
+  //                   <Link to="/infrastructure">Infrastructure</Link>
+  //                 </li>
+  //                 <li className="">
+  //                   <Link to="/experience">Experience</Link>
+  //                 </li>
+  //                 <li className="">
+  //                   <Link to="/doctors">Doctors</Link>
+  //                 </li>
+  //                 <li className="">
+  //                   <Link to="/internationalPatient">International Patients</Link>
+  //                 </li>
+  //                 <li className="">
+  //                   <Link to="/about">About</Link>
+  //                 </li>
+  //               </ul>
+  //             </div>
+  //             <div className="w-1/5 flex justify-end items-center">
+  //               <div className="w-8 h-8 ml-4">
+  //                 <SVG display="inline-block" icon="helpline" width={'25px'} fill={'#fff'} />
+  //               </div>
+  //               <div className="w-8 h-8 mx-4">
+  //                 <SVG display="inline-block" icon="landLine" width={'25px'} fill={'#fff'} />
+  //               </div>
+  //               <BookBtn buttonPadding="5px 10px" theme="mint"><Link to="/booking">Book Now</Link></BookBtn>
+  //             </div>
+  //           </Nav>
+  //         </StickyMenu>
+  //         <main className="flex flex-col flex-1 justify-center overflow-hidden mx-auto m-0 w-full">
+  //           {children}
+  //         </main>
+  //         <footer className="">
+  //           <HeaderIntro/>
+  //           <div className="px-8 pt-4">
+  //             <Subscribe/>
+  //             <div className="flex">
+  //               <QuickLinks/>
+  //               <div className="flex flex-col">
+  //                 <ReachUs/>
+  //                 <FollowUs/>
+  //               </div>
+  //             </div>
+  //           </div>
+  //           <CopyRight/>
+  //         </footer>
+  //       </LayoutContainer>
+  //     )}
+  //   />
+  // );
 
-export default Layout;
+
+// Layout.propTypes = {
+//   children: PropTypes.node.isRequired
+// };
+
