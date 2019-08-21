@@ -225,6 +225,13 @@ function Layout({children, ...props}) {
 
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
+
+      // To redirect desktop site to mobile domain on mobile devices of max-width 760px.
+      if(window && window.matchMedia("(max-width: 760px)clear")){
+        // Mobile domain
+        window.location = "https://m.sukoonhealth.com";
+      }
+      // Sticky menu event
       window.addEventListener('scroll', handleScroll)
   });
 
