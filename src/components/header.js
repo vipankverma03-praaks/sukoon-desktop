@@ -5,6 +5,7 @@ import styled from "styled-components";
 
 import SukoonLogo from "../images/sukoon-logo/logo_dark@3x.png"
 import HelpIcon from "../images/helpline/helpline copy 2@3x.jpg";
+import SVG from "../elements/SVG";
 
 const NavItem = styled.nav`
   
@@ -66,7 +67,7 @@ function Header(props) {
                     </LogoLink>
                     <div className="text-sukoon my-auto flex justify-end px-1">
                         <div className="flex ">
-                            <div className="fit"><img src={HelpIcon} className="w-8" alt="Help Icon"/></div>
+                            <div className="fit"><SVG display="inline-block" icon="helpline" width={'25px'} fill={'#12443e'} /></div>
                             <span className="ml-4">1800 123 6789</span>
                         </div>
                     </div>
