@@ -1,4 +1,4 @@
-import React  from "react";
+import React, { useState } from "react";
 import { Link } from "gatsby";
 
 // Components
@@ -52,46 +52,169 @@ const PreviewNav = styled.div`
     background: white;
     margin: -30px 3rem 0 auto;
     position: relative;
-    
+      
+    button:focus{
+    outline: none;
+    }
+      
     ul li {
         margin-right: 10px;
         margin-left: 10px;
     }
 `;
 
+const NavItem = styled.button`
+    cursor: pointer;
+`;
 
-const Preview = (props) =>{
+const ViewContent = {
+    consultingChambers: {
+      image: TherapyView,
+      Card: {
+        about: 'opd',
+        heading: 'consulting Chambers',
+        summary: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+        Lorem Ipsum has been the industry's standard dummy text ever 
+        since the 1500s, when an unknown printer took a 
+        galley of type and scrambled it to make a type specimen book.`
+      }
+    },
+  pharmacy: {
+    image: TherapyView,
+    Card: {
+      about: 'opd',
+      heading: 'pharmacy',
+      summary: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+        Lorem Ipsum has been the industry's standard dummy text ever 
+        since the 1500s, when an unknown printer took a 
+        galley of type and scrambled it to make a type specimen book.`
+    }
+  },
+  rtms: {
+    image: TherapyView,
+    Card: {
+      about: 'opd',
+      heading: 'rtms',
+      summary: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+        Lorem Ipsum has been the industry's standard dummy text ever 
+        since the 1500s, when an unknown printer took a 
+        galley of type and scrambled it to make a type specimen book.`
+    }
+  },
+  virtualTherapy: {
+    image: TherapyView,
+    Card: {
+      about: 'opd',
+      heading: 'virtual therapy',
+      summary: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+        Lorem Ipsum has been the industry's standard dummy text ever 
+        since the 1500s, when an unknown printer took a 
+        galley of type and scrambled it to make a type specimen book.`
+    }
+  },
+  cafeteria: {
+    image: TherapyView,
+    Card: {
+      about: 'opd',
+      heading: 'cafeteria',
+      summary: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+        Lorem Ipsum has been the industry's standard dummy text ever 
+        since the 1500s, when an unknown printer took a 
+        galley of type and scrambled it to make a type specimen book.`
+    }
+  },
+  lounge: {
+    image: TherapyView,
+    Card: {
+      about: 'opd',
+      heading: 'lounge',
+      summary: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+        Lorem Ipsum has been the industry's standard dummy text ever 
+        since the 1500s, when an unknown printer took a 
+        galley of type and scrambled it to make a type specimen book.`
+    }
+  },
+  artTherapy: {
+    image: TherapyView,
+    Card: {
+      about: 'opd',
+      heading: 'art therapy',
+      summary: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+        Lorem Ipsum has been the industry's standard dummy text ever 
+        since the 1500s, when an unknown printer took a 
+        galley of type and scrambled it to make a type specimen book.`
+    }
+  },
+
+};
+
+const View = ({currentView}) =>{
+
+  return(
+    <div className="w-full flex relative">
+      <div className="w-3/5">
+        <img src={currentView.image} className="block object-cover w-full object-center" alt="Header"/>
+      </div>
+      <div className="w-2/5">
+      </div>
+      <PreviewCard className="w-2/5 absolute shadow-lg">
+        <span className="font-semibold text-lg text-sukoon uppercase">{currentView.Card.about}</span>
+        <h2 className="font-bold text-3xl text-sukoon capitalize">{currentView.Card.heading}</h2>
+        <Para Class="py-4" width="100%">{currentView.Card.summary}</Para>
+      </PreviewCard>
+    </div>
+  )
+};
+
+
+
+function Preview (props) {
+
+  const [view , setView] = useState(ViewContent.consultingChambers);
+
+  const changeView = (e) => {
+    setView(ViewContent[e.target.name]);
+  };
 
   return(
     <section className="py-6">
       <div className="ExperienceServices w-full">
-        <div className="w-full flex relative">
-          <div className="w-3/5">
-            <img src={TherapyView} className="block object-cover w-full object-center" alt="Header"/>
-          </div>
-          <div className="w-2/5">
-          </div>
-          <PreviewCard className="w-2/5 absolute shadow-lg">
-            <span className="font-semibold text-lg text-sukoon">OPD</span>
-            <h2 className="font-bold text-3xl text-sukoon">Consulting Chambers</h2>
-            <Para Class="py-4" width="100%">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</Para>
-            <div className="arrowSection">
-              <button className="Circle_btn"><SVG display="inline-block" icon="arrow" width={'20px'} rotate fill={'#969696'} />
-              </button>
-              <button className="Circle_btn right"><SVG display="inline-block" icon="arrow" width={'20px'} rotate fill={'#969696'} />
-              </button>
-            </div>
-          </PreviewCard>
-        </div>
+        <View currentView={view}/>
         <PreviewNav className="bg-white relative py-6 mr-12 w-10/12 shadow-lg">
           <ul className="text-xl font-gilroyMedium flex justify-around px-4 uppercase text-sukoon">
-            <li className="">Consulting Chambers</li>
-            <li className="">Pharmacy</li>
-            <li className="">RTMS</li>
-            <li className="">VIRTUAL THERAPY ROOM</li>
-            <li className="">CAFETERIA</li>
-            <li className="">LOUNGE</li>
-            <li className="">ART THERAPY</li>
+            <li className="">
+              <NavItem name="consultingChambers" type="text" onClick={changeView}>
+                Consulting Chambers
+              </NavItem>
+            </li>
+            <li className="">
+              <NavItem name="pharmacy" type="text" onClick={changeView}>
+                Pharmacy
+              </NavItem>
+              </li>
+            <li className="">
+              <NavItem name="rtms" type="text" onClick={changeView}>
+                RTMS
+            </NavItem></li>
+            <li className="">
+              <NavItem name="virtualTherapy" type="text" onClick={changeView}>
+              VIRTUAL THERAPY ROOM
+            </NavItem></li>
+            <li className="">
+                <NavItem name="cafeteria" type="text" onClick={changeView}>
+                  CAFETERIA
+                </NavItem>
+            </li>
+            <li className="">
+              <NavItem name="lounge" type="text" onClick={changeView}>
+                LOUNGE
+              </NavItem>
+            </li>
+            <li className="">
+              <NavItem name="artTherapy" type="text" onClick={changeView}>
+                ART THERAPY
+              </NavItem>
+            </li>
           </ul>
         </PreviewNav>
       </div>
