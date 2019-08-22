@@ -1,17 +1,20 @@
 import React from "react";
 import {StaticQuery, graphql, Link} from "gatsby";
 import styled from "styled-components";
-import Help from "../images/helpline/helpline copy 2@3x.jpg"
-import Call from "../images/icons/phone.svg"
-import Mail from "../images/icons/mail.svg"
 
+
+// Components
 import Header from "./header";
 import BookBtn from "../elements/BookNowBtn";
 import Para from "../elements/Para";
-
-import SukoonLogo from "../images/sukoon-bg-logo/logo.jpg";
 import SVG from "../elements/SVG";
 import Loader from "./loader";
+import Input from "../elements/Input";
+// Images
+import SukoonLogo from "../images/sukoon-bg-logo/logo.jpg";
+import Help from "../images/helpline/helpline copy 2@3x.jpg"
+import Call from "../images/icons/phone.svg"
+import Mail from "../images/icons/mail.svg"
 
 const LayoutContainer = styled.div`
     background-image: ${props => props.bgImage && (props.loading === 'false') ? `url(${SukoonLogo})`: ''} ;
@@ -30,7 +33,15 @@ const LayoutContainer = styled.div`
     .customer-contact-info input::placeholder{
     opacity: 1;
     }
+    
+    .book-now-button{
+    width: 21%;
+    }
+    .appointment-select{
+    width: 59%;
+    }
 `;
+
 const HeaderIntro = () => {
     return (
         <section className="w-full">
@@ -43,22 +54,15 @@ const HeaderIntro = () => {
                         Appointment
                     </span>
                 </div>
-                <div className="flex font-gilroyRegular items-center sm:w-3/6 md:w-3/5 px-4">
+                <div className="flex appointment-select font-gilroyRegular items-center w-3/6 md:w-3/5 px-4">
                   <div className="mr-6 w-1/4">
-                    <select name="appointment" id="appointment-type"
-                            className="block pb-4 bg-sukoon outline-none text-white border-b border-white border-solid w-full font-medium"
-                            value="">
-                      <option value="" selected>Appointment Type</option>
-                      <option value="">In House</option>
-                      <option value="">Online Consulting</option>
-                    </select>
+                    <Input type="select" label="Appointment Type" placeholder=""/>
                   </div>
                   <div className="mr-4 w-2/3 customer-contact-info">
-                    <input type="text" placeholder="Email / Phone"
-                           className="block bg-transparent outline-none border-b border-white w-full pb-4 text-white"/>
+                    <Input type="name" required={true} label="Email / Phone Number" defaultValue={``}/>
                   </div>
-                  <div className="w-1/6 sm:w-1/4">
-                    <BookBtn wrapperClass="h-fit float-right" border={true}>
+                  <div className="book-now-button w-1/6 sm:w-1/4">
+                    <BookBtn wrapperClass="h-fit float-right" theme="white" border={true}>
                       Book Now
                     </BookBtn>
                   </div>
@@ -169,10 +173,6 @@ const QuickLinks = (props) =>{
 
 const Subscribe = (props) =>{
 
-  const Input = styled.input`
-        width: 30vw;
-    `;
-
     return(
         <div className="py-6 flex justify-between">
             <div className="my-auto text-v3xl">
@@ -180,7 +180,7 @@ const Subscribe = (props) =>{
                 <h3 className="ml-2 inline-block font-gilroyBold text-sukoonYellow">Our Newsletter</h3>
             </div>
             <div className="my-auto mx-4  flex self-end">
-                <Input id="email-address" type="text" placeholder="Enter Your Email Address" className="outline-none mr-4 bg-transparent"/>
+              <Input type="name" green required={true} wrapperClass="mr-4 w-v30" label="Email / Phone Number" defaultValue={``}/>
                 <BookBtn border>Go</BookBtn>
             </div>
         </div>

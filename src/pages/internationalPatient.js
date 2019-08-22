@@ -130,12 +130,12 @@ function InternationalPatient(props) {
               <h2 className="text-white text-vxl">Free Virtual Consultation</h2>
             </div>
             <div className="font-gilroyMedium">
-              <Input type="name" defaultValue={``} placeholder="Patient Name"/>
-              <Input type="name" defaultValue={`Age Name`}/>
-              <Input type="name" defaultValue={`Contact Number`}/>
-              <Input type="select"/>
-              <Input type="select"/>
-              <Input type="name" defaultValue={`Comments`} textarea/>
+              <Input type="name" required={true} defaultValue={``} label="Patient Name"/>
+              <Input type="name" required={true} label="Age" defaultValue={``}/>
+              <Input type="name" required={true} label="Contact Number" defaultValue={``}/>
+              <Input type="select" label="Select Country"/>
+              <Input type="select" label="Select"/>
+              <Input type="name" defaultValue={``} label="Comments" textarea/>
               <BookBtn theme="green" buttonPadding="5px 10px" wrapperClass="">
                 Get An Estimate
               </BookBtn>

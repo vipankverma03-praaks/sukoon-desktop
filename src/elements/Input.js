@@ -32,14 +32,64 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+  // This styled component is to design the textField component of material ui.
+  const Wrapper = styled.div((props)=>{
 
-const Wrapper = styled.div`
-  
-  //  Root class  
+    if(props.green){
+      return`
+  //  Root class    
   .textField {
-  
   }  
   
+  .textField  .MuiInputLabel-root{
+    font-family: Gilroy-Medium;
+  
+  }
+  
+  .textField label{
+    color: #12443e;
+  }
+  // input tag inside the textfield. 
+  .textField .MuiInputBase-input{
+    color: white;
+    font-family: gilroy-medium;
+  }
+   // Border bottom class
+   .textField .MuiInput-underline:before{
+   border-color: #12443e;
+   }
+  
+  .textField .MuiInput-underline:hover:not(.Mui-disabled):before{
+  border-bottom: 2px solid #f6e05e;
+  }
+  // Border bottom on hover 
+  .textField .MuiInput-underline:after{
+    border-bottom: 2px solid #f6e05e;
+  }
+  
+  `}
+    else {
+      return`
+      
+     .textField .MuiInputLabel-shrink {
+    transform: translate(0, .5px) scale(0.75);
+    transform-origin: top 4px left;
+    }
+      .MuiFormControl-marginNormal{
+        margin: 4px;
+      }
+  //  Root class    
+  .textField {
+  }  
+  
+  .textField  .MuiInputLabel-root{
+    font-family: Gilroy-Medium;
+  
+  }
+  
+  .textField label{
+    color: white;
+  }
   // input tag inside the textfield. 
   .textField .MuiInputBase-input{
     color: white;
@@ -62,8 +112,11 @@ const Wrapper = styled.div`
   .textField .MuiFormLabel-root.Mui-focused{
     color: #f6e05e;
   }
-`;
+  `
+    }
 
+});
+  
 const countries = [
   {
     value: 'India',
@@ -75,16 +128,16 @@ const countries = [
   },
 ];
 
-const TextInput = ({classes,defaultValue,textarea,placeholder}) => {
+const TextInput = ({classes,defaultValue,textarea,lable,required}) => {
 
   return(
     <TextField
-      required
-      id="standard-required"
-      label="Required"
+      required={required}
+      id="standard-dense"
+      label={lable}
       defaultValue={defaultValue}
       multiline={textarea ? true : null}
-      placeholder={placeholder}
+      placeholder={``}
       type={ textarea ? 'textarea' : 'text'}
       className={classes}
       margin="normal"
@@ -93,20 +146,18 @@ const TextInput = ({classes,defaultValue,textarea,placeholder}) => {
   )
 };
 
-
-
-const SelectInput = ({classes}) => {
+const SelectInput = ({classes,lable,placeholder}) => {
 
   return(
     <TextField
-      id="standard-select"
-      label="select"
+      id="standard-select-with-placeholder"
+      label={lable}
       select
       defaultValue="Enter details"
       className={classes}
-      value="Enter age"
+      value=""
       margin="normal"
-      helperText="Select Your Country"
+      helperText=""
       SelectProps={{
         MenuProps: {
           className: classes.menu,
@@ -120,13 +171,14 @@ const SelectInput = ({classes}) => {
   )
 };
 
+// This component sets the input type you have selected by passing props type
 const setInput = (classes, props) => {
 
   switch(props.type){
     case 'name':
-    return <TextInput placeholder={props.placeholder} defaultValue={props.defaultValue} textarea={props.textarea} classes={classes}/>;
+    return <TextInput lable={props.label} required={props.required} defaultValue={props.defaultValue} textarea={props.textarea} classes={classes}/>;
     case 'select':
-      return <SelectInput classes={classes}/>;
+      return <SelectInput lable={props.label} placeholder={props.placeholder} classes={classes}/>;
       break;
     default:
       return <TextInput classes={classes}/>;
@@ -134,14 +186,14 @@ const setInput = (classes, props) => {
   }
 };
 
+// Main component
 const Input = (props) => {
-  const classes = useStyles();
 
+  const classes = useStyles();
   return(
-    <Wrapper>
+    <Wrapper green={props.green} className={`${props.wrapperClass} `}>
       {setInput(classes, props)}
     </Wrapper>
-
   )
 };
 

@@ -15,8 +15,8 @@ import SukoonLogo from "../images/logo_light.svg";
 import Calender from "../images/cal.svg";
 import Edit from "../images/edit_icon.png";
 import Timer from "../images/clock.svg";
-import ArrowIcon from "../images/icons/arrow_right.svg";
 import SVG from "../elements/SVG";
+import Input from "../elements/Input";
 
 
 const Form = styled.form`
@@ -81,7 +81,7 @@ const BookingFields = (props) =>{
 const BookingWrapper = styled.section`
   background-image: url(${BookingBg});
   height: 100vh;
-  
+  overflow-y: scroll;
   .BookingInput{
     position: relative;
   }
@@ -178,11 +178,11 @@ const Time =  (props) => {
   )
 };
 
+// User information component.
 const Information = (props) =>{
 
-
   const handleRadioButton = (event, sex) =>{
-    console.log(event, sex);
+
   };
 
   const handleTime = (event, view) =>{
@@ -211,50 +211,36 @@ const Information = (props) =>{
       <Form action="" className="text-white">
         <h2 className="text-white font-gilroyMedium font-medium text-v4xl">Enter Information</h2>
         <div className="flex py-4 justify-between">
-          <div className="flex flex-col w-1/2 pr-4">
-            <input type="text" className="my-2 w-full border-b border-white" placeholder="First Name"/>
+          <div id="left-information" className="flex justify-between flex-col w-1/2 mr-4">
+            <Input type="name" required={true} defaultValue={``} wrapperClass="my-2 w-full " label="First Name"/>
             <div className="my-2">
               <span>Sex :</span>
               <Radio display="inline-block" handleButton={handleRadioButton} arguments={['M']} spanClass="text-white mx-4" spanText="Male"/>
               <Radio display="inline-block" handleButton={handleRadioButton} spanClass="text-white mx-4" arguments={['F']} spanText="Female"/>
             </div>
-            <input type="email" placeholder="Email address" className="my-2 w-full border-b border-white"/>
+            <Input type="name" required={true} defaultValue={``} wrapperClass="w-full " label="Email"/>
           </div>
-          <div className="pl-4 w-1/2">
-            <input type="text" className="my-2 w-full border-b border-white"  placeholder="Last Name"/>
-            <div className="my-2">
-              <span className="mr-2">DOB :</span>
-              <select name="year" id="year">
-                <option value="">Year</option>
-                <option value="1992">1992</option>
-                <option value="1992">1993</option>
-              </select>
-              <select name="month" id="month">
-                <option value="">Month</option>
-                <option value="Jan">Jan</option>
-                <option value="Feb">Feb</option>
-              </select>
-              <select name="date" id="date">
-                <option value="">Date</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-              </select>
+          <div id="right-information" className="pl-4 justify-between w-1/2">
+            <Input type="name" required={true} defaultValue={``} wrapperClass="my-2 w-full " label="Last Name"/>
+            <div className="flex my-2 items-center">
+              <span className="mr-2 self-end">DOB :</span>
+              <Input type="select" wrapperClass="inline-block mr-8 w-1/9" label="Year" placeholder=""/>
+              <Input type="select" wrapperClass="inline-block mr-8 w-1/9" label="Month" placeholder=""/>
+              <Input type="select" wrapperClass="inline-block w-1/9" label="Day" placeholder=""/>
             </div>
-            <input type="tel" placeholder="Phone number" className="border-b border-white my-2 w-full "/>
+            <Input type="name" required={true} wrapperClass="w-full" label="Phone Number" defaultValue={``}/>
           </div>
         </div>
-        <BookingBtn type="white" padding="5px">Book and Pay</BookingBtn>
+        <BookingBtn wrapperClass="float-right" theme="white" padding="5px">Book and Pay</BookingBtn>
       </Form>
     </section>
   );
 };
 
-
-
-
+// Main component
 export default class BookingPage extends React.Component{
-    constructor(){
-      super();
+    constructor(props){
+      super(props);
       this.state = {
         view: 'Date',
         selectedDate: '',
@@ -263,6 +249,7 @@ export default class BookingPage extends React.Component{
       };
     }
 
+  //   function to State update.
   updateState = (stateName, value) =>{
       this.setState({[stateName]: value});
   };
@@ -276,7 +263,6 @@ export default class BookingPage extends React.Component{
         this.setState({view: ''});
       }
   };
-
 
     render(){
 

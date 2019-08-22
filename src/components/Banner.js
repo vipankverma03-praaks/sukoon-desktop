@@ -6,6 +6,7 @@ import BookBtn from "../elements/BookNowBtn"
 import ArrowButton from "../elements/ArrowButton";
 
 import Texture from "../images/texture.png";
+import Input from "../elements/Input";
 
 // Intro Section
 const Heading = () => {
@@ -46,15 +47,8 @@ const Booking = (props) =>{
     return(
         <div className="mt-12 sm:text-vlg xs:text-vxl">
             <div id="contact-info-container" className="p-4 bg-sukoon font-gilroyMedium w-full flex">
-                <select name="appointment" id="appointment-type"
-                        className="block p-2  bg-sukoon text-white outline-none w-2/5 border-b border-white mx-2 font-medium"
-                        value="">
-                    <option value="" selected>Appointment Type</option>
-                    <option value="">In House</option>
-                    <option value="">Online Consulting</option>
-                </select>
-                <input type="text" placeholder="Email / Phone"
-                       className="block bg-transparent border-b border-white outline-none customer-contact-info p-2 ml-4 text-white"/>
+              <Input type="select" wrapperClass="w-2/5" label="Appointment Type" placeholder=""/>
+              <Input type="name" required={true} wrapperClass="ml-4 w-3/5" label="Email / Phone Number" defaultValue={``}/>
             </div>
             <div className="mt-8 font-gilroyMedium">
                 <div className="inline-block">
