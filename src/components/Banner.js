@@ -11,7 +11,7 @@ import Input from "../elements/Input";
 // Intro Section
 const Heading = () => {
     return (
-        <HeadingWrapper className="text-sukoon  sm:text-v5xl md:text-v6xl">
+        <HeadingWrapper className="text-sukoon  sm:text-5xl md:text-6xl">
             <span className="block font-gilroyMedium">
                 Don't Just Stay,
             </span>
@@ -132,8 +132,10 @@ const ButtonSection = (props) =>{
       <p className="mt-8 w-2/5 text-gray-600 my-1 font-gilroyMedium text-vlg leading-relaxed block">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus adipisci aliquam, architecto culpa
       </p>
-      <BookBtn wrapperClass="inline-block mt-8 mr-12" border><Link to="/booking">Book An Appointment</Link></BookBtn>
-      <BookBtn wrapperClass="inline-block" border>Book a Tour</BookBtn>
+      <div className="flex">
+        <BookBtn wrapperClass="mr-24" theme="green"><Link to="/booking" className="w-full h-full">Book An Appointment</Link></BookBtn>
+        <BookBtn wrapperClass="" border>Book a Tour</BookBtn>
+      </div>
     </div>
 
   )

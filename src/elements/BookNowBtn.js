@@ -41,7 +41,7 @@ const Button = (props) =>{
 
   return(
     <ThemeProvider theme={theme}>
-      <Wrapper transparent={props.transparent} className={`${props.wrapperClass || ''} w-fit h-fit  `}>
+      <Wrapper transparent={props.transparent} className={`${props.wrapperClass || ''} w-fit h-fit`}>
         <ThemedButton onClick={()=>{ props.clickFn ? props.clickFn(...props.arguments) : null }} transparent={props.transparent} buttonPadding={props.buttonPadding}
           className={`${props.buttonClass || ''} block relative font-gilroyMedium outline-none text-lg items-center`}>
           {props.children}

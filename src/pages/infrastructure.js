@@ -9,7 +9,6 @@ import styled from "styled-components";
 import Details from "../elements/Details";
 import Para from "../elements/Para";
 import Banner from "../components/Banner";
-import SVG from "../elements/SVG";
 import Enquiry from "../elements/BookNowBtn";
 
 // Images
@@ -43,7 +42,7 @@ const Feet = () => {
 
 const PreviewCard = styled.div`
     background: white;
-    top: 20%;
+    top: 10%;
     right: 50px;
     padding: 50px;
 `;
@@ -65,6 +64,7 @@ const PreviewNav = styled.div`
 
 const NavItem = styled.button`
     cursor: pointer;
+    text-transform: capitalize;
 `;
 
 const ViewContent = {
@@ -180,8 +180,8 @@ function Preview (props) {
     <section className="py-6">
       <div className="ExperienceServices w-full">
         <View currentView={view}/>
-        <PreviewNav className="bg-white relative py-6 mr-12 w-10/12 shadow-lg">
-          <ul className="text-xl font-gilroyMedium flex justify-around px-4 uppercase text-sukoon">
+        <PreviewNav className="bg-white relative py-4  mr-12 w-10/12 shadow-lg">
+          <ul className="text-xl font-gilroyMedium flex justify-around px-4 text-sukoon">
             <li className="">
               <NavItem name="consultingChambers" type="text" onClick={changeView}>
                 Consulting Chambers
@@ -194,25 +194,25 @@ function Preview (props) {
               </li>
             <li className="">
               <NavItem name="rtms" type="text" onClick={changeView}>
-                RTMS
+                rtms
             </NavItem></li>
             <li className="">
               <NavItem name="virtualTherapy" type="text" onClick={changeView}>
-              VIRTUAL THERAPY ROOM
+              virtual thearapy room
             </NavItem></li>
             <li className="">
                 <NavItem name="cafeteria" type="text" onClick={changeView}>
-                  CAFETERIA
+                  cafeteria
                 </NavItem>
             </li>
             <li className="">
               <NavItem name="lounge" type="text" onClick={changeView}>
-                LOUNGE
+                lounge
               </NavItem>
             </li>
             <li className="">
               <NavItem name="artTherapy" type="text" onClick={changeView}>
-                ART THERAPY
+                art therapy
               </NavItem>
             </li>
           </ul>
