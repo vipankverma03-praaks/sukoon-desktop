@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../css/style.css";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -28,7 +28,11 @@ import HeaderImg from "../images/Desktop-Header/HomeBanner.jpg";
 import Para from "../elements/Para"
 import styled from "styled-components";
 import Banner from "../components/Banner"
-import SVG from "../elements/SVG";
+import Category from "../elements/BookNowBtn";
+import Details from "../elements/Details";
+import Enquiry from "../elements/BookNowBtn";
+import { Link } from "gatsby";
+import Preview from "../components/Preview";
 
 const HighLightExperience = styled.div`
 background: url(${HighLightTherapy});   
@@ -91,8 +95,79 @@ const MenuItems = styled.div`
 `;
 
 
+const RoomFeatures = styled.ul`
+  
+  li{
+    width: 25%;
+    margin-bottom: 4px;
+  }
+`;
 
+const Rooms = {
+    suiteRoom: {
+        type: 'suite room',
+        description: 'lorem ipsum is just a dummy text',
+        amenities:['wifi','tv','Elevator','Power Backup','Kitchen','AC','Geyser','Wheel Chair','Single Bed','Room Heater' ,'Bath Tub'],
+        previewImages: [RoomOne, RoomTwo, RoomThree, RoomFour],
+        preview: RoomOne,
+    },
+    deluxeRoom: {
+        type: 'deluxe room',
+        description: 'lorem ipsum is just a dummy text',
+        amenities:['wifi','tv','Elevator','Power Backup','Kitchen','AC','Geyser','Wheel Chair','Single Bed','Room Heater' ,'Bath Tub'],
+        previewImages: [RoomOne, RoomTwo, RoomThree, RoomFour],
+        preview: RoomOne,
+    },
+    icuRoom: {
+        type: 'Intensive Care Unit',
+        description: 'lorem ipsum is just a dummy text',
+        amenities:['wifi','tv','Elevator','Power Backup','Kitchen','AC','Geyser','Wheel Chair','Single Bed','Room Heater' ,'Bath Tub'],
+        previewImages: [RoomOne, RoomTwo, RoomThree, RoomFour],
+        preview: RoomOne,
+    },
+};
+
+const RoomIntro = ({room}) =>{
+
+    let amenities = room.amenities.map((amenity)=>{
+        return(
+          <li>{amenity}</li>
+        )
+    });
+
+    return(
+      <div className="">
+          <span className="block text-2xl font-gilroySemiBold">Rooms</span>
+          <h3 className="text-4xl text-sukoon my-2 font-gilroyBold">{room.type}</h3>
+          <Para width="100%">
+              {room.description}
+          </Para>
+          <RoomFeatures className="font-gilroyMedium flex flex-wrap my-8">
+              {amenities}
+          </RoomFeatures>
+          <div className="roomImg">
+              <ul className="">
+                  <li><a><img src={RoomOne} className="block" alt=""/></a></li>
+                  <li><a><img src={RoomTwo} className="block" alt=""/></a></li>
+                  <li><a><img src={RoomThree} className="block" alt=""/></a></li>
+                  <li><a><img src={RoomFour} className="block" alt=""/></a></li>
+              </ul>
+          </div>
+      </div>
+    )
+};
+
+// Main component
 function ExperiencePage() {
+
+    const[activeCategory, setCategory] = useState('suite rooms');
+    const[data, setData] = useState(Rooms.suiteRoom);
+
+    const setView = (view , data) =>{
+        setCategory(view);
+        setData(data);
+    };
+
     return (
         <Layout>
             <SEO
@@ -100,68 +175,47 @@ function ExperiencePage() {
                 keywords={[`sukoon`, `hospital`, `psychiatry center`, `service`]}
             />
             <Banner inner texture HeaderImg={HeaderImg}/>
-            <section className="p-8">
+            <section className="py-12 px-20">
                 <div className="">
                     <Title titleLight="Experience" titleBold="Sukoon" />
-                    <h3 className="text-xl font-gilroyMedium text-sukoon">Let's Take a Tour</h3>
-                    <Para width="100%">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged</Para>
+                    <h3 className="text-3xl font-gilroyBold  mt-4 text-sukoon">Let's Take a Tour</h3>
+                    <Para width="100%" Class="my-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged</Para>
                 </div>
                 <div className="w-full flex mt-10">
                     <div className="w-2/5">
                         <img src={RoomView} className="block min-h-full" alt=""/>
                     </div>
-                    <div className="w-3/5 pl-10 flex flex-col justify-evenly">
+                    <div className="w-3/5 pl-10 flex flex-col justify-between">
                         <ul className="RoomBtnTab mb-10">
-                            <li className="mr-4"><button className="globe_btn"><a>Suite Rooms</a></button></li>
-                            <li className="mr-4"><button className="globe_btn"><a>Deluxe Rooms</a></button></li>
-                            <li><button className="globe_btn"><a>Intensive Care Unit</a></button></li>
+                            <Category transparent={activeCategory !== 'suite rooms'} arguments={['suite rooms', Rooms.suiteRoom]} clickFn={setView}>Suite Rooms</Category>
+                            <Category transparent={activeCategory !== 'deluxe rooms'} arguments={['deluxe rooms', Rooms.deluxeRoom]} clickFn={setView}>Deluxe Rooms</Category>
+                            <Category transparent={activeCategory !== 'intensive care unit'} arguments={['intensive care unit', Rooms.icuRoom]} clickFn={setView}>Intensive Care Unit</Category>
                         </ul>
-                        <div className="">
-                            <span className="block text-2xl">Rooms</span>
-                            <h3 className="text-4xl text-sukoon font-bold">Suite Rooms</h3>
-                            <Para width="100%">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</Para>
-                            <ul className="RoomFeatures">
-                                <li>Wifi</li>
-                                <li>TV</li>
-                                <li>Elevator</li>
-                                <li>Power Backup</li>
-                                <li>Kitchen</li>
-                                <li>AC</li>
-                                <li>Geyser</li>
-                                <li>Wheel Chair</li>
-                                <li>Single Bed</li>
-                                <li>Room Heater</li>
-                                <li>Bath Tub</li>
-                            </ul>
-                            <div className="roomImg">
-                                <ul className="">
-                                    <li><a><img src={RoomOne} className="block" alt=""/></a></li>
-                                    <li><a><img src={RoomTwo} className="block" alt=""/></a></li>
-                                    <li><a><img src={RoomThree} className="block" alt=""/></a></li>
-                                    <li><a><img src={RoomFour} className="block" alt=""/></a></li>
-                                </ul>
-                            </div>
-                        </div>
+                        <RoomIntro room={data}/>
                     </div>
                 </div>
             </section>
-            <section className="p-8">
+            <section className="py-12 px-20">
                 <div className="w-full flex">
-                    <div className="w-2/5 pr-8 ActivityInfo">
+                    <div className="w-2/5 pr-8 flex flex-col justify-between ActivityInfo">
                         <div>
                         <span className="block text-2xl">Activity Per Floor</span>
-                        <details open className="facilities mb-8">
-                            <summary><h2 className="text-4xl font-bold text-sukoon">Lounge</h2></summary>
-                            <Para width="100%">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</Para>
-                        </details>
-                        <details className="facilities">
-                            <summary><h2 className="text-4xl font-bold text-sukoon">Nursing Station</h2></summary>
-                            <Para width="100%">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</Para>
-                        </details>
+                            <Details open padding="10px 0" summary="Lounge">
+                                <Para Class="py-4" width="100%">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                    Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                                    galley of type and scrambled it to make a type specimen book. It has survived not only five
+                                    centuries</Para>
+                            </Details>
+                            <Details padding="10px 0" summary="Nursing Station">
+                                <Para Class="py-4" width="100%">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                    Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                                    galley of type and scrambled it to make a type specimen book. It has survived not only five
+                                    centuries</Para>
+                            </Details>
                         </div>
-                        <button className="globe_btn"><a>Enquiry</a>    </button>
+                        <Enquiry wrapperClass=""><Link to="/">Enquiry</Link></Enquiry>
                     </div>
-                    <div className="w-3/5 ActivitySecImg">
+                    <div className="w-3/5 flex">
                             <img src={PartyTwo} className="block viewOne" alt="Header"/>
                             <img src={PartyOne} className="block ViewTwo" alt="Header"/>
                     </div>
@@ -176,37 +230,7 @@ function ExperiencePage() {
                     </div>
                 </HighLightExperience>
             </section>
-            <section className="my-8">
-                <div className="ExperienceServices w-full">
-                    <div className="w-full flex relative">
-                        <div className="w-3/5">
-                            <img src={TherapyView} className="block object-cover w-full object-center" alt="Header"/>
-                        </div>
-                        <div className="w-2/5">
-                        </div>
-                        <ExperienceServicesDetails className="w-2/5 absolute shadow-lg">
-                            <span className="font-semibold text-lg text-sukoon">Clinical Programs</span>
-                            <h2 className="font-bold text-3xl text-sukoon">Fitness Therapy</h2>
-                            <Para width="100%">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</Para>
-                            <div className="arrowSection">
-                                <button className="Circle_btn"><SVG display="inline-block" icon="arrow" width={'20px'} rotate fill={'#969696'} />
-                                </button>
-                                <button className="Circle_btn right"><SVG display="inline-block" icon="arrow" width={'20px'} rotate fill={'#969696'} />
-                                </button>
-                            </div>
-                        </ExperienceServicesDetails>
-                    </div>
-                    <div className="ExperienceServicesNav w-10/12 shadow-lg">
-                        <ul>
-                            <li className="font-medium text-base text-sukoon">Virtual Therapy</li>
-                            <li className="font-medium text-base text-sukoon">Virtual Therapy</li>
-                            <li className="font-medium text-base text-sukoon">Virtual Therapy</li>
-                            <li className="font-medium text-base text-sukoon">Virtual Therapy</li>
-                            <li className="font-medium text-base text-sukoon">Virtual Therapy</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
+            <Preview />
             <section>
                 <HighLightExperienceTwo className="my-8 p-8">
                     <div className="HighlightSecInfo shadow-xl">
