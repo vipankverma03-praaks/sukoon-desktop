@@ -12,6 +12,7 @@ import HelpContact from "../images/contact/help_contact.svg";
 
 import Banner from "../components/Banner";
 import BookBtn from "../elements/BookNowBtn";
+import Input from "../elements/Input";
 
 const ServiceType = styled.div`
 `;
@@ -40,7 +41,7 @@ const InfoSection = (props) =>{
 const CareService = (props) =>{
 
   return(
-    <section id={props.titleLight} className="p-4">
+    <section id={props.titleLight} className="py-12 px-20">
       <Title titleLight={props.titleLight} titleBold={props.titleBold} display="inline-block"/>
       <div className="flex flex-wrap overflow-x-hidden ">
         <ServiceType className="service_content mt-2 overflow-x-hidden text-justify">
@@ -50,15 +51,15 @@ const CareService = (props) =>{
         <ul className="flex mt-6 w-full justify-between">
           <li>
             <div className="text-center">
-              <HpContact src={HelpContact} />
-              <h2 className="text-xl text-sukoon">Helpine No.</h2>
+              <HpContact className="mx-auto" src={HelpContact} />
+              <h2 className="text-xl text-center text-sukoon">Helpine No.</h2>
               <Para width="100%">+91 9818273797</Para>
             </div>
           </li>
           <li>
             <div>
-              <PhContact src={PhoneContact} />
-              <h2 className="text-xl text-sukoon">Contact No.</h2>
+              <PhContact className="mx-auto" src={PhoneContact} />
+              <h2 className="text-xl text-center text-sukoon">Contact No.</h2>
               <Para width="100%">+91 9818273797</Para>
             </div>
           </li>
@@ -72,24 +73,26 @@ const CareService = (props) =>{
         <form className="ContactForm w-full">
           <h2 className="text-sukoon text-2xl">Contact Us</h2>
           <div className="flex w-full my-3">
-            <input className="mx-1 w-1/2" type="text" placeholder="First Name" />
-            <input className="mx-1 w-1/2" type="text" placeholder="Last Name" />
+            <Input green type="name" required={true} defaultValue={``} wrapperClass="my-2 w-1/2 mr-2" label="First Name"/>
+            <Input green type="name" required={true} defaultValue={``} wrapperClass="my-2 w-1/2 ml-2" label="Last Name"/>
           </div>
           <div className="flex w-full my-3">
-            <input className="mx-1 w-full" type="text" placeholder="Email Address" />
+            <Input type="name" green required={true} defaultValue={``} wrapperClass="w-full " label="Email"/>
           </div>
           <div className="flex w-full my-3">
-            <input className="mx-1 w-full" type="text" placeholder="Phone Number" />
+            <Input type="name" green required={true} defaultValue={``} wrapperClass="w-full " label="Phone Number"/>
           </div>
           <div className="flex w-full my-3">
-            <select className="mx-1 w-full h-8 bg-transparent border-b border-gray-600">
-              <option>Subject 01</option>
-              <option>Subject 02</option>
-              <option>Subject 03</option>
-            </select>
+            <Input type="select" wrapperClass="inline-block w-full" green label="Subject" placeholder=""/>
+            {/*<select className="mx-1 w-full h-8 bg-transparent border-b border-gray-600">*/}
+            {/*  <option>Subject 01</option>*/}
+            {/*  <option>Subject 02</option>*/}
+            {/*  <option>Subject 03</option>*/}
+            {/*</select>*/}
           </div>
           <div className="flex w-full my-3">
-            <textarea className="mx-1 w-full border-b border-gray-600" placeholder="Message" />
+            <Input type="name" defaultValue={``}wrapperClass="w-full"  green label="Message" textarea/>
+            {/*<textarea className="mx-1 w-full border-b border-gray-600" placeholder="Message" />*/}
           </div>
           <BookBtn border wrapperClass="float-right">
             Send Us
@@ -107,7 +110,7 @@ function ContactPage() {
         title="About"
         keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
       />
-      <Banner HeaderImg={BannerBg}/>
+      <Banner inner texture HeaderImg={BannerBg}/>
       <CareService titleLight="Contact" titleBold=" Sukoon"/>
     </Layout>
   );
