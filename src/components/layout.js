@@ -45,16 +45,16 @@ const LayoutContainer = styled.div`
 const HeaderIntro = () => {
     return (
         <section className="w-full">
-            <div id="Book-appointment-footer" className="px-8 py-6 bg-sukoon flex justify-between">
+            <div id="Book-appointment-footer" className="pl-8 pr-4 py-6 bg-sukoon flex justify-between">
                 <div className="text-white text-5xl my-auto">
-                    <span className="font-gilroyLight mr-2">
+                    <span className="font-light mr-2">
                         Book an
                     </span>
-                        <span className="font-gilroyMedium">
+                        <span className="font-semiBold">
                         Appointment
                     </span>
                 </div>
-                <div className="flex appointment-select font-gilroyRegular items-center w-3/6 md:w-3/5 px-4">
+                <div className="flex appointment-select font-normal items-center w-3/6 md:w-3/5">
                   <div className="mr-6 w-1/4">
                     <Input type="select" label="Appointment Type" placeholder=""/>
                   </div>
@@ -75,7 +75,7 @@ const HeaderIntro = () => {
 const ReachUs = (props) =>{
   return(
       <div className="">
-          <span className="text-sukoon text-4xl font-gilroyBold">Reach Us</span>
+          <span className="text-sukoon text-4xl font-bold">Reach Us</span>
           <Para>
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.
           </Para>
@@ -107,7 +107,7 @@ const FollowUs = (props) =>{
     `;
     return(
         <div className="pb-4">
-            <h1 className="text-sukoon inline-block mr-8 font-gilroyMedium text-xl mb-2">Follow us on</h1>
+            <h1 className="text-sukoon inline-block mr-8 font-semiBold text-xl mb-2">Follow us on</h1>
             <div className="text-lg  inline break-words">
                 <a href="/" className="mx-4 text-blue-800 cursor-pointer">Facebook</a>
                 <a href="/" className="mx-4 text-blue-400 cursor-pointer">Twitter</a>
@@ -131,8 +131,8 @@ const QuickLinks = (props) =>{
     return(
         <div className="flex mr-12">
             <div className="mr-24">
-                <h3 className="text-sukoon text-2xl font-gilroyBold block">Sukoon</h3>
-                <ul className="mt-4 font-gilroyMedium">
+                <h3 className="text-sukoon text-2xl font-bold block">Sukoon</h3>
+                <ul className="mt-4 font-semiBold">
                     <li className="text-gray-600 text-lg my-1 list-none"><Link to="/">Sitemap</Link></li>
                     <li className="text-gray-600 text-lg my-1 list-none"><Link to="/">Our Story</Link></li>
                     <li className="text-gray-600 text-lg my-1 list-none"><Link to="/">Privacy Policy</Link></li>
@@ -141,8 +141,8 @@ const QuickLinks = (props) =>{
                 </ul>
             </div>
             <div className="flex flex-col mr-4 w-2/5">
-                <h3 className="text-sukoon text-2xl font-gilroyBold block">Quick Links</h3>
-                <div className="w-fit font-gilroyMedium flex">
+                <h3 className="text-sukoon text-2xl font-bold block">Quick Links</h3>
+                <div className="w-fit font-semiBold flex">
                           <ul className="mt-4 inline-block mr-12">
                             <li className="text-gray-600 text-lg my-1 list-none">
                               <Link to="/about">About Us</Link></li>
@@ -176,10 +176,10 @@ const Subscribe = (props) =>{
     return(
         <div className="py-6 flex justify-between">
             <div className="my-auto text-v3xl">
-                <h3 className="text-sukoon inline font-gilroyRegular">Subscribe</h3>
-                <h3 className="ml-2 inline-block font-gilroyBold text-sukoonYellow">Our Newsletter</h3>
+                <h3 className="text-sukoon inline font-normal">Subscribe</h3>
+                <h3 className="ml-2 inline-block font-bold text-sukoonYellow">Our Newsletter</h3>
             </div>
-            <div className="my-auto mx-4  flex self-end">
+            <div className="my-auto mx-4 items-center flex self-end">
               <Input type="name" green required={true} wrapperClass="mr-4 w-v30" label="Email / Phone Number" defaultValue={``}/>
                 <BookBtn border>Go</BookBtn>
             </div>

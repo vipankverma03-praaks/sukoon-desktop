@@ -13,7 +13,6 @@ import RoomFour from "../images/exp/room_5.jpg";
 import PartyOne from "../images/exp/party.jpg";
 import PartyTwo from "../images/exp/party_2.jpg";
 import HighLightTherapy from "../images/exp/bg.jpg";
-import TherapyView from "../images/exp/bg_2.jpg";
 import HighLightTherapyTwo from "../images/exp/bg_3.jpg";
 import RoomDining from "../images/exp/room_dining.jpg";
 import RoomSpa from "../images/exp/room_spa.jpg";
@@ -50,12 +49,7 @@ background-position:top center;
 display:flex;
 align-items: center;
 `;
-const ExperienceServicesDetails = styled.div`
-    background: white;
-    top: 20%;
-    right: 50px;
-    padding: 50px;
-`;
+
 const ExtraFeatures = styled.div`
 background: url(${RoomDining});   
     min-height: 400px;

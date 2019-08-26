@@ -9,7 +9,6 @@ import TextField from '@material-ui/core/TextField';
 // To customize the input text field component of material ui.
 const useStyles = makeStyles(theme => ({
   root: {
-    color: '#efefef',
     background: 'white',
     fontFamily: 'gilroy-regular'
   },
@@ -22,7 +21,6 @@ const useStyles = makeStyles(theme => ({
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
     width: 200,
-    color: 'white'
   },
   dense: {
     marginTop: 19,
@@ -43,7 +41,7 @@ const useStyles = makeStyles(theme => ({
   
   .textField  .MuiInputLabel-root{
     font-family: Gilroy-Medium;
-  
+    
   }
   
   .textField label{
@@ -51,7 +49,7 @@ const useStyles = makeStyles(theme => ({
   }
   // input tag inside the textfield. 
   .textField .MuiInputBase-input{
-    color: white;
+    color: #12443e;
     font-family: gilroy-medium;
   }
    // Border bottom class

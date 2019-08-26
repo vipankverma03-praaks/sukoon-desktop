@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React  from "react";
 import { Link } from "gatsby";
 
 // Components
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Title from "../elements/Heading";
-import styled from "styled-components";
 import Details from "../elements/Details";
 import Para from "../elements/Para";
 import Banner from "../components/Banner";

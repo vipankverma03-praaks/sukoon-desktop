@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 
 /**
  * This injects Tailwind's base styles, which is a combination of
@@ -51,49 +51,51 @@
 @tailwind screen;
 
 
-/*Fonts */
-@font-face {
-    font-family: gilroy-regular;
-    src: url(../../static/fonts/Gilroy-Regular.ttf);
-}
+/*Google Poppins font import*/
 
-@font-face {
-    font-family: gilroy-bold;
-    src: url(../../static/fonts/Gilroy-Bold.ttf);
-}
-@font-face {
-    font-family: gilroy-light;
-    src: url(../../static/fonts/Gilroy-Light.ttf);
-}
-@font-face {
-    font-family: gilroy-thin;
-    src: url(../../static/fonts/Gilroy-Thin.ttf);
-}
-@font-face {
-    font-family: gilroy-black;
-    src: url(../../static/fonts/Gilroy-Black.ttf);
-}
-@font-face {
-    font-family: gilroy-extraBold;
-    src: url(../../static/fonts/Gilroy-ExtraBold.ttf);
-}
-@font-face {
-    font-family: gilroy-heavy;
-    src: url(../../static/fonts/Gilroy-Heavy.ttf);
-}
+/*!*Fonts *!*/
+/*@font-face {*/
+/*    font-family: gilroy-regular;*/
+/*    src: url(../../static/fonts/Gilroy-Regular.ttf);*/
+/*}*/
 
-@font-face {
-    font-family: gilroy-medium;
-    src: url(../../static/fonts/Gilroy-Medium.ttf);
-}
-@font-face {
-    font-family: gilroy-semiBold;
-    src: url(../../static/fonts/Gilroy-SemiBold.ttf);
-}
-@font-face {
-    font-family: gilroy-ultraLight;
-    src: url(../../static/fonts/Gilroy-UltraLight.ttf);
-}
+/*@font-face {*/
+/*    font-family: gilroy-bold;*/
+/*    src: url(../../static/fonts/Gilroy-Bold.ttf);*/
+/*}*/
+/*@font-face {*/
+/*    font-family: gilroy-light;*/
+/*    src: url(../../static/fonts/Gilroy-Light.ttf);*/
+/*}*/
+/*@font-face {*/
+/*    font-family: gilroy-thin;*/
+/*    src: url(../../static/fonts/Gilroy-Thin.ttf);*/
+/*}*/
+/*@font-face {*/
+/*    font-family: gilroy-black;*/
+/*    src: url(../../static/fonts/Gilroy-Black.ttf);*/
+/*}*/
+/*@font-face {*/
+/*    font-family: gilroy-extraBold;*/
+/*    src: url(../../static/fonts/Gilroy-ExtraBold.ttf);*/
+/*}*/
+/*@font-face {*/
+/*    font-family: gilroy-heavy;*/
+/*    src: url(../../static/fonts/Gilroy-Heavy.ttf);*/
+/*}*/
+
+/*@font-face {*/
+/*    font-family: gilroy-medium;*/
+/*    src: url(../../static/fonts/Gilroy-Medium.ttf);*/
+/*}*/
+/*@font-face {*/
+/*    font-family: gilroy-semiBold;*/
+/*    src: url(../../static/fonts/Gilroy-SemiBold.ttf);*/
+/*}*/
+/*@font-face {*/
+/*    font-family: gilroy-ultraLight;*/
+/*    src: url(../../static/fonts/Gilroy-UltraLight.ttf);*/
+/*}*/
 
 @font-face{
     font-family: accanthis-regular;
@@ -112,6 +114,7 @@ body{
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+    font-family:  'Poppins', sans-serif;
 }
 
 h3{
@@ -247,14 +250,6 @@ button.globe_btn a {
     display: flex;
     flex-flow: column;
     justify-content: space-between;
-}
-ul.RoomFeatures {
-    display: flex;
-    flex-flow: wrap;
-    margin: 20px 0px 10px 0px;
-}
-ul.RoomFeatures li {
-    column-count: 3;
 }
 .roomImg ul {
     display: flex;

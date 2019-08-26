@@ -11,7 +11,7 @@ import Input from "../elements/Input";
 // Intro Section
 const Heading = () => {
     return (
-        <HeadingWrapper className="text-sukoon  sm:text-5xl md:text-6xl">
+        <HeadingWrapper className="text-sukoon  text-6xl">
             <span className="block font-gilroyMedium">
                 Don't Just Stay,
             </span>
