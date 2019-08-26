@@ -264,8 +264,8 @@ export default class Layout extends React.Component {
             <div>
               <Header logoHighlighter={this.props.logoHighlighter} siteTitle={data.site.siteMetadata.title}/>
             <StickyMenu id="sticky-nav" className="hide">
-              <Nav className="bg-sukoon text-white py-2 px-4 flex items-center">
-                <div className="w-4/5 font-gilroyMedium text-xl">
+              <Nav className="bg-sukoon text-white py-2 px-20 flex items-center">
+                <div className="w-4/5 font-semiBold text-xl">
                   <ul className="flex">
                     <li className="">
                       <Link to="/services">Services</Link>
