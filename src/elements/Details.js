@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 const DetailWrapper = styled.details((props)=>{
 
-
     return`
             &{
             border: ${props.border ? '1px solid #969696' : ''};

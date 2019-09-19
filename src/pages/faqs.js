@@ -1,161 +1,47 @@
-import React ,{useState} from "react";
-import {Link} from "gatsby"
-import "../css/style.css";
-import Banner from "../components/Banner";
+import React  from "react";
 
 // Components
-import Layout from "../components/layout";
+import Mobile from "./Faqs/mobile";
+import Desktop from "./Faqs/desktop";
+import Layout from "../components/view/layout";
 import SEO from "../components/seo";
-import Title from "../elements/Heading"
-import styled from "styled-components";
-import Para from "../elements/Para";
-import Category from "../elements/BookNowBtn";
 
-import HeaderImg from "../images/Desktop-Header/HomeBanner.jpg";
-import Details from "../elements/Details";
+export  default  class IndexPage extends React.Component{
+  constructor(props) {
+    super(props);
+    this.state={
+      overlay:false,
+    }
+  }
 
+  // Function to update state.
+  updateState = (stateName, value) => {
+    this.setState({[stateName] : value});
+  };
 
-const content = [
-    {
-        summary: 'Introduction What is the meaning of Lorem ipsum?',
-        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.",
-    },
-    {
-        summary: 'Introduction What is the meaning of Lorem ipsum?',
-        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.",
-    },
-    {
-        summary: 'Introduction What is the meaning of Lorem ipsum?',
-        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.",
-    },
-    {
-        summary: 'Introduction What is the meaning of Lorem ipsum?',
-        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.",
-    },
-    {
-        summary: 'Introduction What is the meaning of Lorem ipsum?',
-        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.",
-    },
-    {
-        summary: 'Introduction What is the meaning of Lorem ipsum?',
-        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.",
-    },
-    {
-        summary: 'Introduction What is the meaning of Lorem ipsum?',
-        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.",
-    },
-    {
-        summary: 'Introduction What is the meaning of Lorem ipsum?',
-        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.",
-    },
+    render() {
+        if (window && window.matchMedia("(max-device-width: 760px)").matches) {
+            return  (
+              <Layout overlay={this.state.overlay} setOverlay={this.updateState}>
+                  <SEO
+                    title="FAQS"
+                    keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
+                  />
+                  <Mobile/>
+              </Layout>
+            )
+        }
+        else{
+            return(
+              <Layout>
+                  <SEO
+                    title="FAQS"
+                    keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
+                  />
+                  <Desktop/>
+              </Layout>
+            )
+        }
+    }
 
-
-];
-
-const content1 = [
-    {
-        summary: 'What is the meaning of Lorem ipsum?',
-        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.",
-    },
-    {
-        summary: 'Introduction What is the meaning of Lorem ipsum?',
-        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.",
-    },
-    {
-        summary: 'Introduction What is the meaning of Lorem ipsum?',
-        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.",
-    },
-    {
-        summary: 'Introduction What is the meaning of Lorem ipsum?',
-        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.",
-    },
-    {
-        summary: 'Introduction What is the meaning of Lorem ipsum?',
-        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.",
-    },
-    {
-        summary: 'Introduction What is the meaning of Lorem ipsum?',
-        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.",
-    },
-    {
-        summary: 'Introduction What is the meaning of Lorem ipsum?',
-        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.",
-    },
-    {
-        summary: 'Introduction What is the meaning of Lorem ipsum?',
-        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.",
-    },
-
-
-];
-
-const Questions = (props) =>{
-
-    return(
-      props.content.map((item)=>{
-          return(
-            <div className="flex-col flex p-4 shadow-lg my-4 bg-white">
-                <Details summary={item.summary}>
-                    <Para width="auto" padding="1rem">
-                        {item.description}
-                    </Para>
-                </Details>
-            </div>
-        )})
-      );
-};
-
-
-const Faqs = (props) => {
-
-    const[activeCategory, setCategory] = useState('category1');
-    const[data, setData] = useState(content);
-
-    const setView = (view , data) =>{
-        setCategory(view);
-        setData(data);
-    };
-
-    return (
-        <section id="faq-section" className="p-8 flex relative flex-row-reverse justify-between">
-            <div className="w-3/5">
-                <ul className="flex mb-10 justify-between">
-                    <li className="">
-                        <Category transparent={activeCategory !== 'category1'} arguments={['category1', content]} clickFn={setView}>Category 01</Category>
-                    </li>
-                    <li>
-                          <Category transparent={activeCategory !== 'category2'} arguments={['category2', content1]} clickFn={setView}>Category 2</Category>
-                    </li>
-                    <li>
-                          <Category transparent={activeCategory !== 'category3'} arguments={['category3', content]} clickFn={setView}>Category 3</Category>
-                    </li>
-                    <li>
-                          <Category transparent={activeCategory !== 'category4'} arguments={['category4', content]} clickFn={setView}>Category 4</Category>
-                    </li>
-                </ul>
-                <Questions content={data}/>
-            </div>
-            <div className="mr-40">
-                <Title titleLight="Frequently" addClass="block" titleBold="Asked Questions"/>
-                <Para>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquam amet cupiditate dolores excepturi iure quibusdam.</Para>
-            </div>
-        </section>
-    )
-};
-
-
-function FaqsPage(props) {
-    return (
-        <Layout>
-            <SEO
-                title="Home"
-                keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
-            />
-            <Banner HeaderImg={HeaderImg}/>
-            <Faqs/>
-        </Layout>
-
-    );
 }
-
-export default FaqsPage;

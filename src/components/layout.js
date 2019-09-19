@@ -187,7 +187,6 @@ const Subscribe = (props) =>{
     )
 };
 
-
 const StickyMenu = styled.section`
   width: 100%;
   position: fixed;
@@ -202,7 +201,6 @@ const Nav = styled.nav`
   margin-right: 5vw;
   }
 `;
-
 
 export default class Layout extends React.Component {
   constructor(props) {
@@ -229,11 +227,8 @@ export default class Layout extends React.Component {
 
   };
 
-
-
   // Renders after render function.
   componentDidMount() {
-
     // To redirect desktop site to mobile domain on mobile devices of max-width 760px.
     if (window && window.matchMedia("(max-device-width: 760px)").matches) {
       // Mobile domain
@@ -242,7 +237,7 @@ export default class Layout extends React.Component {
     else{
       this.setState({loading: 'false'});
     }
-    // Sticky menu event
+    // Sticky menu event listener
     window.addEventListener('scroll', this.handleScroll);
   }
 
