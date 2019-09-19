@@ -141,14 +141,10 @@ const Faqs = (props) => {
 
 function FaqsPage(props) {
   return (
-    <Layout>
-      <SEO
-        title="Home"
-        keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
-      />
+    <>
       <Banner HeaderImg={HeaderImg}/>
       <Faqs/>
-    </Layout>
+    </>
 
   );
 }

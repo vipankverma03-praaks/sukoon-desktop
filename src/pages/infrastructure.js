@@ -6,11 +6,12 @@ import Desktop from "./Infrastructure/desktop";
 import Layout from "../components/view/layout";
 import SEO from "../components/seo";
 
-export  default  class IndexPage extends React.Component{
+export default class Infrastructure extends React.Component{
   constructor(props) {
     super(props);
     this.state={
       overlay:false,
+      view:'desktop',
     }
   }
 
@@ -18,13 +19,23 @@ export  default  class IndexPage extends React.Component{
   updateState = (stateName, value) => {
     this.setState({[stateName] : value});
   };
+  componentDidMount() {
+    if(window && window.matchMedia("(max-device-width: 760px)").matches){
+      this.setState({view: 'mobile'});
+    }
+    else{
+      this.setState({view: 'desktop'});
+    }
+  }
 
   render() {
-    if (window && window.matchMedia("(max-device-width: 760px)").matches) {
+
+    // To switch between mobile and desktop design.
+    if (this.state.view === 'mobile') {
       return  (
         <Layout overlay={this.state.overlay} setOverlay={this.updateState}>
           <SEO
-            title="Infrastructure"
+            title="About"
             keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
           />
           <Mobile/>
@@ -35,7 +46,7 @@ export  default  class IndexPage extends React.Component{
       return(
         <Layout>
           <SEO
-            title="Infrastructure"
+            title="About"
             keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
           />
           <Desktop/>
@@ -43,5 +54,4 @@ export  default  class IndexPage extends React.Component{
       )
     }
   }
-
 }
