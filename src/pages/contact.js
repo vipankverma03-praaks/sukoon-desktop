@@ -36,7 +36,7 @@ export default class Contact extends React.Component{
       return  (
         <Layout overlay={this.state.overlay} setOverlay={this.updateState}>
           <SEO
-            title="About"
+            title="Contact"
             keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
           />
           <Mobile/>
@@ -47,7 +47,7 @@ export default class Contact extends React.Component{
       return(
         <Layout>
           <SEO
-            title="About"
+            title="Contact"
             keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
           />
           <Desktop/>

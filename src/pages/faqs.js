@@ -35,7 +35,7 @@ export default class Faqs extends React.Component{
       return  (
         <Layout overlay={this.state.overlay} setOverlay={this.updateState}>
           <SEO
-            title="About"
+            title="FAQ"
             keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
           />
           <Mobile/>
@@ -46,7 +46,7 @@ export default class Faqs extends React.Component{
       return(
         <Layout>
           <SEO
-            title="About"
+            title="FAQ"
             keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
           />
           <Desktop/>
