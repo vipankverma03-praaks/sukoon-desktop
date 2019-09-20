@@ -2,8 +2,8 @@ import React  from "react";
 import "../css/style.css";
 
 // Components
-import Mobile from "./About/mobile";
-import Desktop from "./About/desktop";
+import Mobile from "./About/Aboutmobile";
+import Desktop from "./About/Aboutdesktop";
 import Layout from "../components/view/layout";
 import SEO from "../components/seo";
 

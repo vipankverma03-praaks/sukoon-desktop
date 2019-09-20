@@ -1,8 +1,8 @@
 import React  from "react";
 
 // Components
-import Mobile from "./Experience/mobile";
-import Desktop from "./Experience/desktop";
+import Mobile from "./Experience/Experiencemobile";
+import Desktop from "./Experience/Experiencedesktop";
 import Layout from "../components/view/layout";
 import SEO from "../components/seo";
 
