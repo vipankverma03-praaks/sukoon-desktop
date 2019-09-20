@@ -34,44 +34,117 @@ const WhySukoon = (props) => {
     <section id="why-sukoon" className="why-sukoon py-6 px-4">
       <Title subHeading="About" titleLight="Why" titleBold="Sukoon" />
       <Caption subHeading="Consult best doctors"
-               para=" Get expert advice from our team of experienced doctors, led by Dr. Sameer Parikh"/>
-      <Caption subHeading="Get personalised care"
-               para="Receive customised and holistic care because of our incredible 1:1 nurse to patient ratio"/>
-      <Caption subHeading="Experience premium facilities"
-               para="Enhance your recovery in a calming, positive, and comfortable environment "/>
+               para="Get expert advice from an experienced team of psychiatrists, clinical psychologists, counsellors, and art-based therapists that ensure holistic care to address your concerns. We take our doctor-patient confidentiality with utmost seriousness while guiding you towards better days."/>
+      <Caption subHeading="Get personalised care 24*7"
+               para="Powered by Fortis Healthcare, Sukoon is India’s first super-specialty psychiatric center. We have leading psychiatric, deaddiction, rehabilitation, and mental health treatments for both inpatients and outpatients. We are a one-of-a-kind healthcare provider for all your psychiatric and mental well-being needs."/>
+      <Caption subHeading="Recover in premium facilities"
+               para="Enhance your recovery in a calming, positive, and comfortable world-class environment. With residential care tailor-made to your mental and psychological health, recovery and better days are just around the corner."/>
     </section>
   )
 };
 
-const content = [
+const ResidentialService = [
   {
     mainTitle: 'Acute',
     subTitle: 'Psychiatry Care',
-    para: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+    para: 'Inpatient hospitalisation with high levels of personalised care, comfort, and safety.'
   },
   {
-    mainTitle: 'Acute',
-    subTitle: 'Psychiatry Care',
-    para: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+    mainTitle: 'Intensive',
+    subTitle: 'Care Units',
+    para: 'Three ICUs designed to handle any emergencies with round the clock care, and medical supervision'
   },
   {
-    mainTitle: 'Acute',
-    subTitle: 'Psychiatry Care',
-    para: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+    mainTitle: 'Alcohol',
+    subTitle: 'Deaddiction',
+    para: 'Customised treatment programs designed for alcohol deaddiction, and  alcohol rehabilitation.'
   },
   {
-    mainTitle: 'Acute',
-    subTitle: 'Psychiatry Care',
-    para: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
-  }
+    mainTitle: 'Drug',
+    subTitle: 'Deaddiction',
+    para: 'Personalised treatments addressing substance abuse such as smoking cigarettes, taking drugs, or sniffing glue. '
+  },
+  {
+    mainTitle: 'Habit',
+    subTitle: 'Deaddiction',
+    para: 'Specialised treatments for lifestyle issues such as gambling, gaming, and internet addiction.'
+  },
+  {
+    mainTitle: 'Sukoon',
+    subTitle: 'At Home',
+    para: 'Get tailor-made psychiatric care in the comfort of your residence from our expert team of doctors and nurses.'
+  },
+  {
+    mainTitle: 'Geriatric',
+    subTitle: 'Psychiatry',
+    para: 'Old age psychiatric treatments and mental health programs for all needs of the elderly.'
+  },
+  {
+    mainTitle: 'Women',
+    subTitle: 'Focused Care',
+    para: ' Consult with only female doctors, and receive care from female nurses in a safe environment'
+  },
+  {
+    mainTitle: 'Child',
+    subTitle: 'Psychiatry',
+    para: 'Adolescent focused mental health programs and psychiatric treatments delivered with extra care'
+  },
 ];
 
-const InPatientServices = (props) => {
+const OutPatientCareServices = [
+  {
+    mainTitle: 'Clinical',
+    subTitle: 'Psychology',
+    para: 'Specialised psychotherapeutic treatments for emotional and behavioural disorders'
+  },
+  {
+    mainTitle: 'Counselling',
+    subTitle: 'Psychology',
+    para: 'Personalised care to help cope with life situations, problems, and everyday issues.'
+  },
+  {
+    mainTitle: 'Art-Based',
+    subTitle: 'Therapy',
+    para: 'Visual arts, storytelling, music, creative writing, and movement in a therapeutic setting'
+  },
+  {
+    mainTitle: 'RTMS',
+    subTitle: 'Treatment',
+    para: 'Repetitive Transcranial Magnetic Stimulation (rTMS) treatments for behavioural and emotional disorders'
+  },
+  {
+    mainTitle: 'Remediation',
+    subTitle: '',
+    para: 'Special educators assist children with learning disabilities, attention deficit, and intellectual disabilities'
+  },
+  {
+    mainTitle: 'Psychoanalytical',
+    subTitle: 'Therapy',
+    para: 'Work through early life traumas and change long standing maladaptive personality and relational patterns'
+  },
+  {
+    mainTitle: 'Occupational',
+    subTitle: 'Therapy',
+    para: 'Treatments designed for restoring cognitive and motor functions to perform better at daily activities  '
+  },
+  {
+    mainTitle: 'Virtual',
+    subTitle: 'Therapy',
+    para: 'Continue your treatment plan and receive expert psychiatric care via chat, phone calls, or video calls'
+  },
+  {
+    mainTitle: 'Psycho-',
+    subTitle: 'Oncology',
+    para: 'Specialised treatments designed to address the psychological impact and social aspects of cancer'
+  },
+];
+
+const ResidentialServices = (props) => {
 
   return (
     <section id="" className="p-4">
       <Title subHeading="IPD" titleLight="Residential" titleBold="Services" display="block"/>
-      <Carousel class="" content={content}/>
+      <Carousel class="" content={ResidentialService}/>
     </section>
   )
 };
@@ -184,7 +257,7 @@ const OutPatientServices = (props) => {
   return (
     <section id="" className="p-4">
       <Title subHeading="OPD" titleLight="Out Patient" titleBold="Care Services" display="block"/>
-      <Carousel content={content}/>
+      <Carousel content={OutPatientCareServices}/>
     </section>
   )
 };
@@ -193,9 +266,9 @@ function IndexPage(props) {
 
   return (
     <>
-      <Banner overlay={props.overlay} bookNow contact discover backgroundImg={HeaderBg}/>
+      <Banner captionLight={`A safe space`} captionBold={`for better days.`} overlay={props.overlay} bookNow contact discover backgroundImg={HeaderBg}/>
       <WhySukoon/>
-      <InPatientServices/>
+      <ResidentialServices/>
       <OutPatientServices/>
       <Infrastructure />
       <MeetExperts/>

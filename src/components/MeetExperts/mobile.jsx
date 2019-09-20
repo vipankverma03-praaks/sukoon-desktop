@@ -63,9 +63,8 @@ const CarouselItems = (item) =>{
 const MeetExperts = (props) => {
   return (
     <MeetExpertsWrapper id="meet-experts" className="p-4 relative">
-      <Title subHeading="About" titleLight="Our" titleBold="Doctors"/>
-      <Para width="100%" content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since the 1500s" />
+      <Title subHeading="Team" titleLight="Our" titleBold="Formidable Team"/>
+      <Para width="100%" content="With a team of experienced doctors led by Medical Director - Dr Samir Parikh of Fortis Healthcare, we can assure you that everybody is in good hands here. With an emphasis on relaxation and restoration of your mental well-being, we have a clinical team of psychiatrists, clinical psychologists, counselling psychologists, visiting consultants, general physicians, art therapists and fitness therapists." />
       <Carousel container  cardFn={CarouselItems} content={Doctors}/>
     </MeetExpertsWrapper>
   )
