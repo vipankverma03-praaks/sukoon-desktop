@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import BookBtn from "../../elements/BookNowBtn/mobile";
+import Input from "../../elements/Input/desktop";
 
 const HeadingWrapper = styled.div`
   font-size: 12vw;
@@ -42,16 +43,9 @@ const BookNow = (props) =>{
 
   return(
     <div className="mb-12">
-      <div id="contact-info-container" className="mt-4">
-        <select name="appointment" id="appointment-type"
-                className="block py-2 bg-transparent border-b border-solid border-sukoon outline-none w-full font-medium"
-                value="">
-          <option value="" selected>Appointment Type</option>
-          <option value="">In House</option>
-          <option value="">Online Consulting</option>
-        </select>
-        <input type="text" placeholder="Email / Phone"
-               className="block bg-transparent border-b border-solid border-sukoon outline-none w-full pl-1 pb-1  pt-2 text-sukoon"/>
+      <div id="contact-info-container" className="p-4 w-full ">
+        <Input type="select" green wrapperClass="w-full" label="Appointment Type" placeholder=""/>
+        <Input type="name" green required={true} wrapperClass="w-full" label="Email / Phone Number" defaultValue={``}/>
       </div>
       <div className="flex flex-col mt-16">
         <BookBtn border bg="transparent" wrapperClass="">
