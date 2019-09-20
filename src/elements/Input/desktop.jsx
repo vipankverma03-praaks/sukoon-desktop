@@ -115,10 +115,11 @@ const Wrapper = styled.div((props)=>{
 
 });
 
+// default options
 const countries = [
   {
     value: 'India',
-    label: 'Value',
+    label: 'Online Consulting',
   },
   {
     value: 'USA',
@@ -144,39 +145,46 @@ const TextInput = ({classes,defaultValue,textarea,lable,required}) => {
   )
 };
 
-const SelectInput = ({classes,lable,placeholder}) => {
+const SelectInput = ({classes,lable,placeholder,value}) => {
+  // Null check
+  if(value){
+    return(
+      <TextField
+        id="standard-select-with-placeholder"
+        label={lable}
+        select
+        defaultValue="Enter details"
+        className={classes}
+        value={``}
+        margin="normal"
+        helperText=""
+        SelectProps={{
+          MenuProps: {
+            className: classes.menu,
+          },
+        }}
+      > {value.map(option => (
+        <MenuItem key={option.value} value={option.value}>
+          {option.label}
+        </MenuItem>
+      ))}</TextField>
+    )
+  }
+  else{
+    return(
+      null
+    )
+  }
 
-  return(
-    <TextField
-      id="standard-select-with-placeholder"
-      label={lable}
-      select
-      defaultValue="Enter details"
-      className={classes}
-      value=""
-      margin="normal"
-      helperText=""
-      SelectProps={{
-        MenuProps: {
-          className: classes.menu,
-        },
-      }}
-    > {countries.map(option => (
-      <MenuItem key={option.value} value={option.value}>
-        {option.label}
-      </MenuItem>
-    ))}</TextField>
-  )
 };
 
 // This component sets the input type you have selected by passing props type
 const setInput = (classes, props) => {
-
   switch(props.type){
     case 'name':
       return <TextInput lable={props.label} required={props.required} defaultValue={props.defaultValue} textarea={props.textarea} classes={classes}/>;
     case 'select':
-      return <SelectInput lable={props.label} placeholder={props.placeholder} classes={classes}/>;
+      return <SelectInput value={props.value} lable={props.label} placeholder={props.placeholder} classes={classes}/>;
       break;
     default:
       return <TextInput classes={classes}/>;
@@ -186,11 +194,10 @@ const setInput = (classes, props) => {
 
 // Main component
 const Input = (props) => {
-
   const classes = useStyles();
   return(
     <Wrapper green={props.green} className={`${props.wrapperClass} `}>
-      {setInput(classes, props)}
+      {setInput(classes,props)}
     </Wrapper>
   )
 };
