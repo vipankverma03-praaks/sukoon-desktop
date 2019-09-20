@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import styled from "styled-components";
 
+// Components
 import Title from "../../elements/Heading/mobile";
 import Para from "../../elements/Para/mobile";
 import Banner from "../../components/Banner/mobile";

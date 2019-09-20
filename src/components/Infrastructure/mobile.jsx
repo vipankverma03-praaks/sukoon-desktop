@@ -10,7 +10,6 @@ import InfraBgImg from "../../images/Infra/WhatsApp Image 2019-07-06 at 11.21.21
 import ConsultingChambers from "../../images/exp/bg.jpg";
 import InHousePharmacy from "../../images/exp/bg_2.jpg";
 
-
 // Cards data
 const CardContent = {
   Card1: {
@@ -18,42 +17,42 @@ const CardContent = {
     caption: 'Consulting Chambers',
     titleLight: 'Consulting',
     titleBold: 'Chamber',
-    para: 'Speak with your doctor in a private, and comfortable environment. Grab a coffee or indulge in some cold snacks while you wait. ',
+    para: 'Consult with your doctor in a private and comfortable environment. Grab a coffee, or indulge in some snacks while you wait.',
   },
   Card2: {
     bgImg:InHousePharmacy,
     caption: 'In House Pharmacy',
     titleLight: 'In House',
     titleBold: 'Pharmacy',
-    para: 'You can always find your prescribed medications at Sukoon. Our pharmacy is ',
+    para: 'You can always find your prescribed medications at Sukoon. No more running around the town to find them.',
   },
   Card3: {
-    bgImg:InfraBgImg,
+    bgImg:ConsultingChambers,
     caption: 'Modern Residences',
     titleLight: 'Modern',
     titleBold: 'Residences',
-    para: 'Stay in premium, well-lit, comfortably furnished rooms designed to provide a calming, warm, and safe environment ',
+    para: 'Stay in premium, well-lit, comfortably furnished rooms designed to provide a calming, warm, and safe environment. ',
   },
   Card4: {
-    bgImg:InfraBgImg,
+    bgImg:InHousePharmacy,
     caption: 'Gourmet Meals',
     titleLight: 'Gourmet',
     titleBold: 'Meals',
     para: 'Enjoy healthy meals that will delight your taste buds. You can also take advantage of our in-room dining menu.',
   },
   Card5: {
-    bgImg:InfraBgImg,
+    bgImg:ConsultingChambers,
     caption: 'Activity Areas',
     titleLight: 'Activity',
     titleBold: 'Areas',
-    para: 'Don’t be limited by space. Undergo alternative therapy programs in our fitness area, art studio, and independent floor lounges\n',
+    para: 'Never be limited by space! Undergo alternative therapy programs in our fitness area, art studio, and independent floor lounges',
   },
   Card6: {
-    bgImg:InfraBgImg,
+    bgImg:InHousePharmacy,
     caption: 'World-Class Amenities',
     titleLight: 'World-Class',
     titleBold: 'Amenities',
-    para: 'Intensive Care Unit, 24*7 doctor on-site, terrace gardens, or in-room spa - we have you covered at every step of your healing process. \n',
+    para: 'Intensive Care Unit, 24*7 doctors on-site, terrace garden, or in-room spa - we have you covered at every step of your healing process.',
   }
 };
 
@@ -63,7 +62,6 @@ const InfraBtnContainer = (props) =>{
   const Wrapper = styled.div`
             position: relative;
             width: 75px;
-            
         `;
   return(
     <Wrapper>
@@ -150,7 +148,7 @@ const Infra = (props) =>{
   const[Card, setCard] = useState(CardContent.Card1);
 
   const Wrapper = styled.div`
-        bottom: 2rem;
+        bottom: 10px;
         left:0;
         right: 0;
         z-index: 11;
@@ -223,33 +221,18 @@ const Infra = (props) =>{
         <Wrapper className="m-4 flex absolute">
           <div className="relative">
             <SimpleInfraButton onClick={()=>handleToggle('0')} yellow={yellowActive0} name="0" className="bg-sukoonYellow"/>
-            <h2 className="absolute text-white text-xs font-gilroyMedium">
-              Consulting Chambers
-            </h2>
           </div>
           <InfraBtnContainer>
             <InfraButton  yellow={yellowActive1} handleToggle={handleToggle} name="1" className="bg-sukoonYellow"/>
-            <h2 className="absolute usp-caption text-white text-xs font-gilroyMedium">
-              {CardContent.Card2.caption}
-            </h2>
           </InfraBtnContainer>
           <InfraBtnContainer>
             <InfraButton  yellow={yellowActive2} name="2" handleToggle={handleToggle} className="bg-sukoonYellow"/>
-            <h2 className="absolute usp-caption text-white text-xs font-gilroyMedium">
-              {CardContent.Card3.caption}
-            </h2>
           </InfraBtnContainer>
           <InfraBtnContainer>
             <InfraButton  yellow={yellowActive3} name="3" handleToggle={handleToggle} className="bg-sukoonYellow"/>
-            <h2 className="absolute text-white usp-caption text-xs font-gilroyMedium">
-              {CardContent.Card4.caption}
-            </h2>
           </InfraBtnContainer>
           <InfraBtnContainer>
             <InfraButton  yellow={yellowActive4} name="4" handleToggle={handleToggle} className="bg-sukoonYellow"/>
-            <h2 className="absolute text-white usp-caption text-xs font-gilroyMedium">
-              {CardContent.Card5.caption}
-            </h2>
           </InfraBtnContainer>
         </Wrapper>
       </InfraSection>

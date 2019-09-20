@@ -1,12 +1,12 @@
 import React from "react";
+import styled from "styled-components";
 
 // Components
-import Title from "../../elements/Heading";
-import Para from "../../elements/Para"
-import styled from "styled-components";
-import Banner from "../../components/Banner";
-import BookBtn from "../../elements/BookNowBtn";
-import Input from "../../elements/Input";
+import Title from "../../elements/Heading/desktop";
+import Para from "../../elements/Para/desktop"
+import Banner from "../../components/Banner/desktop";
+import BookBtn from "../../elements/BookNowBtn/desktop";
+import Input from "../../elements/Input/desktop";
 
 // Images
 import BannerBg from "../../images/Desktop-Header/pacientes-mejora.png";

@@ -3,11 +3,13 @@ import styled from "styled-components";
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import 'react-day-picker/lib/style.css';
 import {Link} from 'gatsby';
+import moment from "moment";
 
 //  Components
-import Radio from "../../elements/RadioButton";
-import moment from "moment";
-import BookingBtn from "../../elements/BookNowBtn";
+import Radio from "../../elements/RadioButton/desktop";
+import BookingBtn from "../../elements/BookNowBtn/desktop";
+import SVG from "../../elements/SVG/desktop";
+import Input from "../../elements/Input/desktop";
 
 // Images
 import BookingBg from "../../images/bookingBg.png";
@@ -15,8 +17,6 @@ import SukoonLogo from "../../images/logo_light.svg";
 import Calender from "../../images/cal.svg";
 import Edit from "../../images/edit_icon.png";
 import Timer from "../../images/clock.svg";
-import SVG from "../../elements/SVG";
-import Input from "../../elements/Input";
 
 const Form = styled.form`
   font-family: gilroy-regular;

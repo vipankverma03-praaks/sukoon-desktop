@@ -41,10 +41,21 @@ const ParaSection = (props) => {
 
 const BookNow = (props) =>{
 
+  const BookingOptions = [
+    {
+      value: "online consulting",
+      label: "online consulting"
+    },
+    {
+      value: "offline consulting",
+      label: "offline consulting"
+    }
+  ];
+  
   return(
     <div className="mb-12">
       <div id="contact-info-container" className="p-4 w-full ">
-        <Input type="select" green wrapperClass="w-full" label="Appointment Type" placeholder=""/>
+        <Input type="select" green value={BookingOptions} wrapperClass="w-full" label="Appointment Type" placeholder=""/>
         <Input type="name" green required={true} wrapperClass="w-full" label="Email / Phone Number" defaultValue={``}/>
       </div>
       <div className="flex flex-col mt-16">

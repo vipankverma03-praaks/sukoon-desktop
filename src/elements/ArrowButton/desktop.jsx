@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import  {Link} from "gatsby";
 
-import SVG from "../SVG";
+import SVG from "../SVG/desktop";
 
 const ButtonWrapper = styled.div`
     margin: ${props => props.margin || '10px 0'};
