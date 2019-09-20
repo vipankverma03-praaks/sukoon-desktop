@@ -32,28 +32,17 @@ export default class About extends React.Component{
 
   render() {
 
-    // To switch between mobile and desktop design.
-    if (this.state.view === 'mobile') {
-      return  (
-        <Layout overlay={this.state.overlay} setOverlay={this.updateState}>
-          <SEO
-            title="About"
-            keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
-          />
-          <Mobile/>
-        </Layout>
-      )
-    }
-    else{
-      return(
-        <Layout>
-          <SEO
-            title="About"
-            keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
-          />
+    return(
+      <Layout overlay={this.state.overlay} setOverlay={this.updateState}>
+        <SEO
+          title="About"
+          keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
+        />
+        {this.state.view === 'mobile' ?
+          <Mobile/> :
           <Desktop/>
-        </Layout>
-      )
-    }
+        }
+      </Layout>
+    )
   }
 }

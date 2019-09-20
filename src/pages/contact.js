@@ -31,28 +31,17 @@ export default class Contact extends React.Component{
 
   render() {
 
-    // To switch between mobile and desktop design.
-    if (this.state.view === 'mobile') {
-      return  (
-        <Layout overlay={this.state.overlay} setOverlay={this.updateState}>
-          <SEO
-            title="Contact"
-            keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
-          />
-          <Mobile/>
-        </Layout>
-      )
-    }
-    else{
-      return(
-        <Layout>
-          <SEO
-            title="Contact"
-            keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
-          />
+    return(
+      <Layout overlay={this.state.overlay} setOverlay={this.updateState}>
+        <SEO
+          title="Contact"
+          keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
+        />
+        {this.state.view === 'mobile' ?
+          <Mobile/> :
           <Desktop/>
-        </Layout>
-      )
-    }
+        }
+      </Layout>
+    )
   }
 }
