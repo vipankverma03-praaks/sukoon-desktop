@@ -26,7 +26,7 @@ export default class Booking extends React.Component{
   render() {
 
     return(
-      <Layout overlay={this.state.overlay} setOverlay={this.updateState}>
+      <>
         <SEO
           title="Booking"
           keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
@@ -35,7 +35,7 @@ export default class Booking extends React.Component{
           <Mobile/> :
           <Desktop/>
         }
-      </Layout>
+        </>
     )
   }
 }
