@@ -50,77 +50,52 @@
 
 @tailwind screen;
 
-
-/*Google Poppins font import*/
-
-/*!*Fonts *!*/
-/*@font-face {*/
-/*    font-family: gilroy-regular;*/
-/*    src: url(../../static/fonts/Gilroy-Regular.ttf);*/
-/*}*/
-
-/*@font-face {*/
-/*    font-family: gilroy-bold;*/
-/*    src: url(../../static/fonts/Gilroy-Bold.ttf);*/
-/*}*/
-/*@font-face {*/
-/*    font-family: gilroy-light;*/
-/*    src: url(../../static/fonts/Gilroy-Light.ttf);*/
-/*}*/
-/*@font-face {*/
-/*    font-family: gilroy-thin;*/
-/*    src: url(../../static/fonts/Gilroy-Thin.ttf);*/
-/*}*/
-/*@font-face {*/
-/*    font-family: gilroy-black;*/
-/*    src: url(../../static/fonts/Gilroy-Black.ttf);*/
-/*}*/
-/*@font-face {*/
-/*    font-family: gilroy-extraBold;*/
-/*    src: url(../../static/fonts/Gilroy-ExtraBold.ttf);*/
-/*}*/
-/*@font-face {*/
-/*    font-family: gilroy-heavy;*/
-/*    src: url(../../static/fonts/Gilroy-Heavy.ttf);*/
-/*}*/
-
-/*@font-face {*/
-/*    font-family: gilroy-medium;*/
-/*    src: url(../../static/fonts/Gilroy-Medium.ttf);*/
-/*}*/
-/*@font-face {*/
-/*    font-family: gilroy-semiBold;*/
-/*    src: url(../../static/fonts/Gilroy-SemiBold.ttf);*/
-/*}*/
-/*@font-face {*/
-/*    font-family: gilroy-ultraLight;*/
-/*    src: url(../../static/fonts/Gilroy-UltraLight.ttf);*/
-/*}*/
-
 @font-face{
     font-family: accanthis-regular;
     src: url("../../static/fonts/accanthis-adf-std.regular.ttf");
 }
 /*Global styles*/
 body{
-    /*overflow-x: hidden;*/
     font-size: 100%;
     -webkit-text-size-adjust: 100%;
-    /* Font varient */
     font-variant-ligatures: none;
     -webkit-font-variant-ligatures: none;
-    /* Smoothing */
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
     font-family:  'Poppins', sans-serif;
+    font-weight: 400;
+    color: #333;
+    letter-spacing: 0.6px;
+    background-color: white;
 }
 
-h3{
-    line-height: 1.2;
+p {margin-bottom: 1.25em;}
+
+h1, h2, h3, h4, h5 {
+    margin: 0 0 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    line-height: 1.15;
 }
 
+h1 {
+    margin-top: 0;
+    font-size: 3.052em;
+}
+
+h2 {font-size: 2.41em;}
+
+h3 {font-size: 1.4em;}
+
+h4 {font-size: 1.3em;}
+
+h5 {font-size: 1.2em;}
+
+.small, .text_small {font-size: 0.8em;}
+
+/* For desktop design*/
 #inpatient-services::before {
     content: '';
     background-image: url("../../static/logo@3x.jpg");
@@ -149,7 +124,6 @@ h3{
     background-color:#c2dcd3;
 }
 
-
 .card-container {
     background-image: url("../../static/green-leaves-waterdrops-4k-wallpaper-3840x2400@3x.jpg");
     background-position: center center;
@@ -164,8 +138,7 @@ input {
     opacity: 1;
 }
 
-/* Loader animation*/
-
+/*-------------------Loader-animation-start------------------*/
 @keyframes loader {
   from {
       transform: scale(1);
@@ -182,6 +155,8 @@ input {
     animation-iteration-count: infinite;
     animation-direction: alternate-reverse;
 }
+
+/*--------------loader-animation-end-----------------------*/
 
 .carousel-container {
     height: fit-content;
@@ -217,18 +192,15 @@ input {
     padding: 7px;
 }
 
-
 @media screen and (min-width: 1024px) {
 
     .customer-contact-info::placeholder {
         color: #fff;
         opacity: 1;
     }
-
 }
 
 /* my-css============================== */
-
 ul.RoomBtnTab {
     display: flex
 }
@@ -324,7 +296,6 @@ input:focus{
         opacity: 0;
     }
 }
-
 .arrowSection {
     display: flex;
     width: auto;
