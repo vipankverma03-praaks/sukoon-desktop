@@ -214,7 +214,7 @@ export default class DesktopLayout extends React.PureComponent{
   render() {
     return (
       <LayoutContainer bgImage={this.props.bgImage} loading={this.state.loading} className="flex flex-col min-h-screen sukoon-bg-1  text-gray-900">
-            <Header logoHighlighter={this.props.logoHighlighter} siteTitle={this.props.data.site.siteMetadata.title}/>
+            <Header logoHighlighter={this.props.logoHighlighter}/>
             <StickyMenu id="sticky-nav" className="hide">
               <Nav className="bg-sukoon text-white py-2 px-20 flex items-center">
                 <div className="w-4/5 font-semiBold text-xl">

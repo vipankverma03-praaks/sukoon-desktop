@@ -164,7 +164,7 @@ function Layout({ children, setOverlay,...props }) {
           } flex-col min-h-screen text-gray-900`}
                          overlay={isExpanded}
         >
-          <Header toggleMenu={toggleMenu} siteTitle={props.data.site.siteMetadata.title} />
+          <Header toggleMenu={toggleMenu} />
           <main className="flex flex-col flex-1 justify-center max-w-4xl mx-auto w-full">
             {children}
           </main>

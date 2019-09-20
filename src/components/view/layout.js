@@ -49,34 +49,17 @@ export default class Layout extends React.Component {
 
   render() {
     // To change layout based on view.
-
       return (
-        <StaticQuery
-          query={graphql`
-        query SiteTitleQuery {
-          site {
-            siteMetadata {
-              title
-            }
-          }
+        <>
+        {this.state.view === 'mobile' ?
+            <MobileLayout setOverlay={this.props.setOverlay} overlay={this.props.overlay} bgImage={this.props.bgImage}>
+              {this.props.children}
+            </MobileLayout> :
+            <DesktopLayout bgImage={this.props.bgImage}>
+              {this.props.children}
+            </DesktopLayout>
         }
-      `}
-          render={(data) => {
-            if (this.state.view === 'mobile') {
-              return (
-                <MobileLayout setOverlay={this.props.setOverlay} overlay={this.props.overlay} data={data} bgImage={this.props.bgImage}>
-                  {this.props.children}
-                </MobileLayout>
-              )
-            } else {
-                  return(
-                    <DesktopLayout data={data} bgImage={this.props.bgImage}>
-                      {this.props.children}
-                    </DesktopLayout>
-                  )
-            }
-          }}
-        />
+        </>
       )
     }
 }
