@@ -3,15 +3,15 @@ import styled from "styled-components";
 import {Link} from 'gatsby';
 
 // Components
-import Title from "../../elements/Heading";
-import Para from "../../elements/Para";
-import Banner from "../../components/Banner";
-import BookBtn from "../../elements/BookNowBtn";
+import Title from "../../elements/Heading/desktop";
+import Para from "../../elements/Para/desktop";
+import Banner from "../../components/Banner/desktop";
+import BookBtn from "../../elements/BookNowBtn/desktop";
+import ArrowButton from "../../elements/ArrowButton/desktop";
 
 // Images
 import HeaderImg from "../../images/pacientes-mejora_2019-08-02/pacientes-mejora@3x.jpg";
 import Doctor from "../../images/doctor/doctor1.jpg";
-import ArrowButton from "../../elements/ArrowButton";
 
 const Intro = styled.div`
     

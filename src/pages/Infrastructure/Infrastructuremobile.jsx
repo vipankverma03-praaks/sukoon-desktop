@@ -13,7 +13,6 @@ import Rooms from "../../images/rooms/rooms.jpg";
 import Chambers from "../../images/chambers/consulting-chambers.jpg";
 import BannerBg from "../../images/servicesBg.png";
 
-
 const TabList = styled.ul`
     
     li{

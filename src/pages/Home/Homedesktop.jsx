@@ -7,22 +7,19 @@ import "slick-carousel/slick/slick-theme.css";
 
 // Components
 import Title from "../../elements/Heading/desktop"
-import Para from "../../elements/Para"
+import Para from "../../elements/Para/desktop"
 import ArrowIcon from "../../elements/ArrowButton/desktop";
 import Banner from "../../components/Banner/desktop";
 import Infrastructure from "../../components/Infrastructure/desktop";
 import WhySukoon from "../../components/Intro/desktop";
+import Details from "../../elements/Details/desktop";
+import MeetExperts from "../../components/MeetExperts/desktop";
 
 // Images
 import BlogImg  from "../../images/iStock-968194620_2019-07-17/iStock-968194620@3x.jpg";
 import HeaderImg from "../../images/Desktop-Header/HomeBanner.jpg";
 import SukoonBgLogo from "../../images/sukoon-bg-logo/logo@2x.jpg";
 import SukoonLogo from "../../images/sukoon-bg-logo/logo.jpg";
-
-
-import Details from "../../elements/Details";
-import MeetExperts from "../../components/MeetExperts";
-import SEO from "../../components/seo";
 
 // Meet Experts and Blog and faq wrapper
 const MFBWrapper = styled.section`
