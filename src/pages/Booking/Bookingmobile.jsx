@@ -11,9 +11,7 @@ import BookingBtn from "../../elements/BookNowBtn/mobile";
 
 // Images
 import BookingBg from "../../images/bookingBg.png";
-import LightSukoon from "../../images/sukoon-logo/logo_sukoon_light.svg";
-import DocImg from "../../images/doctor/doc.png";
-import Calendar from "../../images/sukoon-logo/calendar.svg";
+import DocImg from "../../images/doctor/doc_mobile.png";
 import SukoonLogo from "../../images/logo_light.svg";
 import Calender from "../../images/cal.svg";
 import Edit from "../../images/edit_icon.png";
@@ -353,11 +351,12 @@ const DatePicker = () =>{
 
   return (
     <Main_sec className="">
-      <BookLogo  src={`${LightSukoon}`} alt="calendar_icon"/>
+      <div>
+      <BookLogo  src={`${SukoonLogo}`} alt=""/>
+      <p className="font-accanthisRegular text-white text-base mt-2">Sukoon</p>
+      </div>
       <div className="py-5 text-center text-white relative">
         <input className="bg-transparent text-xs w-64 p-3" type="Name" placeholder="Pick Your Date" />
-
-        {/* <span><InputIcon  src={`${Calendar}`} alt="calendar_icon"/></span> */}
       </div>
       <BookingBtn wrapperClass="float-right" theme="white" padding="5px">Submit</BookingBtn>
     </Main_sec>
@@ -435,9 +434,9 @@ const handleRadioButton = () => {
 return (
 
   <div className="h-full flex p-5">
-    <Form action="" className="text-white m-0">
+    <Form action="" className="text-white m-0 w-full">
         <h2 className="text-white font-Bold text-4xl">Patient Details</h2>
-        <div className="">
+        <div className="overflow-hidden">
           <div id="left-information" className="">
             <Input type="name" required={true} defaultValue={``} wrapperClass="my-2 w-full " label="First Name"/>
             <Input type="name" required={true} defaultValue={``} wrapperClass="my-2 w-full " label="Last Name"/>
