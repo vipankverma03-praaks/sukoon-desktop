@@ -341,6 +341,24 @@ const DateSlot = styled.ul`
 
 `;
 
+const TimeSlot = styled.div`
+
+    display: flex;
+    max-height: 300px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    flex-flow: wrap;
+    margin-top:25px;
+
+.slot{
+  width:50%;
+}
+.slot div {
+  margin:5px;
+}
+
+`;
+
 // doctor_slot  END  ====>>
 
 
@@ -358,7 +376,7 @@ const DatePicker = () =>{
       <div className="py-5 text-center text-white relative">
         <input className="bg-transparent text-xs w-64 p-3" type="Name" placeholder="Pick Your Date" />
       </div>
-      <BookingBtn wrapperClass="float-right" theme="white" padding="5px">Submit</BookingBtn>
+      <BookingBtn wrapperClass="w-full" buttonClass={'w-full'} theme="mint" padding="8px">Submit</BookingBtn>
     </Main_sec>
   )
 
@@ -383,9 +401,57 @@ const Doclist = () =>{
             <p>Dr. Samir Parikh</p>
             </div>
           </li>
+          <li>
+            <div className="DocCard">
+            <img src={`${DocImg}`} alt="" />
+            <p>Dr. Samir Parikh</p>
+            </div>
+          </li>
+          <li>
+            <div className="DocCard">
+            <img src={`${DocImg}`} alt="" />
+            <p>Dr. Samir Parikh</p>
+            </div>
+          </li>
+          <li>
+            <div className="DocCard">
+            <img src={`${DocImg}`} alt="" />
+            <p>Dr. Samir Parikh</p>
+            </div>
+          </li>
+          <li>
+            <div className="DocCard">
+            <img src={`${DocImg}`} alt="" />
+            <p>Dr. Samir Parikh</p>
+            </div>
+          </li>
+          <li>
+            <div className="DocCard">
+            <img src={`${DocImg}`} alt="" />
+            <p>Dr. Samir Parikh</p>
+            </div>
+          </li>
+          <li>
+            <div className="DocCard">
+            <img src={`${DocImg}`} alt="" />
+            <p>Dr. Samir Parikh</p>
+            </div>
+          </li>
+          <li>
+            <div className="DocCard">
+            <img src={`${DocImg}`} alt="" />
+            <p>Dr. Samir Parikh</p>
+            </div>
+          </li>
+          <li>
+            <div className="DocCard">
+            <img src={`${DocImg}`} alt="" />
+            <p>Dr. Samir Parikh</p>
+            </div>
+          </li>
         </ul>
       </DoctorListing>
-      <BookingBtn wrapperClass="float-right" theme="white" padding="5px">Submit</BookingBtn>
+      <BookingBtn wrapperClass="w-full" buttonClass={'w-full'} theme="mint" padding="8px">Submit</BookingBtn>
     </Main_sec>
   )
 
@@ -412,12 +478,65 @@ return (
           <div className="w-full overflow-x-auto overflow-y-hidden">
             <DateSlot className="">
               <li className="text-xs">Tue<br/>17</li>
+              <li className="text-xs">Tue<br/>17</li>
+              <li className="text-xs">Tue<br/>17</li>
+              <li className="text-xs">Tue<br/>17</li>
+              <li className="text-xs">Tue<br/>17</li>
+              <li className="text-xs">Tue<br/>17</li>
+              <li className="text-xs">Tue<br/>17</li>
             </DateSlot>
           </div>
+          <TimeSlot className="w-full">
+            <div className="slot">
+              <TimerWrapper className="flex items-center bg-white">
+                <Radio spanText="03:00 - 05:00 PM" handleButton={''} arguments={['Info','03:00 - 05:00 PM']} />
+              </TimerWrapper>
+            </div>
+            <div className="slot">
+              <TimerWrapper className="flex items-center bg-white">
+                <Radio spanText="03:00 - 05:00 PM" handleButton={''} arguments={['Info','03:00 - 05:00 PM']} />
+              </TimerWrapper>
+            </div>
+            <div className="slot">
+              <TimerWrapper className="flex items-center bg-white">
+                <Radio spanText="03:00 - 05:00 PM" handleButton={''} arguments={['Info','03:00 - 05:00 PM']} />
+              </TimerWrapper>
+            </div>
+            <div className="slot">
+              <TimerWrapper className="flex items-center bg-white">
+                <Radio spanText="03:00 - 05:00 PM" handleButton={''} arguments={['Info','03:00 - 05:00 PM']} />
+              </TimerWrapper>
+            </div>
+            <div className="slot">
+              <TimerWrapper className="flex items-center bg-white">
+                <Radio spanText="03:00 - 05:00 PM" handleButton={''} arguments={['Info','03:00 - 05:00 PM']} />
+              </TimerWrapper>
+            </div>
+            <div className="slot">
+              <TimerWrapper className="flex items-center bg-white">
+                <Radio spanText="03:00 - 05:00 PM" handleButton={''} arguments={['Info','03:00 - 05:00 PM']} />
+              </TimerWrapper>
+            </div>
+            <div className="slot">
+              <TimerWrapper className="flex items-center bg-white">
+                <Radio spanText="03:00 - 05:00 PM" handleButton={''} arguments={['Info','03:00 - 05:00 PM']} />
+              </TimerWrapper>
+            </div>
+            <div className="slot">
+              <TimerWrapper className="flex items-center bg-white">
+                <Radio spanText="03:00 - 05:00 PM" handleButton={''} arguments={['Info','03:00 - 05:00 PM']} />
+              </TimerWrapper>
+            </div>
+            <div className="slot">
+              <TimerWrapper className="flex items-center bg-white">
+                <Radio spanText="03:00 - 05:00 PM" handleButton={''} arguments={['Info','03:00 - 05:00 PM']} />
+              </TimerWrapper>
+            </div>
+          </TimeSlot>
         </div>
         
       </div>
-      <BookingBtn wrapperClass="float-right" theme="white" padding="5px">Submit</BookingBtn>
+      <BookingBtn wrapperClass="w-full" buttonClass={'w-full'} theme="mint" padding="8px">Book Now</BookingBtn>
     </Main_sec>
 
   )
@@ -457,7 +576,7 @@ return (
             <Input type="name" required={true} wrapperClass="w-full" label="Phone Number" defaultValue={``}/>
           </div>
         </div>
-        <BookingBtn wrapperClass="float-right" theme="white" padding="5px">Book and Pay</BookingBtn>
+        <BookingBtn wrapperClass="w-full" buttonClass={'w-full'} theme="mint" padding="8px">Pay Now</BookingBtn>
       </Form>
   </div>
 
@@ -526,8 +645,8 @@ export default class BookingPage extends React.Component{
       <BookingWrapper className="relative">
         {/* <DatePicker /> */}
         {/* <Doclist /> */}
-        {/* <DocBookSlot />         */}
-        <PatientForm />
+        <DocBookSlot />        
+        {/* <PatientForm /> */}
         {/* <ThankYou /> */}
 
         {/* <HomeLink className="text-gray-250 absolute mt-12  ml-8">
