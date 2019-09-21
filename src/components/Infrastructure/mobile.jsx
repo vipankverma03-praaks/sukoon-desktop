@@ -6,7 +6,6 @@ import Title from "../../elements/Heading/mobile";
 import Para from "../../elements/Para/mobile";
 
 // Images
-import InfraBgImg from "../../images/Infra/WhatsApp Image 2019-07-06 at 11.21.21 AM@3x.jpg";
 import ConsultingChambers from "../../images/exp/bg.jpg";
 import InHousePharmacy from "../../images/exp/bg_2.jpg";
 
@@ -56,15 +55,21 @@ const CardContent = {
   }
 };
 
+const FirstButton = styled.div`
+    top: -3px;
+    left: 4px;
+`;
+
 // Bottom Button wrapper
 const InfraBtnContainer = (props) =>{
 
   const Wrapper = styled.div`
             position: relative;
-            width: 75px;
+            width: 20vw;
+            z-index: ${props => props.index || '0'};
         `;
   return(
-    <Wrapper>
+    <Wrapper index={props.index}>
       {props.children}
     </Wrapper>
   )
@@ -85,17 +90,18 @@ const InfraCard = (props) => {
 const InfraButton = (props)=>{
 
   const Button = styled.button`
-        width: 20px;
-        height: 20px;
+        width: 10px;
+        height: 10px;
         border-radius: 50%;
         float:right;
+        margin-top: 4px;
         background: ${props.yellow ? '#ffc300' : 'white'};
         
         ::before{
             position: absolute;
             content: '';
             width: 100%;
-            height: 5px;
+            height: 4px;
             background: ${props.yellow ?  '#ffc300' : 'white'};
             top:7px;
             left:0;
@@ -121,8 +127,8 @@ const InfraSection = styled.section`
         width: 100%;
         height: 40vw;
         z-index: 10;
-        opacity: .25;
-        background: linear-gradient(to top, #212121 20%,transparent 40%);
+        opacity: .7;
+        background: linear-gradient(to bottom,transparent 82%,#000000);
         
         }
     `;
@@ -133,9 +139,11 @@ const CardWrapper = styled.div`
     `;
 
 const SimpleInfraButton = styled.button`
-        width: 20px;
-        height: 20px;
+        width: 10px;
+        height: 10px;
         border-radius: 50%;
+        position: relative;
+        z-index: ${props=> props.index || '0'};
     `;
 
 const Infra = (props) =>{
@@ -145,96 +153,181 @@ const Infra = (props) =>{
   const [yellowActive3, setColor3] = useState(false);
   const [yellowActive4, setColor4] = useState(false);
 
+  // Z-index for seek bar yellow button
+  const[index0, setIndex0] = useState('0');
+  const[index1, setIndex1] = useState('0');
+  const[index2, setIndex2] = useState('0');
+  const[index3, setIndex3] = useState('0');
+  const[index4, setIndex4] = useState('0');
+
+  const [activeStepper, setStepper] = useState('-95%');
+
   const[Card, setCard] = useState(CardContent.Card1);
 
-  const Wrapper = styled.div`
+
+  const StepperInner  = styled.div`
+    
+  `;
+
+  // Big Button which moves with animation
+  const StepperButton = styled.div`
+    z-index: 1;
+    width: 100%;
+    transform: translate(${activeStepper},0);
+    transition: all 2s;
+    
+    button{
+    position: relative;
+    z-index: 10;
+    float: right;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    background: #ffffff;
+    }
+    
+  `;
+
+
+  const Stepper = styled.div`
         bottom: 10px;
-        left:0;
-        right: 0;
+        left: 4%;
+        right: 4%;   
         z-index: 11;
-        
+          
+         .usp-caption-1{
+          top: 40px;
+          left: 0;
+         } 
+          
         .usp-caption{
-        top: 28px;
-        left: 13vw;
+        top: 40px;
+        left: 17vw;
         }
     `;
 
   const handleToggle = (name)=>{
 
     if(name === '0'){
+
+      if(yellowActive0){
+        setIndex0('0');
+      }
+      else{
+        setIndex0('10');
+      }
       setCard(CardContent.Card1);
+      setStepper('-95%');
       setColor1(false);
       setColor2(false);
       setColor3(false);
       setColor4(false);
     }
     else if(name === '1'){
+      setStepper('-73%');
       setCard(CardContent.Card2);
       if(!yellowActive1){
+        setIndex0('10');
+        setColor0(true);
         setColor1(true);
       }
       else{
+        setIndex1('0');
         setColor2(false);
         setColor3(false);
         setColor4(false);
       }
     }
     else if(name === '2'){
+      setStepper('-52%');
       setCard(CardContent.Card3);
       if(!yellowActive2){
+        setColor0(true);
+        setIndex1('10');
         setColor2(true);
         setColor1(true);
       }
       else{
+        setIndex2('0');
 
         setColor3(false);
         setColor4(false);
       }
     }
     else if(name === '3'){
+      setStepper('-29%');
       setCard(CardContent.Card4);
       if(!yellowActive3){
+        setIndex2('10');
+        setColor0(true);
         setColor1(true);
         setColor2(true);
         setColor3(true);
       }
       else{
+        setIndex3('0');
+
         setColor4(false);
       }
     }
     else{
+      setStepper('-8%');
       setCard(CardContent.Card5);
       if(!yellowActive4){
+        setIndex3('10');
+        setColor0(true);
         setColor1(true);
         setColor2(true);
         setColor3(true);
         setColor4(true);
       }
+      else{
+        setIndex4('0');
+      }
     }
   };
-
 
 
   return(
     <div>
       <InfraSection bgImage={Card.bgImg} id="sukoon-infra-section" className="sukoon-infra-section relative w-full my-4 h-full">
-        <Wrapper className="m-4 flex absolute">
-          <div className="relative">
-            <SimpleInfraButton onClick={()=>handleToggle('0')} yellow={yellowActive0} name="0" className="bg-sukoonYellow"/>
-          </div>
-          <InfraBtnContainer>
-            <InfraButton  yellow={yellowActive1} handleToggle={handleToggle} name="1" className="bg-sukoonYellow"/>
-          </InfraBtnContainer>
-          <InfraBtnContainer>
-            <InfraButton  yellow={yellowActive2} name="2" handleToggle={handleToggle} className="bg-sukoonYellow"/>
-          </InfraBtnContainer>
-          <InfraBtnContainer>
-            <InfraButton  yellow={yellowActive3} name="3" handleToggle={handleToggle} className="bg-sukoonYellow"/>
-          </InfraBtnContainer>
-          <InfraBtnContainer>
-            <InfraButton  yellow={yellowActive4} name="4" handleToggle={handleToggle} className="bg-sukoonYellow"/>
-          </InfraBtnContainer>
-        </Wrapper>
+        <Stepper className="flex absolute">
+          <StepperInner className="flex">
+            <StepperButton className="absolute">
+              <button />
+            </StepperButton>
+            <FirstButton className="relative">
+              <SimpleInfraButton onClick={()=>handleToggle('0')} yellow={yellowActive0} name="0" index={index0} className="bg-sukoonYellow"/>
+              <h2 className="absolute usp-caption-1 text-white text-xl">
+                Consulting Chambers
+              </h2>
+            </FirstButton>
+            <InfraBtnContainer index={index1}>
+              <InfraButton  yellow={yellowActive1} handleToggle={handleToggle} name="1"  className="bg-sukoonYellow"/>
+              <h2 className="absolute usp-caption text-white text-xl">
+                {CardContent.Card2.caption}
+              </h2>
+            </InfraBtnContainer>
+            <InfraBtnContainer index={index2}>
+              <InfraButton  yellow={yellowActive2} name="2" handleToggle={handleToggle}  className="bg-sukoonYellow"/>
+              <h2 className="absolute usp-caption text-white text-xl">
+                {CardContent.Card3.caption}
+              </h2>
+            </InfraBtnContainer>
+            <InfraBtnContainer index={index3}>
+              <InfraButton  yellow={yellowActive3} name="3" handleToggle={handleToggle}  className="bg-sukoonYellow"/>
+              <h2 className="absolute text-white usp-caption text-xl">
+                {CardContent.Card4.caption}
+              </h2>
+            </InfraBtnContainer>
+            <InfraBtnContainer index={index4}>
+              <InfraButton  yellow={yellowActive4} name="4" handleToggle={handleToggle}  className="bg-sukoonYellow"/>
+              <h2 className="absolute text-white usp-caption text-xl">
+                {CardContent.Card5.caption}
+              </h2>
+            </InfraBtnContainer>
+          </StepperInner>
+        </Stepper>
       </InfraSection>
       <CardWrapper className="block bg-white">
         <InfraCard card={Card} titleLight="In House" titleBold="Pharmacy" para="You can always find your prescribed medications at Sukoon. Our pharmacy is "/>

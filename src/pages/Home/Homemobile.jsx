@@ -17,7 +17,7 @@ import HeaderBg from "../../images/mobile_header.jpg";
 
 const Caption = (props) => {
   return (
-    <div className="my-4">
+    <div className="my-8">
       <h3 className="text-sukoon font-semibold block">
         {props.subHeading || ''}
       </h3>
@@ -33,10 +33,10 @@ const WhySukoon = (props) => {
   return (
     <section id="why-sukoon" className="why-sukoon py-6 px-4">
       <Title subHeading="About" titleLight="Why" titleBold="Sukoon" />
-      <Caption subHeading="Consult best doctors"
-               para="Get expert advice from an experienced team of psychiatrists, clinical psychologists, counsellors, and art-based therapists that ensure holistic care to address your concerns. We take our doctor-patient confidentiality with utmost seriousness while guiding you towards better days."/>
+      <Caption subHeading="Consult the best doctors"
+               para="Get expert advice from an experienced team of psychiatrists, clinical psychologists, counsellors, and art-based therapists that ensure holistic care. We take doctor-patient confidentiality with utmost seriousness."/>
       <Caption subHeading="Get personalised care 24*7"
-               para="Powered by Fortis Healthcare, Sukoon is India’s first super-specialty psychiatric center. We have leading psychiatric, deaddiction, rehabilitation, and mental health treatments for both inpatients and outpatients. We are a one-of-a-kind healthcare provider for all your psychiatric and mental well-being needs."/>
+               para="Powered by Fortis Healthcare, Sukoon is India’s first super-specialty psychiatric center. We have leading deaddiction, psychiatric, mental health, and rehabilitation treatments for inpatients and outpatients."/>
       <Caption subHeading="Recover in premium facilities"
                para="Enhance your recovery in a calming, positive, and comfortable world-class environment. With residential care tailor-made to your mental and psychological health, recovery and better days are just around the corner."/>
     </section>
@@ -47,7 +47,7 @@ const ResidentialService = [
   {
     mainTitle: 'Acute',
     subTitle: 'Psychiatry Care',
-    para: 'Inpatient hospitalisation with high levels of personalised care, comfort, and safety.'
+    para: 'Inpatient hospitalisation with high levels of personalised care, comfort, privacy, and safety.'
   },
   {
     mainTitle: 'Intensive',
@@ -266,7 +266,7 @@ function IndexPage(props) {
 
   return (
     <>
-      <Banner captionLight={`A safe space`} captionBold={`for better days.`} overlay={props.overlay} bookNow contact discover backgroundImg={HeaderBg}/>
+      <Banner captionLight={`A safe space`} captionBold={`for better days`} overlay={props.overlay} bookNow contact discover backgroundImg={HeaderBg}/>
       <WhySukoon/>
       <ResidentialServices/>
       <OutPatientServices/>

@@ -10,8 +10,10 @@ import TextField from '@material-ui/core/TextField';
 const useStyles = makeStyles(theme => ({
   root: {
     background: 'white',
-    fontFamily: 'gilroy-regular'
   },
+    selectMenu:{
+      background: 'black',
+    },
   container: {
     display: 'flex',
     flexWrap: 'wrap',
@@ -28,6 +30,9 @@ const useStyles = makeStyles(theme => ({
   menu: {
     width: 200,
   },
+  MuiMenu: {
+    background: 'black',
+  },
 }));
 
 // This styled component is to design the textField component of material ui.
@@ -38,25 +43,33 @@ const Wrapper = styled.div((props)=>{
   //  Root class    
   .textField {
   }  
-  
+  .MuiInputLabel-formControl{
+      font-size: 14px;
+    }
   .textField  .MuiInputLabel-root{
-    font-family: Gilroy-Medium;
     
   }
   
+  ..MuiPaper-root{
+    background: black!important;
+    }
+  .textField .MuiPaper-root{
+    background: black;
+  }
   .textField label{
     color: #12443e;
   }
   // input tag inside the textfield. 
   .textField .MuiInputBase-input{
     color: #12443e;
-    font-family: gilroy-medium;
   }
    // Border bottom class
    .textField .MuiInput-underline:before{
    border-color: #12443e;
    }
-  
+   .MuiFormControl-marginNormal{
+      margin: 0;
+   }
   .textField .MuiInput-underline:hover:not(.Mui-disabled):before{
   border-bottom: 2px solid #f6e05e;
   }
@@ -78,8 +91,16 @@ const Wrapper = styled.div((props)=>{
       }
   //  Root class    
   .textField {
+    margin :0;
   }  
   
+   body .MuiList-root{
+    background: black;
+  }
+  .textField .MuiMenu-paper{
+    background: #C2DCD3;
+    color: #12443E;
+    }
   .textField  .MuiInputLabel-root{
     font-family: Gilroy-Medium;
   
@@ -145,7 +166,7 @@ const TextInput = ({classes,defaultValue,textarea,lable,required}) => {
   )
 };
 
-const SelectInput = ({classes,lable,placeholder,value}) => {
+const SelectInput = ({classes,lable,value}) => {
   // Null check
   if(value){
     return(
@@ -164,7 +185,7 @@ const SelectInput = ({classes,lable,placeholder,value}) => {
           },
         }}
       > {value.map(option => (
-        <MenuItem key={option.value} value={option.value}>
+        <MenuItem key={option.value} value={option.value} className={`MenuItem`}>
           {option.label}
         </MenuItem>
       ))}</TextField>
