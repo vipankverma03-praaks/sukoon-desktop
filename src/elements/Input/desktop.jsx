@@ -10,8 +10,10 @@ import TextField from '@material-ui/core/TextField';
 const useStyles = makeStyles(theme => ({
   root: {
     background: 'white',
-    fontFamily: 'gilroy-regular'
   },
+    selectMenu:{
+      background: 'black',
+    },
   container: {
     display: 'flex',
     flexWrap: 'wrap',
@@ -27,6 +29,9 @@ const useStyles = makeStyles(theme => ({
   },
   menu: {
     width: 200,
+  },
+  MuiMenu: {
+    background: 'black',
   },
 }));
 
@@ -45,13 +50,18 @@ const Wrapper = styled.div((props)=>{
     
   }
   
+  ..MuiPaper-root{
+    background: black!important;
+    }
+  .textField .MuiPaper-root{
+    background: black;
+  }
   .textField label{
     color: #12443e;
   }
   // input tag inside the textfield. 
   .textField .MuiInputBase-input{
     color: #12443e;
-    font-family: gilroy-medium;
   }
    // Border bottom class
    .textField .MuiInput-underline:before{
@@ -84,6 +94,13 @@ const Wrapper = styled.div((props)=>{
     margin :0;
   }  
   
+   body .MuiList-root{
+    background: black;
+  }
+  .textField .MuiMenu-paper{
+    background: #C2DCD3;
+    color: #12443E;
+    }
   .textField  .MuiInputLabel-root{
     font-family: Gilroy-Medium;
   
@@ -149,7 +166,7 @@ const TextInput = ({classes,defaultValue,textarea,lable,required}) => {
   )
 };
 
-const SelectInput = ({classes,lable,placeholder,value}) => {
+const SelectInput = ({classes,lable,value}) => {
   // Null check
   if(value){
     return(
@@ -168,7 +185,7 @@ const SelectInput = ({classes,lable,placeholder,value}) => {
           },
         }}
       > {value.map(option => (
-        <MenuItem key={option.value} value={option.value}>
+        <MenuItem key={option.value} value={option.value} className={`MenuItem`}>
           {option.label}
         </MenuItem>
       ))}</TextField>
