@@ -45,28 +45,28 @@ const BookNow = (props) =>{
 
   const BookingOptions = [
     {
-      value: "online consulting",
-      label: "online consulting"
+      value: "Video Appointment",
+      label: "Video Appointment"
     },
     {
-      value: "offline consulting",
-      label: "offline consulting"
+      value: "In Person Appointment",
+      label: "In Person Appointment"
     }
   ];
   
   return(
     <div className="mb-12">
-      <div id="contact-info-container" className="p-4 w-full ">
-        <Input type="select" green value={BookingOptions} wrapperClass="w-full" label="Appointment Type" placeholder=""/>
-        <Input type="name" green required={true} wrapperClass="w-full" label="Email / Phone Number" defaultValue={``}/>
+      <div id="contact-info-container" className="w-full ">
+        <Input type="select" green value={BookingOptions} wrapperClass="w-4/5" label="Appointment Type" placeholder=""/>
+        <Input type="name" green required={true} wrapperClass="w-4/5" label="Email / Phone Number" defaultValue={``}/>
       </div>
-      <div className="flex flex-col mt-16">
+      <div className="flex flex-col mt-8">
         <BookBtn border bg="transparent" wrapperClass="">
           <Link to="/booking" >Book Now</Link>
         </BookBtn>
         {props.contact ?
           <div className="my-4">
-            <span className="font-normal">or Call at +91 9876543210</span>
+            <span className="font-normal ">or Call at <span className={`underline`}>+91 9876543210</span></span>
           </div> : null}
       </div>
     </div>
@@ -78,7 +78,7 @@ const BookNow = (props) =>{
 const Banner = (props) => {
   return (
     <Header id="header-intro-mobile" overlay={props.overlay} bookNow={props.bookNow} backgroundImg={props.backgroundImg} className="w-full px-4">
-      <div className="mt-20 mb-8">
+      <div className="mt-32 mb-8">
         <Heading captionLight={props.captionLight} captionBold={props.captionBold} />
       </div>
       {props.bookNow ?

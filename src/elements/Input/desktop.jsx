@@ -38,9 +38,10 @@ const Wrapper = styled.div((props)=>{
   //  Root class    
   .textField {
   }  
-  
+  .MuiInputLabel-formControl{
+      font-size: 14px;
+    }
   .textField  .MuiInputLabel-root{
-    font-family: Gilroy-Medium;
     
   }
   
@@ -56,7 +57,9 @@ const Wrapper = styled.div((props)=>{
    .textField .MuiInput-underline:before{
    border-color: #12443e;
    }
-  
+   .MuiFormControl-marginNormal{
+      margin: 0;
+   }
   .textField .MuiInput-underline:hover:not(.Mui-disabled):before{
   border-bottom: 2px solid #f6e05e;
   }
@@ -78,6 +81,7 @@ const Wrapper = styled.div((props)=>{
       }
   //  Root class    
   .textField {
+    margin :0;
   }  
   
   .textField  .MuiInputLabel-root{
