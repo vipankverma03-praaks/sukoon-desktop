@@ -84,7 +84,7 @@ const Radio = (props) =>{
   return(
     <Wrapper display={props.display}>
       <label className="radio">
-        <input type="radio" onClick={(event)=>{props.handleButton(event,...props.arguments)}}/>
+        <input type="radio" checked={true} onClick={(event)=>{props.handleButton(event,...props.arguments)}}/>
         <span className={`${props.spanClass || 'text-gray-700 mx-2 font-light'}`}>{props.spanText}</span>
       </label>
     </Wrapper>

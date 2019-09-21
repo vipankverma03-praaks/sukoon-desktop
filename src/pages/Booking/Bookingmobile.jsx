@@ -5,12 +5,15 @@ import 'react-day-picker/lib/style.css';
 import {Link} from 'gatsby';
 
 //  Components
-import Radio from "../../elements/RadioButton";
+import Radio from "../../elements/RadioButton/mobile";
 import moment from "moment";
-import BookingBtn from "../../elements/BookNowBtn";
+import BookingBtn from "../../elements/BookNowBtn/mobile";
 
 // Images
 import BookingBg from "../../images/bookingBg.png";
+import LightSukoon from "../../images/sukoon-logo/logo_sukoon_light.svg";
+import DocImg from "../../images/doctor/doc.png";
+import Calendar from "../../images/sukoon-logo/calendar.svg";
 import SukoonLogo from "../../images/logo_light.svg";
 import Calender from "../../images/cal.svg";
 import Edit from "../../images/edit_icon.png";
@@ -18,10 +21,9 @@ import Timer from "../../images/clock.svg";
 import SVG from "../../elements/SVG";
 import Input from "../../elements/Input";
 
+
 const Form = styled.form`
   font-family: gilroy-regular;
-  
-  margin: 40px 10vw 0 10vw;
   
   input, select{
   padding-bottom: 10px;
@@ -80,6 +82,7 @@ const BookingFields = (props) =>{
 const BookingWrapper = styled.section`
   background-image: url(${BookingBg});
   height: 100vh;
+  background-size:cover;
   overflow-y: scroll;
   .BookingInput{
     position: relative;
@@ -119,7 +122,7 @@ const Date = (props) =>{
       <div className="mt-12">
         <h2 className="text-white mb-2 text-vlg">Pick your Date.</h2>
         <DayPickerInput selectedDay={selectedDate} onDayChange={props.handleDate} style={{background: 'white'}}
-                        classNames={{container: 'BookingInput', ovarlayWrapper: 'DateContainer'}}/>
+          classNames={{container: 'BookingInput', ovarlayWrapper: 'DateContainer'}}/>
       </div>
     </div>
   )
@@ -236,6 +239,261 @@ const Information = (props) =>{
   );
 };
 
+// updated_design=============>>>>>>>>>>>>>>>>>>>>>
+
+
+// date_picker_style====>>
+
+const BookLogo = styled.img`
+    margin: 0 auto;
+    padding-top: 25px;
+    max-width: 80px;
+    display:block;
+`;
+
+const InputIcon = styled.img`
+    max-width: 80px;
+`;
+
+const Main_sec = styled.div`
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    justify-content:space-between;
+    align-items:center;
+`;
+// date_picker_style  END   ====>>
+
+// doctor_listing   ====>>
+
+const DoctorListing = styled.div`
+
+ul {
+  display:flex;
+  flex-flow:wrap;
+  max-height: 380px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+ul li {
+  width:50%;
+}
+.DocCard {
+  margin:0px 15px 25px 15px
+}
+.DocCard img {
+  width:100%;
+}
+.DocCard p {
+    width: 100%;
+    display: block;
+    padding: 6px;
+    font-size: 13px;
+    background: #12443E;
+    color: #fff;
+    text-align: center;
+}
+
+`;
+
+// doctor_listing  END   ====>>
+
+// doctor_slot   ====>>
+
+const DocSlotImg = styled.img`
+
+display:block;
+object-fit:cover;
+
+`;
+
+const DateSlot = styled.ul`
+  display: flex;
+    width: 480px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding: 5px;
+  li{
+    width: 44px;
+    height: 40px;
+    background: white;
+    padding: 5px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.3;
+    margin-right:20px;
+  }
+  li:last-child{
+    margin-right:0px;
+  }
+  li::after{
+    content: '';
+    display: block;
+    width: 52px;
+    height: 48px;
+    background: none;
+    border: 1px solid #fff;
+    top: -4px;
+    position: absolute;
+    left: -4px;
+  }
+
+`;
+
+// doctor_slot  END  ====>>
+
+
+
+
+// add_material UI date picker
+const DatePicker = () =>{
+
+  return (
+    <Main_sec className="">
+      <BookLogo  src={`${LightSukoon}`} alt="calendar_icon"/>
+      <div className="py-5 text-center text-white relative">
+        <input className="bg-transparent text-xs w-64 p-3" type="Name" placeholder="Pick Your Date" />
+
+        {/* <span><InputIcon  src={`${Calendar}`} alt="calendar_icon"/></span> */}
+      </div>
+      <BookingBtn wrapperClass="float-right" theme="white" padding="5px">Submit</BookingBtn>
+    </Main_sec>
+  )
+
+};
+
+const Doclist = () =>{
+
+  return (
+    <Main_sec className="">
+      <h2 className="pt-5 text-white text-xl w-full pl-5">Choose An Expert</h2>
+      <DoctorListing className="">
+        <ul>
+          <li>
+            <div className="DocCard">
+            <img src={`${DocImg}`} alt="" />
+            <p>Dr. Samir Parikh</p>
+            </div>
+          </li>
+          <li>
+            <div className="DocCard">
+            <img src={`${DocImg}`} alt="" />
+            <p>Dr. Samir Parikh</p>
+            </div>
+          </li>
+        </ul>
+      </DoctorListing>
+      <BookingBtn wrapperClass="float-right" theme="white" padding="5px">Submit</BookingBtn>
+    </Main_sec>
+  )
+
+};
+
+const DocBookSlot = () =>{
+
+return (
+
+  <Main_sec className="">
+      
+      <div className="SetDocSlot w-full p-3">
+        <div className="w-full flex flex-wrap">
+          <DocSlotImg className="w-4/12" src={`${DocImg}`} alt="" />
+          <p className="w-8/12 pl-5">
+            <h2 className="text-2xl text-white leading-tight font-semibold">Dr. Samir Parikh</h2>
+            <h5 className="text-sm text-white font-medium">MBBS, DPM, MD (Psychiatry)</h5>
+            <span className="text-xs text-white font-regular mt-2 leading-tight block">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </span>
+          </p>
+          <div className="w-full flex my-6 text-white justify-between">
+            <h4>Schedule My Booking For ? </h4>
+            <Input type="select" />
+          </div>
+          <div className="w-full overflow-x-auto overflow-y-hidden">
+            <DateSlot className="">
+              <li className="text-xs">Tue<br/>17</li>
+            </DateSlot>
+          </div>
+        </div>
+        
+      </div>
+      <BookingBtn wrapperClass="float-right" theme="white" padding="5px">Submit</BookingBtn>
+    </Main_sec>
+
+  )
+  
+};
+
+const PatientForm = () =>{
+
+const handleRadioButton = () => {
+  return null;
+}
+
+
+return (
+
+  <div className="h-full flex p-5">
+    <Form action="" className="text-white m-0">
+        <h2 className="text-white font-Bold text-4xl">Patient Details</h2>
+        <div className="">
+          <div id="left-information" className="">
+            <Input type="name" required={true} defaultValue={``} wrapperClass="my-2 w-full " label="First Name"/>
+            <Input type="name" required={true} defaultValue={``} wrapperClass="my-2 w-full " label="Last Name"/>
+            <div className="my-2">
+              <span>Sex :</span>
+              <Radio display="inline-block" handleButton={handleRadioButton} arguments={['M']} spanClass="text-white mx-4" spanText="Male"/>
+              <Radio display="inline-block" handleButton={handleRadioButton} spanClass="text-white mx-4" arguments={['F']} spanText="Female"/>
+            </div>            
+          </div>
+          <div id="right-information" className="justify-between">
+            <div className="flex my-2 items-center">
+              <span className="mr-2 self-end">DOB :</span>
+              <Input type="select" wrapperClass="inline-block" label="Year" placeholder=""/>
+              <Input type="select" wrapperClass="inline-block mr-2" label="Month" placeholder=""/>
+              <Input type="select" wrapperClass="inline-block" label="Day" placeholder=""/>
+            </div>
+            <Input type="name" required={true} defaultValue={``} wrapperClass="w-full " label="Email"/>
+            <Input type="name" required={true} wrapperClass="w-full" label="Phone Number" defaultValue={``}/>
+          </div>
+        </div>
+        <BookingBtn wrapperClass="float-right" theme="white" padding="5px">Book and Pay</BookingBtn>
+      </Form>
+  </div>
+
+)
+
+};
+
+
+
+const ThankYou = () =>{
+
+  return(
+    <div className="p-5 justify-between flex h-full flex-wrap items-center">
+      <div className="w-full">
+        <h2 className="text-white text-5xl font-bold text-center">Thank You</h2>
+        <h4 className="text-white text-sm text-center">Your video appointment is on<br/>  
+        <b>24th March, 2019</b><br/> 
+        With Dr. Samir Parikh<br/> 
+        From <b>9:00 - 9:15 AM</b></h4>
+      </div>
+      <div className="w-full">
+        <p className="text-white text-xs text-center">Your appointment details have also been sent 
+        via your preferred communication
+        (SMS or Email). Find out more about <a className="text-blue-500">our online 
+        consultation process here.</a></p>
+      </div> 
+      <div className="w-full">
+        <p className="text-white text-xs text-center">Kindly reach us at <a className="text-blue-500">9910911092 </a>in case of any queries.</p>
+      </div>  
+    </div>
+  )
+
+};
+
+
 // Main component
 export default class BookingPage extends React.Component{
   constructor(props){
@@ -267,7 +525,13 @@ export default class BookingPage extends React.Component{
 
     return(
       <BookingWrapper className="relative">
-        <HomeLink className="text-gray-250 absolute mt-12  ml-8">
+        {/* <DatePicker /> */}
+        {/* <Doclist /> */}
+        {/* <DocBookSlot />         */}
+        <PatientForm />
+        {/* <ThankYou /> */}
+
+        {/* <HomeLink className="text-gray-250 absolute mt-12  ml-8">
           <SVG margin="0 10px 0 0" rotate display="inline-block" icon="arrow" width={'30px'} fill={'#8e8e8e'} />
           <Link to="/" className="text-vlg border-b border-gray-250 pb-2">Back to Home</Link>
         </HomeLink>
@@ -282,7 +546,7 @@ export default class BookingPage extends React.Component{
             :this.state.view === 'Time' ? <Time date={this.state.selectedDate} updateState={this.updateState}/>
               :this.state.view === 'Info' ? <Information date={this.state.selectedDate} time={this.state.time} updateState={this.updateState}/>
                 : null}
-        </BookingFields>
+        </BookingFields> */}
       </BookingWrapper>
     )
   }
