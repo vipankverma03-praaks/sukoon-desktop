@@ -13,11 +13,12 @@ console.log(DateFnsUtils.prototype);
 
 const useStyles = makeStyles({
   grid: {
-    width: '60%',
+    width: '100%',
+    color: 'white',
   },
 });
 
-export default function MaterialUIPickers() {
+export default function MaterialUIPickers(props) {
   // The first commit of Material-UI
   const [selectedDate, setSelectedDate] = React.useState(new Date());
 
@@ -33,23 +34,13 @@ export default function MaterialUIPickers() {
         <KeyboardDatePicker
           margin="normal"
           id="mui-pickers-date"
-          label="Date picker"
+          label=""
           value={selectedDate}
           onChange={handleDateChange}
           KeyboardButtonProps={{
             'aria-label': 'change date',
           }}
         />
-        {/*<KeyboardTimePicker*/}
-        {/*  margin="normal"*/}
-        {/*  id="mui-pickers-time"*/}
-        {/*  label="Time picker"*/}
-        {/*  value={selectedDate}*/}
-        {/*  onChange={handleDateChange}*/}
-        {/*  KeyboardButtonProps={{*/}
-        {/*    'aria-label': 'change time',*/}
-        {/*  }}*/}
-        {/*/>*/}
       </Grid>
     </MuiPickersUtilsProvider>
   );

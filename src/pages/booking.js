@@ -4,7 +4,6 @@ import React  from "react";
 import Mobile from "./Booking/Bookingmobile";
 import Desktop from "./Booking/Bookingdesktop";
 import SEO from "../components/seo";
-import Layout from "../components/view/layout";
 
 export default class Booking extends React.Component{
   constructor(props) {

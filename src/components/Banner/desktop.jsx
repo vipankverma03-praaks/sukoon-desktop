@@ -45,11 +45,20 @@ const Header = styled.section`
 `;
 
 const Booking = (props) =>{
-
+  const BookingOptions = [
+    {
+      value: "Video Appointment",
+      label: "Video Appointment"
+    },
+    {
+      value: "In Person Appointment",
+      label: "In Person Appointment"
+    }
+  ];
   return(
     <div className="mt-12 sm:text-vlg xs:text-vxl">
       <div id="contact-info-container" className="p-4 bg-sukoon font-gilroyMedium w-full flex">
-        <Input type="select" wrapperClass="w-2/5" label="Appointment Type" placeholder=""/>
+        <Input type="select" wrapperClass="w-2/5" value={BookingOptions} label="Appointment Type" placeholder=""/>
         <Input type="name" required={true} wrapperClass="ml-4 w-3/5" label="Email / Phone Number" defaultValue={``}/>
       </div>
       <div className="mt-8 font-gilroyMedium">

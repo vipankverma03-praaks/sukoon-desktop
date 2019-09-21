@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import {Link} from "gatsby";
 import BookBtn from "../../elements/BookNowBtn/mobile";
 import Input from "../../elements/Input/desktop";
+
 
 const HeadingWrapper = styled.div`
   font-size: 12vw;
@@ -60,7 +62,7 @@ const BookNow = (props) =>{
       </div>
       <div className="flex flex-col mt-16">
         <BookBtn border bg="transparent" wrapperClass="">
-          Book Now
+          <Link to="/booking" >Book Now</Link>
         </BookBtn>
         {props.contact ?
           <div className="my-4">
