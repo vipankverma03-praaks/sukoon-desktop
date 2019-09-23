@@ -253,7 +253,7 @@ const InputIcon = styled.img`
     max-width: 80px;
 `;
 
-const Main_sec = styled.div`
+const MainSec = styled.div`
     display: flex;
     flex-flow: column;
     height: 100%;
@@ -368,7 +368,7 @@ const TimeSlot = styled.div`
 const DatePicker = () =>{
 
   return (
-    <Main_sec className="">
+    <MainSec className="">
       <div>
       <BookLogo  src={`${SukoonLogo}`} alt=""/>
       <p className="font-accanthisRegular text-white text-base mt-2">Sukoon</p>
@@ -376,8 +376,8 @@ const DatePicker = () =>{
       <div className="py-5 text-center text-white relative">
         <input className="bg-transparent text-xs w-64 p-3" type="Name" placeholder="Pick Your Date" />
       </div>
-      <BookingBtn wrapperClass="w-full" buttonClass={'w-full'} theme="mint" padding="8px">Submit</BookingBtn>
-    </Main_sec>
+      <BookingBtn wrapperClass="w-full" buttonClass={'w-full'} theme="mint"  buttonPadding="10px 10px" >Submit</BookingBtn>
+    </MainSec>
   )
 
 };
@@ -385,7 +385,7 @@ const DatePicker = () =>{
 const Doclist = () =>{
 
   return (
-    <Main_sec className="">
+    <MainSec className="">
       <h2 className="pt-5 text-white text-xl w-full pl-5">Choose An Expert</h2>
       <DoctorListing className="">
         <ul>
@@ -452,7 +452,7 @@ const Doclist = () =>{
         </ul>
       </DoctorListing>
       <BookingBtn wrapperClass="w-full" buttonClass={'w-full'} theme="mint" padding="8px">Submit</BookingBtn>
-    </Main_sec>
+    </MainSec>
   )
 
 };
@@ -461,7 +461,7 @@ const DocBookSlot = () =>{
 
 return (
 
-  <Main_sec className="">
+  <MainSec className="">
       
       <div className="SetDocSlot w-full p-3">
         <div className="w-full flex flex-wrap">
@@ -537,7 +537,7 @@ return (
         
       </div>
       <BookingBtn wrapperClass="w-full" buttonClass={'w-full'} theme="mint" padding="8px">Book Now</BookingBtn>
-    </Main_sec>
+    </MainSec>
 
   )
   
