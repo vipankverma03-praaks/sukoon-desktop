@@ -73,11 +73,7 @@ const MeetExperts = props => {
       <div className="pl-20">
         <Title subHeading="About" titleLight="Our" titleBold="Doctors" />
         <Para Class="py-8" width="100%">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
-          dignissimos dolore dolorum eos, fuga itaque labore laboriosam libero
-          molestiae officiis quibusdam veniam voluptates! Adipisci cum, iusto
-          laudantium molestias perferendis qui reprehenderit suscipit ullam! A
-          aliquam consectetur nisi non nostrum numquam officiis placeat
+          With a team of experienced doctors led by Medical Director - Dr Samir Parikh of Fortis Healthcare, we can assure you that everybody is in good hands here. With an emphasis on relaxation and restoration of your mental well-being, we have a clinical team of psychiatrists, clinical psychologists, counselling psychologists, visiting consultants, general physicians, art therapists and fitness therapists.
         </Para>
       </div>
       <Carousel container  cardFn={CarouselItems} content={Doctors}/>
