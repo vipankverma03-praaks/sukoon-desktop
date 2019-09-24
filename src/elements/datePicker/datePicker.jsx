@@ -9,13 +9,22 @@ import {
 import DateFnsUtils from '@date-io/date-fns';
 DateFnsUtils.prototype.getStartOfMonth = DateFnsUtils.prototype.startOfMonth;
 
-console.log(DateFnsUtils.prototype);
-
 const useStyles = makeStyles({
   grid: {
     width: '100%',
     color: 'white',
+    '& .MuiInputBase-input' : {
+      color : 'white'
+    },
+    '& .MuiSvgIcon-root' : {
+      fill: 'white',
+    },
+    '& .MuiFormLabel-root':{
+      color: 'white',
+    },
+
   },
+
 });
 
 export default function MaterialUIPickers(props) {
@@ -34,7 +43,7 @@ export default function MaterialUIPickers(props) {
         <KeyboardDatePicker
           margin="normal"
           id="mui-pickers-date"
-          label=""
+          label="Pick your Date"
           value={selectedDate}
           onChange={handleDateChange}
           KeyboardButtonProps={{
