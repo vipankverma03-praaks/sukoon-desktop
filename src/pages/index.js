@@ -5,13 +5,15 @@ import Mobile from "./Home/Homemobile";
 import Desktop from "./Home/Homedesktop";
 import Layout from "../components/view/layout";
 import SEO from "../components/seo";
+import Loader from "../components/loader";
 
 export default class IndexPage extends React.Component{
       constructor(props) {
         super(props);
         this.state={
           overlay:false,
-          view:'desktop',
+          view:'',
+          loading: true,
         }
       }
 
@@ -21,26 +23,32 @@ export default class IndexPage extends React.Component{
       };
   componentDidMount() {
     if(window && window.matchMedia("(max-device-width: 760px)").matches){
-      this.setState({view: 'mobile'});
+      this.setState({view: 'mobile', loading: false});
     }
     else{
-      this.setState({view: 'desktop'});
+      this.setState({view: 'desktop', loading: false});
     }
   }
 
   render() {
 
-    return(
-      <Layout overlay={this.state.overlay} setOverlay={this.updateState}>
-       <SEO
-        title="Home"
-        keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
-      />
-        {this.state.view === 'mobile' ?
-          <Mobile/> :
-          <Desktop/>
-        }
-      </Layout>
-    )
+    if(this.state.loading !== 'undefined' && this.state.loading){
+      return <Loader/>
+    }
+    else {
+      return(
+        <Layout overlay={this.state.overlay} setOverlay={this.updateState}>
+          <SEO
+            title="Home"
+            keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
+          />
+          {
+            this.state.view === 'mobile' ?
+              <Mobile/> :
+              <Desktop/>
+          }
+        </Layout>
+      )
+    }
   }
 }
