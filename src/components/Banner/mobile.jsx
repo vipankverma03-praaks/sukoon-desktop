@@ -35,8 +35,7 @@ const ParaSection = (props) => {
 
   return(
     <div>
-      <p className="text-para font-medium py-1 text-left text-v6xl mb-8 block">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur culpa
-        inventore ipsum!</p>
+      <p className="text-para font-medium py-1 text-left text-v6xl mb-8 block">{props.bannerPara}</p>
     </div>
   )
 };
@@ -79,11 +78,11 @@ const Banner = (props) => {
   return (
     <Header id="header-intro-mobile" overlay={props.overlay} bookNow={props.bookNow} backgroundImg={props.backgroundImg} className="w-full px-4">
       <div className="mt-32 mb-8">
-        <Heading captionLight={props.captionLight} captionBold={props.captionBold} />
+        <Heading captionLight={props.captionLight} bannerPara={props.bannerPara} captionBold={props.captionBold} />
       </div>
       {props.bookNow ?
         <BookNow  contact={props.contact} discover={props.discover}/> :
-        <ParaSection />}
+        <ParaSection bannerPara={props.bannerPara} />}
     </Header>
   )
 };
