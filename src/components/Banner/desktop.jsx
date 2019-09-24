@@ -173,12 +173,6 @@ const HeaderIntro = (props) => {
               Services
             </Link>
             <Link
-              to="/infrastructure"
-              className=" inline-block mt-0 mr-6 no-underline"
-            >
-              Infrastructure
-            </Link>
-            <Link
               to="/experience"
               className=" inline-block mt-0 mr-6 no-underline"
             >

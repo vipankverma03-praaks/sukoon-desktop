@@ -41,8 +41,6 @@ const QuickLinks = (props) =>{
           <li className="text-gray-600 text-lg list-none">
             <Link to="/services">Services</Link></li>
           <li className="text-gray-600 list-none">
-            <Link to="/infrastructure">Infrastructure</Link></li>
-          <li className="text-gray-600 list-none">
             <Link to="/">Amenities</Link></li>
           <li className="text-gray-600 list-none">
             <Link to="/">Doctors</Link></li>
