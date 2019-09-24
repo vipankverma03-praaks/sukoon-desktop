@@ -18,21 +18,21 @@ const CardContent = {
     caption: 'Consulting Chambers',
     titleLight: 'Consulting',
     titleBold: 'Chamber',
-    para: 'Speak with your doctor in a private, and comfortable environment. Grab a coffee or indulge in some cold snacks while you wait. ',
+    para: 'Consult with your doctor in a private and comfortable environment. Grab a coffee, or indulge in some snacks while you wait.',
   },
   Card2: {
     bgImg:InHousePharmacy,
     caption: 'In House Pharmacy',
     titleLight: 'In House',
     titleBold: 'Pharmacy',
-    para: 'You can always find your prescribed medications at Sukoon. Our pharmacy is ',
+    para: 'You can always find your prescribed medications at Sukoon. No more running around the town to find them.',
   },
   Card3: {
     bgImg:InfraBgImg,
     caption: 'Modern Residences',
     titleLight: 'Modern',
     titleBold: 'Residences',
-    para: 'Stay in premium, well-lit, comfortably furnished rooms designed to provide a calming, warm, and safe environment ',
+    para: 'Stay in premium, well-lit, comfortably furnished rooms designed to provide a calming, warm, and safe environment.',
   },
   Card4: {
     bgImg:InfraBgImg,
@@ -46,14 +46,14 @@ const CardContent = {
     caption: 'Activity Areas',
     titleLight: 'Activity',
     titleBold: 'Areas',
-    para: 'Don’t be limited by space. Undergo alternative therapy programs in our fitness area, art studio, and independent floor lounges\n',
+    para: 'Never be limited by space! Undergo alternative therapy programs in our fitness area, art studio, and independent floor lounges.',
   },
   Card6: {
     bgImg:InfraBgImg,
     caption: 'World-Class Amenities',
     titleLight: 'World-Class',
     titleBold: 'Amenities',
-    para: 'Intensive Care Unit, 24*7 doctor on-site, terrace gardens, or in-room spa - we have you covered at every step of your healing process. \n',
+    para: 'Intensive Care Unit, 24*7 doctors on-site, terrace garden, or in-room spa - we have you covered at every step of your healing process.',
   }
 };
 

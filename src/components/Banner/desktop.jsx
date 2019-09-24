@@ -11,14 +11,14 @@ import Input from "../../elements/Input/desktop";
 import Texture from "../../images/texture.png";
 
 // Intro Section
-const Heading = () => {
+const Heading = (props) => {
   return (
     <HeadingWrapper className="text-sukoon  text-6xl">
-            <span className="block font-gilroyMedium">
-                Don't Just Stay,
+            <span className="block font-light">
+                 {props.captionLight || "Don't Just Stay"}
             </span>
-      <span className="font-gilroyBold block">
-                Live Here !
+      <span className="font-bold block">
+                {props.captionBold || "Live Here !"}
             </span>
     </HeadingWrapper>
   )
@@ -89,8 +89,9 @@ const HeaderIntroRight = styled.div`
 const ParagraphSection = (props) =>{
   return(
     <p Class="mt-8 w-3/5 text-sukoon my-1 font-gilroyMedium text-vlg leading-relaxed block">
-      entium, rem repellendus repudiandae sequi similique tempora tenetur ut velit veritatis!
-      entium, rem repellendus repudiandae sequi similique tempora tenetur ut velit veritatis!
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dolor eos explicabo harum, iure libero, magnam
+      molestias, natus optio quia similique vel veritatis. Consequuntur dolore dolores illo laudantium molestiae
+      veritatis?
     </p>
   )
 };
@@ -140,8 +141,8 @@ const BannerImage = styled.div`
 const ButtonSection = (props) =>{
   return(
     <div>
-      <p className="mt-8 w-2/5 text-gray-600 my-1 font-gilroyMedium text-vlg leading-relaxed block">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus adipisci aliquam, architecto culpa
+      <p className="mt-8 w-full text-gray-600 my-1 font-gilroyMedium text-vlg leading-relaxed block">
+        {props.bannerPara}
       </p>
       <div className="flex">
         <BookBtn wrapperClass="mr-24" theme="green"><Link to="/booking" className="w-full h-full">Book An Appointment</Link></BookBtn>
@@ -172,12 +173,6 @@ const HeaderIntro = (props) => {
               Services
             </Link>
             <Link
-              to="/infrastructure"
-              className=" inline-block mt-0 mr-6 no-underline"
-            >
-              Infrastructure
-            </Link>
-            <Link
               to="/experience"
               className=" inline-block mt-0 mr-6 no-underline"
             >
@@ -204,11 +199,11 @@ const HeaderIntro = (props) => {
           </NavWrapper>
           <BannerImage HeaderImg={props.HeaderImg} texture={props.texture} className="relative">
             <BannerText inner={props.inner} id="header-intro-left" className="py-12">
-              <Heading/>
+              <Heading captionLight={props.captionLight} captionBold={props.captionBold}/>
               {props.booking ?
                 <Booking discover={props.discover}/>
                 : props.para ? <ParagraphSection/> :
-                  <ButtonSection/>
+                  <ButtonSection bannerPara={props.bannerPara}/>
               }
             </BannerText>
           </BannerImage>

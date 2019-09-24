@@ -30,7 +30,6 @@ import Enquiry from "../../elements/BookNowBtn/desktop";
 import Preview from "../../components/Preview/desktop";
 import Title from "../../elements/Heading/desktop";
 
-
 const HighLightExperience = styled.div`
 background: url(${HighLightTherapy});   
 min-height: 415px;
@@ -96,24 +95,24 @@ const RoomFeatures = styled.ul`
 `;
 
 const Rooms = {
-  suiteRoom: {
-    type: 'suite room',
+  deluxeRoom: {
+    type: 'Deluxe room',
     description: 'lorem ipsum is just a dummy text',
-    amenities:['wifi','tv','Elevator','Power Backup','Kitchen','AC','Geyser','Wheel Chair','Single Bed','Room Heater' ,'Bath Tub'],
+    amenities:['Queen Bed','Smart TV (45”)','Private Balcony','AC & Heater','Mini Fridge','Spacious Closet','Lounge Seating','Writing Desk','Geyser','Wifi'],
     previewImages: [RoomOne, RoomTwo, RoomThree, RoomFour],
     preview: RoomOne,
   },
-  deluxeRoom: {
-    type: 'deluxe room',
+  suiteRoom: {
+    type: 'suite room',
     description: 'lorem ipsum is just a dummy text',
-    amenities:['wifi','tv','Elevator','Power Backup','Kitchen','AC','Geyser','Wheel Chair','Single Bed','Room Heater' ,'Bath Tub'],
+    amenities:['Queen Bed','Food Pantry','Smart TV (55”)','Private Balcony','Outdoor Seating','AC & Heater','Mini Fridge','Spacious Closet','Lounge Seating','Writing Desk' ,'Wifi','Geyser'],
     previewImages: [RoomOne, RoomTwo, RoomThree, RoomFour],
     preview: RoomOne,
   },
   icuRoom: {
     type: 'Intensive Care Unit',
     description: 'lorem ipsum is just a dummy text',
-    amenities:['wifi','tv','Elevator','Power Backup','Kitchen','AC','Geyser','Wheel Chair','Single Bed','Room Heater' ,'Bath Tub'],
+    amenities:['24*7 Doctor','Dedicated Nurse','Soft-touch Walls','Padded Furniture','Personalised Meals','Queen Bed','Private Balcony','AC & Heater','Spacious Closet','Luggage Rack'],
     previewImages: [RoomOne, RoomTwo, RoomThree, RoomFour],
     preview: RoomOne,
   },
@@ -152,8 +151,8 @@ const RoomIntro = ({room}) =>{
 // Main component
 function ExperiencePage() {
 
-  const[activeCategory, setCategory] = useState('suite rooms');
-  const[data, setData] = useState(Rooms.suiteRoom);
+  const[activeCategory, setCategory] = useState('deluxe rooms');
+  const[data, setData] = useState(Rooms.deluxeRoom);
 
   const setView = (view , data) =>{
     setCategory(view);
@@ -162,12 +161,16 @@ function ExperiencePage() {
 
   return (
       <>
-      <Banner inner texture HeaderImg={HeaderImg}/>
+      <Banner inner bannerPara={`Your health and happiness are our top priorities. We ensure this with the best doctors and nurses, world-class
+        treatments, premium facilities, and modern amenities. All our rooms are designed in accordance with the American
+        Psychiatric Association(APA) standards. Our center has ample natural light, lush green outdoor spaces, and
+        spacious activity areas to enhance your recovery. Don’t just stay, live here!`} texture captionLight={`Comfort meets`} captionBold={`Exceptional care`} HeaderImg={HeaderImg}/>
       <section className="py-12 px-20">
         <div className="">
           <Title titleLight="Experience" titleBold="Sukoon" />
-          <h3 className="text-3xl font-gilroyBold  mt-4 text-sukoon">Let's Take a Tour</h3>
-          <Para width="100%" Class="my-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged</Para>
+          <h3 className="text-3xl font-gilroyBold  mt-4 text-sukoon">Rooms</h3>
+          <Para width="100%" Class="my-4">At Sukoon, each residential room is thoughtfully designed to aid in your recovery. Sophisticated details such as wooden flooring and lounge seating create a residential comfort, while modern bath amenities and private balconies invite patients to relax.
+          </Para>
         </div>
         <div className="w-full flex mt-10">
           <div className="w-2/5">
@@ -175,8 +178,8 @@ function ExperiencePage() {
           </div>
           <div className="w-3/5 pl-10 flex flex-col justify-between">
             <ul className="RoomBtnTab mb-10">
-              <Category transparent={activeCategory !== 'suite rooms'} arguments={['suite rooms', Rooms.suiteRoom]} clickFn={setView}>Suite Rooms</Category>
               <Category transparent={activeCategory !== 'deluxe rooms'} arguments={['deluxe rooms', Rooms.deluxeRoom]} clickFn={setView}>Deluxe Rooms</Category>
+              <Category transparent={activeCategory !== 'suite rooms'} arguments={['suite rooms', Rooms.suiteRoom]} clickFn={setView}>Suite Rooms</Category>
               <Category transparent={activeCategory !== 'intensive care unit'} arguments={['intensive care unit', Rooms.icuRoom]} clickFn={setView}>Intensive Care Unit</Category>
             </ul>
             <RoomIntro room={data}/>
@@ -187,18 +190,24 @@ function ExperiencePage() {
         <div className="w-full flex">
           <div className="w-2/5 pr-8 flex flex-col justify-between ActivityInfo">
             <div>
-              <span className="block text-2xl">Activity Per Floor</span>
-              <Details open padding="10px 0" summary="Lounge">
-                <Para Class="py-4" width="100%">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                  Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                  galley of type and scrambled it to make a type specimen book. It has survived not only five
-                  centuries</Para>
+              <span className="block text-2xl">Spacious Activity Areas</span>
+              <Details open padding="10px 0" summary="Resident Lounges">
+                <Para Class="py-4" width="100%">At Sukoon, every floor has a modern resident lounge that comprises of a
+                  dining area, movie lounge, and board game tables. These versatile spaces are also used for art-based
+                  therapy, wellness classes, and group therapy.
+                </Para>
               </Details>
-              <Details padding="10px 0" summary="Nursing Station">
-                <Para Class="py-4" width="100%">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                  Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                  galley of type and scrambled it to make a type specimen book. It has survived not only five
-                  centuries</Para>
+              <Details padding="10px 0" summary="Nursing Stations">
+                <Para Class="py-4" width="100%">At Sukoon, every floor has a dedicated nursing station that is staffed round the clock. They have all the necessary medication, equipment, and technology to handle each and every emergency situation.
+                </Para>
+              </Details>
+              <Details padding="10px 0" summary="Fitness Studio">
+                <Para Class="py-4" width="100%">Our physical therapist have designed effective fitness classes that help you recover both physically and mentally. Make use of a world-class fitness studio that overlooks a terrace garden.
+                </Para>
+              </Details>
+              <Details padding="10px 0" summary="Terrace Garden">
+                <Para Class="py-4" width="100%">Being surrounded by nature reduces stress, and increases positive emotions. At Sukoon, you can unwind and rejuvenate  in our terrace garden that is lush-green, spacious, and secure.
+                </Para>
               </Details>
             </div>
             <Enquiry wrapperClass=""><Link to="/">Enquiry</Link></Enquiry>
@@ -212,9 +221,9 @@ function ExperiencePage() {
       <section>
         <HighLightExperience className="my-8 p-8">
           <div className="HighlightSecInfo shadow-xl">
-            <span className="font-semibold text-lg text-sukoon">Nurse To Paitent Ratio</span>
-            <h2 className="font-bold text-3xl text-sukoon">1:1 (One Person One Nurse)</h2>
-            <Para width="100%">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</Para>
+            <Title headingClass={`text-3xl`} titleLight={`One nurse for every patient`}/>
+            <Para width="100%">Our promise of holistic care is delivered via an unmatched nurse to patient ratio. At Sukoon, you and your loves ones are given individual attention for a speedy recovery
+            </Para>
           </div>
         </HighLightExperience>
       </section>
@@ -223,8 +232,8 @@ function ExperiencePage() {
         <HighLightExperienceTwo className="my-8 p-8">
           <div className="HighlightSecInfo shadow-xl">
             <span className="font-semibold text-lg text-sukoon">Patient Care</span>
-            <h2 className="font-bold text-3xl text-sukoon">Doctor Visit Twice Daily</h2>
-            <Para width="100%">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</Para>
+            <h2 className="font-bold text-3xl text-sukoon">Daily doctor consults</h2>
+            <Para width="100%">Depending on your needs our psychiatrists, psychologists, counsellors, and therapists will ensure that you receive personalised medical care via daily individual attention.</Para>
           </div>
         </HighLightExperienceTwo>
       </section>
@@ -233,22 +242,21 @@ function ExperiencePage() {
           <ExtraFeatures className="w-2/4">
             <div className="ClearView shadow-2xl"><img src={RoomDiningMain} className="block" alt="Header"/></div>
             <ExtraExperienceDetail className="">
-              <h2 className="font-bold text-3xl text-sukoon mb-1">Room Dining</h2>
-              <para width="100%">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</para>
+              <h2 className="font-bold text-3xl text-sukoon mb-1">In room Dining</h2>
+              <para width="100%">Indulge in some freshly prepared food whenever your heart desires. Our room service menu consists of both Indian and Continental dishes.</para>
             </ExtraExperienceDetail>
           </ExtraFeatures>
           <ExtraFeaturesTwo className="w-2/4">
             <div className="ClearView shadow-2xl"><img src={RoomSpaMain} className="block" alt="Header"/></div>
             <ExtraExperienceDetail className="">
-              <h2 className="font-bold text-3xl text-sukoon mb-1">Room Spa</h2>
-              <para width="100%">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</para>
+              <h2 className="font-bold text-3xl text-sukoon mb-1">In Room Spa</h2>
+              <para width="100%">Our licensed massage therapists  are there to help you relax anytime in the comfort of your own room.  Chose from a variety of spa services.</para>
             </ExtraExperienceDetail>
           </ExtraFeaturesTwo>
         </div>
       </section>
       <section className="p-8" id="mealSection">
-        <span className="font-semibold text-lg text-sukoon">Meal</span>
-        <h2 className="font-bold text-3xl text-sukoon mb-1">Catered Meal (3 Times a Day)</h2>
+        <Title  headingClass={``} titleLight={`Delicious Meals`} subHeading={`Meal`} titleBold={``}/>
         <div className="mealSection w-full flex">
           <div className="w-1/3 p-12 px-8">
             <MealCard className="">
@@ -258,10 +266,6 @@ function ExperiencePage() {
                 <Para width="100%">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</Para>
               </div>
             </MealCard>
-            <MenuItems className="py-5">
-              <h4 className="font-medium text-lg text-sukoon">Menu Items</h4>
-              <Para width="100%">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</Para>
-            </MenuItems>
           </div>
           <div className="w-1/3 p-12 px-8">
             <MealCard className="">
@@ -271,10 +275,6 @@ function ExperiencePage() {
                 <Para width="100%">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</Para>
               </div>
             </MealCard>
-            <MenuItems className="py-5">
-              <h4 className="font-medium text-lg text-sukoon">Menu Items</h4>
-              <Para width="100%">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</Para>
-            </MenuItems>
           </div>
           <div className="w-1/3 p-12 px-8">
             <MealCard className="">
@@ -284,10 +284,6 @@ function ExperiencePage() {
                 <Para width="100%">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</Para>
               </div>
             </MealCard>
-            <MenuItems className="py-5">
-              <h4 className="font-medium text-lg text-sukoon">Menu Items</h4>
-              <Para width="100%">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</Para>
-            </MenuItems>
           </div>
         </div>
       </section>

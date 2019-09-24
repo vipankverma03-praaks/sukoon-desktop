@@ -54,37 +54,147 @@ const TopRow = styled.section`
 `;
 
 // Content for residential services & out-patient services.
-let content = [
+let ResidentialServicesContent = [
   {
-    titleLight: 'Acute',
-    titleBold: 'Psychiatry Care',
-    para: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-    numberOfCards: [1,2,3],
+    Cards:[
+      {
+     titleLight: 'Acute',
+      titleBold: 'Psychiatry Care',
+      para: 'Inpatient hospitalisation with high levels of personalised care, comfort, and safety.',
+    },
+      {
+        titleLight: 'Intensive',
+        titleBold: 'Care Units',
+        para: 'Three ICUs designed to handle any emergencies with round the clock care, and medical supervision.',
+      },
+      {
+        titleLight: 'Alcohol',
+        titleBold: 'Deaddiction',
+        para: 'Personalised treatments addressing substance abuse such as smoking cigarettes, taking drugs, or sniffing glue. ',
+      },
+    ],
     col:'Col1'
   },
   {
-    titleLight: 'Acute',
-    titleBold: 'Psychiatry Care',
-    para: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-    numberOfCards: [1,2,3],
+    Cards:[
+      {
+        titleLight: 'Drug',
+        titleBold: 'Deaddiction',
+        para: 'Personalised treatments addressing substance abuse such as smoking cigarettes, taking drugs, or sniffing glue. ',
+      },
+      {
+        titleLight: 'Habit',
+        titleBold: 'Deaddiction',
+        para: 'Specialised treatments for lifestyle issues such as gambling, gaming, and internet addiction',
+      },
+      {
+        titleLight: 'Sukoon',
+        titleBold: 'At Home',
+        para: 'Get tailor-made psychiatric care in the comfort of your residence from our expert team of doctors and nurses',
+      },
+
+    ],
     col:'Col2'
   },
   {
-    titleLight: 'Acute',
-    titleBold: 'Psychiatry Care',
-    para: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-    numberOfCards: [1,2],
+    Cards:[
+      {
+        titleLight: 'Geriatric',
+        titleBold: 'Psychiatry',
+        para: 'Old age psychiatric treatments and mental health programs for all needs of the elderly',
+      },
+      {
+        titleLight: 'Women',
+        titleBold: 'Focused Care',
+        para: 'Consult with only female doctors, and receive care from female nurses in a safe environment',
+      },
+
+    ],
     col:'Col3'
   },
   {
-    titleLight: 'Acute',
-    titleBold: 'Psychiatry Care',
-    para: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-    numberOfCards: [1],
+    Cards:[
+      {
+        titleLight: 'Child',
+        titleBold: 'Psychiatry',
+        para: 'Adolescent focused mental health programs and psychiatric treatments delivered with extra care.',
+      },
+    ],
     col:'Col4'
   }
 ];
 
+
+// Content for residential services & out-patient services.
+let OutPatientServicesContent = [
+  {
+    Cards:[
+      {
+        titleLight: 'Clinical',
+        titleBold: 'psychology',
+        para: 'Specialised psychotherapeutic treatments for emotional and behavioural disorders',
+      },
+      {
+        titleLight: 'Counselling',
+        titleBold: 'Psychology',
+        para: 'Personalised care to help cope with life situations, problems, and everyday issues ',
+      },
+      {
+        titleLight: 'Art-Based',
+        titleBold: 'Therapy',
+        para: 'Visual arts, storytelling, music, creative writing, and movement in a therapeutic setting.',
+      },
+    ],
+    col:'Col1'
+  },
+  {
+    Cards:[
+      {
+        titleLight: 'rTMS',
+        titleBold: 'Treatment',
+        para: ' Repetitive Transcranial Magnetic Stimulation (rTMS) treatments for behavioural and emotional disorders',
+      },
+      {
+        titleLight: 'Remediation',
+        titleBold: '',
+        para: 'Special educators assist children with learning disabilities, attention deficit, and intellectual disabilities',
+      },
+      {
+        titleLight: 'Psychoanalytical',
+        titleBold: 'Therapy',
+        para: 'Work through early life traumas and change long standing maladaptive personality and relational patterns',
+      },
+
+    ],
+    col:'Col2'
+  },
+  {
+    Cards:[
+      {
+        titleLight: 'Occupational',
+        titleBold: 'Therapy',
+        para: 'Treatments designed for restoring cognitive and motor functions to perform better at daily activities.',
+      },
+      {
+        titleLight: 'Virtual',
+        titleBold: 'Therapy',
+        para: 'Continue your treatment plan and receive expert psychiatric care via chat, phone calls, or video calls',
+      },
+
+    ],
+    col:'Col3'
+  },
+  {
+    Cards:[
+      {
+        titleLight: 'Psycho',
+        titleBold: 'Oncology',
+        para: 'Specialised treatments designed to address the psychological impact and social aspects of cancer',
+      },
+    ],
+    col:'Col4'
+  }
+];
 
 const PyramidWrapper = styled.div`
       flex-direction: ${props => props.reverse ? 'row-reverse' : 'row'};
@@ -119,17 +229,17 @@ const Pyramid = (props) =>{
     `;
 
   const CoolCards = ()=>{
-    let items = content.map((item)=>{
+    let items = props.content.map((item)=>{
       let Col = item.col;
-      let Cards = item.numberOfCards.map(()=>{
+      let Cards = item.Cards.map((card)=>{
         return(
           <Card className="card-container mb-4 mx-2">
             <div className="bg-white w-full">
               <div className="">
-                <h3 className="text-v2xl font-bold text-sukoon block">{item.titleLight}</h3>
-                <h3 className="text-v2xl font-bold text-sukoon block">{item.titleBold}</h3>
+                <h3 className="text-v2xl font-bold text-sukoon block">{card.titleLight}</h3>
+                <h3 className="text-v2xl font-bold text-sukoon block">{card.titleBold}</h3>
                 <Para Class="w-full pt-4">
-                  {item.para} <ArrowIcon/>
+                  {card.para} <ArrowIcon/>
                 </Para>
               </div>
             </div>
@@ -178,16 +288,16 @@ const Pyramid = (props) =>{
 };
 
 
-const InPatientServices = (props) => {
+const ResidentialServices = (props) => {
 
   return (
-    <section id="inpatient-services" className="relative py-12">
+    <section id="Residential Services" className="relative py-12">
       <div className="w-fit absolute pl-20 pt-12">
         <Title subHeading="IPD" titleLight="Residential" titleBold="Services" display="block"/>
-        <Para width="40%">Our residential treatment programs provide specialised care. Recover in a home-like setting - comfortable, warm, and personalised.
+        <Para width="40%">Home is where the heart is! At Sukoon, your heart has over 20,000 sq. ft to fall in love with. Its spread across 6 lush green floors to positively affect your well-being
         </Para>
       </div>
-      <Pyramid reverse={true} top="-12rem"/>
+      <Pyramid content={ResidentialServicesContent} reverse={true} top="-12rem"/>
     </section>
   )
 };
@@ -350,11 +460,11 @@ const OutPatientServices = (props) => {
       <OutPatientServiceHeading className="w-fit pt-12 absolute">
         <Title subHeading="OPD" titleLight="Out Patient" textAlign="right" titleBold="Care Services" borderRight={true} display="block"/>
         <Para width="23vw" textAlign="right">
-          In addition to providing holistic care in our calming environment, we also offer effective daycare treatment programs.
+          We offer effective daycare treatment programs in a calming, and relaxing environment. Our team of expert doctors, combined with modern facilities ensure holistic care.
         </Para>
 
       </OutPatientServiceHeading>
-      <Pyramid top="0" reverse={false}/>
+      <Pyramid content={OutPatientServicesContent}top="0" reverse={false}/>
     </section>
   )
 };
@@ -363,13 +473,14 @@ const IntroContent = {
   Heading: { titleLight: 'Why', titleBold: 'Sukoon'},
   Caption: [
     {
-      heading: "Consult best doctors",
-      para: "Get expert advice from our team of experienced doctors, led by Dr. Sameer Parikh"
-    }, {
-      heading: "Get personalised care",
-      para: "Receive customised and holistic care because of our incredible 1:1 nurse to patient ratio"
+      heading: "Consult the best Psychiatric Team",
+      para: "Get expert advice from an experienced team of doctors that ensure holistic care to address your concerns. We take our doctor-patient confidentiality with utmost seriousness while guiding you towards better days."
     },
-    { heading: "Experience premium facilities", para: "Enhance your recovery in a calming, positive, and comfortable environment" }
+    {
+      heading: "Your personal mental rehabilitation center",
+      para: "Powered by Fortis Healthcare, Sukoon is India’s first super-specialty psychiatric center. We have leading de-addiction, psychiatric, and mental health programs for both inpatients and outpatients. We are a one-of-a-kind healthcare provider for all your psychiatric and mental well-being needs."
+    },
+    { heading: "State-Of-The-Art Premium Facilities", para: "Enhance your recovery in a calming, positive, and comfortable world-class environment. With residential care tailor-made to your mental and psychological health, recovery and better days are just around the corner." }
   ]
 };
 
@@ -380,10 +491,10 @@ function DesktopHome() {
   return (
     <>
       <TopRow>
-        <Banner booking discover HeaderImg={HeaderImg}/>
+        <Banner bannerPara={`lorem ipsum is a dummy text`} captionLight={`A safe space`} captionBold={`for better days.`} ooking discover HeaderImg={HeaderImg}/>
         <WhySukoon content={IntroContent}/>
       </TopRow>
-      <InPatientServices/>
+      <ResidentialServices/>
       <OutPatientServices/>
       <Infrastructure/>
       <MFBWrapper>
