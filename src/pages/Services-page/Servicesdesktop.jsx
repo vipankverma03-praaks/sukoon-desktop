@@ -281,9 +281,7 @@ const StyledLeftNav = styled.ul`
   flex-direction: column;
   justify-content: space-between;
   line-height: 1.5;
-  font-family: gilroy-medium;
   font-size: 1.1vw;
-  margin-top: 1rem;
   width: 37vw;
   
   li{
@@ -303,26 +301,43 @@ const StyledLeftNav = styled.ul`
   
 `;
 
+const OutPatienList = [
+  {name: 'Clinical psychology ' , content: Content, number: '1'},
+  {name: 'Counselling psychology', content: Content2, number: '2'},
+  {name: 'Art-Based Therapy', content: Content3, number: '3'},
+  {name: 'rTMS Treatment', content: Content4, number: '4'},
+  {name: 'Remediation', content: Content5, number: '5'},
+  {name: 'Psychoanalytical  Therapy', content: Content, number: '6'},
+  {name: 'Occupational Therapy', content: Content, number: '7'},
+  {name: 'Virtual Therapy', content: Content, number: '8'},
+  {name: 'Psycho - Oncology ', content: Content, number: '9'},
+];
+
+const ResidentialServicesList = [
+  {name: 'Acute Psychiatry Care' , content: Content, number: '1'},
+  {name: 'Intensive Care Unit', content: Content2, number: '2'},
+  {name: 'Alcohol Deaddiction', content: Content3, number: '3'},
+  {name: 'Drug Deaddiction', content: Content4, number: '4'},
+  {name: 'Habit Deaddiction', content: Content5, number: '5'},
+  {name: 'Sukoon At Home', content: Content, number: '6'},
+  {name: 'Geriatric Psychiatry', content: Content, number: '7'},
+  {name: 'Women Focused Care', content: Content, number: '8'},
+  {name: 'Child Psychiatry', content: Content, number: '9'},
+];
+
+
 // Patient card component
 const PatientCare = (props) => {
 
   const[ListContent, setContent] = useState(Content);
   const[isActive, setActive] = useState('1');
 
-  const List = [
-    {name: 'Acute Psychiatry Care Intensive Care Unit' , content: Content, number: '1'},
-    {name: 'Alcohol, Drug, And Habbit De-addiction Programs', content: Content2, number: '2'},
-    {name: 'Day-Care Counselling, and Immersive Therapy Programs.', content: Content3, number: '3'},
-    {name: 'Off-site IPD Setup At Home Services', content: Content4, number: '4'},
-    {name: 'Geriatic Psychiatry age related mental health issues.', content: Content5, number: '5'},
-    {name: 'Special Ward for Women Female Staff Only', content: Content, number: '6'},
-  ];
 
   // Left nav list component.
-  let navList = List.map((list)=>{
+  let navList = props.list.map((list)=>{
     return(
-      <li className={`${isActive === list.number ? 'text-sukoon' : ''} flex justify-between hover:text-sukoon items-center`}>
-        <button onClick={()=>{setContent(list.content); setActive(list.number)}} className="font-gilroyMedium focus:outline-none">
+      <li className={`${isActive === list.number ? 'text-sukoon' : ''} text-2xl flex justify-between hover:text-sukoon items-center`}>
+        <button onClick={()=>{setContent(list.content); setActive(list.number)}} className="focus:outline-none">
           {list.name}
         </button>
         <ArrowButton wrapperClass={`${isActive === list.number ? 'active' : 'hidden'}`} margin="0"/>
@@ -335,14 +350,14 @@ const PatientCare = (props) => {
       <div id="top-title-row" className="flex">
         <div className="w-4/5">
           <Title
-            titleLight={props.title}
-            titleBold="Care Services"
+            titleLight={props.titleLight}
+            titleBold={props.titleBold}
             display="block"
           />
         </div>
         <div className="bg-sukoon text-center text-vxs text-white p-6 w-1/5">
           <SVG display="inline-block" icon="helpline" width={'35px'} fill={'#fff'} />
-          <h4 className="leading-loose font-gilroyMedium py-2">Sukoon Suicide Helpline</h4>
+          <h4 className="leading-loose py-2">Sukoon Suicide Helpline</h4>
           <h2 className="text-v2xl tracking-widest">1800-234-6789</h2>
         </div>
       </div>
@@ -408,9 +423,9 @@ function ServicesPage(props) {
 
   return (
     <>
-      <Banner para inner texture HeaderImg={HeaderImg}/>
-      <PatientCare title="In Patient" />
-      <PatientCare title="Out Patient" />
+      <Banner para captionLight={`Feel like`} bannerPara={`We’re here for you. At Sukoon, our experienced team of psychiatrists, clinical psychologists, counselling psychologists, therapists, and nurses provide compassionate, short-term and inpatient psychiatric and mental health services that help you feel better as quickly as possible. We work with you one-on-one ensuring that every part of your care is personalised to your condition, emotions, and needs.`} captionBold={`Yourself Again`} inner texture HeaderImg={HeaderImg}/>
+      <PatientCare list={ResidentialServicesList} titleLight="Residential" titleBold={`Services`} />
+      <PatientCare list={OutPatienList} title="Out Patient" />
       <MeetExperts />
     </>
   );

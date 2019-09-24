@@ -203,11 +203,11 @@ const PyramidWrapper = styled.div`
 const Pyramid = (props) =>{
 
   const Card = styled.div`
-      width: 18vw;
+      width: 20vw;
       padding: 13px;
       
        > div > div{
-        padding: 6% 8%;
+        padding: 5% 6%;
       }
       
       
@@ -221,11 +221,11 @@ const Pyramid = (props) =>{
     `;
   const Col3 = styled.div`
         width: fit-content;
-        margin-top: 15rem;
+        margin-top: 18rem;
     `;
   const Col4 = styled.div`
         width: fit-content;
-        margin-top: 25rem;
+        margin-top: 27rem;
     `;
 
   const CoolCards = ()=>{
@@ -491,7 +491,7 @@ function DesktopHome() {
   return (
     <>
       <TopRow>
-        <Banner bannerPara={`lorem ipsum is a dummy text`} captionLight={`A safe space`} captionBold={`for better days.`} ooking discover HeaderImg={HeaderImg}/>
+        <Banner bannerPara={``} captionLight={`A safe space`} captionBold={`for better days`} booking discover HeaderImg={HeaderImg}/>
         <WhySukoon content={IntroContent}/>
       </TopRow>
       <ResidentialServices/>

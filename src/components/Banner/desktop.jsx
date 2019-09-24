@@ -88,10 +88,8 @@ const HeaderIntroRight = styled.div`
 
 const ParagraphSection = (props) =>{
   return(
-    <p Class="mt-8 w-3/5 text-sukoon my-1 font-gilroyMedium text-vlg leading-relaxed block">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dolor eos explicabo harum, iure libero, magnam
-      molestias, natus optio quia similique vel veritatis. Consequuntur dolore dolores illo laudantium molestiae
-      veritatis?
+    <p Class="mt-8 w-3/5 text-para my-1 text-vlg leading-relaxed block">
+      {props.para}
     </p>
   )
 };
@@ -202,7 +200,7 @@ const HeaderIntro = (props) => {
               <Heading captionLight={props.captionLight} captionBold={props.captionBold}/>
               {props.booking ?
                 <Booking discover={props.discover}/>
-                : props.para ? <ParagraphSection/> :
+                : props.para ? <ParagraphSection para={props.bannerPara}/> :
                   <ButtonSection bannerPara={props.bannerPara}/>
               }
             </BannerText>

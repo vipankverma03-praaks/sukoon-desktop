@@ -95,6 +95,11 @@ h5 {font-size: 1.2em;}
 
 .small, .text_small {font-size: 0.8em;}
 
+/*-----------Outline--------------*/
+svg:focus, a:focus , input:focus , select:focus, button:focus{
+    outline: transparent thin dotted;
+}
+
 /* For desktop design*/
 #inpatient-services::before {
     content: '';
@@ -303,3 +308,12 @@ input:focus{
     top: 20px;
     right: 20px;
 }
+
+/*------------Date-picker-START--------------*/
+body .MuiPickersToolbar-toolbar, body .MuiPickersDay-daySelected, .MuiPickersDay-daySelected:hover{
+    background: #12443e;
+}
+body .MuiPickersDay-day:hover{
+    background-color: #C2DCD3;
+}
+/*------------Date-picker-END--------------*/

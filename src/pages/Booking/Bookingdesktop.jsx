@@ -1,26 +1,20 @@
 import  React,{useState}  from "react";
 import styled from "styled-components";
-import DayPickerInput from 'react-day-picker/DayPickerInput';
 import 'react-day-picker/lib/style.css';
-import {Link} from 'gatsby';
-import moment from "moment";
 
 //  Components
 import Radio from "../../elements/RadioButton/desktop";
 import BookingBtn from "../../elements/BookNowBtn/desktop";
 import Input from "../../elements/Input/desktop";
+import Date from "../../elements/datePicker/datePicker";
 
 // Images
 import BookingBg from "../../images/bookingBg.png";
 import SukoonLogo from "../../images/logo_light.svg";
 import Calender from "../../images/cal.svg";
-import Edit from "../../images/edit_icon.png";
-import Timer from "../../images/clock.svg";
 import DocImg from "../../images/doctor/doctor1.jpg";
 
 const Form = styled.form`
-  font-family: gilroy-regular;
-  
   margin: 40px 10vw 0 10vw;
   
   input, select{
@@ -61,13 +55,6 @@ const TimerWrapper = styled.div`
     /* text-align:center; */
 `;
 
-const TopLogo = styled.img`
-  width: 6vw;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 6vw;
-`;
-
 const BookingFields = (props) =>{
   return(
     <div>
@@ -75,8 +62,6 @@ const BookingFields = (props) =>{
     </div>
   );
 };
-
-
 
 const BookingWrapper = styled.section`
   background-image: url(${BookingBg});
@@ -104,154 +89,11 @@ const BookingWrapper = styled.section`
   }
 `;
 
-const LogoRow = styled.div`
-  
-  > div > h1{
-    padding-top: 20px;
-  }
-`;
-
-const Date = (props) =>{
-
-  let selectedDate = props.selectedDate ? props.selectedDate : '';
-
-  return(
-    <div className="flex justify-around">
-      <div className="mt-12">
-        <h2 className="text-white mb-2 text-vlg">Pick your Date.</h2>
-        <DayPickerInput selectedDay={selectedDate} onDayChange={props.handleDate} style={{background: 'white'}}
-                        classNames={{container: 'BookingInput', ovarlayWrapper: 'DateContainer'}}/>
-      </div>
-    </div>
-  )
-};
-
-
-
-
-
-const Time =  (props) => {
-
-  const handleTime = (event, view,time) =>{
-    props.updateState('view',view);
-    props.updateState('time', time);
-    props.updateState('bookingFieldKey', Math.random());
-  };
-
-  return(
-    <section>
-      <div className="p-8">
-        <span className="text-gray-400 text-vlg mr-4">Your appointment is on</span>
-        <button onClick={(event)=>{handleTime(event,'Date')}}  className="text-white border-solid border-white border-0 border-b text-vlg">
-          {moment(props.date).format("Do MMMM YY")}
-          <img src={Edit} className="inline-block w-4 ml-4" alt="edit icon"/>
-        </button>
-      </div>
-      <div className="flex flex-col  p-8 text-vsm flex-no-wrap">
-        <div className="mx-auto flex">
-          <TimerWrapper className="flex items-center bg-white mr-4">
-            <Radio spanText="03:00 PM - 05:00 PM" handleButton={handleTime} arguments={['Info','03:00 PM - 05:00 PM']} />
-            <img src={Timer} className="w-6 inline-block" alt="timer icon"/>
-          </TimerWrapper>
-          <TimerWrapper className="flex items-center bg-white mr-4">
-            <Radio spanText="03:00 PM - 05:00 PM" handleButton={handleTime} arguments={['Info','03:00 PM - 05:00 PM']} />
-            <img src={Timer} className="w-6 inline-block" alt="timer icon"/>
-          </TimerWrapper>
-          <TimerWrapper className="flex items-center bg-white mr-4">
-            <Radio spanText="03:00 PM - 05:00 PM" handleButton={handleTime} arguments={['Info','03:00 PM - 05:00 PM']} />
-            <img src={Timer} className="w-6 inline-block" alt="timer icon"/>
-          </TimerWrapper>
-        </div>
-        <div className="mx-auto flex mt-8">
-          <TimerWrapper className="flex items-center bg-white mr-4">
-            <Radio spanText="03:00 PM - 05:00 PM" handleButton={handleTime} arguments={['Info','03:00 PM - 05:00 PM']} />
-            <img src={Timer} className="w-6 inline-block" alt="timer icon"/>
-          </TimerWrapper>
-          <TimerWrapper className="flex items-center bg-white mr-4">
-            <Radio spanText="03:00 PM - 05:00 PM" handleTime={handleTime} arguments={['Info','03:00 PM - 05:00 PM']} />
-            <img src={Timer} className="w-6 inline-block" alt="timer icon"/>
-          </TimerWrapper>
-        </div>
-
-      </div>
-    </section>
-  )
-};
-
-// User information component.
-const Information = (props) =>{
-
-  const handleRadioButton = (event, sex) =>{
-
-  };
-
-  const handleTime = (event, view) =>{
-    props.updateState('view',view);
-    props.updateState('bookingFieldKey', Math.random());
-  };
-
-  return (
-    <section className="p-8 flex flex-col">
-      <div>
-        <div>
-          <span className="text-gray-250 text-vlg mr-4">Your Appoinment is on</span>
-          <button className="text-white text-vlg underline">
-            {moment(props.date).format("Do MMMM YY")}
-            <img src={Edit} onClick={(event)=>{handleTime(event,'Date')}} className="inline-block w-4 ml-4" alt="edit icon" />
-          </button>
-        </div>
-        <div className="mt-4">
-          <span className="text-gray-250 text-vlg mr-4">At</span>
-          <button className="text-white text-vlg underline">
-            {props.time}
-            <img src={Edit} onClick={(event)=>{handleTime(event,'Time')}} className="inline-block w-4 ml-4" alt="edit icon" />
-          </button>
-        </div>
-      </div>
-      <Form action="" className="text-white">
-        <h2 className="text-white font-medium text-v4xl">Enter Information</h2>
-        <div className="flex py-4 justify-between">
-          <div id="left-information" className="flex justify-between flex-col w-1/2 mr-4">
-            <Input type="name" required={true} defaultValue={``} wrapperClass="my-2 w-full " label="First Name"/>
-            <div className="my-2">
-              <span>Sex :</span>
-              <Radio display="inline-block" handleButton={handleRadioButton} arguments={['M']} spanClass="text-white mx-4" spanText="Male"/>
-              <Radio display="inline-block" handleButton={handleRadioButton} spanClass="text-white mx-4" arguments={['F']} spanText="Female"/>
-            </div>
-            <Input type="name" required={true} defaultValue={``} wrapperClass="w-full " label="Email"/>
-          </div>
-          <div id="right-information" className="pl-4 justify-between w-1/2">
-            <Input type="name" required={true} defaultValue={``} wrapperClass="my-2 w-full " label="Last Name"/>
-            <div className="flex my-2 items-center">
-              <span className="mr-2 self-end">DOB :</span>
-              <Input type="select" wrapperClass="inline-block mr-8 w-1/9" label="Year" placeholder=""/>
-              <Input type="select" wrapperClass="inline-block mr-8 w-1/9" label="Month" placeholder=""/>
-              <Input type="select" wrapperClass="inline-block w-1/9" label="Day" placeholder=""/>
-            </div>
-            <Input type="name" required={true} wrapperClass="w-full" label="Phone Number" defaultValue={``}/>
-          </div>
-        </div>
-        <BookingBtn wrapperClass="float-right" theme="white" padding="5px">Book and Pay</BookingBtn>
-      </Form>
-    </section>
-  );
-};
-
-
-// updated_design=============>>>>>>>>>>>>>>>>>>>>>
-
-
-// date_picker_style====>>
-
 const BookLogo = styled.img`
     margin: 0 auto;
     padding-top: 25px;
     max-width: 80px;
     display:block;
-`;
-
-const InputIcon = styled.img`
-    max-width: 80px;
 `;
 
 const MainSec = styled.div`
@@ -262,16 +104,13 @@ const MainSec = styled.div`
     align-items:center;
     padding:0% 8%;
 `;
-// date_picker_style  END   ====>>
-
-// doctor_listing   ====>>
 
 const DoctorListing = styled.div`
 
 ul {
   display:flex;
   flex-flow:wrap;
-  max-height: 380px;
+  max-height: 35vw;
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -279,7 +118,7 @@ ul li {
   width:20%;
 }
 .DocCard {
-  margin:0px 15px 25px 15px
+  margin:0px 15px 25px 0;
 }
 .DocCard img {
   width:100%;
@@ -298,10 +137,6 @@ ul li {
 
 `;
 
-// doctor_listing  END   ====>>
-
-// doctor_slot   ====>>
-
 const DocSlotImg = styled.img`
 
 max-width:100%;
@@ -316,15 +151,13 @@ const DateSlot = styled.ul`
 `;
 
 const TimeSlot = styled.div`
-
     display: flex;
-    /* max-height: 300px; */
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
     flex-flow: wrap;
     margin-top:25px;
     margin-bottom:25px;
-    height:230px;
+    height:fit-content;
 
 .slot{
   width:25%;
@@ -332,28 +165,22 @@ const TimeSlot = styled.div`
 }
 .slot div {
   margin:5px;
-  /* background: transparent; */
     border: 1px solid #fff;
     color: #fff;
 }
-
 `;
 
 const ThankSec = styled.div`
-
 display:flex;
 flex-flow:column;
 justify-content:center;
 
 `;
 
-// doctor_slot  END  ====>>
-
 // Function to change the view after submit button.
 function handleSubmit (stateName, value, updateState) {
   updateState(stateName, value);
 };
-
 
 // add_material UI date picker
 const DatePicker = (props) =>{
@@ -365,9 +192,9 @@ const DatePicker = (props) =>{
       <p className="font-accanthisRegular text-white text-base mt-2">Sukoon</p>
       </div>
       <div className="py-5 text-center text-white relative">
-        <input className="bg-transparent text-xs w-64 p-3" type="Name" placeholder="Pick Your Date" />
+        <Date/>
       </div>
-      <BookingBtn wrapperClass="" buttonClass={''} theme="mint" padding="8px"  clickFn={handleSubmit} buttonArguments={['view', 'Doctor List', props.updateState]}>Submit</BookingBtn>
+      <BookingBtn wrapperClass="self-end mt-32 mr-64" buttonClass={''} theme="mint" padding="8px"  clickFn={handleSubmit} buttonArguments={['view', 'Doctor List', props.updateState]}>Submit</BookingBtn>
     </MainSec>
   )
 
@@ -377,7 +204,7 @@ const Doclist = (props) =>{
 
   return (
     <MainSec className="">
-      <h2 className="pt-5 text-white text-2xl w-full font-bold">Choose An Expert</h2>
+      <h2 className="pt-16 pb-4 text-white text-2xl w-full font-bold">Choose An Expert</h2>
       <DoctorListing className="">
         <ul>
           <li>
@@ -453,14 +280,14 @@ const Doclist = (props) =>{
 const DocBookSlot = (props) =>{
 
   const[activeCategory, setCategory] = useState('category1');
-  const setView = (view , data) =>{
+  const setView = (view ) =>{
     setCategory(view);
   };
 
 return (
 
   <MainSec className="">
-      <div className="SetDocSlot w-full">
+      <div className="SetDocSlot pt-8 w-full">
         <div className="w-full flex flex-wrap">
           <div className="w-1/4">
           <DocSlotImg src={`${DocImg}`} alt="" />
@@ -472,13 +299,13 @@ return (
             <span className="text-xs text-white font-regular mt-2 leading-tight block">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </span>
             <div className="w-full mt-8 overflow-y-hidden">
             <DateSlot className="">
-              <BookingBtn buttonText={`#fff`} buttonClass="text-sm leading-tight text-white" buttonPadding="5px 10px" wrapperPadding={activeCategory !== 'category1' ? '': '2px'} theme="white" transparent={activeCategory !== 'category1'} arguments={['category1']} clickFn={setView}>Tuesday<br/>17</BookingBtn>
-              <BookingBtn buttonText={`#fff`} buttonClass="text-sm leading-tight text-white" buttonPadding="5px 10px" wrapperPadding={activeCategory !== 'category2' ? '': '2px'} theme="white" transparent={activeCategory !== 'category2'} arguments={['category2']} clickFn={setView}>Wednesday<br/>18</BookingBtn>
-              <BookingBtn buttonText={`#fff`} buttonClass="text-sm leading-tight text-white" buttonPadding="5px 10px" wrapperPadding={activeCategory !== 'category3' ? '': '2px'} theme="white" transparent={activeCategory !== 'category3'} arguments={['category3']} clickFn={setView}>Thursday<br/>19</BookingBtn>
-              <BookingBtn buttonText={`#fff`} buttonClass="text-sm leading-tight text-white" buttonPadding="5px 10px" wrapperPadding={activeCategory !== 'category4' ? '': '2px'} theme="white" transparent={activeCategory !== 'category4'} arguments={['category4']} clickFn={setView}>Friday<br/>20</BookingBtn>
-              <BookingBtn buttonText={`#fff`} buttonClass="text-sm leading-tight text-white" buttonPadding="5px 10px" wrapperPadding={activeCategory !== 'category5' ? '': '2px'} theme="white" transparent={activeCategory !== 'category5'} arguments={['category5']} clickFn={setView}>Saturday<br/>21</BookingBtn>
-              <BookingBtn buttonText={`#fff`} buttonClass="text-sm leading-tight text-white" buttonPadding="5px 10px" wrapperPadding={activeCategory !== 'category6' ? '': '2px'} theme="white" transparent={activeCategory !== 'category6'} arguments={['category6']} clickFn={setView}>Sunday<br/>22</BookingBtn>
-              <BookingBtn buttonText={`#fff`} buttonClass="text-sm leading-tight text-white" buttonPadding="5px 10px" wrapperPadding={activeCategory !== 'category7' ? '': '2px'} theme="white" transparent={activeCategory !== 'category7'} arguments={['category7']} clickFn={setView}>Monday<br/>23</BookingBtn>
+              <BookingBtn buttonText={`#fff`} buttonClass="text-sm leading-tight text-white" buttonPadding="5px 10px" wrapperPadding={activeCategory !== 'category1' ? '': '2px'} theme="white" transparent={activeCategory !== 'category1'} buttonArguments={['category1']} clickFn={setView}>Tuesday<br/>17</BookingBtn>
+              <BookingBtn buttonText={`#fff`} buttonClass="text-sm leading-tight text-white" buttonPadding="5px 10px" wrapperPadding={activeCategory !== 'category2' ? '': '2px'} theme="white" transparent={activeCategory !== 'category2'} buttonArguments={['category2']} clickFn={setView}>Wednesday<br/>18</BookingBtn>
+              <BookingBtn buttonText={`#fff`} buttonClass="text-sm leading-tight text-white" buttonPadding="5px 10px" wrapperPadding={activeCategory !== 'category3' ? '': '2px'} theme="white" transparent={activeCategory !== 'category3'} buttonArguments={['category3']} clickFn={setView}>Thursday<br/>19</BookingBtn>
+              <BookingBtn buttonText={`#fff`} buttonClass="text-sm leading-tight text-white" buttonPadding="5px 10px" wrapperPadding={activeCategory !== 'category4' ? '': '2px'} theme="white" transparent={activeCategory !== 'category4'} buttonArguments={['category4']} clickFn={setView}>Friday<br/>20</BookingBtn>
+              <BookingBtn buttonText={`#fff`} buttonClass="text-sm leading-tight text-white" buttonPadding="5px 10px" wrapperPadding={activeCategory !== 'category5' ? '': '2px'} theme="white" transparent={activeCategory !== 'category5'} buttonArguments={['category5']} clickFn={setView}>Saturday<br/>21</BookingBtn>
+              <BookingBtn buttonText={`#fff`} buttonClass="text-sm leading-tight text-white" buttonPadding="5px 10px" wrapperPadding={activeCategory !== 'category6' ? '': '2px'} theme="white" transparent={activeCategory !== 'category6'} buttonArguments={['category6']} clickFn={setView}>Sunday<br/>22</BookingBtn>
+              <BookingBtn buttonText={`#fff`} buttonClass="text-sm leading-tight text-white" buttonPadding="5px 10px" wrapperPadding={activeCategory !== 'category7' ? '': '2px'} theme="white" transparent={activeCategory !== 'category7'} buttonArguments={['category7']} clickFn={setView}>Monday<br/>23</BookingBtn>
             </DateSlot>
           </div>
           <div className="w-full flex mt-6 text-white">

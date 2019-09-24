@@ -162,14 +162,14 @@ function ExperiencePage() {
   return (
       <>
       <Banner inner bannerPara={`Your health and happiness are our top priorities. We ensure this with the best doctors and nurses, world-class
-        treatments, premium facilities, and modern amenities. All our rooms are designed in accordance with the American
-        Psychiatric Association(APA) standards. Our center has ample natural light, lush green outdoor spaces, and
-        spacious activity areas to enhance your recovery. Don’t just stay, live here!`} texture captionLight={`Comfort meets`} captionBold={`Exceptional care`} HeaderImg={HeaderImg}/>
+        treatments, premium facilities, and modern amenities.Our center has ample natural light, lush green outdoor spaces, and
+        spacious activity areas to enhance your recovery.`} texture captionLight={`Comfort meets`} captionBold={`Exceptional care`} HeaderImg={HeaderImg}/>
       <section className="py-12 px-20">
         <div className="">
           <Title titleLight="Experience" titleBold="Sukoon" />
           <h3 className="text-3xl font-gilroyBold  mt-4 text-sukoon">Rooms</h3>
-          <Para width="100%" Class="my-4">At Sukoon, each residential room is thoughtfully designed to aid in your recovery. Sophisticated details such as wooden flooring and lounge seating create a residential comfort, while modern bath amenities and private balconies invite patients to relax.
+          <Para width="100%" Class="my-4">At Sukoon, each residential room is thoughtfully designed to aid in your recovery. Sophisticated details such as wooden flooring and lounge seating create a residential comfort, while modern bath amenities and private balconies invite patients to relax. All our rooms are designed in accordance with the American
+            Psychiatric Association(APA) standards.
           </Para>
         </div>
         <div className="w-full flex mt-10">

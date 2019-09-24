@@ -122,7 +122,7 @@ const DoctorListing = styled.div`
 ul {
   display:flex;
   flex-flow:wrap;
-  max-height: 63vh;
+  max-height: 75vh;
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -208,6 +208,14 @@ const TimeSlot = styled.div`
 
 `;
 
+const ThankSec = styled.div`
+
+display:flex;
+flex-flow:column;
+justify-content:center;
+
+`;
+
 // Function to change the view after submit button.
 function handleSubmit (stateName, value, updateState) {
   updateState(stateName, value);
@@ -236,7 +244,7 @@ const DocList = (props) =>{
 
   return (
     <Main className="">
-      <h3 className="pt-16 text-white w-full pl-5">Choose An Expert</h3>
+      <h3 className="pt-6 text-white w-full pl-5">Choose An Expert</h3>
       <DoctorListing className="">
         <ul>
           <li>
@@ -335,7 +343,9 @@ const DocBookSlot = (props) =>{
               <li className="text-xs">Tue<br/>17</li>
             </DateSlot>
           </div>
-          <TimeSlot className="w-full">
+          
+        </div>
+        <TimeSlot className="w-full">
             <div className="slot">
               <TimerWrapper className="flex items-center bg-white">
                 <Radio spanText="03:00 - 05:00 PM" handleButton={''} arguments={['Info','03:00 - 05:00 PM']} />
@@ -382,7 +392,6 @@ const DocBookSlot = (props) =>{
               </TimerWrapper>
             </div>
           </TimeSlot>
-        </div>
 
       </div>
       <BookingBtn wrapperClass="w-full" buttonClass={'w-full'} handleClick={handleSubmit} buttonArguments={['view', 'Patient Info', props.updateState]} theme="mint" padding="8px">Book Now</BookingBtn>
@@ -434,24 +443,24 @@ const PatientForm = (props) =>{
 const ThankYou = () =>{
 
   return(
-    <div className="p-5 justify-between flex h-full flex-wrap items-center">
+    <ThankSec className="p-5 h-full items-center">
       <div className="w-full">
         <h2 className="text-white text-5xl font-bold text-center">Thank You</h2>
-        <h4 className="text-white text-sm text-center">Your video appointment is on<br/>
-          <b>24th March, 2019</b><br/>
-          With Dr. Samir Parikh<br/>
-          From <b>9:00 - 9:15 AM</b></h4>
+        <h4 className="text-white text-base text-center">Your video appointment is on
+        <span className={`font-bold text-sukoonYellow`}> 24th March, 2019</span><br/>
+        With Dr. Samir Parikh
+        From <span className={`font-bold text-sukoonYellow`}>9:00 - 9:15 AM</span></h4>
       </div>
-      <div className="w-full">
-        <p className="text-white text-xs text-center">Your appointment details have also been sent
-          via your preferred communication
-          (SMS or Email). Find out more about <a className="text-blue-500">our online
-            consultation process here.</a></p>
+      <div className="w-full mt-10">
+        <p className="text-white text-sm text-center">Your appointment details have also been sent
+        via your preferred communication
+        (SMS or Email).<br />Find out more about <a className="text-blue-500">our online
+        consultation process here.</a></p>
       </div>
-      <div className="w-full">
-        <p className="text-white text-xs text-center">Kindly reach us at <a className="text-blue-500">9910911092 </a>in case of any queries.</p>
+      <div className="w-full mt-6">
+        <p className="text-white text-sm text-center">Kindly reach us at <a className="text-blue-500">9910911092 </a>in case of any queries.</p>
       </div>
-    </div>
+    </ThankSec>
   )
 
 };
