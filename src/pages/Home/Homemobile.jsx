@@ -270,7 +270,7 @@ function IndexPage(props) {
       <WhySukoon/>
       <ResidentialServices/>
       <OutPatientServices/>
-      <Infrastructure />
+      {/*<Infrastructure />*/}
       <MeetExperts/>
       <Faqs/>
       <Blogs/>
