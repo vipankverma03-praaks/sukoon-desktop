@@ -33,21 +33,28 @@ export default class IndexPage extends React.Component{
   render() {
 
     if(this.state.loading !== 'undefined' && this.state.loading){
-      return <Loader/>
+      return (
+        <div className={`flex`}>
+          <Loader/>
+        </div>
+        )
+
     }
     else {
       return(
         <Layout overlay={this.state.overlay} setOverlay={this.updateState}>
-          <SEO
-            title="Home"
-            keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
-          />
-          {
-            this.state.view === 'mobile' ?
-              <Mobile/> :
-              <Desktop/>
-          }
-        </Layout>
+        <SEO
+          title="Home"
+          keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
+        />
+
+        {
+          this.state.view === 'mobile' ?
+            <Mobile/> :
+            <Desktop/>
+        }
+      </Layout>
+
       )
     }
   }
