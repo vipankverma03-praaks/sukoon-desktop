@@ -298,7 +298,7 @@ return (
             <h5 className="text-sm text-white font-medium">MBBS, DPM, MD (Psychiatry)</h5>
             <span className="text-xs text-white font-regular mt-2 leading-tight block">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </span>
             <div className="w-full mt-8 overflow-y-hidden">
-            <DateSlot className="">
+            <DateSlot className="">  
               <BookingBtn buttonText={`#fff`} buttonClass="text-sm leading-tight text-white" buttonPadding="5px 10px" wrapperPadding={activeCategory !== 'category1' ? '': '2px'} theme="white" transparent={activeCategory !== 'category1'} buttonArguments={['category1']} clickFn={setView}>Tuesday<br/>17</BookingBtn>
               <BookingBtn buttonText={`#fff`} buttonClass="text-sm leading-tight text-white" buttonPadding="5px 10px" wrapperPadding={activeCategory !== 'category2' ? '': '2px'} theme="white" transparent={activeCategory !== 'category2'} buttonArguments={['category2']} clickFn={setView}>Wednesday<br/>18</BookingBtn>
               <BookingBtn buttonText={`#fff`} buttonClass="text-sm leading-tight text-white" buttonPadding="5px 10px" wrapperPadding={activeCategory !== 'category3' ? '': '2px'} theme="white" transparent={activeCategory !== 'category3'} buttonArguments={['category3']} clickFn={setView}>Thursday<br/>19</BookingBtn>
@@ -319,7 +319,7 @@ return (
             <div className="SlotTiming w-1/4 text-white text-right pr-12">Morning</div>
             <div className="w-3/4 flex flex-wrap h-fit">
               <div className="slot h-fit">
-                <TimerWrapper className="flex  items-center  bg-white">
+                <TimerWrapper className="flex  items-center bg-white">
                   <span className="font-light block text-center w-full text-sukoon block text-center w-full">03:00 To 03:15PM</span>
                 </TimerWrapper>
               </div>
