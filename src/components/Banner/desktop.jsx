@@ -69,11 +69,11 @@ const Booking = (props) =>{
         </div>
         <Link to="/" className="text-sukoon ml-4 underline text-lg">or Call at +91 9876543210</Link>
       </div>
-      { props.discover ?
-        <div className="font-gilroyMedium absolute bottom-0 flex">
-          <Link to="/" className="border-sukoon border-b text-lg">Explore Appointments</Link>
-          <ArrowButton border={false} margin="0 12px"/>
-        </div> : null}
+      {/*{ props.discover ?*/}
+      {/*  <div className="font-gilroyMedium absolute bottom-0 flex">*/}
+      {/*    <Link to="/" className="border-sukoon border-b text-lg">Explore Appointments</Link>*/}
+      {/*    <ArrowButton border={false} margin="0 12px"/>*/}
+      {/*  </div> : null}*/}
     </div>
 
 
