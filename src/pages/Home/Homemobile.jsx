@@ -17,11 +17,11 @@ import HeaderBg from "../../images/mobile_header.jpg";
 
 const Caption = (props) => {
   return (
-    <div className="my-8">
+    <div className={`${props.WrapperClass || 'my-8'}`}>
       <h3 className="text-sukoon font-semibold block">
         {props.subHeading || ''}
       </h3>
-      <Para>
+      <Para wrapperClass={`mb-0`}>
         {props.para || ''}
       </Para>
     </div>
@@ -37,7 +37,7 @@ const WhySukoon = (props) => {
                para="Get expert advice from an experienced team of psychiatrists, clinical psychologists, counsellors, and art-based therapists that ensure holistic care. We take doctor-patient confidentiality with utmost seriousness."/>
       <Caption subHeading="Get personalised care 24*7"
                para="Powered by Fortis Healthcare, Sukoon is India’s first super-specialty psychiatric center. We have leading deaddiction, psychiatric, mental health, and rehabilitation treatments for inpatients and outpatients."/>
-      <Caption subHeading="Recover in premium facilities"
+      <Caption WrapperClass={`my-0`} subHeading="Recover in premium facilities"
                para="Enhance your recovery in a calming, positive, and comfortable world-class environment. With residential care tailor-made to your mental and psychological health, recovery and better days are just around the corner."/>
     </section>
   )
