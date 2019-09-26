@@ -139,7 +139,7 @@ const BannerImage = styled.div`
 const ButtonSection = (props) =>{
   return(
     <div>
-      <p className="mt-8 w-full text-gray-600 my-1 font-gilroyMedium text-vlg leading-relaxed block">
+      <p className="mt-8 w-3/5 text-para my-6  text-vlg leading-relaxed block">
         {props.bannerPara}
       </p>
       <div className="flex">
