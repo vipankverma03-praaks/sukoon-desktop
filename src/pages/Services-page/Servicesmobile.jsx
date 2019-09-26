@@ -345,7 +345,7 @@ const CareService = (props) =>{
 
   return(
     <section id={props.titleLight} className="p-4">
-      <Title titleLight={props.titleLight} titleBold={props.titleBold} display="block"/>
+      <Title titleLight={props.titleLight} subHeading={props.subheading} titleBold={props.titleBold} display="block"/>
       <div className="flex flex-wrap overflow-x-hidden ">
         <TabList className="patient_services_nav flex overflow-y-hidden overflow-x-scroll">
           {props.list.map((item)=>{
@@ -374,9 +374,9 @@ function Services(props) {
 
   return (
     <>
-      <Banner captionLight={`Feel like`} bannerPara={`We’re here for you. At Sukoon, our experienced team of psychiatrists, clinical psychologists, counselling psychologists, therapists, and nurses provide compassionate, short-term and inpatient psychiatric and mental health services that help you feel better as quickly as possible. We work with you one-on-one ensuring that every part of your care is personalised to your condition, emotions, and needs.`} captionBold={`Yourself Again`}  overlay={props.overlay} backgroundImg={BannerBg}/>
-      <CareService list={ResidentialServicesList} titleLight="Residential" titleBold="Services"/>
-      <CareService list={OutPatienList} titleLight="Out Patient" titleBold="Care Services"/>
+      <Banner captionLight={`Feel like`} bannerPara={`We’re here for you. At Sukoon, our experienced team of psychiatrists, clinical psychologists, therapists, and nurses provide compassionate, short-term and inpatient psychiatric and mental health services that help you feel better as quickly as possible. We work with you one-on-one ensuring that every part of your care is personalised to your condition, emotions, and needs.`} captionBold={`Yourself Again`}  overlay={props.overlay} backgroundImg={BannerBg}/>
+      <CareService list={ResidentialServicesList} subHeading={`IPD`} titleLight="Residential" titleBold="Care Services"/>
+      <CareService list={OutPatienList} subHeading={`OPD`} titleLight="Out Patient" titleBold="Care Services"/>
       <MeetExperts/>
     </>
   );

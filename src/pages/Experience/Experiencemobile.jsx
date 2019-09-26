@@ -82,7 +82,6 @@ const Content = (Room) =>{
   return(
     <div className="">
       <img className="mt-3 mb-4" src={RoomImg} alt=""/>
-      <span>Rooms</span>
       <h3 className="mt-2 mb-1">{Room.type}</h3>
       <Para>{Room.description}</Para>
       <div className="flex flex-wrap overflow-x-hidden overflow-y-hidden">
@@ -100,20 +99,19 @@ function Experience(props) {
 
   return (
     <>
-      <Banner captionLight={`Comfort meets`} bannerPara={`Your health and happiness are our top priorities. We ensure this with the best doctors and nurses, world-class
-        treatments, premium facilities, and modern amenities. All our rooms are designed in accordance with the American
-        Psychiatric Association(APA) standards. Our center has ample natural light, lush green outdoor spaces, and
-        spacious activity areas to enhance your recovery. Don’t just stay, live here!`} captionBold={`Exceptional care`} overlay={props.overlay} backgroundImg={BannerBg}/>
+      <Banner captionLight={`Comfort with`} bannerPara={`Your health and happiness are our top priorities. We ensure this with the best doctors and nurses, world-class
+        treatments, premium facilities, and modern amenities. Our center has ample natural light, lush green outdoor spaces, and
+        spacious activity areas to enhance your recovery. Don’t just stay, live here!`} captionBold={`Superb care`} overlay={props.overlay} backgroundImg={BannerBg}/>
       <section className="p-4">
         <Title subHeading="Tour" titleLight="Experience " titleBold="Sukoon" />
-        <h3 className="mt-3 mb-1 text-sukoon font-gilroyMedium font-normal">Rooms</h3>
         <div className="flex flex-wrap overflow-x-hidden overflow-y-hidden">
-          <Para>At Sukoon, each residential room is thoughtfully designed to aid in your recovery. Sophisticated details such as wooden flooring and lounge seating create a residential comfort, while modern bath amenities and private balconies invite patients to relax.</Para>
+          <Para>At Sukoon, each residential room is thoughtfully designed to aid in your recovery. Sophisticated details such as wooden flooring and lounge seating create a residential comfort, while modern bath amenities and private balconies invite patients to relax.All our rooms are designed in accordance with the American
+            Psychiatric Association(APA) standards.</Para>
         </div>
       </section>
       <section className="facilities Exp px-5 my-1">
-        <Details  open content={Content} arguments={Rooms.suiteRoom} border summaryClass="border-gray-700" summaryTextClass="text-xl" summary="Suite Room"/>
-        <Details  content={Content} arguments={Rooms.deluxeRoom}border summaryClass="border-gray-700" summaryTextClass="text-xl" summary="Deluxe Room"/>
+        <Details  open  content={Content} arguments={Rooms.deluxeRoom}border summaryClass="border-gray-700" summaryTextClass="text-xl" summary="Deluxe Room"/>
+        <Details  content={Content} arguments={Rooms.suiteRoom} border summaryClass="border-gray-700" summaryTextClass="text-xl" summary="Suite Room"/>
         <Details content={Content} arguments={Rooms.icuRoom} border summaryClass="border-gray-700" summaryTextClass="text-xl" summary="Intensive  Care Unit"/>
       </section>
       <div className="facilities Perfloor px-5 my-5">
