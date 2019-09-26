@@ -167,9 +167,10 @@ function Layout({ children, setOverlay,...props }) {
             {children}
           </main>
           <footer className="">
-            <Banner bookNow captionLight="Book An" captionBold="Appointment"/>
-            <Subscribe/>
-            <QuickLinks/>
+            {/*----------------------Removed for time being---by-deepak---------------- */}
+            {/*<Banner bookNow captionLight="Book An" captionBold="Appointment"/>*/}
+            {/*<Subscribe/>*/}
+            {/*<QuickLinks/>*/}
             <ReachUs/>
             <FollowUs/>
             <CopyRight/>

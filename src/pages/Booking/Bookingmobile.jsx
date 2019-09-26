@@ -46,8 +46,8 @@ const Form = styled.form`
 
 const TimerWrapper = styled.div`
     margin-right: 2rem;
-    border-radius: 5px;
-    padding: 15px 10px;
+    border-radius: 0px;
+    padding: 8px 6px;
 `;
 
 const BookingFields = (props) =>{
@@ -122,7 +122,7 @@ const DoctorListing = styled.div`
 ul {
   display:flex;
   flex-flow:wrap;
-  max-height: 75vh;
+  max-height: 74vh;
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -204,6 +204,8 @@ const TimeSlot = styled.div`
 }
 .slot div {
   margin:5px;
+    border: 1px solid #fff;
+    color: #fff;
 }
 
 `;
@@ -215,6 +217,17 @@ flex-flow:column;
 justify-content:center;
 
 `;
+
+const FormDesign = styled.div`
+ 
+ .FormSec {
+  display:flex;
+  flex-flow:column;
+  justify-content:space-between;
+}
+
+`;
+
 
 // Function to change the view after submit button.
 function handleSubmit (stateName, value, updateState) {
@@ -235,7 +248,7 @@ function DatePicker (props) {
           <Date/>
         </div>
       </div>
-      <BookingBtn wrapperClass="w-full" buttonClass={'w-full date-submit-button'} handleClick={handleSubmit} buttonArguments={['view', 'Doctor List', props.updateState]}  theme="mint" padding="8px">Submit</BookingBtn>
+      <BookingBtn wrapperClass="w-full" buttonClass={'w-full date-submit-button'} handleClick={handleSubmit} buttonArguments={['view', 'Doctor List', props.updateState]}  theme="mint" padding="12px">Submit</BookingBtn>
     </Main>
   )
 };
@@ -244,7 +257,7 @@ const DocList = (props) =>{
 
   return (
     <Main className="">
-      <h3 className="pt-6 text-white w-full pl-5">Choose An Expert</h3>
+      <h3 className="pt-5 text-white w-full pl-5">Choose An Expert</h3>
       <DoctorListing className="">
         <ul>
           <li>
@@ -348,47 +361,47 @@ const DocBookSlot = (props) =>{
         <TimeSlot className="w-full">
             <div className="slot">
               <TimerWrapper className="flex items-center bg-white">
-                <Radio spanText="03:00 - 05:00 PM" handleButton={''} arguments={['Info','03:00 - 05:00 PM']} />
+                 <span className="font-light block text-center w-full text-sukoon block text-center w-full text-sm">03:00 To 03:15PM</span>
               </TimerWrapper>
             </div>
             <div className="slot">
-              <TimerWrapper className="flex items-center bg-white">
-                <Radio spanText="03:00 - 05:00 PM" handleButton={''} arguments={['Info','03:00 - 05:00 PM']} />
+              <TimerWrapper className="flex items-center ">
+                 <span className="font-light block text-center w-full text-sukoon block text-center w-full text-sm">03:00 To 03:15PM</span>
               </TimerWrapper>
             </div>
             <div className="slot">
-              <TimerWrapper className="flex items-center bg-white">
-                <Radio spanText="03:00 - 05:00 PM" handleButton={''} arguments={['Info','03:00 - 05:00 PM']} />
+              <TimerWrapper className="flex items-center ">
+                 <span className="font-light block text-center w-full text-sukoon block text-center w-full text-sm">03:00 To 03:15PM</span>
               </TimerWrapper>
             </div>
             <div className="slot">
-              <TimerWrapper className="flex items-center bg-white">
-                <Radio spanText="03:00 - 05:00 PM" handleButton={''} arguments={['Info','03:00 - 05:00 PM']} />
+              <TimerWrapper className="flex items-center ">
+                 <span className="font-light block text-center w-full text-sukoon block text-center w-full text-sm">03:00 To 03:15PM</span>
               </TimerWrapper>
             </div>
             <div className="slot">
-              <TimerWrapper className="flex items-center bg-white">
-                <Radio spanText="03:00 - 05:00 PM" handleButton={''} arguments={['Info','03:00 - 05:00 PM']} />
+              <TimerWrapper className="flex items-center ">
+                 <span className="font-light block text-center w-full text-sukoon block text-center w-full text-sm">03:00 To 03:15PM</span>
               </TimerWrapper>
             </div>
             <div className="slot">
-              <TimerWrapper className="flex items-center bg-white">
-                <Radio spanText="03:00 - 05:00 PM" handleButton={''} arguments={['Info','03:00 - 05:00 PM']} />
+              <TimerWrapper className="flex items-center ">
+                 <span className="font-light block text-center w-full text-sukoon block text-center w-full text-sm">03:00 To 03:15PM</span>
               </TimerWrapper>
             </div>
             <div className="slot">
-              <TimerWrapper className="flex items-center bg-white">
-                <Radio spanText="03:00 - 05:00 PM" handleButton={''} arguments={['Info','03:00 - 05:00 PM']} />
+              <TimerWrapper className="flex items-center ">
+                 <span className="font-light block text-center w-full text-sukoon block text-center w-full text-sm">03:00 To 03:15PM</span>
               </TimerWrapper>
             </div>
             <div className="slot">
-              <TimerWrapper className="flex items-center bg-white">
-                <Radio spanText="03:00 - 05:00 PM" handleButton={''} arguments={['Info','03:00 - 05:00 PM']} />
+              <TimerWrapper className="flex items-center ">
+                 <span className="font-light block text-center w-full text-sukoon block text-center w-full text-sm">03:00 To 03:15PM</span>
               </TimerWrapper>
             </div>
             <div className="slot">
-              <TimerWrapper className="flex items-center bg-white">
-                <Radio spanText="03:00 - 05:00 PM" handleButton={''} arguments={['Info','03:00 - 05:00 PM']} />
+              <TimerWrapper className="flex items-center ">
+                 <span className="font-light block text-center w-full text-sukoon block text-center w-full text-sm">03:00 To 03:15PM</span>
               </TimerWrapper>
             </div>
           </TimeSlot>
@@ -408,10 +421,10 @@ const PatientForm = (props) =>{
   };
 
   return (
-    <div className="h-full flex p-5">
-      <Form action="" className="text-white m-0 w-full">
+    <FormDesign className="h-screen flex p-0">
+      <Form action="" className="FormSec text-white m-0 w-full">        
+        <div className="overflow-hidden p-5">
         <h2 className="text-white font-Bold text-4xl">Patient Details</h2>
-        <div className="overflow-hidden">
           <div id="left-information" className="">
             <Input type="name" required={true} defaultValue={``} wrapperClass="my-2 w-full " label="First Name"/>
             <Input type="name" required={true} defaultValue={``} wrapperClass="my-2 w-full " label="Last Name"/>
@@ -434,7 +447,7 @@ const PatientForm = (props) =>{
         </div>
         <BookingBtn wrapperClass="w-full" buttonClass={'w-full'} handleClick={handleSubmit} buttonArguments={['view', 'thank you', props.updateState]} theme="mint" padding="8px">Pay Now</BookingBtn>
       </Form>
-    </div>
+    </FormDesign>
 
   )
 
@@ -443,13 +456,13 @@ const PatientForm = (props) =>{
 const ThankYou = () =>{
 
   return(
-    <ThankSec className="p-5 h-full items-center">
+    <ThankSec className="p-5 h-screen items-center">
       <div className="w-full">
         <h2 className="text-white text-5xl font-bold text-center">Thank You</h2>
-        <h4 className="text-white text-base text-center">Your video appointment is on
+        <h4 className="text-white text-base text-center leading-normal">Your video appointment is on
         <span className={`font-bold text-sukoonYellow`}> 24th March, 2019</span><br/>
         With Dr. Samir Parikh
-        From <span className={`font-bold text-sukoonYellow`}>9:00 - 9:15 AM</span></h4>
+        <br />From <span className={`font-bold text-sukoonYellow`}>9:00 - 9:15 AM</span></h4>
       </div>
       <div className="w-full mt-10">
         <p className="text-white text-sm text-center">Your appointment details have also been sent

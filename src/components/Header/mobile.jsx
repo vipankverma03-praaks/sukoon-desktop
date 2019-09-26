@@ -1,6 +1,6 @@
 import {Link} from "gatsby";
 import PropTypes from "prop-types";
-import React, {useState} from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 // Images
@@ -47,33 +47,30 @@ const Menu = styled.span`
 function Header(props) {
   const [isExpanded, toggleExpansion] = useState(false);
 
-  // // Makes nav bar sticky after user scrolls past banner section.
-  // const handleScroll = () =>{
-  //
-  //   let Header = document.getElementById('header-intro');
-  //   let StickyMenu = document.getElementById('nav-bar');
-  //   let Booking = document.getElementById('nav-booking-button');
-  //   let offset =  Math.abs(Number(Header.getBoundingClientRect().top));
-  //
-  //   if(offset > 786 || offset > 666 || offset > 556){
-  //     Booking.classList.add('show');
-  //     Booking.classList.remove('hide');
-  //     StickyMenu.classList.add('sticky');
-  //     StickyMenu.classList.remove('static');
-  //   }
-  //   else{
-  //     Booking.classList.add('hide');
-  //     Booking.classList.remove('show');
-  //     StickyMenu.classList.remove('sticky');
-  //     StickyMenu.classList.add('static');
-  //   }
-  //
-  // };
+  // Makes nav bar sticky after user scrolls past banner section.
+  const handleScroll = () =>{
 
-  // // Similar to componentDidMount and componentDidUpdate:
-  // useEffect(() => {
-  //   window.addEventListener('scroll', handleScroll)
-  // });
+    let Header = document.getElementById('header-intro-mobile');
+    let Booking = document.getElementById('nav-booking-button');
+    let offset =  Math.abs(Number(Header.getBoundingClientRect().top));
+    // Logic
+    // Book button to be shown whene the banner has been scrolled out of the view.
+
+    if(offset > 786 || offset > 666 || offset > 556){
+      Booking.classList.add('show');
+      Booking.classList.remove('hide');
+    }
+    else{
+      Booking.classList.add('hide');
+      Booking.classList.remove('show');
+    }
+
+  };
+
+  // Similar to componentDidMount and componentDidUpdate:
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+  });
 
   return (
     <Nav id="nav-bar" className="fixed bottom-0">
@@ -87,11 +84,11 @@ function Header(props) {
           <div className="mt-6 flex justify-around">
             <div className="">
               <img src={Call} className="w-4 inline-block" alt="Contact Sukoon"/>
-              <span className="ml-2">+91 9876543210</span>
+              <a href="tel:+91 9910911082" className="ml-2">+91 9910911082</a>
             </div>
             <div className="">
               <img src={Call} className="w-4 inline-block" alt="Contact Sukoon"/>
-              <span className="ml-2">+91 9876543210</span>
+              <a href="tel:+91 9910269034" className="ml-2">+91 9910269034</a>
             </div>
           </div>
           <div className="text-lg ml-6 text-sukoon flex flex-col">
@@ -106,13 +103,6 @@ function Header(props) {
               className="inline-block mt-4 mt-0 mr-6 no-underline"
             >
               Services
-            </Link>
-
-            <Link
-              to="/infrastructure"
-              className="inline-block mt-4 mt-0 mr-6 no-underline"
-            >
-              Infrastructure
             </Link>
             <Link
               to="/experience"

@@ -9,7 +9,7 @@ const Wrapper = styled.div`
 `;
 
 const ThemedButton = styled.button`
-  padding: 5px 10px;
+  padding: 10px 10px;
   color: ${props => props.theme.fg};
   background: ${props => props.theme.bg};
 `;
@@ -38,7 +38,7 @@ const Button = (props) =>{
   return(
     <ThemeProvider theme={theme}>
       <Wrapper  full={props.full} id={props.id} className={`${props.wrapperClass || ''} w-fit`}>
-        <ThemedButton onClick={()=> {props.handleClick(...props.buttonArguments)}}
+        <ThemedButton onClick={()=> {props.handleClick ? props.handleClick(...props.buttonArguments) : null}}
           className={`${props.buttonClass || ''} block relative font-gilroyMedium outline-none text-sm items-center`} >
           {props.children}
         </ThemedButton>

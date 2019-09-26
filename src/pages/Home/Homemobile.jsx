@@ -143,7 +143,7 @@ const ResidentialServices = (props) => {
 
   return (
     <section id="" className="p-4">
-      <Title subHeading="IPD" titleLight="Residential" titleBold="Services" display="block"/>
+      <Title subHeading="IPD" titleLight="Residential" titleBold="Care Services" display="block"/>
       <Carousel class="" content={ResidentialService}/>
     </section>
   )

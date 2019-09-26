@@ -64,16 +64,16 @@ const Booking = (props) =>{
       <div className="mt-8 font-gilroyMedium">
         <div className="inline-block">
           <BookBtn theme="green" wrapperClass="">
-            <Link to="/booking">Book Now</Link>
+            <Link to="/">Book Now</Link>
           </BookBtn>
         </div>
         <Link to="/" className="text-sukoon ml-4 underline text-lg">or Call at +91 9876543210</Link>
       </div>
-      { props.discover ?
-        <div className="font-gilroyMedium absolute bottom-0 flex">
-          <Link to="/" className="border-sukoon border-b text-lg">Explore Appointments</Link>
-          <ArrowButton border={false} margin="0 12px"/>
-        </div> : null}
+      {/*{ props.discover ?*/}
+      {/*  <div className="font-gilroyMedium absolute bottom-0 flex">*/}
+      {/*    <Link to="/" className="border-sukoon border-b text-lg">Explore Appointments</Link>*/}
+      {/*    <ArrowButton border={false} margin="0 12px"/>*/}
+      {/*  </div> : null}*/}
     </div>
 
 
@@ -139,7 +139,7 @@ const BannerImage = styled.div`
 const ButtonSection = (props) =>{
   return(
     <div>
-      <p className="mt-8 w-full text-gray-600 my-1 font-gilroyMedium text-vlg leading-relaxed block">
+      <p className="mt-8 w-3/5 text-para my-6  text-vlg leading-relaxed block">
         {props.bannerPara}
       </p>
       <div className="flex">

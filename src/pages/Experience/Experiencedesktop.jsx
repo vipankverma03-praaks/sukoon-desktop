@@ -97,21 +97,21 @@ const RoomFeatures = styled.ul`
 const Rooms = {
   deluxeRoom: {
     type: 'Deluxe room',
-    description: 'lorem ipsum is just a dummy text',
+    description: 'lorem ipsum is just a dummy text lorem ipsum is just a dummy text lorem ipsum is just a dummy text',
     amenities:['Queen Bed','Smart TV (45”)','Private Balcony','AC & Heater','Mini Fridge','Spacious Closet','Lounge Seating','Writing Desk','Geyser','Wifi'],
     previewImages: [RoomOne, RoomTwo, RoomThree, RoomFour],
     preview: RoomOne,
   },
   suiteRoom: {
     type: 'suite room',
-    description: 'lorem ipsum is just a dummy text',
+    description: 'lorem ipsum is just a dummy text lorem ipsum is just a dummy text lorem ipsum is just a dummy text',
     amenities:['Queen Bed','Food Pantry','Smart TV (55”)','Private Balcony','Outdoor Seating','AC & Heater','Mini Fridge','Spacious Closet','Lounge Seating','Writing Desk' ,'Wifi','Geyser'],
     previewImages: [RoomOne, RoomTwo, RoomThree, RoomFour],
     preview: RoomOne,
   },
   icuRoom: {
     type: 'Intensive Care Unit',
-    description: 'lorem ipsum is just a dummy text',
+    description: 'lorem ipsum is just a dummy text lorem ipsum is just a dummy text lorem ipsum is just a dummy text',
     amenities:['24*7 Doctor','Dedicated Nurse','Soft-touch Walls','Padded Furniture','Personalised Meals','Queen Bed','Private Balcony','AC & Heater','Spacious Closet','Luggage Rack'],
     previewImages: [RoomOne, RoomTwo, RoomThree, RoomFour],
     preview: RoomOne,
@@ -128,8 +128,6 @@ const RoomIntro = ({room}) =>{
 
   return(
     <div className="">
-      <span className="block text-2xl font-gilroySemiBold">Rooms</span>
-      <h3 className="text-4xl text-sukoon my-2 font-gilroyBold">{room.type}</h3>
       <Para width="100%">
         {room.description}
       </Para>
@@ -167,7 +165,6 @@ function ExperiencePage() {
       <section className="py-12 px-20">
         <div className="">
           <Title titleLight="Experience" titleBold="Sukoon" />
-          <h3 className="text-3xl font-gilroyBold  mt-4 text-sukoon">Rooms</h3>
           <Para width="100%" Class="my-4">At Sukoon, each residential room is thoughtfully designed to aid in your recovery. Sophisticated details such as wooden flooring and lounge seating create a residential comfort, while modern bath amenities and private balconies invite patients to relax. All our rooms are designed in accordance with the American
             Psychiatric Association(APA) standards.
           </Para>
@@ -178,9 +175,9 @@ function ExperiencePage() {
           </div>
           <div className="w-3/5 pl-10 flex flex-col justify-between">
             <ul className="RoomBtnTab mb-10">
-              <Category transparent={activeCategory !== 'deluxe rooms'} arguments={['deluxe rooms', Rooms.deluxeRoom]} clickFn={setView}>Deluxe Rooms</Category>
-              <Category transparent={activeCategory !== 'suite rooms'} arguments={['suite rooms', Rooms.suiteRoom]} clickFn={setView}>Suite Rooms</Category>
-              <Category transparent={activeCategory !== 'intensive care unit'} arguments={['intensive care unit', Rooms.icuRoom]} clickFn={setView}>Intensive Care Unit</Category>
+              <Category transparent={activeCategory !== 'deluxe rooms'} buttonArguments={['deluxe rooms', Rooms.deluxeRoom]} clickFn={setView}>Deluxe Rooms</Category>
+              <Category transparent={activeCategory !== 'suite rooms'} buttonArguments={['suite rooms', Rooms.suiteRoom]} clickFn={setView}>Suite Rooms</Category>
+              <Category transparent={activeCategory !== 'intensive care unit'} buttonArguments={['intensive care unit', Rooms.icuRoom]} clickFn={setView}>Intensive Care Unit</Category>
             </ul>
             <RoomIntro room={data}/>
           </div>
