@@ -25,8 +25,8 @@ const Title = (props) => {
     <Wrapper className={`${props.wrapperClass || ''} font-normal`}>
       <SubheadTop className="small">{props.subHeading || 'Explore'}</SubheadTop>
       <HeadingWrapper className="text-sukoon w-full mt-2 block">
-        <HeadingLight className="font-normal mr-2"
-                      display={props.display}>{props.titleLight || ''}</HeadingLight>
+        {props.titleLight ? <HeadingLight className="font-normal mr-2"
+                                          display={props.display}>{props.titleLight || ''}</HeadingLight> : null}
         <span className="text-sukoon block font-semibold  mr-2 w-full">
                 {props.titleBold}
                 </span>
