@@ -61,7 +61,7 @@ const BookNow = (props) =>{
       </div>
       <div className="flex flex-col mt-8">
         <BookBtn border bg="transparent" wrapperClass="">
-          <Link to="/booking" >Book Now</Link>
+          <Link to="/" >Book Now</Link>
         </BookBtn>
         {props.contact ?
           <div className="my-4">

@@ -64,7 +64,7 @@ const Booking = (props) =>{
       <div className="mt-8 font-gilroyMedium">
         <div className="inline-block">
           <BookBtn theme="green" wrapperClass="">
-            <Link to="/booking">Book Now</Link>
+            <Link to="/">Book Now</Link>
           </BookBtn>
         </div>
         <Link to="/" className="text-sukoon ml-4 underline text-lg">or Call at +91 9876543210</Link>
