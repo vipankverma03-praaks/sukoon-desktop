@@ -9,7 +9,7 @@ const Wrapper = styled.div`
 `;
 
 const ThemedButton = styled.button`
-  padding: 10px 10px;
+  padding: 10px 20px;
   color: ${props => props.theme.fg};
   background: ${props => props.theme.bg};
 `;
