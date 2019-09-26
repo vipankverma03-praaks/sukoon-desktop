@@ -297,3 +297,8 @@ body .MuiPickersDay-day:hover{
     background-color: #C2DCD3;
 }
 /*------------Date-picker-END--------------*/
+
+/*----------Select-Drop-down--Start-----------*/
+body .MuiPaper-root{
+    background-color: #C2DCD3;
+}
