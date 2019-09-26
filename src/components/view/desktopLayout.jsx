@@ -8,6 +8,7 @@ import BookBtn from "../../elements/BookNowBtn/desktop";
 import Para from "../../elements/Para/desktop";
 import SVG from "../../elements/SVG/desktop";
 import Input from "../../elements/Input/desktop";
+import Tooltip from "../../elements/Tooltip/tooltip";
 
 // Images
 import SukoonLogo from "../../images/sukoon-bg-logo/logo.jpg";
@@ -225,20 +226,22 @@ export default class DesktopLayout extends React.PureComponent{
                     <li className="">
                       <Link to="/experience">Experience</Link>
                     </li>
-                    <li className="">
-                      <Link to="/doctors">Doctors</Link>
-                    </li>
-                    <li className="">
-                      <Link to="/internationalPatient">International Patients</Link>
-                    </li>
+                    {/*<li className="">*/}
+                    {/*  <Link to="/doctors">Doctors</Link>*/}
+                    {/*</li>*/}
+                    {/*<li className="">*/}
+                    {/*  <Link to="/internationalPatient">International Patients</Link>*/}
+                    {/*</li>*/}
                     <li className="">
                       <Link to="/about">About</Link>
                     </li>
                   </ul>
                 </div>
                 <div className="w-1/5 flex justify-end items-center">
-                  <div className="w-8 h-8 ml-4">
-                    <SVG display="inline-block" icon="helpline" width={'25px'} fill={'#fff'}/>
+                  <div className="w-8 ml-4">
+                    <Tooltip toolTipText={`1800 123 6789`}>
+                      <SVG display="inline-block" icon="helpline" width={'25px'} fill={'#fff'}/>
+                    </Tooltip>
                   </div>
                   <div className="w-8 h-8 mx-4">
                     <SVG display="inline-block" icon="landLine" width={'25px'} fill={'#fff'}/>

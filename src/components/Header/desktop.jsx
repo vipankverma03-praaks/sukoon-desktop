@@ -8,6 +8,7 @@ import SVG from "../../elements/SVG/desktop";
 
 // Images
 import SukoonLogo from "../../images/sukoon-logo/logo_dark@3x.png"
+// import Tooltip from "../../elements/Tooltip/tooltip";
 
 const NavItem = styled.nav`
   
@@ -69,7 +70,12 @@ function Header(props) {
           </LogoLink>
           <div className="text-sukoon my-auto flex justify-end px-1">
             <div className="flex ">
-              <div className="fit"><SVG display="inline-block" icon="helpline" width={'25px'} fill={'#12443e'} /></div>
+              <div className="fit">
+                {/*<Tooltip toolTipText={`1800 123 6789`}>*/}
+                {/*  <SVG display="inline-block" icon="helpline" width={'25px'} fill={'#12443e'}/>*/}
+                {/*</Tooltip>*/}
+                <SVG display="inline-block" icon="helpline" width={'25px'} fill={'#12443e'} />
+              </div>
               <span className="ml-4">1800 123 6789</span>
             </div>
           </div>
