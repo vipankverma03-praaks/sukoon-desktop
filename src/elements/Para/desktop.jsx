@@ -19,7 +19,7 @@ const Paragraph = styled.p`
 
 const Para = (props) =>{
   return(
-    <Paragraph width={props.width} padding={props.padding} lineHeight={props.lineHeight} textAlign={props.textAlign} className={`${props.Class || ''} text-gray-600 font-gilroyMedium  block`}>
+    <Paragraph width={props.width} padding={props.padding} lineHeight={props.lineHeight} textAlign={props.textAlign} className={`${props.Class || ''} text-gray-600 block`}>
       {props.children || props.content}
     </Paragraph>
   )

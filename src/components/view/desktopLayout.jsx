@@ -226,14 +226,14 @@ export default class DesktopLayout extends React.PureComponent{
                     <li className="">
                       <Link to="/experience">Experience</Link>
                     </li>
-                    {/*<li className="">*/}
-                    {/*  <Link to="/doctors">Doctors</Link>*/}
-                    {/*</li>*/}
-                    {/*<li className="">*/}
-                    {/*  <Link to="/internationalPatient">International Patients</Link>*/}
-                    {/*</li>*/}
                     <li className="">
-                      <Link to="/about">About</Link>
+                      <Link to="/">Doctors</Link>
+                    </li>
+                    <li className="">
+                      <Link to="/">International Patients</Link>
+                    </li>
+                    <li className="">
+                      <Link to="/">About</Link>
                     </li>
                   </ul>
                 </div>
