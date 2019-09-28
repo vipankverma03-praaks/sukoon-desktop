@@ -18,7 +18,7 @@ const Nav = styled.nav`
   transition: all 200ms ease-in-out;
   background: #C2DCD3;
   min-height: 50px;
-  z-index: 101;
+  z-index: 10;
 `;
 
 const Menu = styled.span`

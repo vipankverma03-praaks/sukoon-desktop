@@ -304,9 +304,14 @@ const ResidentialServices = (props) => {
 
 const FaqsPara = (item) =>{
   return(
-    <Para width="97%" padding="1rem">
-      {item}
-    </Para>
+    item.map((description=>{
+        return(
+          <Para width="97%" padding="1rem">
+            {description}
+          </Para>
+        )
+      }
+    ))
   )
 };
 
@@ -314,16 +319,20 @@ const Faqs = (props) => {
 
   let content = [
     {
-      summary: 'Introduction What is the meaning of Lorem ipsum?',
-      description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.",
+      summary: 'How do I find which expert to consult ?',
+      description:[
+        `A psychiatrist is a trained doctor (MBBS degree) who has done a specialisation in  psychiatry. They are allowed to prescribe medication and use them as a form of treatment, whereas a clinical psychologist, or a psychologist can’t. `,
+        `A clinical psychologist is a professional with a specialisation in clinical psychiatry.  They conduct psychological testing (psychometry), psychotherapy, and treat emotional and mental disorders with behavioural changes. A clinical psychologist has to be registered with the Rehabilitation Council of India whereas a psychologist isn’t.`,
+        `A psychologist or therapist is someone with a college degree in psychology. They focus on individuals with fewer concerns and can’t identify mental and emotional disorders. A psychologist hasn’t received any certified training and hence, we don’t have any at Sukoon.`
+      ],
     },
     {
-      summary: 'Introduction What is the meaning of Lorem ipsum?',
-      description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.",
+      summary: 'What should I expect from my first consultation?',
+      description: ["You will first meet with a clinical psychologist for a psychological assessment. They will understand your concerns, needs, and medical history. Based on their diagnosis, you will be treated either by a psychiatrist, or a clinical psychologist, or both." ],
     },
     {
-      summary: 'Introduction What is the meaning of Lorem ipsum?',
-      description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.",
+      summary: 'Who has access to my medical information?',
+      description: ["Only your caregiver(s) - psychiatrist, clinical psychologist, and nurses - will have access to your medical information. At Sukoon, we take our patient confidentiality with utmost seriousness and will never share your medical records without your consent."],
     },
 
   ];
@@ -331,7 +340,7 @@ const Faqs = (props) => {
   let items = content.map((item)=>{
     return(
       <div className="flex-col flex shadow-lg mb-4 bg-white">
-        <Details summary={item.summary} content={FaqsPara} arguments={item.description}>
+        <Details summary={item.summary} content={FaqsPara} arguments={[item.description]}>
         </Details>
       </div>
     )
