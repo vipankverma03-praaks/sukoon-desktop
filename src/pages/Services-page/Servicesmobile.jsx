@@ -6,6 +6,7 @@ import Title from "../../elements/Heading/mobile";
 import Para from "../../elements/Para/mobile"
 import MeetExperts from "../../components/MeetExperts/mobile";
 import Banner from "../../components/Banner/mobile";
+import Tab from "../../elements/Tabs/TabsMobile";
 
 // Images
 import BannerBg from "../../images/servicesBg.png";
@@ -17,32 +18,24 @@ const TabList = styled.ul`
    min-height: 40px;
    height: 60px;
    
-   
-   
-  button{
-    border-radius: 10px 10px 0 0;
-  }
-
-  .active{
-    background: rgba(205,236,227,0.81);
-  }
-  
-  
-  .passive{
-   background: #d1e1d6cf;
-  }
+  //.active{
+  //  background: rgba(205,236,227,0.81);
+  //} 
+  //
+  //
+  //.passive{
+  // background: #d1e1d6cf;
+  //}
 `;
 
-const Tab = styled.button`
-    margin-left: 1px;
-    width: fit-content;
-    
-    &:focus{
-    outline: none;
-    }
-`;
-
-
+// const Tab = styled.button`
+//     margin-left: 1px;
+//     width: fit-content;
+//
+//     &:focus{
+//     outline: none;
+//     }
+// `;
 
 const Content = {
   Main: 'Acute Psychiatry Services',
@@ -51,7 +44,7 @@ const Content = {
             seven-day-a-week crisis counseling, assessment, and referral.`,
   items:[
     {
-      title: 'Services',
+      title: 'Service',
       para: `Hennepin Healthcare's Acute Psychiatric Services (APS) center
             serves those in emotional crisis with 24-hour,
             seven-day-a-week crisis counseling, assessment, and referral.
@@ -343,6 +336,11 @@ const CareService = (props) =>{
 
   const[ListContent, setContent] = useState(Content);
 
+  function handleView(content){
+    // Content bellow the tab is changed by the next function.
+    setContent(content);
+  }
+
   return(
     <section id={props.titleLight} className="p-4">
       <Title titleLight={props.titleLight} subHeading={props.subheading} titleBold={props.titleBold} display="block"/>
@@ -351,7 +349,7 @@ const CareService = (props) =>{
           {props.list.map((item)=>{
             return (
             <li className="mt-3">
-            <Tab onClick={()=>{setContent(item.content);}} className="text-sm text-gray-800 active font-medium py-2 px-2 text-left">
+            < Tab onClick={handleView} argument={[item.content]} active={ ListContent === item.content} buttonClass={``}>
               {item.name}
             </Tab>
             </li>
