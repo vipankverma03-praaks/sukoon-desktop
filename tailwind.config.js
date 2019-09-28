@@ -18,6 +18,8 @@ module.exports = {
       sukoon: '#12443e',
       sukoonYellow: '#ffc300',
       paleMint: '#C2DCD3',
+      tab:'#60AC9F',
+      sukoonGrey:'#E9EFED',
       paleMintLight:'#f2f4f3',
       paleMintDark:'#e9efed',
       gray: {
