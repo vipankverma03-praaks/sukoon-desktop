@@ -74,7 +74,8 @@ function InternationalPatient(props) {
 
   return (
     <>
-      <Banner booking inner texture HeaderImg={HeaderImg} />
+      <Banner  captionLight={`Feel like`}
+               captionBold={`Yourself Again`} booking inner texture HeaderImg={HeaderImg} />
       <PageIntro content={IntroContent}/>
       <div className="flex px-20 py-8">
         <div className="w-3/5 pr-6">
@@ -83,34 +84,35 @@ function InternationalPatient(props) {
               Facilities For International Patient
             </h2>
             <h3 className="py-4 pr-16 text-gray-600 font-gilroyMedium text-vlg block" >
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Accusamus at, deleniti dolor dolorem doloribus ducimus, ex
-              excepturi illo illum ipsa quas, quos sapiente totam.
+              Sukoon's International Team will compassionately ensure that you and your loved ones medical journey is smooth, hassle free, and comfortable. We will hand hold you at every step to provide a world-class experience.
             </h3>
             <ul className="text-xl font-gilroyMedium text-gray-600">
               <li className="mt-6">
-                1. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Cupiditate fuga id nisi.
+                1. Providing detailed medical opinion and video- consultation with our team of doctors before arrival
               </li>
               <li className="mt-2">
-                2. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Cupiditate fuga id nisi.
+                2. Assistance with Visa Services
               </li>
               <li className="mt-2">
-                3. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Cupiditate fuga id nisi.
+                3. A dedicated relationship manager is assigned to each patient to take care of all you needs inside the hospital and to assist you with hospital administrative processes
               </li>
               <li className="mt-2">
-                4. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Cupiditate fuga id nisi.
+                4. International Concierge Desk at dedicated International lounge will help to arrange for a hotel/ guest house as per your preference.
               </li>
               <li className="mt-2">
-                5. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Cupiditate fuga id nisi.
+                5. Complimentary two way airport transfers
               </li>
               <li className="mt-2">
-                6. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Cupiditate fuga id nisi.
+                6. Dedicated Relationship manager to take care of all you needs inside the hospital.
+              </li>
+              <li className="mt-2">
+                7. Payments can be done either via cash, credit card or Wire Transfer.
+              </li>
+              <li className="mt-2">
+                8. International Concierge Desk available at the hospital will facilitate travel within the city as well as for local sight-seeing
+              </li>
+              <li className="mt-2">
+                9. Interpreters available at the hospital
               </li>
             </ul>
           </section>
@@ -132,10 +134,9 @@ function InternationalPatient(props) {
               </BookBtn>
             </div>
           </MainForm>
-          <Para>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut hic
-            recusandae vero.
-          </Para>
+          <span className={`text-Para text-sm`}>
+            Disclaimer :
+          </span>
         </div>
       </div>
       <PartnerHotelInfo className="my-16 p-16 mb-0" id="">
@@ -156,28 +157,28 @@ function InternationalPatient(props) {
           <h2 className="text-sukoon font-gilroyBold text-3xl">Process</h2>
           <ul className="mt-2">
             <li className="flex">
-              <img width="12px" className="mr-2" src={SukoonBullets} /> Lorem
-              ipsum dolor sit amet,
+              <img width="12px" className="mr-2" alt={`Checklist icon`} src={SukoonBullets} /> General Enquiry
             </li>
             <li className="flex">
-              <img width="12px" className="mr-2" src={SukoonBullets} /> Lorem
-              ipsum dolor sit amet,
+              <img width="12px" className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />Medical opinion by psychiatrist
             </li>
             <li className="flex">
-              <img width="12px" className="mr-2" src={SukoonBullets} /> Lorem
-              ipsum dolor sit amet,
+              <img width="12px" className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />Visa assistance
             </li>
             <li className="flex">
-              <img width="12px" className="mr-2" src={SukoonBullets} /> Lorem
-              ipsum dolor sit amet,
+              <img width="12px" className="mr-2" alt={`Checklist icon`} src={SukoonBullets} /> Booking, Arrival
             </li>
             <li className="flex">
-              <img width="12px" className="mr-2" src={SukoonBullets} /> Lorem
-              ipsum dolor sit amet,
+              <img width="12px" className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />Consultation with doctors
             </li>
             <li className="flex">
-              <img width="12px" className="mr-2" src={SukoonBullets} /> Lorem
-              ipsum dolor sit amet,
+              <img width="12px" className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />Treatment
+            </li>
+            <li className="flex">
+              <img width="12px" className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />Sight seeing if medically allowed
+            </li>
+            <li className="flex">
+              <img width="12px" className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />Follow-up via video appointments
             </li>
           </ul>
         </div>
@@ -185,28 +186,13 @@ function InternationalPatient(props) {
           <h2 className="text-sukoon font-gilroyBold text-3xl">Checklist</h2>
           <ul className="mt-2">
             <li className="flex">
-              <img width="12px" className="mr-2" src={SukoonBullets} /> Lorem
-              ipsum dolor sit amet,
+              <img width="12px" className="mr-2" alt={`check list icon`} src={SukoonBullets} />Quotation provided by Sukoon
             </li>
             <li className="flex">
-              <img width="12px" className="mr-2" src={SukoonBullets} /> Lorem
-              ipsum dolor sit amet,
+              <img width="12px" className="mr-2" alt={`check list icon`} src={SukoonBullets} />Treatment plan provided by Sukoon
             </li>
             <li className="flex">
-              <img width="12px" className="mr-2" src={SukoonBullets} /> Lorem
-              ipsum dolor sit amet,
-            </li>
-            <li className="flex">
-              <img width="12px" className="mr-2" src={SukoonBullets} /> Lorem
-              ipsum dolor sit amet,
-            </li>
-            <li className="flex">
-              <img width="12px" className="mr-2" src={SukoonBullets} /> Lorem
-              ipsum dolor sit amet,
-            </li>
-            <li className="flex">
-              <img width="12px" className="mr-2" src={SukoonBullets} /> Lorem
-              ipsum dolor sit amet,
+              <img width="12px" className="mr-2" alt={`check list icon`} src={SukoonBullets} />Photographs (passport size)
             </li>
           </ul>
         </div>
@@ -216,28 +202,13 @@ function InternationalPatient(props) {
           </h2>
           <ul className="mt-2">
             <li className="flex">
-              <img width="12px" className="mr-2" src={SukoonBullets} /> Lorem
-              ipsum dolor sit amet,
+              <img width="12px" className="mr-2" src={SukoonBullets} />Old Medical Reports
             </li>
             <li className="flex">
-              <img width="12px" className="mr-2" src={SukoonBullets} /> Lorem
-              ipsum dolor sit amet,
+              <img width="12px" className="mr-2" src={SukoonBullets} />Visa
             </li>
             <li className="flex">
-              <img width="12px" className="mr-2" src={SukoonBullets} /> Lorem
-              ipsum dolor sit amet,
-            </li>
-            <li className="flex">
-              <img width="12px" className="mr-2" src={SukoonBullets} /> Lorem
-              ipsum dolor sit amet,
-            </li>
-            <li className="flex">
-              <img width="12px" className="mr-2" src={SukoonBullets} /> Lorem
-              ipsum dolor sit amet,
-            </li>
-            <li className="flex">
-              <img width="12px" className="mr-2" src={SukoonBullets} /> Lorem
-              ipsum dolor sit amet,
+              <img width="12px" className="mr-2" src={SukoonBullets} />Passport
             </li>
           </ul>
         </div>

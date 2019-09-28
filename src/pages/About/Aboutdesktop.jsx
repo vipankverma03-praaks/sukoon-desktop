@@ -38,15 +38,13 @@ const CareService = (props) =>{
         Hennepin County funds and state grants, provides these services to any person in need.</Para>
       <div className="flex flex-wrap">
         <ServiceType className="service_content mt-2 text-justify">
-          <InfoSection title="Our Mission" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus magni sapiente
-                        veritatis."/>
-          <InfoSection title="Our Vision" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus magni sapiente
-                        veritatis."/>
-          <InfoSection content="Hennepin Healthcare's Acute Psychiatric Services (APS) center serves those in emotional
-                        crisis with 24-hour, seven-day-a-week crisis counseling, assessment, and referral. More than
-                        42,000 calls and drop-in visits each year are handled by the Acute Psychiatric Services
-                        staff of psychiatrists, social workers, and psychiatric nurses. The APS is supported by
-                        Hennepin County funds and state grants, provides these services to any person in need."/>
+          <InfoSection title="Our Mission" content="Provide world-class psychiatric care, and mental health treatments with compassion, personalisation, and sincerity"/>
+          <InfoSection title="Our Vision" content="To be the largest network of psychiatric hospitals, mental health facilities, deaddiction centers in India"/>
+          {/*<InfoSection content="Hennepin Healthcare's Acute Psychiatric Services (APS) center serves those in emotional*/}
+          {/*              crisis with 24-hour, seven-day-a-week crisis counseling, assessment, and referral. More than*/}
+          {/*              42,000 calls and drop-in visits each year are handled by the Acute Psychiatric Services*/}
+          {/*              staff of psychiatrists, social workers, and psychiatric nurses. The APS is supported by*/}
+          {/*              Hennepin County funds and state grants, provides these services to any person in need."/>*/}
         </ServiceType>
       </div>
     </section>
@@ -56,7 +54,7 @@ const CareService = (props) =>{
 function DesktopAbout() {
   return (
     <>
-      <Banner inner texture HeaderImg={BannerBg}/>
+      <Banner captionLight={`Get Care`} captionBold={`Without compromise`}  inner texture HeaderImg={BannerBg}/>
       <CareService titleLight="About" titleBold=" Sukoon"/>
       </>
   );
