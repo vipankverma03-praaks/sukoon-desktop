@@ -65,7 +65,7 @@ const BookNow = (props) =>{
         </BookBtn>
         {props.contact ?
           <div className="my-4">
-            <span className="font-normal ">or Call at <span className={`underline`}>+91 9876543210</span></span>
+            <span className="font-normal ">or Call at <span className={`border-sukoon border-b `}>+91 9876543210</span></span>
           </div> : null}
       </div>
     </div>

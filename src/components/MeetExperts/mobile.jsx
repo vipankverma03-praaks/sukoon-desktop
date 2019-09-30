@@ -41,8 +41,8 @@ const Doctors = [
     name: 'John Doe',
     image: NursesImg,
   },
-
 ];
+
 const Nurses = styled.div`
     width:75vw;
     margin-right: 20px;
@@ -63,7 +63,7 @@ const CarouselItems = (item) =>{
 const MeetExperts = (props) => {
   return (
     <MeetExpertsWrapper id="meet-experts" className="p-4 relative">
-      <Title subHeading="Team" titleLight="Our" titleBold="Doctors"/>
+      <Title singleLine subHeading="Team" titleLight="Our" titleBold="Doctors"/>
       <Para width="100%"
             content="With a team of experienced psychiatrists, clinical psychologists, counselling psychologists, and art therapists led by Dr Samir Parikh of Fortis Healthcare, we can assure you that everybody is in good hands here."/>
       <Carousel container  cardFn={CarouselItems} content={Doctors}/>

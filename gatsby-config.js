@@ -20,6 +20,7 @@ module.exports = {
         icon: `src/images/sukoon-logo/logo_dark.png`
       }
     },
+    'gatsby-plugin-offline',
     `gatsby-plugin-postcss`,
     {
       resolve: "gatsby-plugin-purgecss",

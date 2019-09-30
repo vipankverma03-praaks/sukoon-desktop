@@ -102,7 +102,6 @@ const Wrapper = styled.div((props)=>{
     color: #12443E;
     }
   .textField  .MuiInputLabel-root{
-    font-family: Gilroy-Medium;
   
   }
   
@@ -112,7 +111,6 @@ const Wrapper = styled.div((props)=>{
   // input tag inside the textfield. 
   .textField .MuiInputBase-input{
     color: white;
-    font-family: gilroy-medium;
   }
    // Border bottom class
    .textField .MuiInput-underline:before{
@@ -151,7 +149,6 @@ const countries = [
 const TextInput = ({classes,defaultValue,textarea,lable,required}) => {
   return(
     <TextField
-      autoFocus
       required={required}
       id="standard-dense"
       label={lable}
