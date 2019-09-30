@@ -27,7 +27,7 @@ const Title = (props) => {
       <HeadingWrapper HeadingTag={props.HeadingTag || 'h2'} className="text-sukoon w-full mt-2 block">
         {props.titleLight ? <HeadingLight className="font-normal mr-2"
                                           display={props.display}>{props.titleLight || ''}</HeadingLight> : null}
-        <span className="text-sukoon block font-semibold  mr-2 w-full">
+        <span className={`text-sukoon  ${props.singleLine ? '' : 'block'} font-semibold  mr-2 w-full`}>
                 {props.titleBold}
                 </span>
       </HeadingWrapper>
