@@ -236,18 +236,18 @@ function ExperiencePage() {
       </section>
       <section className="extraExperience my-8">
         <div className="w-full flex">
-          <ExtraFeatures className="w-2/4">
+          <ExtraFeatures className="w-1/2">
             <div className="ClearView shadow-2xl"><img src={RoomDiningMain} className="block" alt="Header"/></div>
             <ExtraExperienceDetail className="">
               <h2 className="font-bold text-3xl text-sukoon mb-1">In room Dining</h2>
-              <para width="100%">Indulge in some freshly prepared food whenever your heart desires. Our room service menu consists of both Indian and Continental dishes.</para>
+              <Para Class={`mt-6`} width="100%">Indulge in some freshly prepared food whenever your heart desires. Our room service menu consists of both Indian and Continental dishes.</Para>
             </ExtraExperienceDetail>
           </ExtraFeatures>
-          <ExtraFeaturesTwo className="w-2/4">
+          <ExtraFeaturesTwo className="w-1/2">
             <div className="ClearView shadow-2xl"><img src={RoomSpaMain} className="block" alt="Header"/></div>
             <ExtraExperienceDetail className="">
               <h2 className="font-bold text-3xl text-sukoon mb-1">In Room Spa</h2>
-              <para width="100%">Our licensed massage therapists  are there to help you relax anytime in the comfort of your own room.  Chose from a variety of spa services.</para>
+              <Para Class={`mt-6`} width="100%">Our licensed massage therapists  are there to help you relax anytime in the comfort of your own room.  Chose from a variety of spa services.</Para>
             </ExtraExperienceDetail>
           </ExtraFeaturesTwo>
         </div>
