@@ -158,6 +158,9 @@ function Header(props) {
             onClick={() => {
               toggleExpansion(!isExpanded);
               props.toggleMenu(!isExpanded);
+              let body = document.body;
+              // To prevent page scrolling when menu is open.
+              body.style.overflow = isExpanded ? '' : 'hidden';
             }
             }>
             <Menu id="menu-hamburger-icon" className="text-xs font-bold">
