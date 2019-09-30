@@ -13,7 +13,7 @@ import Para from "../../elements/Para/mobile";
 
 // Images
 import BlogImg  from "../../images/iStock-968194620_2019-07-17/iStock-968194620@3x.jpg";
-import HeaderBg from "../../images/mobile_header.jpg";
+import HeaderBg from "../../images/mobile_home_banner_with_logo.jpg";
 
 const Caption = (props) => {
   return (
