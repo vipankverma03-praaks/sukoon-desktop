@@ -41,8 +41,8 @@ const Doctors = [
     name: 'John Doe',
     image: NursesImg,
   },
-
 ];
+
 const Nurses = styled.div`
     width:75vw;
     margin-right: 20px;

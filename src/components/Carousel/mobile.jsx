@@ -35,7 +35,7 @@ const Cards = (item) =>{
 const Carousel = (props) => {
 
   let item = props.content.map(item => {
-
+    // This iterates over the content array props passed fromm parent.
     if(props.container){
       return props.cardFn(item);
     }
