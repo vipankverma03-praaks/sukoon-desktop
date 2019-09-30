@@ -17,25 +17,7 @@ const ServiceType = styled.div`
 const TabList = styled.ul`
    min-height: 40px;
    height: 60px;
-   
-  //.active{
-  //  background: rgba(205,236,227,0.81);
-  //} 
-  //
-  //
-  //.passive{
-  // background: #d1e1d6cf;
-  //}
 `;
-
-// const Tab = styled.button`
-//     margin-left: 1px;
-//     width: fit-content;
-//
-//     &:focus{
-//     outline: none;
-//     }
-// `;
 
 const Content = {
   Main: 'Acute Psychiatry Services',
@@ -349,7 +331,7 @@ const CareService = (props) =>{
           {props.list.map((item)=>{
             return (
             <li className="mt-3">
-            < Tab onClick={handleView} argument={[item.content]} active={ ListContent === item.content} buttonClass={``}>
+            <Tab onClick={handleView} argument={[item.content]} active={ ListContent === item.content} buttonClass={``}>
               {item.name}
             </Tab>
             </li>
