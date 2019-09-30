@@ -8,19 +8,19 @@ module.exports = {
     `babel-preset-gatsby`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-offline`,
       {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Sukoon`,
-        short_name: `starter`,
+        short_name: `Sukoon`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#4dc0b5`,
-        display: `minimal-ui`,
+        display: `standalone`,
         icon: `src/images/sukoon-logo/logo_dark.png`
       }
     },
-    'gatsby-plugin-offline',
     `gatsby-plugin-postcss`,
     {
       resolve: "gatsby-plugin-purgecss",
