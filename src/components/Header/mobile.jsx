@@ -67,6 +67,13 @@ function Header(props) {
 
   };
 
+  // Scroll handle function
+  function NoScroll (scroll){
+    let body = document.body;
+    // To activate page scroll on page click
+    body.style.overflow = scroll ? '' : 'hidden';
+  }
+
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
@@ -95,48 +102,55 @@ function Header(props) {
             <Link
               to="/"
               className="inline-block mt-4 mt-0 mr-6 no-underline"
+              onClick={()=>{NoScroll(true)}}
             >
               Home
             </Link>
             <Link
               to="/services"
-              className="inline-block mt-4 mt-0 mr-6 no-underline"
+              className="inline-block mt-4 mt-0 mr-6 no-underline" onClick={()=>{NoScroll(true)}}
             >
               Services
             </Link>
             <Link
               to="/experience"
               className="inline-block mt-4 mt-0 mr-6 no-underline"
+              onClick={()=>{NoScroll(true)}}
             >
               Experience
             </Link>
             <Link
               to="/"
               className="inline-block mt-4 mt-0 mr-6 no-underline"
+              onClick={()=>{NoScroll(true)}}
             >
               Doctors
             </Link>
             <Link
               to="/internationalPatient"
               className="inline-block mt-4 mt-0 mr-6 no-underline"
+              onClick={()=>{NoScroll(true)}}
             >
               International Patients
             </Link>
             <Link
               to="/faqs"
               className="inline-block mt-4 mt-0 mr-6 no-underline"
+              onClick={()=>{NoScroll(true)}}
             >
               FAQS
             </Link>
             <Link
               to="/"
               className="inline-block mt-4 mt-0 mr-6 no-underline"
+              onClick={()=>{NoScroll(true)}}
             >
               Blogs
             </Link>
             <Link
               to="/contact"
               className="inline-block mt-4 mt-0 mr-6 no-underline"
+              onClick={()=>{NoScroll(true)}}
             >
               Contact
             </Link>
