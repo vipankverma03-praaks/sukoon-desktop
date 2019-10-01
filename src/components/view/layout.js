@@ -55,7 +55,7 @@ export default class Layout extends React.Component {
             <MobileLayout setOverlay={this.props.setOverlay} overlay={this.props.overlay} bgImage={this.props.bgImage}>
               {this.props.children}
             </MobileLayout> :
-            <DesktopLayout bgImage={this.props.bgImage}>
+            <DesktopLayout logoHighlighter={this.props.logoHighlighter} bgImage={this.props.bgImage}>
               {this.props.children}
             </DesktopLayout>
         }

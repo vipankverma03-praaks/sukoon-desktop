@@ -15,23 +15,24 @@ const Title = (props) =>{
      margin-bottom: 10px;
 `;
 
-  const HeadingWrapper = styled.div`
+  const HeadingWrapper = styled(`${props.HeadingTag || 'h2'}`)`
     line-height: 1;
     text-align: ${props => props.textAlign || 'left'};
 `;
+
   const HeadingLight = styled.span`
      display: ${props => props.display };
 `;
   const HeadingBold = styled.span`
-     display: ${props => props.display };
+     
 `;
 
   return(
     <Wrapper className={props.wrapperClass}>
       <Explore textAlign={props.textAlign} className="font-normal uppercase" borderRight={props.borderRight}>{props.subHeading || 'Explore'}</Explore>
       <HeadingWrapper textAlign={props.textAlign} className={`${props.headingClass || 'text-v5xl'} text-sukoon inline  w-full`}>
-        <HeadingLight className="font-normal mt-3 mr-2" display={props.display}>{props.titleLight || ''}</HeadingLight>
-        <HeadingBold className={`font-bold mb-3 ${props.addClass}`} display={props.display}>{props.titleBold || ''}</HeadingBold>
+        {props.titleLight ? <HeadingLight headingTag={props.HeadingTag} className="font-normal mt-3 mr-2" display={props.display}>{props.titleLight || ''}</HeadingLight> : null}
+        <HeadingBold className={`font-bold mb-3 ${props.addClass} ${props.singleLine ? '' : 'block'}`}>{props.titleBold || ''}</HeadingBold>
       </HeadingWrapper>
     </Wrapper>
   )

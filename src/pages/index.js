@@ -42,7 +42,7 @@ export default class IndexPage extends React.Component{
     }
     else {
       return(
-        <Layout overlay={this.state.overlay} setOverlay={this.updateState}>
+        <Layout logoHighlighter={true} overlay={this.state.overlay} setOverlay={this.updateState}>
         <SEO
           title="Home"
           keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}

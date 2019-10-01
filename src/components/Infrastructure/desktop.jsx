@@ -76,7 +76,7 @@ const InfraBtnContainer = (props) =>{
 const InfraCard = (props) => {
   return (
     <section className="p-6">
-      <Title titleLight={props.card.titleLight} className="mb-4" titleBold={props.card.titleBold} display="block"/>
+      <Title wrapperClass={`mb-6`} titleLight={props.card.titleLight} headingClass={`text-4xl`} titleBold={props.card.titleBold} singleLine/>
       <Para className="text-gray-600 block" width="23vw">
         {props.card.para}
       </Para>
@@ -130,8 +130,9 @@ const InfraSection = styled.section`
     `;
 
 const CardWrapper = styled.div`
-        right:10vw;
-        top:8vw;
+    margin: 8% 8% 0 0;
+    width: fit-content;
+    float: right;
     `;
 
 const SimpleInfraButton = styled.button`
@@ -282,7 +283,7 @@ const Infra = (props) =>{
 
   return(
     <InfraSection bgImage={Card.bgImg} id="sukoon-infra-section" className="sukoon-infra-section relative w-full my-12 h-full">
-      <CardWrapper className="block absolute bg-white">
+      <CardWrapper className="block bg-white">
         <InfraCard card={Card} titleLight="In House" titleBold="Pharmacy" para="You can always find your prescribed medications at Sukoon. Our pharmacy is "/>
       </CardWrapper>
       <Stepper className="flex absolute">

@@ -233,12 +233,12 @@ const Pyramid = (props) =>{
       let Col = item.col;
       let Cards = item.Cards.map((card)=>{
         return(
-          <Card className="card-container mb-4 mx-2">
+          <Card className="card-container">
             <div className="bg-white w-full">
               <div className="">
                 <h3 className="text-v2xl font-bold text-sukoon block">{card.titleLight}</h3>
                 <h3 className="text-v2xl font-bold text-sukoon block">{card.titleBold}</h3>
-                <Para Class="w-full pt-4">
+                <Para Class="w-full m-0 pt-4">
                   {card.para} <ArrowIcon/>
                 </Para>
               </div>
@@ -349,7 +349,7 @@ const Faqs = (props) => {
   return (
     <section id="faq-section" className="py-12 px-20 flex relative flex-row justify-between">
       <div className="mr-40">
-        <Title subHeading="Learn" titleLight="Frequently" addClass="block" titleBold="Asked Questions"/>
+        <Title HeadingTag={`h3`} subHeading="Learn" titleLight="Frequently" addClass="block" titleBold="Asked Questions"/>
       </div>
       <div className="w-3/5">
         {items}

@@ -16,6 +16,17 @@ const Wrapper = styled.svg`
   display: ${props => props.display};`;
 
 const icons = {
+  logo:{
+    shape: (
+      <g>
+        <path
+          className="st0"
+          d="M0,14.2h39.3L29.4,4l3.9-4L50,17L33.3,34l-3.9-4l9.9-10.2H0V14.2z"
+        />
+      </g>
+    ),
+    viewBox: "0 0 50 34"
+},
   arrow: {
     shape: (
       <g>
