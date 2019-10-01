@@ -336,7 +336,7 @@ const PatientCare = (props) => {
   // Left nav list component.
   let navList = props.list.map((list)=>{
     return(
-      <li className={`${isActive === list.number ? 'text-sukoon' : ''} text-2xl flex justify-between hover:text-sukoon items-center`}>
+      <li className={`${isActive === list.number ? 'text-sukoon' : ''} text-lg flex justify-between hover:text-sukoon items-center`}>
         <button onClick={()=>{setContent(list.content); setActive(list.number)}} className="focus:outline-none">
           {list.name}
         </button>

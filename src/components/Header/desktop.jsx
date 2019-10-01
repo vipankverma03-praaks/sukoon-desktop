@@ -7,7 +7,7 @@ import styled from "styled-components";
 import SVG from "../../elements/SVG/desktop";
 
 // Images
-import SukoonLogo from "../../images/sukoon-logo/logo_dark@3x.png"
+import SukoonLogo from "../../images/sukoon-logo/sukoon_logo.svg"
 // import Tooltip from "../../elements/Tooltip/tooltip";
 
 const NavItem = styled.nav`
@@ -30,21 +30,20 @@ const LogoLink = styled(Link)((props)=>{
             height: 2px;
             width: 90px;
             transform: rotate(90deg);
-            top: 110px;
-            right: -22px; 
+            top: 118px;
+            right: -14px; 
               
           }
           
           &::before{
-               content: 'Psychotherapy Center';
+            content: 'Psychotherapy Center';
             position: absolute;
-            font-size: 14px;
+            font-size: 13px;
             transform: rotate(-90deg);
             letter-spacing: 5px;
             top: 280px;
             width: 250px;
-            font-family: gilroy-regular;
-            right: -100px;
+            right: -92px;
             color: #8E8E8D;
             
           }
@@ -64,7 +63,7 @@ function Header(props) {
     <NavItem className="">
       <div className="flex flex-wrap items-center justify-between mx-auto p-4 ">
         <div className="w-full sukoon-top-logo flex justify-between">
-          <LogoLink to="/" logoHighlighter={props.logoHighlighter} className="flex w-12 relative  items-center no-underline ">
+          <LogoLink to="/" logoHighlighter={props.logoHighlighter} className="flex w-16 relative  items-center no-underline ">
             <img src={SukoonLogo} className="" alt="Sukoon Logo"/>
             <h2 className="text-sukoon text-v3xl font-accanthisRegular ml-4">Sukoon</h2>
           </LogoLink>

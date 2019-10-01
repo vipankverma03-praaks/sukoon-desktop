@@ -302,3 +302,27 @@ body .MuiPickersDay-day:hover{
 body .MuiPaper-root{
     background-color: #C2DCD3;
 }
+
+/*-------------------Media-Queries-------------*/
+
+@media screen and (max-width: 1800px) and (min-width: 1600px){
+    .card-container{
+        width: 19vw;
+    }
+}
+@media screen and (max-width: 1600px) and (min-width: 1400px){
+    .card-container{
+        width: 18vw;
+    }
+}
+@media screen and (max-width: 1400px) and (min-width: 1300px){
+    .card-container{
+        width: 20vw;
+    }
+}
+/*-------------Till-Ipad---------------------*/
+@media screen and (max-width: 1300px) and (min-width: 1024px){
+    .card-container{
+        width: 18vw;
+    }
+}

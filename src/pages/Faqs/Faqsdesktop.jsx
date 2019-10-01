@@ -139,8 +139,8 @@ const Faqs = (props) => {
   }
 
   return (
-    <section id="faq-section" className="p-8 flex relative flex-row-reverse justify-between">
-      <div className="w-3/5">
+    <section id="faq-section" className="p-8 flex relative flex-row-reverse">
+      <div className="w-4/5">
         <TabList className="flex mb-10 justify-between">
           {TabNames.map((tab)=>{
             return(
@@ -167,9 +167,9 @@ const Faqs = (props) => {
           })
         }
       </div>
-      <div className="mr-40">
+      <div className="">
         <Title subHeading={`Learn`}  titleLight="Frequently" addClass="block" titleBold="Asked Questions"/>
-        <Para>Want to find out more about Sukoon? Or find out more about psychiatry, and mental health? The answers to these and more can be found below.
+        <Para width={`70%`}>Want to find out more about Sukoon? Or find out more about psychiatry, and mental health? The answers to these and more can be found below.
         </Para>
       </div>
     </section>

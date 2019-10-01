@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
 
@@ -24,7 +24,7 @@ import HeaderImg from "../../images/Desktop-Header/HomeBanner.jpg";
 // Components
 import Para from "../../elements/Para/desktop"
 import Banner from "../../components/Banner/desktop"
-import Category from "../../elements/BookNowBtn/desktop";
+import Category from "../../elements/Tabs/TabsDesktop";
 import Details from "../../elements/Details/desktop";
 import Enquiry from "../../elements/BookNowBtn/desktop";
 import Preview from "../../components/Preview/desktop";
@@ -58,6 +58,19 @@ background: url(${RoomDining});
     align-items: center;
     position:relative;
 `;
+
+const RightImgPrv = styled.div`
+  
+  .viewOne:hover{
+    width: 80%;
+    transition: width 3s ease-in-out ;
+  }
+  .viewOne{
+    transition: width 1s ease-out;
+  }
+`;
+
+
 const ExtraFeaturesTwo = styled.div`
 background: url(${RoomSpa});   
     min-height: 400px;
@@ -96,14 +109,14 @@ const RoomFeatures = styled.ul`
 
 const Rooms = {
   deluxeRoom: {
-    type: 'Deluxe room',
+    type: 'deluxe rooms',
     description: 'lorem ipsum is just a dummy text lorem ipsum is just a dummy text lorem ipsum is just a dummy text',
     amenities:['Queen Bed','Smart TV (45”)','Private Balcony','AC & Heater','Mini Fridge','Spacious Closet','Lounge Seating','Writing Desk','Geyser','Wifi'],
     previewImages: [RoomOne, RoomTwo, RoomThree, RoomFour],
     preview: RoomOne,
   },
   suiteRoom: {
-    type: 'suite room',
+    type: 'suite rooms',
     description: 'lorem ipsum is just a dummy text lorem ipsum is just a dummy text lorem ipsum is just a dummy text',
     amenities:['Queen Bed','Food Pantry','Smart TV (55”)','Private Balcony','Outdoor Seating','AC & Heater','Mini Fridge','Spacious Closet','Lounge Seating','Writing Desk' ,'Wifi','Geyser'],
     previewImages: [RoomOne, RoomTwo, RoomThree, RoomFour],
@@ -118,7 +131,7 @@ const Rooms = {
   },
 };
 
-const RoomIntro = ({room}) =>{
+const RoomIntro = ({room,...props}) =>{
 
   let amenities = room.amenities.map((amenity)=>{
     return(
@@ -136,10 +149,16 @@ const RoomIntro = ({room}) =>{
       </RoomFeatures>
       <div className="roomImg">
         <ul className="">
-          <li><a><img src={RoomOne} className="block" alt=""/></a></li>
-          <li><a><img src={RoomTwo} className="block" alt=""/></a></li>
-          <li><a><img src={RoomThree} className="block" alt=""/></a></li>
-          <li><a><img src={RoomFour} className="block" alt=""/></a></li>
+          {
+            room.previewImages.map((img)=>{
+              return (
+                <li>
+                    <img src={img} onClick={()=>{
+                      props.setPreview(img)}} className="block cursor-pointer" alt="" />
+                </li>
+              );
+            })
+          }
         </ul>
       </div>
     </div>
@@ -149,11 +168,9 @@ const RoomIntro = ({room}) =>{
 // Main component
 function ExperiencePage() {
 
-  const[activeCategory, setCategory] = useState('deluxe rooms');
   const[data, setData] = useState(Rooms.deluxeRoom);
-
-  const setView = (view , data) =>{
-    setCategory(view);
+  const[previewImg, setPreview] = useState(Rooms.deluxeRoom.preview);
+  const setView = ( data) =>{
     setData(data);
   };
 
@@ -171,15 +188,15 @@ function ExperiencePage() {
         </div>
         <div className="w-full flex mt-10">
           <div className="w-2/5">
-            <img src={RoomView} className="block min-h-full" alt=""/>
+            <img src={previewImg} className="block min-h-full" alt=""/>
           </div>
           <div className="w-3/5 pl-10 flex flex-col justify-between">
             <ul className="RoomBtnTab mb-10">
-              <Category transparent={activeCategory !== 'deluxe rooms'} buttonArguments={['deluxe rooms', Rooms.deluxeRoom]} clickFn={setView}>Deluxe Rooms</Category>
-              <Category transparent={activeCategory !== 'suite rooms'} buttonArguments={['suite rooms', Rooms.suiteRoom]} clickFn={setView}>Suite Rooms</Category>
-              <Category transparent={activeCategory !== 'intensive care unit'} buttonArguments={['intensive care unit', Rooms.icuRoom]} clickFn={setView}>Intensive Care Unit</Category>
+              <Category active={data.type === 'deluxe rooms'} argument={[ Rooms.deluxeRoom]} onClick={setView}>Deluxe Rooms</Category>
+              <Category active={data.type === 'suite rooms'} argument={[ Rooms.suiteRoom]} onClick={setView}>Suite Rooms</Category>
+              <Category active={data.type === 'Intensive Care Unit'} argument={[Rooms.icuRoom]} onClick={setView}>Intensive Care Unit</Category>
             </ul>
-            <RoomIntro room={data}/>
+            <RoomIntro room={data} setPreview={setPreview}/>
           </div>
         </div>
       </section>
@@ -209,10 +226,10 @@ function ExperiencePage() {
             </div>
             <Enquiry wrapperClass=""><Link to="/">Enquiry</Link></Enquiry>
           </div>
-          <div className="w-3/5 flex">
-            <img src={PartyTwo} className="block viewOne" alt="Header"/>
+          <RightImgPrv className="w-3/5 flex">
+            <img src={PartyTwo} className={`block viewOne`} alt="Header"/>
             <img src={PartyOne} className="block ViewTwo" alt="Header"/>
-          </div>
+          </RightImgPrv>
         </div>
       </section>
       <section>
@@ -228,8 +245,7 @@ function ExperiencePage() {
       <section>
         <HighLightExperienceTwo className="my-8 p-8">
           <div className="HighlightSecInfo shadow-xl">
-            <span className="font-semibold text-lg text-sukoon">Patient Care</span>
-            <h2 className="font-bold text-3xl text-sukoon">Daily doctor consults</h2>
+            <Title headingClass={``} HeadingTag={`h3`} subHeading={`Patient Care`} titleLight={`Daily Doctor Consults`}/>
             <Para width="100%">Depending on your needs our psychiatrists, psychologists, counsellors, and therapists will ensure that you receive personalised medical care via daily individual attention.</Para>
           </div>
         </HighLightExperienceTwo>
