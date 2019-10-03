@@ -281,7 +281,7 @@ function IndexPage(props) {
       {/*<Infrastructure />*/}
       <MeetExperts/>
       <Faqs/>
-      <Blogs/>
+      {/*<Blogs/>*/}
     </>
   );
 }
