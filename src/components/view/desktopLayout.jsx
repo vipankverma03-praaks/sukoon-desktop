@@ -140,7 +140,7 @@ const CopyRight = (props) =>{
 const QuickLinks = (props) =>{
 
   return(
-    <div className="flex justify-between mr-12">
+    <div className="flex justify-between mr-12 w-2/5 lg:w-2/6">
       <div className="">
         <h3 className="text-sukoon text-2xl font-bold block">Sukoon</h3>
         <ul className="mt-4 font-semiBold">
@@ -154,7 +154,7 @@ const QuickLinks = (props) =>{
       <div className="flex flex-col">
         <h3 className="text-sukoon text-2xl font-bold block">Quick Links</h3>
         <div className="w-fit font-semiBold flex">
-          <ul className="mt-4 inline-block mr-12">
+          <ul className="mt-4 inline-block mr-8">
             <li className="text-gray-600 text-lg my-1 list-none">
               <Link to="/about">About Us</Link></li>
             <li className="text-gray-600 text-lg my-1 list-none">
@@ -268,9 +268,9 @@ export default class DesktopLayout extends React.PureComponent{
               <HeaderIntro/>
               <div className="px-8 pt-4">
                 <Subscribe/>
-                <div className="flex justify-between">
+                <div className="flex">
                   <QuickLinks/>
-                  <div className="flex flex-col">
+                  <div className="flex w-3/5 flex-col">
                     <ReachUs/>
                     <FollowUs/>
                   </div>
