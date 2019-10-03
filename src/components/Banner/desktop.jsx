@@ -66,7 +66,7 @@ const Booking = (props) =>{
             <Link to="/" >Book Now</Link>
           </BookBtn>
         </div>
-        <Link to="/" className="text-sukoon ml-4 underline text-lg">or Call at +91 9876543210</Link>
+        <Link to="/" className="text-sukoon ml-4  text-lg">or Call at <span className={`border-b-2 border-sukoon`}>+91 7558640422</span></Link>
       </div>
     </div>
 
