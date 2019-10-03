@@ -171,7 +171,7 @@ const HeaderIntro = (props) => {
               Experience
             </Link>
             <Link
-              to="/doctors"
+              to="/"
               className=" inline-block mt-0 mr-6 no-underline"
             >
               Doctors
