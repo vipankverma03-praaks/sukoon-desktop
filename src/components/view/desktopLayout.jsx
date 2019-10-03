@@ -27,7 +27,7 @@ const LayoutContainer = styled.div`
     }
     
     .customer-contact-info{
-    width: 47%;
+    width: 30%;
     
     }
     .customer-contact-info input::placeholder{
@@ -56,8 +56,8 @@ const HeaderIntro = () => {
 
   return (
     <section className="w-full">
-      <div id="Book-appointment-footer" className="pl-8 pr-4 py-6 bg-sukoon flex justify-between">
-        <div className="text-white text-5xl my-auto">
+      <div id="Book-appointment-footer" className="px-8 py-6 bg-sukoon flex justify-between">
+        <div className="text-white text-4xl sm:text-5xl my-auto">
                     <span className="font-light mr-2">
                         Book an
                     </span>
@@ -65,7 +65,7 @@ const HeaderIntro = () => {
                         Appointment
                     </span>
         </div>
-        <div className="flex appointment-select font-normal items-center w-3/6 md:w-3/5">
+        <div className="flex appointment-select justify-end font-normal items-center w-3/6 md:w-3/5">
           <div className="mr-6 w-1/4">
             <Input type="select" value={BookingOptions} label="Appointment Type" placeholder=""/>
           </div>
@@ -190,7 +190,7 @@ const Subscribe = (props) =>{
         <h3 className="text-sukoon inline font-normal">Subscribe</h3>
         <h3 className="ml-2 inline-block font-bold text-sukoonYellow">Our Newsletter</h3>
       </div>
-      <div className="my-auto mx-4 items-center flex self-end">
+      <div className="my-auto items-center flex self-end">
         <Input type="name" green required={true} wrapperClass="mr-4 w-v30" label="Email / Phone Number" defaultValue={``}/>
         <BookBtn border>Go</BookBtn>
       </div>
