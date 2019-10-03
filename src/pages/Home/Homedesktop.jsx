@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 // Slick CSS files
@@ -542,6 +542,21 @@ const PopUp = (props) =>{
  * @return {boolean}
  */
 function DesktopHome() {
+  const[popUp, setPopUp] = useState(false);
+
+  // To prevent page scroll when dialog box is open.
+  function handlePopUp(showBox) {
+    let body = document.body;
+    if(showBox){
+      setPopUp(showBox);
+      body.style.overflow = 'hidden';
+    }
+    else{
+      setPopUp(showBox);
+      body.style.overflow = 'auto';
+    }
+  }
+
   return (
     <>
       <TopRow>

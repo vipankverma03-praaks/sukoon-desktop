@@ -61,9 +61,9 @@ const Booking = (props) =>{
         <Input type="name" required={true} wrapperClass="ml-4 w-3/5" label="Email / Phone Number" defaultValue={``}/>
       </div>
       <div className="mt-8 font-gilroyMedium">
-        <div className="inline-block">
+        <div className="inline-block" onClick={()=>props.showHidePopUp(true)}>
           <BookBtn theme="green" wrapperClass="">
-            <Link to="/">Book Now</Link>
+            <Link to="/" >Book Now</Link>
           </BookBtn>
         </div>
         <Link to="/" className="text-sukoon ml-4 underline text-lg">or Call at +91 9876543210</Link>
@@ -193,7 +193,7 @@ const HeaderIntro = (props) => {
             <BannerText inner={props.inner} id="header-intro-left" className="py-12">
               <Heading captionLight={props.captionLight} captionBold={props.captionBold}/>
               {props.booking ?
-                <Booking discover={props.discover}/>
+                <Booking showHidePopUp={props.showHidePopUp} discover={props.discover}/>
                 : props.para ? <ParagraphSection para={props.bannerPara}/> :
                   <ButtonSection bannerPara={props.bannerPara}/>
               }
