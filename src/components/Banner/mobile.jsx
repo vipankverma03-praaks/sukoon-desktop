@@ -59,7 +59,7 @@ const BookNow = (props) =>{
         <Input type="select" green value={BookingOptions} wrapperClass="w-4/5" label="Appointment Type" placeholder=""/>
         <Input type="name" green required={true} wrapperClass="w-4/5" label="Email / Phone Number" defaultValue={``}/>
       </div>
-      <div className="flex flex-col mt-8">
+      <div className="flex flex-col mt-8" onClick={()=>props.showHidePopUp(true)}>
         <BookBtn border bg="transparent" wrapperClass="">
           <Link to="/" >Book Now</Link>
         </BookBtn>
@@ -81,7 +81,7 @@ const Banner = (props) => {
         <Heading captionLight={props.captionLight} bannerPara={props.bannerPara} captionBold={props.captionBold} />
       </div>
       {props.bookNow ?
-        <BookNow  contact={props.contact} discover={props.discover}/> :
+        <BookNow  showHidePopUp={props.showHidePopUp} contact={props.contact} discover={props.discover}/> :
         <ParaSection bannerPara={props.bannerPara} />}
     </Header>
   )

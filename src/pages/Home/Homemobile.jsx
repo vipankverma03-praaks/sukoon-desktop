@@ -270,11 +270,70 @@ const OutPatientServices = (props) => {
   )
 };
 
+
+const DialogWrapper = styled.div`
+    z-index: 10001;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+      
+    &::before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      background: rgba(31, 30, 30, .7);
+    }  
+      
+    .inside-box-wrapper{
+    }
+`;
+
+const PopUp = (props) =>{
+
+  return (
+    <DialogWrapper id={`pop-up-box`} className={`${props.popUp ? 'block' : 'hidden'} fixed pin overflow-auto  flex`} onClick={()=>props.show(false)}>
+      <div className={`relative inside-box-wrapper w-full mt-16 flex-col flex self-end`}>
+        <div className={`header px-8 py-2 flex bg-tab justify-between`}>
+          <h3>Ooops...</h3>
+        </div>
+        <div className={`body bg-white px-8 py-4 text-lg`}>
+          <h6 className={`my-2`}>Unfortunately, we aren't able to accept appointments online at the time being.</h6>
+          <h6 className={`my-4`}>Kindly call us at <span className={`tracking-widest font-bold border-gray-600 border-b-2`}><a
+            href="tel:+91 7558640422">7558640422</a></span> to book one. Thank you! We regret the inconvenience caused.</h6>
+        </div>
+        <div className={`footer`}>
+
+        </div>
+      </div>
+    </DialogWrapper>
+  )
+};
+
 function IndexPage(props) {
+  const[popUp, setPopUp] = useState(false);
+
+  // To prevent page scroll when dialog box is open.
+  function handlePopUp(showBox) {
+    let body = document.body;
+    if(showBox){
+      setPopUp(showBox);
+      body.style.overflow = 'hidden';
+    }
+    else{
+      setPopUp(showBox);
+      body.style.overflow = 'auto';
+    }
+  }
 
   return (
     <>
-      <Banner captionLight={`A safe space`} captionBold={`for better days`} overlay={props.overlay} bookNow contact discover backgroundImg={HeaderBg}/>
+      <PopUp show={handlePopUp} popUp={popUp}/>
+      <Banner showHidePopUp={handlePopUp} captionLight={`A safe space`} captionBold={`for better days`} overlay={props.overlay} bookNow contact discover backgroundImg={HeaderBg}/>
       <WhySukoon/>
       <ResidentialServices/>
       <OutPatientServices/>
