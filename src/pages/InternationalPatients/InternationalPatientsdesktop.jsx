@@ -15,6 +15,7 @@ import SukoonBgLogo from "../../images/sukoon-bg-logo/logo@2x.jpg";
 import VirtualFormBg from "../../images/internationalpatient/form_bg.png";
 import PartnerHotel from "../../images/internationalpatient/partner_hotel.png";
 import SukoonBullets from "../../images/internationalpatient/sukoon_bullet.svg";
+import Title from "../../elements/Heading/mobile";
 
 // Meet Experts and Blog and faq wrapper
 const MFBWrapper = styled.section`
@@ -33,7 +34,6 @@ const MainForm = styled.form`
   
   input::placeholder, textarea::placeholder{
     opacity: 1;
-    font-family: gilroy-regular;
   }
   textarea{
     min-height: 100px;
@@ -69,8 +69,23 @@ const IntroContent = {
   ]
 };
 
+const ListItems = styled.ul`
+  
+`;
 
 function InternationalPatient(props) {
+
+  const BookingOptions = [
+    {
+      value: "Video Appointment",
+      label: "Video Appointment"
+    },
+    {
+      value: "In Person Appointment",
+      label: "In Person Appointment"
+    }
+  ];
+
 
   return (
     <>
@@ -83,38 +98,46 @@ function InternationalPatient(props) {
             <h2 className="text-sukoon text-v3xl font-gilroyBold">
               Facilities For International Patient
             </h2>
-            <h3 className="py-4 pr-16 text-gray-600 font-gilroyMedium text-vlg block" >
+            <Para Class={`mt-6`} lineHeight={`1.4`}>
               Sukoon's International Team will compassionately ensure that you and your loved ones medical journey is smooth, hassle free, and comfortable. We will hand hold you at every step to provide a world-class experience.
-            </h3>
-            <ul className="text-xl font-gilroyMedium text-gray-600">
-              <li className="mt-6">
-                1. Providing detailed medical opinion and video- consultation with our team of doctors before arrival
+            </Para>
+            <ListItems className="text-sm  text-gray-600">
+              <li className="flex items-baseline mt-6">
+                <img width="12px" className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />
+                Providing detailed medical opinion and video- consultation with our team of doctors before arrival.
               </li>
-              <li className="mt-2">
-                2. Assistance with Visa Services
+              <li className="flex items-baseline mt-2">
+                <img width="12px" className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />
+                Assistance with Visa Services
               </li>
-              <li className="mt-2">
-                3. A dedicated relationship manager is assigned to each patient to take care of all you needs inside the hospital and to assist you with hospital administrative processes
+              <li className="flex items-baseline mt-2">
+                <img width="12px" className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />
+                A dedicated relationship manager is assigned to each patient to take care of all you needs inside the hospital and to assist you with hospital administrative processes
               </li>
-              <li className="mt-2">
-                4. International Concierge Desk at dedicated International lounge will help to arrange for a hotel/ guest house as per your preference.
+              <li className="flex items-baseline mt-2">
+                <img width="12px" className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />
+                International Concierge Desk at dedicated International lounge will help to arrange for a hotel/ guest house as per your preference.
+              </li><li className="flex items-baseline mt-2">
+              <img width="12px" className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />
+              Complimentary two way airport transfers
+            </li>
+              <li className="flex items-baseline mt-2">
+                <img width="12px" className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />
+                Dedicated Relationship manager to take care of all you needs inside the hospital.
               </li>
-              <li className="mt-2">
-                5. Complimentary two way airport transfers
+              <li className="flex items-baseline mt-2">
+                <img width="12px" className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />
+                Payments can be done either via cash, credit card or Wire Transfer.
               </li>
-              <li className="mt-2">
-                6. Dedicated Relationship manager to take care of all you needs inside the hospital.
+              <li className="flex items-baseline mt-2">
+                <img width="12px" className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />
+                International Concierge Desk available at the hospital will facilitate travel within the city as well as for local sight-seeing
               </li>
-              <li className="mt-2">
-                7. Payments can be done either via cash, credit card or Wire Transfer.
+              <li className="flex items-baseline mt-2">
+                <img width="12px" className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />
+                Interpreters available at the hospital
               </li>
-              <li className="mt-2">
-                8. International Concierge Desk available at the hospital will facilitate travel within the city as well as for local sight-seeing
-              </li>
-              <li className="mt-2">
-                9. Interpreters available at the hospital
-              </li>
-            </ul>
+            </ListItems>
           </section>
         </div>
         <div className="w-2/5 pl-6">
@@ -126,25 +149,22 @@ function InternationalPatient(props) {
               <Input type="name" required={true} defaultValue={``} label="Patient Name"/>
               <Input type="name" required={true} label="Age" defaultValue={``}/>
               <Input type="name" required={true} label="Contact Number" defaultValue={``}/>
-              <Input type="select" label="Select Country"/>
-              <Input type="select" label="Select"/>
+              <Input type="select" value={BookingOptions} label="Select Country"/>
+              <Input type="select" value={BookingOptions} label="Select"/>
               <Input type="name" defaultValue={``} label="Comments" textarea/>
-              <BookBtn theme="green" buttonPadding="5px 10px" wrapperClass="">
+              <BookBtn theme="green" buttonPadding="5px 10px" wrapperClass="mt-4">
                 Get An Estimate
               </BookBtn>
             </div>
           </MainForm>
-          <span className={`text-Para text-sm`}>
+          <span className={`text-Para text-xs`}>
             Disclaimer :
           </span>
         </div>
       </div>
       <PartnerHotelInfo className="my-16 p-16 mb-0" id="">
         <PartnerHotelContent className="shadow-lg w-1/3">
-          <span className="text-sukoon">Patient Care</span>
-          <h2 className="text-sukoon text-2xl font-gilroyBold">
-            Partners Hotels / Guest Houses
-          </h2>
+          <Title subHeading={`Patient Care`} titleLight={`Partners Hotels`} wrapperClass={`text-sm mb-4`} titleBold={`Guest Houses`}/>
           <Para width="100%">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda
             cum dicta facilis, iure mollitia numquam quae quis tenetur voluptate
