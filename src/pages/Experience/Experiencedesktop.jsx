@@ -170,13 +170,28 @@ function ExperiencePage() {
 
   const[data, setData] = useState(Rooms.deluxeRoom);
   const[previewImg, setPreview] = useState(Rooms.deluxeRoom.preview);
+  const[popUp, setPopUp] = useState(false);
+
+  // To prevent page scroll when dialog box is open.
+  function handlePopUp(showBox) {
+    if(showBox){
+      setPopUp(showBox);
+      General.NoScroll(showBox);
+    }
+    else{
+      setPopUp(showBox);
+      General.NoScroll(showBox);
+    }
+  }
+
   const setView = ( data) =>{
     setData(data);
   };
 
   return (
       <>
-      <Banner inner bannerPara={`Your health and happiness are our top priorities. We ensure this with the best doctors and nurses, world-class
+        <PopUp handlePopUp={handlePopUp} popUp={popUp}/>
+      <Banner showHidePopUp={handlePopUp} inner bannerPara={`Your health and happiness are our top priorities. We ensure this with the best doctors and nurses, world-class
         treatments, premium facilities, and modern amenities.Our center has ample natural light, lush green outdoor spaces, and
         spacious activity areas to enhance your recovery.`} texture captionLight={`Comfort meets`} captionBold={`Exceptional care`} HeaderImg={HeaderImg}/>
       <section className="py-12 px-20">

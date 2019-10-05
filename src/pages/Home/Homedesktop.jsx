@@ -14,12 +14,14 @@ import Infrastructure from "../../components/Infrastructure/desktop";
 import WhySukoon from "../../components/Intro/desktop";
 import Details from "../../elements/Details/desktop";
 import MeetExperts from "../../components/MeetExperts/desktop";
+import PopUp from "../../elements/PopUp/popUpDesktop"
 
 // Images
 import BlogImg  from "../../images/iStock-968194620_2019-07-17/blogImg.jpg";
 import HeaderImg from "../../images/Desktop-Header/HomeBanner.jpg";
 import SukoonBgLogo from "../../images/sukoon-bg-logo/logo@2x.jpg";
 import SukoonLogo from "../../images/sukoon-bg-logo/logo.jpg";
+import General from "../../components/common/general";
 
 // Meet Experts and Blog and faq wrapper
 const MFBWrapper = styled.section`
@@ -233,13 +235,14 @@ const Pyramid = (props) =>{
       let Col = item.col;
       let Cards = item.Cards.map((card)=>{
         return(
-          <Card className="card-container">
+          <Card className="card-container mb-4 mx-2">
             <div className="bg-white w-full">
               <div className="">
                 <h3 className="text-v2xl font-bold text-sukoon block">{card.titleLight}</h3>
                 <h3 className="text-v2xl font-bold text-sukoon block">{card.titleBold}</h3>
-                <Para Class="w-full m-0 pt-4">
-                  {card.para} <ArrowIcon/>
+                <Para Class="w-full pt-4">
+                  {card.para}
+                  {/*<ArrowIcon/>*/}
                 </Para>
               </div>
             </div>
@@ -493,50 +496,6 @@ const IntroContent = {
   ]
 };
 
-const DialogWrapper = styled.div`
-    z-index: 10001;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-      
-    &::before{
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      width: 100%;
-      background: rgba(31, 30, 30, .7);
-    }  
-      
-    .inside-box-wrapper{
-    opacity: 1;
-    }
-`;
-
-const PopUp = (props) =>{
-
-  return (
-    <DialogWrapper id={`pop-up-box`} className={`${props.popUp ? 'block' : 'hidden'} fixed pin overflow-auto  flex`}>
-      <div className={`relative inside-box-wrapper bg-tab w-full max-w-md m-auto flex-col flex`}>
-        <div className={`header px-8 py-2 flex justify-between`}>
-          <h3>Notification</h3>
-          <button className={`text-2xl text-white`} onClick={()=>props.show(false)}>X</button>
-        </div>
-        <div className={`body bg-white px-8 py-4 text-lg`}>
-          <h6 className={`my-2`}>Unfortunately, we aren't able to accept appointments online at the time being.</h6>
-          <h6 className={`my-4`}>Kindly call us at <span className={`tracking-widest font-bold border-gray-600 border-b-2`}>7558640422</span> to book one. Thank you! We regret the inconvenience caused.</h6>
-        </div>
-        <div className={`footer`}>
-
-        </div>
-      </div>
-    </DialogWrapper>
-  )
-};
-
 
 /**
  * @return {boolean}
@@ -546,21 +505,20 @@ function DesktopHome() {
 
   // To prevent page scroll when dialog box is open.
   function handlePopUp(showBox) {
-    let body = document.body;
     if(showBox){
       setPopUp(showBox);
-      body.style.overflow = 'hidden';
+      General.NoScroll(showBox);
     }
     else{
       setPopUp(showBox);
-      body.style.overflow = 'auto';
+      General.NoScroll(showBox);
     }
   }
 
   return (
     <>
       <TopRow>
-        <PopUp show={handlePopUp} popUp={popUp}/>
+        <PopUp  handlePopUp={handlePopUp} popUp={popUp}/>
         <Banner showHidePopUp={handlePopUp} bannerPara={``} captionLight={`A safe space`} captionBold={`for better days`} booking discover HeaderImg={HeaderImg}/>
         <WhySukoon content={IntroContent}/>
       </TopRow>

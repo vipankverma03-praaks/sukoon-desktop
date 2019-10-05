@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 // Components
@@ -74,6 +74,19 @@ const ListItems = styled.ul`
 `;
 
 function InternationalPatient(props) {
+  const[popUp, setPopUp] = useState(false);
+
+  // To prevent page scroll when dialog box is open.
+  function handlePopUp(showBox) {
+    if(showBox){
+      setPopUp(showBox);
+      General.NoScroll(showBox);
+    }
+    else{
+      setPopUp(showBox);
+      General.NoScroll(showBox);
+    }
+  }
 
   const BookingOptions = [
     {
@@ -89,7 +102,8 @@ function InternationalPatient(props) {
 
   return (
     <>
-      <Banner  captionLight={`Feel like`}
+      <PopUp handlePopUp={handlePopUp} popUp={popUp}/>
+      <Banner  showHidePopUp={handlePopUp} captionLight={`Feel like`}
                captionBold={`Yourself Again`} booking inner texture HeaderImg={HeaderImg} />
       <PageIntro content={IntroContent}/>
       <div className="flex px-20 py-8">

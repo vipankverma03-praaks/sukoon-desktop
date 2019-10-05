@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 // Components
@@ -8,6 +8,8 @@ import Banner from "../../components/Banner/desktop";
 
 // Images
 import BannerBg from "../../images/Desktop-Header/pacientes-mejora.png";
+import PopUp from "../../elements/PopUp/popUpDesktop";
+import General from "../../components/common/general";
 
 const ServiceType = styled.div`
 `;
@@ -44,6 +46,20 @@ const CareService = (props) =>{
 };
 
 function DesktopAbout() {
+  const[popUp, setPopUp] = useState(false);
+
+  // To prevent page scroll when dialog box is open.
+  function handlePopUp(showBox) {
+    if(showBox){
+      setPopUp(showBox);
+      General.NoScroll(showBox);
+    }
+    else{
+      setPopUp(showBox);
+      General.NoScroll(showBox);
+    }
+  }
+
   return (
     <>
       <Banner captionLight={`Get Care`} captionBold={`Without compromise`}  inner texture HeaderImg={BannerBg}/>
