@@ -62,7 +62,8 @@ function DesktopAbout() {
 
   return (
     <>
-      <Banner captionLight={`Get Care`} captionBold={`Without compromise`}  inner texture HeaderImg={BannerBg}/>
+      <PopUp handlePopUp={handlePopUp} popUp={popUp}/>
+      <Banner showHidePopUp={handlePopUp} width={`52vw`} marginLeft={`-30vw`} captionLight={`Get Care`} captionBold={`Without compromise`}  inner texture HeaderImg={BannerBg}/>
       <CareService titleLight="About" titleBold=" Sukoon"/>
       </>
   );

@@ -31,12 +31,9 @@ const HeadingWrapper = styled.div`
 // Header Text Container  position
 const BannerText = styled.div`
         position: relative; 
-        //padding: 4vw 0;
-        margin-left: -25vw;
-        //margin-top: ${props=> props.inner ? '-22vw' : '-30vw'};
-        // margin-left: ${props=> props.inner ? '-26vw' : '-22vw'};;
+        margin-left: ${props => props.marginLeft || '-25vw'};
         z-index: 100;
-        width: 40vw;
+        width: ${props => props.width || '40vw'};
     `;
 
 // Main Header section component
@@ -194,7 +191,7 @@ const HeaderIntro = (props) => {
             </Link>
           </NavWrapper>
           <BannerImage HeaderImg={props.HeaderImg} texture={props.texture} className="relative">
-            <BannerText inner={props.inner} id="header-intro-left" className="py-12">
+            <BannerText marginLeft={props.marginLeft} width={props.width} inner={props.inner} id="header-intro-left" className="py-12">
               <Heading captionLight={props.captionLight} captionBold={props.captionBold}/>
               {props.booking ?
                 <Booking showHidePopUp={props.showHidePopUp} discover={props.discover}/>
