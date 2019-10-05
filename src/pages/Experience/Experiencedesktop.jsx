@@ -20,6 +20,7 @@ import Breakfast from "../../images/exp/meal_1.jpg";
 import Lunch from "../../images/exp/meal_2.jpg";
 import Dinner from "../../images/exp/meal_3.jpg";
 import HeaderImg from "../../images/Desktop-Header/HomeBanner.jpg";
+import SukoonBullets from "../../images/internationalpatient/sukoon_icon.png";
 
 // Components
 import Para from "../../elements/Para/desktop"
@@ -29,15 +30,19 @@ import Details from "../../elements/Details/desktop";
 import Enquiry from "../../elements/BookNowBtn/desktop";
 import Preview from "../../components/Preview/desktop";
 import Title from "../../elements/Heading/desktop";
+import Carousel from "../../components/Carousel/desktop";
+import General from "../../components/common/general";
+import PopUp from "../../elements/PopUp/popUpDesktop";
 
 const HighLightExperience = styled.div`
-background: url(${HighLightTherapy});   
+background: url(${props=> props.bgImg || HighLightTherapy});   
 min-height: 415px;
 background-size:cover;
 background-position:center center;
 display:flex;
 align-items: center;
 `;
+
 const HighLightExperienceTwo = styled.div`
 background: url(${HighLightTherapyTwo});   
 min-height: 415px;
@@ -135,15 +140,17 @@ const RoomIntro = ({room,...props}) =>{
 
   let amenities = room.amenities.map((amenity)=>{
     return(
-      <li>{amenity}</li>
+      <li className="flex items-center">
+        <img style={{width: '16px', height: '16px'}} className="mr-2" alt={`Checklist icon`} src={SukoonBullets} /> {amenity}
+      </li>
     )
   });
 
   return(
     <div className="">
-      <Para width="100%">
-        {room.description}
-      </Para>
+      {/*<Para width="100%">*/}
+      {/*  {room.description}*/}
+      {/*</Para>*/}
       <RoomFeatures className="font-gilroyMedium flex flex-wrap my-8">
         {amenities}
       </RoomFeatures>
@@ -165,18 +172,59 @@ const RoomIntro = ({room,...props}) =>{
   )
 };
 
+const CarouselContent = [
+  {
+      bg: HighLightTherapy,
+      titleLight: `One nurse for every patient`,
+      para: `Our promise of holistic care is delivered via an unmatched nurse to patient ratio. At Sukoon, you and your loves ones are given individual attention for a speedy recovery.`
+  },
+  {
+    bg: HighLightTherapyTwo,
+    titleLight: `Daily Doctor Consults`,
+    para: `Depending on your needs our psychiatrists, psychologists, counsellors, and therapists will ensure that you receive personalised medical care via daily individual attention.`
+  }
+];
+
+const CarouselItems = (item) =>{
+  return(
+    <HighLightExperience bgImg={item.bg} className="mt-8 p-12">
+      <div className="HighlightSecInfo shadow-xl">
+        <Title headingClass={`text-3xl`} titleLight={item.titleLight}/>
+        <Para width="100%">
+          {item.para}
+        </Para>
+      </div>
+    </HighLightExperience>
+  )
+};
+
 // Main component
 function ExperiencePage() {
 
   const[data, setData] = useState(Rooms.deluxeRoom);
   const[previewImg, setPreview] = useState(Rooms.deluxeRoom.preview);
+  const[popUp, setPopUp] = useState(false);
+
+  // To prevent page scroll when dialog box is open.
+  function handlePopUp(showBox) {
+    if(showBox){
+      setPopUp(showBox);
+      General.NoScroll(showBox);
+    }
+    else{
+      setPopUp(showBox);
+      General.NoScroll(showBox);
+    }
+  }
+
   const setView = ( data) =>{
     setData(data);
   };
 
   return (
       <>
-      <Banner inner bannerPara={`Your health and happiness are our top priorities. We ensure this with the best doctors and nurses, world-class
+        <PopUp handlePopUp={handlePopUp} popUp={popUp}/>
+      <Banner showHidePopUp={handlePopUp} inner bannerPara={`Your health and happiness are our top priorities. We ensure this with the best doctors and nurses, world-class
         treatments, premium facilities, and modern amenities.Our center has ample natural light, lush green outdoor spaces, and
         spacious activity areas to enhance your recovery.`} texture captionLight={`Comfort meets`} captionBold={`Exceptional care`} HeaderImg={HeaderImg}/>
       <section className="py-12 px-20">
@@ -204,7 +252,7 @@ function ExperiencePage() {
         <div className="w-full flex">
           <div className="w-2/5 pr-8 flex flex-col justify-between ActivityInfo">
             <div>
-              <span className="block text-2xl">Spacious Activity Areas</span>
+              {/*<span className="block text-2xl">Spacious Activity Areas</span>*/}
               <Details open padding="10px 0" summary="Resident Lounges">
                 <Para Class="py-4" width="100%">At Sukoon, every floor has a modern resident lounge that comprises of a
                   dining area, movie lounge, and board game tables. These versatile spaces are also used for art-based
@@ -224,7 +272,7 @@ function ExperiencePage() {
                 </Para>
               </Details>
             </div>
-            <Enquiry wrapperClass=""><Link to="/">Enquiry</Link></Enquiry>
+            <Enquiry wrapperClass="self-end"><Link to="/">Enquiry</Link></Enquiry>
           </div>
           <RightImgPrv className="w-3/5 flex">
             <img src={PartyTwo} className={`block viewOne`} alt="Header"/>
@@ -233,25 +281,11 @@ function ExperiencePage() {
         </div>
       </section>
       <section>
-        <HighLightExperience className="my-8 p-8">
-          <div className="HighlightSecInfo shadow-xl">
-            <Title headingClass={`text-3xl`} titleLight={`One nurse for every patient`}/>
-            <Para width="100%">Our promise of holistic care is delivered via an unmatched nurse to patient ratio. At Sukoon, you and your loves ones are given individual attention for a speedy recovery
-            </Para>
-          </div>
-        </HighLightExperience>
+        <Carousel wrapperPadding={`0`} slidesToShow={1} slidesToScroll={1} container  cardFn={CarouselItems} content={CarouselContent}/>
       </section>
-      <Preview />
-      <section>
-        <HighLightExperienceTwo className="my-8 p-8">
-          <div className="HighlightSecInfo shadow-xl">
-            <Title headingClass={``} HeadingTag={`h3`} subHeading={`Patient Care`} titleLight={`Daily Doctor Consults`}/>
-            <Para width="100%">Depending on your needs our psychiatrists, psychologists, counsellors, and therapists will ensure that you receive personalised medical care via daily individual attention.</Para>
-          </div>
-        </HighLightExperienceTwo>
-      </section>
-      <section className="extraExperience my-8">
-        <div className="w-full flex">
+        <section className="extraExperience mb-8 bg-paleMintLight">
+          <Preview />
+          <div className="w-full flex">
           <ExtraFeatures className="w-1/2">
             <div className="ClearView shadow-2xl"><img src={RoomDiningMain} className="block" alt="Header"/></div>
             <ExtraExperienceDetail className="">

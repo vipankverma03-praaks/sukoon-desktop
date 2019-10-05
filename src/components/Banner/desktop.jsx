@@ -31,12 +31,9 @@ const HeadingWrapper = styled.div`
 // Header Text Container  position
 const BannerText = styled.div`
         position: relative; 
-        //padding: 4vw 0;
-        margin-left: -25vw;
-        //margin-top: ${props=> props.inner ? '-22vw' : '-30vw'};
-        // margin-left: ${props=> props.inner ? '-26vw' : '-22vw'};;
+        margin-left: ${props => props.marginLeft || '-25vw'};
         z-index: 100;
-        width: 40vw;
+        width: ${props => props.width || '40vw'};
     `;
 
 // Main Header section component
@@ -61,9 +58,9 @@ const Booking = (props) =>{
         <Input type="name" required={true} wrapperClass="ml-4 w-3/5" label="Email / Phone Number" defaultValue={``}/>
       </div>
       <div className="mt-8 font-gilroyMedium">
-        <div className="inline-block" onClick={()=>props.showHidePopUp(true)}>
+        <div className="inline-block"  >
           <BookBtn theme="green" wrapperClass="">
-            <Link to="/" >Book Now</Link>
+            <span onClick={()=>props.showHidePopUp(true)}>Book Now</span>
           </BookBtn>
         </div>
         <Link to="/" className="text-sukoon ml-4  text-lg">or Call at <span className={`border-b-2 border-sukoon`}>+91 7558640422</span></Link>
@@ -136,9 +133,13 @@ const ButtonSection = (props) =>{
       <p className="mt-8 w-3/5 text-para my-6  text-vlg leading-relaxed block">
         {props.bannerPara}
       </p>
-      <div className="flex">
-        <BookBtn wrapperClass="mr-24" theme="green"><Link to="/booking" className="w-full h-full">Book An Appointment</Link></BookBtn>
-        <BookBtn wrapperClass="" border>Book a Tour</BookBtn>
+      <div className="flex" >
+        <BookBtn wrapperClass="mr-24" theme="green"><span onClick={()=>props.showHidePopUp(true)} className="w-full h-full" >Book An Appointment</span></BookBtn>
+        <BookBtn wrapperClass=""  border >
+          <span onClick={()=>props.showHidePopUp(true)}>
+          Book a Tour
+          </span>
+        </BookBtn>
       </div>
     </div>
 
@@ -190,12 +191,12 @@ const HeaderIntro = (props) => {
             </Link>
           </NavWrapper>
           <BannerImage HeaderImg={props.HeaderImg} texture={props.texture} className="relative">
-            <BannerText inner={props.inner} id="header-intro-left" className="py-12">
+            <BannerText marginLeft={props.marginLeft} width={props.width} inner={props.inner} id="header-intro-left" className="py-12">
               <Heading captionLight={props.captionLight} captionBold={props.captionBold}/>
               {props.booking ?
                 <Booking showHidePopUp={props.showHidePopUp} discover={props.discover}/>
                 : props.para ? <ParagraphSection para={props.bannerPara}/> :
-                  <ButtonSection bannerPara={props.bannerPara}/>
+                  <ButtonSection showHidePopUp={props.showHidePopUp} bannerPara={props.bannerPara}/>
               }
             </BannerText>
           </BannerImage>

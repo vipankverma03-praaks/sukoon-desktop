@@ -53,14 +53,14 @@ const Carousel = (props) => {
     arrows: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
+    slidesToShow: props.slidesToShow || 3,
+    slidesToScroll: props.slidesToScroll || 1,
     autoplaySpeed: 2500,
-    autoplay: true,
+    autoplay: props.autoPlay || true,
   };
 
   return (
-    <div style={{width: '', padding: '25px 4vw'}}>
+    <div style={{width: '', padding: props.wrapperPadding || '25px 4vw'}}>
       <Slider {...settings}>
         {item}
       </Slider>

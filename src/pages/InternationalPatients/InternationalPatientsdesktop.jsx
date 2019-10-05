@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 // Components
@@ -8,14 +8,16 @@ import BookBtn from "../../elements/BookNowBtn/desktop";
 import PageIntro from "../../components/Intro/desktop";
 import MeetExperts from "../../components/MeetExperts/desktop";
 import Input from "../../elements/Input/desktop";
+import Title from "../../elements/Heading/mobile";
 
 // Images
 import HeaderImg from "../../images/Desktop-Header/HomeBanner.jpg";
 import SukoonBgLogo from "../../images/sukoon-bg-logo/logo@2x.jpg";
 import VirtualFormBg from "../../images/internationalpatient/form_bg.png";
 import PartnerHotel from "../../images/internationalpatient/partner_hotel.png";
-import SukoonBullets from "../../images/internationalpatient/sukoon_bullet.svg";
-import Title from "../../elements/Heading/mobile";
+import SukoonBullets from "../../images/internationalpatient/sukoon_icon.png";
+import General from "../../components/common/general";
+import PopUp from "../../elements/PopUp/popUpDesktop";
 
 // Meet Experts and Blog and faq wrapper
 const MFBWrapper = styled.section`
@@ -56,7 +58,7 @@ const PartnerHotelInfo = styled.div`
 `;
 
 const IntroContent = {
-  Heading: { titleLight: 'Plan', titleBold: 'Trip'},
+  Heading: { titleLight: 'Plan Your', titleBold: 'Trip'},
   Caption: [
     {
       heading: "Consult best doctors",
@@ -74,6 +76,19 @@ const ListItems = styled.ul`
 `;
 
 function InternationalPatient(props) {
+  const[popUp, setPopUp] = useState(false);
+
+  // To prevent page scroll when dialog box is open.
+  function handlePopUp(showBox) {
+    if(showBox){
+      setPopUp(showBox);
+      General.NoScroll(showBox);
+    }
+    else{
+      setPopUp(showBox);
+      General.NoScroll(showBox);
+    }
+  }
 
   const BookingOptions = [
     {
@@ -89,52 +104,53 @@ function InternationalPatient(props) {
 
   return (
     <>
-      <Banner  captionLight={`Feel like`}
+      <PopUp handlePopUp={handlePopUp} popUp={popUp}/>
+      <Banner  showHidePopUp={handlePopUp} captionLight={`Feel like`}
                captionBold={`Yourself Again`} booking inner texture HeaderImg={HeaderImg} />
       <PageIntro content={IntroContent}/>
       <div className="flex px-20 py-8">
         <div className="w-3/5 pr-6">
           <section className="text-v3xl" id="InternationalPatientInfo">
-            <h2 className="text-sukoon text-v3xl font-gilroyBold">
+            <h2 className="text-sukoon text-v3xl">
               Facilities For International Patient
             </h2>
             <Para Class={`mt-6`} lineHeight={`1.4`}>
               Sukoon's International Team will compassionately ensure that you and your loved ones medical journey is smooth, hassle free, and comfortable. We will hand hold you at every step to provide a world-class experience.
             </Para>
             <ListItems className="text-sm  text-gray-600">
-              <li className="flex items-baseline mt-6">
-                <img width="12px" className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />
+              <li className="flex items-start mt-6">
+                <img className="mr-2" style={{width: '16px', height:'16px'}} alt={`Checklist icon`} src={SukoonBullets} />
                 Providing detailed medical opinion and video- consultation with our team of doctors before arrival.
               </li>
-              <li className="flex items-baseline mt-2">
-                <img width="12px" className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />
+              <li className="flex items-start mt-2">
+                <img style={{width: '16px', height:'16px'}} className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />
                 Assistance with Visa Services
               </li>
-              <li className="flex items-baseline mt-2">
-                <img width="12px" className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />
+              <li className="flex items-start mt-2">
+                <img style={{width: '16px', height:'16px'}} className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />
                 A dedicated relationship manager is assigned to each patient to take care of all you needs inside the hospital and to assist you with hospital administrative processes
               </li>
-              <li className="flex items-baseline mt-2">
-                <img width="12px" className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />
+              <li className="flex items-start mt-2">
+                <img style={{width: '16px', height:'16px'}} className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />
                 International Concierge Desk at dedicated International lounge will help to arrange for a hotel/ guest house as per your preference.
-              </li><li className="flex items-baseline mt-2">
-              <img width="12px" className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />
+              </li><li className="flex items-start mt-2">
+              <img style={{width: '16px', height:'16px'}} className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />
               Complimentary two way airport transfers
             </li>
-              <li className="flex items-baseline mt-2">
-                <img width="12px" className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />
+              <li className="flex items-start mt-2">
+                <img style={{width: '16px', height:'16px'}} className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />
                 Dedicated Relationship manager to take care of all you needs inside the hospital.
               </li>
-              <li className="flex items-baseline mt-2">
-                <img width="12px" className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />
+              <li className="flex items-start mt-2">
+                <img style={{width: '16px', height:'16px'}} className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />
                 Payments can be done either via cash, credit card or Wire Transfer.
               </li>
-              <li className="flex items-baseline mt-2">
-                <img width="12px" className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />
+              <li className="flex items-start mt-2">
+                <img style={{width: '16px', height:'16px'}} className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />
                 International Concierge Desk available at the hospital will facilitate travel within the city as well as for local sight-seeing
               </li>
-              <li className="flex items-baseline mt-2">
-                <img width="12px" className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />
+              <li className="flex items-start mt-2">
+                <img style={{width: '16px', height:'16px'}} className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />
                 Interpreters available at the hospital
               </li>
             </ListItems>
@@ -176,43 +192,43 @@ function InternationalPatient(props) {
         <div className="Steps mb-5 w-1/3 p-16 bg-paleMintLight">
           <h2 className="text-sukoon font-gilroyBold text-3xl">Process</h2>
           <ul className="mt-2">
-            <li className="flex">
-              <img width="12px" className="mr-2" alt={`Checklist icon`} src={SukoonBullets} /> General Enquiry
+            <li className="flex items-center">
+              <img style={{width: '16px', height:'16px'}} className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />General Enquiry
             </li>
-            <li className="flex">
-              <img width="12px" className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />Medical opinion by psychiatrist
+            <li className="flex items-center">
+              <img style={{width: '16px', height:'16px'}} className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />Medical opinion by psychiatrist
             </li>
-            <li className="flex">
-              <img width="12px" className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />Visa assistance
+            <li className="flex items-center">
+              <img style={{width: '16px', height:'16px'}} className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />Visa assistance
             </li>
-            <li className="flex">
-              <img width="12px" className="mr-2" alt={`Checklist icon`} src={SukoonBullets} /> Booking, Arrival
+            <li className="flex items-center">
+              <img style={{width: '16px', height:'16px'}} className="mr-2" alt={`Checklist icon`} src={SukoonBullets} /> Booking, Arrival
             </li>
-            <li className="flex">
-              <img width="12px" className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />Consultation with doctors
+            <li className="flex items-center">
+              <img style={{width: '16px', height:'16px'}} className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />Consultation with doctors
             </li>
-            <li className="flex">
-              <img width="12px" className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />Treatment
+            <li className="flex items-center">
+              <img style={{width: '16px', height:'16px'}} className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />Treatment
             </li>
-            <li className="flex">
-              <img width="12px" className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />Sight seeing if medically allowed
+            <li className="flex items-center">
+              <img style={{width: '16px', height:'16px'}} className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />Sight seeing if medically allowed
             </li>
-            <li className="flex">
-              <img width="12px" className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />Follow-up via video appointments
+            <li className="flex items-center">
+              <img style={{width: '16px', height:'16px'}} className="mr-2" alt={`Checklist icon`} src={SukoonBullets} />Follow-up via video appointments
             </li>
           </ul>
         </div>
         <div className="Steps mb-5 w-1/3 p-16 bg-paleMintDark">
           <h2 className="text-sukoon font-gilroyBold text-3xl">Checklist</h2>
           <ul className="mt-2">
-            <li className="flex">
-              <img width="12px" className="mr-2" alt={`check list icon`} src={SukoonBullets} />Quotation provided by Sukoon
+            <li className="flex items-center">
+              <img style={{width: '16px', height:'16px'}} className="mr-2" alt={`check list icon`} src={SukoonBullets} />Quotation provided by Sukoon
             </li>
-            <li className="flex">
-              <img width="12px" className="mr-2" alt={`check list icon`} src={SukoonBullets} />Treatment plan provided by Sukoon
+            <li className="flex items-center">
+              <img style={{width: '16px', height:'16px'}} className="mr-2" alt={`check list icon`} src={SukoonBullets} />Treatment plan provided by Sukoon
             </li>
-            <li className="flex">
-              <img width="12px" className="mr-2" alt={`check list icon`} src={SukoonBullets} />Photographs (passport size)
+            <li className="flex items-center">
+              <img style={{width: '16px', height:'16px'}} className="mr-2" alt={`check list icon`} src={SukoonBullets} />Photographs (passport size)
             </li>
           </ul>
         </div>
@@ -221,14 +237,14 @@ function InternationalPatient(props) {
             Document Needed
           </h2>
           <ul className="mt-2">
-            <li className="flex">
-              <img width="12px" className="mr-2" src={SukoonBullets} />Old Medical Reports
+            <li className="flex items-center">
+              <img style={{width: '16px', height:'16px'}} className="mr-2" src={SukoonBullets} />Old Medical Reports
             </li>
-            <li className="flex">
-              <img width="12px" className="mr-2" src={SukoonBullets} />Visa
+            <li className="flex items-center">
+              <img style={{width: '16px', height:'16px'}} className="mr-2" src={SukoonBullets} />Visa
             </li>
-            <li className="flex">
-              <img width="12px" className="mr-2" src={SukoonBullets} />Passport
+            <li className="flex items-center">
+              <img style={{width: '16px', height:'16px'}} className="mr-2" src={SukoonBullets} />Passport
             </li>
           </ul>
         </div>
