@@ -31,21 +31,6 @@ export default function TriggersTooltips(props) {
   return (
     <div>
       <Grid container justify="center">
-        {/*<Grid item>*/}
-        {/*  <Tooltip disableFocusListener title="Add">*/}
-        {/*    <Button>Hover or touch</Button>*/}
-        {/*  </Tooltip>*/}
-        {/*</Grid>*/}
-        {/*<Grid item>*/}
-        {/*  <Tooltip disableHoverListener title="Add">*/}
-        {/*    <Button>Focus or touch</Button>*/}
-        {/*  </Tooltip>*/}
-        {/*</Grid>*/}
-        {/*<Grid item>*/}
-        {/*  <Tooltip disableFocusListener disableTouchListener title="Add">*/}
-        {/*    <Button>Hover</Button>*/}
-        {/*  </Tooltip>*/}
-        {/*</Grid>*/}
         <Grid item>
           <ClickAwayListener onClickAway={handleTooltipClose}>
             <div>
@@ -53,19 +38,9 @@ export default function TriggersTooltips(props) {
                 title={
                   <React.Fragment>
                     <Typography color="inherit">{props.toolTipText}</Typography>
-                    <em>{"Emergency Helpline Number"}</em>
-                    {/*<b>{'some'}</b> <u>{'amazing content'}</u>.{' '}*/}
-                    {/*{"It's very engaging. Right?"}*/}
+                    <em>{`${props.toolTipBottomTxt || 'Emergency Helpline Number'}`}</em>
                   </React.Fragment>
                 }
-                PopperProps={{
-                  disablePortal: true,
-                }}
-                onClose={handleTooltipClose}
-                open={open}
-                disableFocusListener
-                disableHoverListener
-                disableTouchListener
                 interactive
                 TransitionComponent={Fade}
               >
