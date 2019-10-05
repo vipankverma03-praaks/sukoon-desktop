@@ -358,7 +358,7 @@ const PatientCare = (props) => {
         <div className="bg-sukoon text-center text-vxs text-white p-6 w-1/5">
           <SVG display="inline-block" icon="helpline" width={'35px'} fill={'#fff'} />
           <h4 className="leading-loose py-2">Sukoon Suicide Helpline</h4>
-          <h2 className="text-v2xl tracking-widest">1800-234-6789</h2>
+          <h2 className="text-v2xl tracking-widest">+91 8448170041</h2>
         </div>
       </div>
       <StickyContainer id="sticky-container" className="flex pt-8 justify-between">
@@ -423,7 +423,7 @@ function ServicesPage(props) {
 
   return (
     <>
-      <Banner para captionLight={`Feel like`} bannerPara={`We’re here for you. At Sukoon, our experienced team of psychiatrists, clinical psychologists, counselling psychologists, therapists, and nurses provide compassionate, short-term and inpatient psychiatric and mental health services that help you feel better as quickly as possible. We work with you one-on-one ensuring that every part of your care is personalised to your condition, emotions, and needs.`} captionBold={`Yourself Again`} inner texture HeaderImg={HeaderImg}/>
+      <Banner para captionLight={`Feel like`} bannerPara={`We’re here for you! At Sukoon, our experienced team provides compassionate, short-term and inpatient mental health services that help you feel better as quickly as possible. We work with you one-on-one ensuring that every part of your care is personalised to your condition, emotions, and needs.`} captionBold={`Yourself Again`} inner texture HeaderImg={HeaderImg}/>
       <PatientCare list={ResidentialServicesList} titleLight="Residential" titleBold={`Services`} />
       <PatientCare list={OutPatienList} title="Out Patient" />
       <MeetExperts />
