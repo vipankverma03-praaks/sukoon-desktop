@@ -249,13 +249,15 @@ export default class DesktopLayout extends React.PureComponent{
                   </ul>
                 </div>
                 <div className="w-1/5 flex justify-end items-center">
-                  <div className="w-8 ml-4">
-                    <Tooltip toolTipText={`1800 123 6789`}>
-                      <SVG display="inline-block" icon="helpline" width={'25px'} fill={'#fff'}/>
+                  <div className="w-6 ml-4">
+                    <Tooltip toolTipText={`+91 8448170041`}>
+                      <SVG display="inline-block" icon="helpline" width={'22px'} fill={'#fff'}/>
                     </Tooltip>
                   </div>
                   <div className="w-8 h-8 mx-4">
-                    <SVG display="inline-block" icon="landLine" width={'25px'} fill={'#fff'}/>
+                    <Tooltip toolTipText={`+91 7558640422`} toolTipBottomTxt={`Contact Us`}>
+                      <SVG display="inline-block" icon="landLine" width={'22px'} fill={'#fff'}/>
+                    </Tooltip>
                   </div>
                   <BookBtn buttonPadding="5px 10px" theme="mint"><Link to="/booking">Book Now</Link></BookBtn>
                 </div>
