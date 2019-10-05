@@ -85,25 +85,13 @@ const HeaderIntro = () => {
 
 const ReachUs = (props) =>{
   return(
-    <div className="">
-      <span className="text-sukoon text-4xl font-bold">Reach Us</span>
-      <Para>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.
+    <div className={`w-1/3 lg:w-1/4`}>
+      <Para Class={`text-lg`}>
+        <span className={`text-gray font-bold`}>Sukoon Health</span><br/>
+        Sector-56, Gurugram <br/>
+        Haryana - 122011<br/>
       </Para>
-      <div className="my-6 flex flex-wrap">
-        <div className="text-sukoon mr-12 my-2 flex pr-1">
-          <div className="fit"><img src={Help} className="w-6" alt="Help Icon"/></div>
-          <span className="ml-4">1800 123 6789</span>
-        </div>
-        <div className="text-sukoon mr-8 my-2 flex pr-1">
-          <div className="fit"><img src={Call} className="w-6" alt="Help Icon"/></div>
-          <span className="ml-4">1800 123 6789</span>
-        </div>
-        <div className="text-sukoon mr-6 my-2 flex pr-1">
-          <div className="fit"><img src={Mail} className="w-6" alt="Help Icon"/></div>
-          <span className="ml-4">1800 123 6789</span>
-        </div>
-      </div>
+
     </div>
   )
 };
@@ -117,13 +105,27 @@ const FollowUs = (props) =>{
     -webkit-text-fill-color: transparent;
     `;
   return(
-    <div className="pb-4">
-      <h1 className="text-sukoon inline-block mr-8 font-semiBold text-xl mb-2">Follow us on</h1>
+    <div className="">
+      <div className="mb-2 flex flex-wrap">
+        <div className="text-sukoon mr-4 my-2 items-center flex pr-1">
+            <SVG display="inline-block" icon="helpline" width={'20px'} fill={'#12443e'}/>
+          <span className="ml-2">+91 8448170041</span>
+        </div>
+        <div className="text-sukoon mr-4 my-2 items-center flex pr-1">
+            <SVG display="inline-block" icon="landLine" width={'20px'} fill={'#12443e'}/>
+          <span className="ml-2">+91 7558640422</span>
+        </div>
+        <div className="text-sukoon my-2 flex items-center pr-1">
+          <div className="fit"><img src={Mail} className="w-4" alt="Help Icon"/></div>
+          <span className="ml-2">sukoonhealth.com</span>
+        </div>
+      </div>
+      <h1 className="text-sukoon inline-block mr-8 font-semiBold text-lg mb-2">Follow us on</h1>
       <div className="text-lg  inline break-words">
         <a href="/" className="mx-4 text-blue-800 cursor-pointer">Facebook</a>
-        <a href="/" className="mx-4 text-blue-400 cursor-pointer">Twitter</a>
+        {/*<a href="/" className="mx-4 text-blue-400 cursor-pointer">Twitter</a>*/}
         <Instagram href="/">Instagram</Instagram>
-        <a href="/" className="mx-4 text-blue-600 cursor-pointer">Skype</a>
+        {/*<a href="/" className="mx-4 text-blue-600 cursor-pointer">Skype</a>*/}
       </div>
     </div>
   )
@@ -132,7 +134,7 @@ const FollowUs = (props) =>{
 const CopyRight = (props) =>{
   return(
     <div className="py-2 px-6 bg-sukoon text-center break-words">
-      <span className="text-white text-xs">Copyright © 2019 - All Rights Reserved - Design By Praaks</span>
+      <span className="text-white text-xs">Copyright © 2019 - All Rights Reserved - Design By <a target="_blank" href="http://praaks.com/">Praaks Consultancy</a></span>
     </div>
   )
 };
@@ -141,16 +143,16 @@ const QuickLinks = (props) =>{
 
   return(
     <div className="flex justify-between mr-12 w-2/5 lg:w-2/6">
-      <div className="">
-        <h3 className="text-sukoon text-2xl font-bold block">Sukoon</h3>
-        <ul className="mt-4 font-semiBold">
-          <li className="text-gray-600 text-lg my-1 list-none"><Link to="/">Sitemap</Link></li>
-          <li className="text-gray-600 text-lg my-1 list-none"><Link to="/">Our Story</Link></li>
-          <li className="text-gray-600 text-lg my-1 list-none"><Link to="/">Privacy Policy</Link></li>
-          <li className="text-gray-600 text-lg my-1 list-none"><Link to="/">Terms & Conditions</Link></li>
-          <li className="text-gray-600 text-lg my-1 list-none"><Link to="/">Careers</Link></li>
-        </ul>
-      </div>
+      {/*<div className="">*/}
+      {/*  <h3 className="text-sukoon text-2xl font-bold block">Sukoon</h3>*/}
+      {/*  <ul className="mt-4 font-semiBold">*/}
+      {/*    <li className="text-gray-600 text-lg my-1 list-none"><Link to="/">Sitemap</Link></li>*/}
+      {/*    <li className="text-gray-600 text-lg my-1 list-none"><Link to="/">Our Story</Link></li>*/}
+      {/*    <li className="text-gray-600 text-lg my-1 list-none"><Link to="/">Privacy Policy</Link></li>*/}
+      {/*    <li className="text-gray-600 text-lg my-1 list-none"><Link to="/">Terms & Conditions</Link></li>*/}
+      {/*    <li className="text-gray-600 text-lg my-1 list-none"><Link to="/">Careers</Link></li>*/}
+      {/*  </ul>*/}
+      {/*</div>*/}
       <div className="flex flex-col">
         <h3 className="text-sukoon text-2xl font-bold block">Quick Links</h3>
         <div className="w-fit font-semiBold flex">
@@ -269,12 +271,15 @@ export default class DesktopLayout extends React.PureComponent{
             <footer className="">
               <HeaderIntro/>
               <div className="px-8 pt-4">
-                <Subscribe/>
+                {/*<Subscribe/>*/}
                 <div className="flex">
                   <QuickLinks/>
-                  <div className="flex w-3/5 flex-col">
-                    <ReachUs/>
-                    <FollowUs/>
+                  <div className={`w-4/5 flex flex-col`}>
+                    <h3 className="text-sukoon mb-4 font-bold">Reach Us</h3>
+                    <div className="flex">
+                      <ReachUs/>
+                      <FollowUs/>
+                    </div>
                   </div>
                 </div>
               </div>

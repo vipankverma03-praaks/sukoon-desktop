@@ -7,6 +7,7 @@ import Para from "../../elements/Para/desktop";
 
 // Images
 import InfraBgImg from "../../images/InfraSectionbg.jpg";
+import GourmetMeals from "../../images/Infra/gourmet_meals.png";
 import ConsultingChambers from "../../images/exp/bg.jpg";
 import InHousePharmacy from "../../images/exp/bg_2.jpg";
 
@@ -35,7 +36,7 @@ const CardContent = {
     para: 'Stay in premium, well-lit, comfortably furnished rooms designed to provide a calming, warm, and safe environment.',
   },
   Card4: {
-    bgImg:InfraBgImg,
+    bgImg:GourmetMeals,
     caption: 'Gourmet Meals',
     titleLight: 'Gourmet',
     titleBold: 'Meals',
