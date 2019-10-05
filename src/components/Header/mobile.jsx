@@ -91,11 +91,11 @@ function Header(props) {
           <div className="mt-6 flex justify-around">
             <div className="">
               <img src={Call} className="w-4 inline-block" alt="Contact Sukoon"/>
-              <a href="tel:+91 9910911082" className="ml-2">+91 9910911082</a>
+              <a href="tel:+91 8448170041" className="ml-2">+91 8448170041</a>
             </div>
             <div className="">
               <img src={Call} className="w-4 inline-block" alt="Contact Sukoon"/>
-              <a href="tel:+91 9910269034" className="ml-2">+91 9910269034</a>
+              <a href="tel:+91 7558640422" className="ml-2">+91 7558640422</a>
             </div>
           </div>
           <div className="text-lg ml-6 text-sukoon flex flex-col">
