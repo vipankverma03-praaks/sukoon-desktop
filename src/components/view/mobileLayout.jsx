@@ -10,9 +10,8 @@ import Banner from "../Banner/mobile";
 import BookBtn from "../../elements/BookNowBtn/mobile";
 
 // Images
-import HelpIcon from "../../images/helpline/helpline copy 2@2x.jpg"
-import CallIcon from "../../images/icons/phone.svg";
 import MailIcon from "../../images/icons/mail.svg";
+import SVG from "../../elements/SVG/desktop";
 
 const FooterLinks = styled.ul`
 font-size: 16px !important;
@@ -82,16 +81,16 @@ const ReachUs = (props) =>{
       </Para>
       <div className="my-2 flex flex-wrap">
         <div className="text-sukoon mr-2 my-2 flex px-1">
-          <div className="fit"><img src={HelpIcon} className="w-4" alt="Help Icon"/></div>
-          <span className="ml-4">1800 123 6789</span>
+          <SVG display="inline-block" icon="helpline" width={'20px'} fill={'#12443e'}/>
+          <a href="tel: +91 8448170041" className="ml-4">+91 8448170041</a>
         </div>
         <div className="text-sukoon mr-2 my-2 flex px-1">
-          <div className="fit"><img src={CallIcon} className="w-4" alt="Help Icon"/></div>
-          <span className="ml-4">1800 123 6789</span>
+          <SVG display="inline-block" icon="landLine" width={'20px'} fill={'#12443e'}/>
+          <a className="ml-4" href="tel:+91 7558640422">+91 7558640422</a>
         </div>
         <div className="text-sukoon mr-2 my-2 flex px-1">
           <div className="fit"><img src={MailIcon} className="w-4" alt="Help Icon"/></div>
-          <span className="ml-4">1800 123 6789</span>
+          <span className="ml-4">sukoonhealth.com</span>
         </div>
       </div>
     </div>
@@ -109,11 +108,11 @@ const FollowUs = (props) =>{
   return(
     <div className="p-4 font-medium">
       <h2 className="text-sukoon text-xl mb-2">Follow us on</h2>
-      <div className="text-sm mr-2 flex justify-between break-words">
-        <a href="/" className="mr-2 text-blue-800 cursor-pointer">Facebook</a>
-        <a href="/" className="mr-2 text-blue-400 cursor-pointer">Twitter</a>
+      <div className="text-sm mr-2 flex break-words">
+        <a href="/" className="mr-4 text-blue-800 cursor-pointer">Facebook</a>
+        {/*<a href="/" className="mr-2 text-blue-400 cursor-pointer">Twitter</a>*/}
         <Instagram href="/">Instagram</Instagram>
-        <a href="/" className="mr-2 text-blue-600 cursor-pointer">Skype</a>
+        {/*<a href="/" className="mr-2 text-blue-600 cursor-pointer">Skype</a>*/}
       </div>
     </div>
   )
