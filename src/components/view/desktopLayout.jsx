@@ -117,7 +117,7 @@ const FollowUs = (props) =>{
         </div>
         <div className="text-sukoon my-2 flex items-center pr-1">
           <div className="fit"><img src={Mail} className="w-4" alt="Help Icon"/></div>
-          <span className="ml-2">sukoonhealth.com</span>
+          <a href="mailto:info@sukoonhealth.com" className="ml-2">info@sukoonhealth.com</a>
         </div>
       </div>
       <h1 className="text-sukoon inline-block mr-8 font-semiBold text-lg mb-2">Follow us on</h1>
