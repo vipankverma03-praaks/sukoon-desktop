@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import {Link} from "gatsby";
 
 // Components
 import Title from "../../elements/Heading/desktop";
@@ -7,7 +8,8 @@ import Para from "../../elements/Para/desktop";
 import Carousel from ".././Carousel/desktop";
 
 // Images
-import Physician from "../../images/physician_retail_web_2019-07-29/physician_retail_web@3x.jpg";
+import Samir_Kalani from "../../images/doctor/rsz_samir_kalani.jpg";
+import Ila from "../../images/doctor/ila2.jpg";
 
 const DocImgSec = styled.div`
 `;
@@ -16,7 +18,9 @@ const CarouselItems = (item) =>{
   return(
     <Nurses className="">
       <DocImgSec className="DocImgSec">
-        <img src={item.image} alt="doctor"/>
+        <Link to="/">
+          <img src={item.image} alt="doctor" />
+        </Link>
         <h3 className="bg-sukoon text-white p-2 text-center text-xl">{item.name}</h3>
       </DocImgSec>
     </Nurses>
@@ -25,42 +29,13 @@ const CarouselItems = (item) =>{
 
 const Doctors = [
   {
-    name: 'John Doe',
-    image: Physician,
+    name: 'Dr. Sameer Kalani',
+    image: Samir_Kalani,
   },
   {
-    name: 'John Doe',
-    image: Physician,
+    name: 'Ila',
+    image: Ila,
   },
-  {
-    name: 'John Doe',
-    image: Physician,
-  },
-  {
-    name: 'John Doe',
-    image: Physician,
-  },
-  {
-    name: 'John Doe',
-    image: Physician,
-  },
-  {
-    name: 'John Doe',
-    image: Physician,
-  },
-  {
-    name: 'John Doe',
-    image: Physician,
-  },
-  {
-    name: 'John Doe',
-    image: Physician,
-  },
-  {
-    name: 'John Doe',
-    image: Physician,
-  },
-
 ];
 const Nurses = styled.div`
     padding: 0 5px;
@@ -76,7 +51,7 @@ const MeetExperts = props => {
           With a team of experienced doctors led by our Resident Director - Dr Sameer Kalani, we can assure you that everybody is in good hands here. With an emphasis on relaxation and restoration of your mental well-being, we have a clinical team of psychiatrists, clinical psychologists, counselling psychologists, visiting consultants, general physicians, art therapists and fitness therapists.
         </Para>
       </div>
-      <Carousel container  cardFn={CarouselItems} content={Doctors}/>
+      <Carousel container  autoPlay={false} slidesToShow={2} cardFn={CarouselItems} content={Doctors}/>
     </section>
   );
 };
