@@ -90,7 +90,7 @@ const ReachUs = (props) =>{
         </div>
         <div className="text-sukoon mr-2 my-2 flex px-1">
           <div className="fit"><img src={MailIcon} className="w-4" alt="Help Icon"/></div>
-          <span className="ml-4">sukoonhealth.com</span>
+          <a href="mailto:info@sukoonhealth.com" className="ml-4">info@sukoonhealth.com</a>
         </div>
       </div>
     </div>

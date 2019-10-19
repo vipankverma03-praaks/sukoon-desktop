@@ -9,6 +9,8 @@ import Para from "../../elements/Para/mobile";
 import Carousel from ".././Carousel/mobile";
 
 // Images
+import Samir_Kalani from "../../images/doctor/rsz_samir_kalani.jpg";
+import Ila from "../../images/doctor/ila2.jpg";
 import NursesImg from "../../images/physician_retail_web_2019-07-29/physician_retail_web.jpg";
 
 const MeetExpertsWrapper = styled.section`
@@ -18,28 +20,12 @@ const MeetExpertsWrapper = styled.section`
 
 const Doctors = [
   {
-    name: 'John Doe',
-    image: NursesImg,
+    name: 'Dr. Sameer Kalani',
+    image: Samir_Kalani,
   },
   {
-    name: 'John Doe',
-    image: NursesImg,
-  },
-  {
-    name: 'John Doe',
-    image: NursesImg,
-  },
-  {
-    name: 'John Doe',
-    image: NursesImg,
-  },
-  {
-    name: 'John Doe',
-    image: NursesImg,
-  },
-  {
-    name: 'John Doe',
-    image: NursesImg,
+    name: 'Ila',
+    image: Ila,
   },
 ];
 
@@ -58,7 +44,6 @@ const CarouselItems = (item) =>{
     </Nurses>
   )
 };
-
 
 const MeetExperts = (props) => {
   return (
