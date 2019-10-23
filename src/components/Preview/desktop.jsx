@@ -10,8 +10,9 @@ import Title from "../../elements/Heading/desktop";
 
 const PreviewNav = styled.div`
     background: white;
-    margin: -30px 3rem 0 auto;
+    margin: 30px 3rem -6px auto;
     position: relative;
+    z-index: 2;
       
     button:focus{
     outline: none;
@@ -21,11 +22,21 @@ const PreviewNav = styled.div`
         margin-right: 10px;
         margin-left: 10px;
     }
+    
+    .selected{
+      border-bottom: 2px solid #f6e05e;
+    }
 `;
 
 const NavItem = styled.button`
     cursor: pointer;
     text-transform: capitalize;
+    height: 30px;
+    
+    &:hover{
+    border-bottom: 2px solid #f6e05e;
+    
+    }
 `;
 
 const PreviewCard = styled.div`
@@ -121,46 +132,46 @@ function Preview (props) {
   };
 
   return(
-    <section className="py-6">
+    <section className="pt-6 pb-16">
       <div className="ExperienceServices w-full">
-        <View currentView={view}/>
         <PreviewNav className="bg-white relative py-4  mr-12 w-10/12 shadow-lg">
           <ul className="text-xl font-gilroyMedium flex justify-around px-4 text-sukoon">
             <li className="">
-              <NavItem name="consultingChambers" type="text" onClick={changeView}>
+              <NavItem name="consultingChambers"  className={`${view === ViewContent.consultingChambers ? 'selected' : ''}`} type="text" onClick={changeView}>
                 Consulting Chambers
               </NavItem>
             </li>
             <li className="">
-              <NavItem name="pharmacy" type="text" onClick={changeView}>
+              <NavItem name="pharmacy" type="text" className={`${view === ViewContent.pharmacy ? 'selected' : ''}`} onClick={changeView}>
                 Pharmacy
               </NavItem>
             </li>
             <li className="">
-              <NavItem name="rtms" type="text" onClick={changeView}>
+              <NavItem name="rtms" type="text" className={`${view === ViewContent.rtms ? 'selected' : ''}`}onClick={changeView}>
                 rtms
               </NavItem></li>
             <li className="">
-              <NavItem name="virtualTherapy" type="text" onClick={changeView}>
+              <NavItem name="virtualTherapy" type="text" className={`${view === ViewContent.virtualTherapy ? 'selected' : ''}`} onClick={changeView}>
                 Video Consultation
               </NavItem></li>
             <li className="">
-              <NavItem name="cafeteria" type="text" onClick={changeView}>
+              <NavItem name="cafeteria" type="text" className={`${view === ViewContent.cafeteria ? 'selected' : ''}`} onClick={changeView}>
                 Cafetaria
               </NavItem>
             </li>
             <li className="">
-              <NavItem name="lounge" type="text" onClick={changeView}>
+              <NavItem name="lounge" type="text" className={`${view === ViewContent.lounge ? 'selected' : ''}`} onClick={changeView}>
                 Waiting Area
               </NavItem>
             </li>
             <li className="">
-              <NavItem name="artTherapy" type="text" onClick={changeView}>
+              <NavItem name="artTherapy" type="text" className={`${view === ViewContent.artTherapy ? 'selected' : ''}`} onClick={changeView}>
                 Art Therapy
               </NavItem>
             </li>
           </ul>
         </PreviewNav>
+        <View currentView={view}/>
       </div>
     </section>
   )

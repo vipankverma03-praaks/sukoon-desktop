@@ -1,4 +1,5 @@
 import React ,{useState} from "react";
+import styled from "styled-components";
 
 // Components
 import Banner from "../../components/Banner/desktop";
@@ -9,8 +10,7 @@ import Details from "../../elements/Details/desktop";
 
 // Images
 import HeaderImg from "../../images/Desktop-Header/HomeBanner.jpg";
-import styled from "styled-components";
-
+import SukoonBgLogo from "../../images/sukoon-bg-logo/logo@2x.jpg";
 
 const General = {
   tab:'General',
@@ -130,6 +130,14 @@ const TabList = styled.ul`
    
 `;
 
+const FaqSection = styled.section`
+    background-image: url(${SukoonBgLogo});
+    background-position: top 0 left -18vw;
+    background-size: 37vw;
+    background-repeat: no-repeat;
+}
+`;
+
 const Faqs = (props) => {
   const[ListContent, setContent] = useState(General);
 
@@ -139,7 +147,7 @@ const Faqs = (props) => {
   }
 
   return (
-    <section id="faq-section" className="p-8 flex relative flex-row-reverse">
+    <FaqSection id="faq-section" className="p-8 flex relative flex-row-reverse">
       <div className="w-4/5">
         <TabList className="flex mb-10 justify-between">
           {TabNames.map((tab)=>{
@@ -172,7 +180,7 @@ const Faqs = (props) => {
         <Para width={`70%`}>Want to find out more about Sukoon? Or find out more about psychiatry, and mental health? The answers to these and more can be found below.
         </Para>
       </div>
-    </section>
+    </FaqSection>
   )
 };
 

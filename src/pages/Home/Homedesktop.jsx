@@ -27,7 +27,7 @@ import General from "../../components/common/general";
 const MFBWrapper = styled.section`
     background-image: url(${SukoonBgLogo});
     background-repeat: no-repeat;
-    background-position: left -23vw top 16vw;
+    background-position: left -23vw top 0;
     background-size: 48vw;
 `;
 
