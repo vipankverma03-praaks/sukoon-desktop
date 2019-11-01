@@ -332,13 +332,6 @@ const Treatments = {
         It is not uncommon for patients to stop taking their medication when they feel their symptoms are under control. Other patients may choose to stop taking their medication because of its side effects, without realizing that most side effects can be effectively managed. While it may seem reasonable to stop taking the medication, the problem is that most often, the symptoms will return when maintenance phase is not completed. Therefore, it is very important that you work together with your doctor before making decisions about any changes in your treatment.`,
     }
     ,
-    {
-      summary: '',
-      description
-        :
-        ``,
-    }
-    ,
   ]
 
 };
