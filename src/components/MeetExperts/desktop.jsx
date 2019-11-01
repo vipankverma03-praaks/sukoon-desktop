@@ -8,8 +8,8 @@ import Para from "../../elements/Para/desktop";
 import Carousel from ".././Carousel/desktop";
 
 // Images
-import Samir_Kalani from "../../images/doctor/rsz_samir_kalani.jpg";
-import Ila from "../../images/doctor/ila2.jpg";
+import Samir_Kalani from "../../images/doctor/dr_samir_parikh.jpg";
+import Ila from "../../images/doctor/ila.jpg";
 
 const DocImgSec = styled.div`
 `;
