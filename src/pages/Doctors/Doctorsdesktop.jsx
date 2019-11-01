@@ -11,11 +11,10 @@ import ArrowButton from "../../elements/ArrowButton/desktop";
 
 // Images
 import HeaderImg from "../../images/pacientes-mejora_2019-08-02/pacientes-mejora@3x.jpg";
-import Doctor from "../../images/doctor/doctor1.jpg";
+import Doctor from "../../images/doctor/dr_samir_parikh.jpg";
+import Ila from "../../images/doctor/ila.jpg";
 
 const Intro = styled.div`
-    
-    
     .director-row{
       padding: 3vw 0;
       width: 100%;
@@ -62,132 +61,35 @@ const Content = [
   {
     doctors: [
       {
-        name: "Dr. Samir Parekh",
+        name: "Dr. Sameer Kalani",
         image: Doctor,
-        designation: { titleLight: "Medical", titleBold: "Director", title: 'Director, Mental Health and Behavioural Sciences' },
-        qualification: "MBBS, DPM, MD (Psychiatry)",
+        designation: {
+          titleLight: "Medical",
+          titleBold: "Director",
+          title: "Sr. Consultant Psychiatrist, Geriatric Psychiatrist"
+        },
+        qualification: "MD (Psychiatry)",
         bio: {
-          intro: `Dr. Pradeep Chowbey belongs to the cadre of the pioneer laparoscopic surgeons in India. One of the first
-                to perform Laparoscopic cholecystectomy in North India, he has graphed his career with singular
-                determination to develop, evaluate and propagate Minimal Access, Metabolic & Bariatric Surgery in India.
-                The advent of Laparoscopic surgery with his hands became a point in India's medical history.`,
-          summary: `Dr. Chowbey established the Minimal Access and Bariatric Surgery Centre, Sir Ganga Ram Hospital, New
-                Delhi in 1996, which was the first of its kind in the Asian subcontinent. His Institute at Max
-                Healthcare was the First Centre to receive the Center of excellence accreditations in India for`
+          intro: `Dr. Sameer Kalani is a Psychiatrist by profession, helping people work out their emotional and behavioural difficulties. He predominantly works with children, adolescents and elderly. He treats patients with conditions like anxiety disorder, panic disorder, social phobia, specific phobia, post-traumatic stress disorder, bipolar disorder, Alzheimer’s disease, vascular dementia, anorexia nervosa, bulimia nervosa, major depressive disorder, stuttering, schizophrenia, and hyperactivity disorder.  He strongly believes that being free from mental illness is not just enough; we must strive towards a better and healthy state of mind and body. He has been blessed to have worked with the top most experts of India in the field of mental health and well-being in Mumbai and Delhi.`,
+          summary: `He is an enthusiastic person with a keenness to keep himself up-to-date regarding new technological developments in the field of Psychiatry.`
         }
       },
       {
-        name: "Dr. Abhishek Kapadia",
-        image: Doctor,
-        designation: { titleLight: "Medical", titleBold: "Director", title: 'Director, Mental Health and Behavioural Sciences' },
-        qualification: "MBBS, DPM, MD (Psychiatry)",
+        name: "Ms. Ila Kulshrestha",
+        image: Ila,
+        designation: {
+          titleLight: "Clinical",
+          titleBold: "Psychologist",
+          title: "Consultant, Clinical Psychologist"
+        },
+        qualification: "M. Phil. Clinical Psychology",
         bio: {
-          intro: `Dr. Pradeep Chowbey belongs to the cadre of the pioneer laparoscopic surgeons in India. One of the first
-                to perform Laparoscopic cholecystectomy in North India, he has graphed his career with singular
-                determination to develop, evaluate and propagate Minimal Access, Metabolic & Bariatric Surgery in India.
-                The advent of Laparoscopic surgery with his hands became a point in India's medical history.`,
-          summary: `Dr. Chowbey established the Minimal Access and Bariatric Surgery Centre, Sir Ganga Ram Hospital, New
-                Delhi in 1996, which was the first of its kind in the Asian subcontinent. His Institute at Max
-                Healthcare was the First Centre to receive the Center of excellence accreditations in India for`
-        }
-
-      },
-      {
-        name: "Dr. Abhishek Kapadia",
-        image: Doctor,
-        designation: { titleLight: "Medical", titleBold: "Director", title: 'Director, Mental Health and Behavioural Sciences' },
-        qualification: "MBBS, DPM, MD (Psychiatry)",
-        bio: {
-          intro: `Dr. Pradeep Chowbey belongs to the cadre of the pioneer laparoscopic surgeons in India. One of the first
-                to perform Laparoscopic cholecystectomy in North India, he has graphed his career with singular
-                determination to develop, evaluate and propagate Minimal Access, Metabolic & Bariatric Surgery in India.
-                The advent of Laparoscopic surgery with his hands became a point in India's medical history.`,
-          summary: `Dr. Chowbey established the Minimal Access and Bariatric Surgery Centre, Sir Ganga Ram Hospital, New
-                Delhi in 1996, which was the first of its kind in the Asian subcontinent. His Institute at Max
-                Healthcare was the First Centre to receive the Center of excellence accreditations in India for`
+          intro: `Ms. Ila Kulshrestha is a licensed clinical psychologist recognized by Rehabilitation Council of India and a CID- UNESCO certified Arts based Therapist. She uses an eclectic framework of psychotherapy to devise a personalized treatment plan for each individual. She is proficient in providing various psychological assessments including psycho-diagnostics, personality, neuropsychological, developmental and IQ assessments.`,
+          summary: `She uses assessments, psychotherapy and expressive arts to work with adolescents and adults on a wide range of clinical, emotional, psychological, behavioural and adjustment issues. She recognizes the role intersectionality plays in an individual’s mental health and is passionate to work with LGBTQIA+ identities to help address their mental health concerns.Over the course of her career, she has worked with individuals, parents, couples and families to improve their quality of life and enhance their sense of wellbeing.`
         }
       },
-      {
-        name: "Dr. Abhishek Kapadia",
-        image: Doctor,
-        designation: { titleLight: "Medical", titleBold: "Director", title: 'Director, Mental Health and Behavioural Sciences' },
-        qualification: "MBBS, DPM, MD (Psychiatry)",
-        bio: {
-          intro: `Dr. Pradeep Chowbey belongs to the cadre of the pioneer laparoscopic surgeons in India. One of the first
-                to perform Laparoscopic cholecystectomy in North India, he has graphed his career with singular
-                determination to develop, evaluate and propagate Minimal Access, Metabolic & Bariatric Surgery in India.
-                The advent of Laparoscopic surgery with his hands became a point in India's medical history.`,
-          summary: `Dr. Chowbey established the Minimal Access and Bariatric Surgery Centre, Sir Ganga Ram Hospital, New
-                Delhi in 1996, which was the first of its kind in the Asian subcontinent. His Institute at Max
-                Healthcare was the First Centre to receive the Center of excellence accreditations in India for`
-        }
-      }
     ]
   },
-  {
-    doctors: [
-      {
-        name: "Dr. Abhishek Kapadia",
-        image: Doctor,
-        designation: { titleLight: "Medical", titleBold: "Director", title: 'Director, Mental Health and Behavioural Sciences' },
-        qualification: "MBBS, DPM, MD (Psychiatry)",
-        bio: {
-          intro: `Dr. Pradeep Chowbey belongs to the cadre of the pioneer laparoscopic surgeons in India. One of the first
-                to perform Laparoscopic cholecystectomy in North India, he has graphed his career with singular
-                determination to develop, evaluate and propagate Minimal Access, Metabolic & Bariatric Surgery in India.
-                The advent of Laparoscopic surgery with his hands became a point in India's medical history.`,
-          summary: `Dr. Chowbey established the Minimal Access and Bariatric Surgery Centre, Sir Ganga Ram Hospital, New
-                Delhi in 1996, which was the first of its kind in the Asian subcontinent. His Institute at Max
-                Healthcare was the First Centre to receive the Center of excellence accreditations in India for`
-        }
-      },
-      {
-        name: "Dr. Abhishek Kapadia",
-        image: Doctor,
-        designation: { titleLight: "Medical", titleBold: "Director" ,title: 'Director, Mental Health and Behavioural Sciences'},
-        qualification: "MBBS, DPM, MD (Psychiatry)",
-        bio: {
-          intro: `Dr. Pradeep Chowbey belongs to the cadre of the pioneer laparoscopic surgeons in India. One of the first
-                to perform Laparoscopic cholecystectomy in North India, he has graphed his career with singular
-                determination to develop, evaluate and propagate Minimal Access, Metabolic & Bariatric Surgery in India.
-                The advent of Laparoscopic surgery with his hands became a point in India's medical history.`,
-          summary: `Dr. Chowbey established the Minimal Access and Bariatric Surgery Centre, Sir Ganga Ram Hospital, New
-                Delhi in 1996, which was the first of its kind in the Asian subcontinent. His Institute at Max
-                Healthcare was the First Centre to receive the Center of excellence accreditations in India for`
-        }
-      },
-      {
-        name: "Dr. Abhishek Kapadia",
-        image: Doctor,
-        designation: { titleLight: "Medical", titleBold: "Director" ,title: 'Director, Mental Health and Behavioural Sciences'},
-        qualification: "MBBS, DPM, MD (Psychiatry)",
-        bio: {
-          intro: `Dr. Pradeep Chowbey belongs to the cadre of the pioneer laparoscopic surgeons in India. One of the first
-                to perform Laparoscopic cholecystectomy in North India, he has graphed his career with singular
-                determination to develop, evaluate and propagate Minimal Access, Metabolic & Bariatric Surgery in India.
-                The advent of Laparoscopic surgery with his hands became a point in India's medical history.`,
-          summary: `Dr. Chowbey established the Minimal Access and Bariatric Surgery Centre, Sir Ganga Ram Hospital, New
-                Delhi in 1996, which was the first of its kind in the Asian subcontinent. His Institute at Max
-                Healthcare was the First Centre to receive the Center of excellence accreditations in India for`
-        }
-      },
-      {
-        name: "Dr. Abhishek Kapadia",
-        image: Doctor,
-        designation: { titleLight: "Medical", titleBold: "Director", title: 'Director, Mental Health and Behavioural Sciences' },
-        qualification: "MBBS, DPM, MD (Psychiatry)",
-        bio: {
-          intro: `Dr. Pradeep Chowbey belongs to the cadre of the pioneer laparoscopic surgeons in India. One of the first
-                to perform Laparoscopic cholecystectomy in North India, he has graphed his career with singular
-                determination to develop, evaluate and propagate Minimal Access, Metabolic & Bariatric Surgery in India.
-                The advent of Laparoscopic surgery with his hands became a point in India's medical history.`,
-          summary: `Dr. Chowbey established the Minimal Access and Bariatric Surgery Centre, Sir Ganga Ram Hospital, New
-                Delhi in 1996, which was the first of its kind in the Asian subcontinent. His Institute at Max
-                Healthcare was the First Centre to receive the Center of excellence accreditations in India for`
-        }
-      }
-    ]
-  }
 ];
 
 // Doctors Profile Images row component
@@ -200,7 +102,7 @@ const TeamRow = (props)=>{
           {item.doctors.map(doctor=>{
             return(
               <div  className="flex flex-col mr-12">
-                <DoctorProfile src={doctor.image} onClick={()=>{props.setDoctor(doctor); props.changeView(true);}} alt="doctor" className=""/>
+                <DoctorProfile src={doctor.image} onClick={()=>{props.setDoctor(doctor); document.getElementById("doctor-info").scrollIntoView();}} alt="doctor" className=""/>
                 <div className="text-white bg-sukoon py-4 text-center">
                   <h3 className="text-vxl">{doctor.name}</h3>
                 </div>
@@ -218,8 +120,8 @@ const DoctorBio = ({doctor}) =>{
 
   if(doctor && doctor.designation){
     return(
-      <section className="pl-20 py-12">
-        <Title titleLight={doctor.designation.titleLight} titleBold={doctor.designation.titleBold} subHeading="MEET THE"/>
+      <section id="doctor-info" className="pl-20 py-12">
+        <Title singleLine titleLight={doctor.designation.titleLight} titleBold={doctor.designation.titleBold} subHeading="MEET THE"/>
         <Intro className="">
           <div className="director-row flex">
             <div id="doctor-intro-image" className="w-30% mr-24">
@@ -255,7 +157,6 @@ const DoctorBio = ({doctor}) =>{
   }
 
 };
-
 
 const DoctorInfo = (props) =>{
 
@@ -299,18 +200,13 @@ const DoctorInfo = (props) =>{
 function DoctorsPage(props) {
 
   let temObj = {
-    name: "Dr. Abhishek Kapadia",
+    name: "Dr. Sameer Kalani",
     image: Doctor,
-    designation: { titleLight: "Medical", titleBold: "Director", title: 'Director, Mental Health and Behavioural Sciences' },
-    qualification: "MBBS, DPM, MD (Psychiatry)",
+    designation: { titleLight: "Medical", titleBold: "Director", title: 'Sr. Consultant Psychiatrist, Geriatric Psychiatrist' },
+    qualification: "MD (Psychiatry)",
     bio: {
-      intro: `Dr. Pradeep Chowbey belongs to the cadre of the pioneer laparoscopic surgeons in India. One of the first
-                to perform Laparoscopic cholecystectomy in North India, he has graphed his career with singular
-                determination to develop, evaluate and propagate Minimal Access, Metabolic & Bariatric Surgery in India.
-                The advent of Laparoscopic surgery with his hands became a point in India's medical history.`,
-      summary: `Dr. Chowbey established the Minimal Access and Bariatric Surgery Centre, Sir Ganga Ram Hospital, New
-                Delhi in 1996, which was the first of its kind in the Asian subcontinent. His Institute at Max
-                Healthcare was the First Centre to receive the Center of excellence accreditations in India for`
+      intro: `Dr. Sameer Kalani is a Psychiatrist by profession, helping people work out their emotional and behavioural difficulties. He predominantly works with children, adolescents and elderly. He treats patients with conditions like anxiety disorder, panic disorder, social phobia, specific phobia, post-traumatic stress disorder, bipolar disorder, Alzheimer’s disease, vascular dementia, anorexia nervosa, bulimia nervosa, major depressive disorder, stuttering, schizophrenia, and hyperactivity disorder.`,
+      summary: `He has been leading the field of Neurosciences with his experience in Repetitive Tran cranial Magnetic Stimulation (rTMS) treatment modality, currently being used in very few centres all over India.`
     }
   };
   const[SelectedDoctor, setDoctor] = useState(temObj);
@@ -322,19 +218,19 @@ function DoctorsPage(props) {
       <DoctorBio doctor={SelectedDoctor}/>
       {doctorInfo ? null :
         <Team className="doctors-team py-12 pl-20">
-          <Title titleLight="Meet The" titleBold="Experts" subHeading='our TEAM'/>
+          <Title singleLine titleLight="Meet The" titleBold="Experts" subHeading='our team'/>
           <div id="doctors-team-table" className="flex flex-col py-12">
             <TeamRow setDoctor={setDoctor} changeView={setView}/>
           </div>
         </Team> }
-      {
-        doctorInfo ?
-          <div className="pl-20 pb-12">
-            <DoctorInfo heading="Memberships"/>
-            <DoctorInfo heading="Education & Training"/>
-            <DoctorInfo heading="Awards Information"/>
-            <DoctorInfo heading="Research & Publication"/>
-          </div> : null}
+      {/*{*/}
+      {/*  doctorInfo ?*/}
+      {/*    <div className="pl-20 pb-12">*/}
+      {/*      <DoctorInfo heading="Memberships"/>*/}
+      {/*      <DoctorInfo heading="Education & Training"/>*/}
+      {/*      <DoctorInfo heading="Awards Information"/>*/}
+      {/*      <DoctorInfo heading="Research & Publication"/>*/}
+      {/*    </div> : null}*/}
     </>
   );
 }

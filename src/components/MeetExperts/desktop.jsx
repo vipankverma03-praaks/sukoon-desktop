@@ -8,8 +8,8 @@ import Para from "../../elements/Para/desktop";
 import Carousel from ".././Carousel/desktop";
 
 // Images
-import Samir_Kalani from "../../images/doctor/rsz_samir_kalani.jpg";
-import Ila from "../../images/doctor/ila2.jpg";
+import Samir_Kalani from "../../images/doctor/dr_samir_parikh.jpg";
+import Ila from "../../images/doctor/ila.jpg";
 
 const DocImgSec = styled.div`
 `;
@@ -33,7 +33,7 @@ const Doctors = [
     image: Samir_Kalani,
   },
   {
-    name: 'Ila',
+    name: 'Ms. Ila Kulshrestha',
     image: Ila,
   },
 ];
@@ -46,7 +46,7 @@ const MeetExperts = props => {
   return (
     <section id="meet-experts" className="py-12  overflow-x-hidden relative">
       <div className="pl-20">
-        <Title subHeading="About" titleLight="Our" titleBold="Doctors" />
+        <Title subHeading="About" singleLine titleLight="Our" titleBold="Doctors" />
         <Para Class="py-8" width="65%">
           With a team of experienced doctors led by our Resident Director - Dr Sameer Kalani, we can assure you that everybody is in good hands here. With an emphasis on relaxation and restoration of your mental well-being, we have a clinical team of psychiatrists, clinical psychologists, counselling psychologists, visiting consultants, general physicians, art therapists and fitness therapists.
         </Para>

@@ -425,7 +425,7 @@ function ServicesPage(props) {
     <>
       <Banner para captionLight={`Feel like`} bannerPara={`We’re here for you! At Sukoon, our experienced team provides compassionate, short-term and inpatient mental health services that help you feel better as quickly as possible. We work with you one-on-one ensuring that every part of your care is personalised to your condition, emotions, and needs.`} captionBold={`Yourself Again`} inner texture HeaderImg={HeaderImg}/>
       <PatientCare list={ResidentialServicesList} titleLight="Residential" titleBold={`Services`} />
-      <PatientCare list={OutPatienList} title="Out Patient" />
+      <PatientCare list={OutPatienList} titleLight={`Out`} titleBold={`Patient`}/>
       <MeetExperts />
     </>
   );

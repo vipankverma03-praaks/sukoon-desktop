@@ -43,15 +43,6 @@ display:flex;
 align-items: center;
 `;
 
-const HighLightExperienceTwo = styled.div`
-background: url(${HighLightTherapyTwo});   
-min-height: 415px;
-background-size:cover;
-background-position:top center;
-display:flex;
-align-items: center;
-`;
-
 const ExtraFeatures = styled.div`
 background: url(${RoomDining});   
     min-height: 400px;
@@ -108,7 +99,11 @@ const RoomFeatures = styled.ul`
   
   li{
     width: 25%;
-    margin-bottom: 4px;
+    margin-bottom: 20px;
+  }
+  
+  .last-el{
+  width: auto;
   }
 `;
 
@@ -130,7 +125,7 @@ const Rooms = {
   icuRoom: {
     type: 'Intensive Care Unit',
     description: 'lorem ipsum is just a dummy text lorem ipsum is just a dummy text lorem ipsum is just a dummy text',
-    amenities:['24*7 Doctor','Dedicated Nurse','Soft-touch Walls','Padded Furniture','Personalised Meals','Queen Bed','Private Balcony','AC & Heater','Spacious Closet','Luggage Rack'],
+    amenities:['24*7 Doctor','Dedicated Nurse','Soft-touch Walls','Gourmet Meals','Queen Bed','Private Balcony','AC & Heater','Spacious Closet','Luggage Rack','Furniture Padded'],
     previewImages: [RoomOne, RoomTwo, RoomThree, RoomFour],
     preview: RoomOne,
   },
@@ -138,9 +133,9 @@ const Rooms = {
 
 const RoomIntro = ({room,...props}) =>{
 
-  let amenities = room.amenities.map((amenity)=>{
+  let amenities = room.amenities.map((amenity, index)=>{
     return(
-      <li className="flex items-center">
+      <li key={`amenities${index}`} className={`flex items-center ${index === room.amenities.length -1 ? 'last-el': ''}`}>
         <img style={{width: '16px', height: '16px'}} className="mr-2" alt={`Checklist icon`} src={SukoonBullets} /> {amenity}
       </li>
     )
@@ -151,7 +146,7 @@ const RoomIntro = ({room,...props}) =>{
       {/*<Para width="100%">*/}
       {/*  {room.description}*/}
       {/*</Para>*/}
-      <RoomFeatures className="font-gilroyMedium flex flex-wrap my-8">
+      <RoomFeatures className="font-gilroyMedium flex flex-wrap mb-8">
         {amenities}
       </RoomFeatures>
       <div className="roomImg">
