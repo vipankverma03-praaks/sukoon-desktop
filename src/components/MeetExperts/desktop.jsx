@@ -33,7 +33,7 @@ const Doctors = [
     image: Samir_Kalani,
   },
   {
-    name: 'Ila',
+    name: 'Ms. Ila Kulshrestha',
     image: Ila,
   },
 ];
