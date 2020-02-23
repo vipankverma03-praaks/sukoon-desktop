@@ -14,7 +14,7 @@ import SVG from "../../elements/SVG/desktop";
 import HeaderImg from "../../images/pacientes-mejora_2019-08-02/pacientes-mejora@3x.jpg";
 
 const Content = {
-  Main: 'Acute Psychiatry Services',
+  Main: 'Acute Psychiatric Care',
   Summary:  ` Hennepin Healthcare's Acute Psychiatric Services (APS) center
             serves those in emotional crisis with 24-hour,
             seven-day-a-week crisis counseling, assessment, and referral.`,
