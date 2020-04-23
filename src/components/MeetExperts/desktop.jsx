@@ -7,12 +7,14 @@ import Title from "../../elements/Heading/desktop";
 import Para from "../../elements/Para/desktop";
 import Carousel from ".././Carousel/desktop";
 
-// Images
+// Images upated
 import Samir_Kalani from "../../images/doctor/kalani.jpeg";
 import Ila from "../../images/doctor/ila.jpeg";
 import Jaiman from "../../images/doctor/Jaiman.jpeg";
 import Sharmeen from "../../images/doctor/Sharmeen.jpeg";
 import Akshita from "../../images/doctor/akshita.jpeg";
+
+
 
 const DocImgSec = styled.div`
 `;
