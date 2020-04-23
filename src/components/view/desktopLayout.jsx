@@ -240,7 +240,7 @@ export default class DesktopLayout extends React.PureComponent{
                       <Link to="/experience">Experience</Link>
                     </li>
                     <li className="">
-                      <Link to="/">Doctors</Link>
+                      <Link to="/doctors">Doctors</Link>
                     </li>
                     <li className="">
                       <Link to="/">International Patients</Link>
