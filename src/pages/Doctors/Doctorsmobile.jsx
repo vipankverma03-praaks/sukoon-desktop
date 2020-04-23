@@ -99,16 +99,17 @@ function DoctorsPage(props) {
       <Intro/>
       <section className="MedicalDirectorSection p-4 pt-0">
         <div className="MedicalDocImg">
-          <img src={MedicalDoc} />
+          <img src={Samir_Kalani} />
         </div>
         <div className="MedicalDocInfo pt-4">
-          <h3 className="text-sukoon text-3xl font-Gilroy-Bold">Medical Director</h3>
-          <Para wrapperClass={`m-0`} width="100%">MBBS, DPM, MD (Psychiatry)</Para>
-          <Para width="100%">Director, Mental Health And Behavioural Sciences</Para>
-          <Para>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam architecto delectus distinctio dolorum eius, facilis fuga iure iusto magnam nam natus nihil, odit quam tempora, velit. Animi architecto blanditiis cupiditate dolore explicabo, facere in itaque necessitatibus neque, odio odit officia perferendis quam quo repellat? Est, impedit, sapiente! Aspernatur, error obcaecati? Consectetur eaque eos laudantium molestias recusandae sunt? Aliquam asperiores atque, autem debitis esse fuga fugit necessitatibus nesciunt.</Para>
+          <h3 className="text-sukoon text-3xl font-Gilroy-Bold">Center Head</h3>
+          <Para wrapperClass={`m-0`} width="100%">MD (Psychiatry)</Para>
+          <Para width="100%">Sr. Consultant Psychiatrist</Para>
+          <Para>Dr. Sameer Kalani is a Psychiatrist by profession, helping people work out their emotional and behavioural difficulties. He predominantly works with children, adolescents and elderly. He treats patients with conditions like anxiety disorder, panic disorder, social phobia, specific phobia, post-traumatic stress disorder, bipolar disorder, Alzheimer’s disease, vascular dementia, anorexia nervosa, bulimia nervosa, major depressive disorder, stuttering, schizophrenia, and hyperactivity disorder.</Para>
+          <Para>He has been leading the field of Neurosciences with his experience in Repetitive Tran cranial Magnetic Stimulation (rTMS) treatment modality, currently being used in very few centres all over India.</Para>
         </div>
       </section>
-      <InPatientServices/>
+      {/* <InPatientServices/> */}
       <MeetExperts/>
     </>
   );
