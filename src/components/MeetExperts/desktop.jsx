@@ -10,7 +10,7 @@ import Carousel from ".././Carousel/desktop";
 // Images upated
 import Samir_Kalani from "../../images/doctor/kalani.jpeg";
 import Ila from "../../images/doctor/ila.jpeg";
-import Jaiman from "../../images/doctor/Jaiman.jpeg";
+import Jaiman from "../../images/doctor/jaiman.jpeg";
 import Sharmeen from "../../images/doctor/Sharmeen.jpeg";
 import Akshita from "../../images/doctor/akshita.jpeg";
 

@@ -13,7 +13,7 @@ import ArrowButton from "../../elements/ArrowButton/desktop";
 import HeaderImg from "../../images/pacientes-mejora_2019-08-02/pacientes-mejora@3x.jpg";
 import Doctor from "../../images/doctor/kalani.jpeg";
 import Ila from "../../images/doctor/ila.jpeg";
-import Jaiman from "../../images/doctor/Jaiman.jpeg";
+import Jaiman from "../../images/doctor/jaiman.jpeg";
 import Sharmeen from "../../images/doctor/Sharmeen.jpeg";
 import Akshita from "../../images/doctor/akshita.jpeg";
 
