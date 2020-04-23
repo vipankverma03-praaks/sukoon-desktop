@@ -150,7 +150,7 @@ const TeamRow = (props)=>{
             return(
               <div  className="flex flex-col mr-12">
                 <DoctorProfile src={doctor.image} onClick={()=>{props.setDoctor(doctor); document.getElementById("doctor-info").scrollIntoView();}} alt="doctor" className=""/>
-                <div className="text-white bg-sukoon text-center" style={{"height":"80px"}}>
+                <div className="text-white bg-sukoon text-center py-4">
                   <h3 className="text-vxl">{doctor.name}</h3>
                 </div>
                 {/* <BookBtn wrapperClass="mx-auto my-4" theme="green">Book Now</BookBtn> */}
