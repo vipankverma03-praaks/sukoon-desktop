@@ -122,9 +122,9 @@ const FollowUs = (props) =>{
       </div>
       <h1 className="text-sukoon inline-block mr-8 font-semiBold text-lg mb-2">Follow us on</h1>
       <div className="text-lg  inline break-words">
-        <a href="https://www.facebook.com/sukoonhealth" className="mx-4 text-blue-800 cursor-pointer">Facebook</a>
+        <a href="https://www.facebook.com/sukoonhealth" className="mx-4 text-blue-800 cursor-pointer" target="_blank">Facebook</a>
         {/*<a href="/" className="mx-4 text-blue-400 cursor-pointer">Twitter</a>*/}
-        <Instagram href="https://www.instagram.com/sukoonhealth/">Instagram</Instagram>
+        <Instagram href="https://www.instagram.com/sukoonhealth/" target="_blank">Instagram</Instagram>
         {/*<a href="/" className="mx-4 text-blue-600 cursor-pointer">Skype</a>*/}
       </div>
     </div>
