@@ -120,7 +120,7 @@ function Header(props) {
               Experience
             </Link>
             <Link
-              to="/"
+              to="/doctors"
               className="inline-block mt-4 mt-0 mr-6 no-underline"
               onClick={()=>{NoScroll(true)}}
             >
