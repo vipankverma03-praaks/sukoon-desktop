@@ -36,7 +36,7 @@ const Caption = (props) => {
 const Intro = (props) => {
   return (
     <section id="why-sukoon" className="why-sukoon p-4">
-      <Title subHeading="Meet" titleLight="Our" titleBold="Team" />
+      <Title subHeading="MEET THE" titleLight="Center" titleBold="Head" />
     </section>
   )
 };
