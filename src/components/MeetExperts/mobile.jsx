@@ -9,8 +9,11 @@ import Para from "../../elements/Para/mobile";
 import Carousel from ".././Carousel/mobile";
 
 // Images
-import Samir_Kalani from "../../images/doctor/dr_samir_parikh.jpg";
-import Ila from "../../images/doctor/ila.jpg";
+import Samir_Kalani from "../../images/doctor/kalani.jpeg";
+import Ila from "../../images/doctor/ila.jpeg";
+import Jaiman from "../../images/doctor/Jaiman.jpeg";
+import Sharmeen from "../../images/doctor/Sharmeen.jpeg";
+import Akshita from "../../images/doctor/akshita.jpeg";
 import NursesImg from "../../images/physician_retail_web_2019-07-29/physician_retail_web.jpg";
 
 const MeetExpertsWrapper = styled.section`
@@ -24,8 +27,20 @@ const Doctors = [
     image: Samir_Kalani,
   },
   {
-    name: 'Ila',
+    name: 'Ms. Ila Kulshrestha',
     image: Ila,
+  },
+  {
+    name: 'Dr. Shambhavi Jaiman',
+    image: Jaiman,
+  },
+  {
+    name: 'Ms. Akshita Shukla',
+    image: Akshita,
+  },
+  {
+    name: 'Sharmeen Kaur Khurana',
+    image: Sharmeen,
   },
 ];
 

@@ -12,6 +12,11 @@ import MeetExperts from "../../components/MeetExperts/mobile";
 // Images
 import HeaderBg from "../../images/mobile_header.jpg";
 import MedicalDoc from "../../images/doctor/doctor1.jpg";
+import Samir_Kalani from "../../images/doctor/kalani.jpeg";
+import Ila from "../../images/doctor/ila.jpeg";
+import Jaiman from "../../images/doctor/Jaiman.jpeg";
+import Sharmeen from "../../images/doctor/Sharmeen.jpeg";
+import Akshita from "../../images/doctor/akshita.jpeg";
 
 
 const Caption = (props) => {
@@ -43,28 +48,24 @@ const DocCard = styled.div`
 
 const Doctors = [
   {
-    name: 'John Doe',
-    image: MedicalDoc,
+    name: 'Dr. Sameer Kalani',
+    image: Samir_Kalani,
   },
   {
-    name: 'John Doe',
-    image: MedicalDoc,
+    name: 'Ms. Ila Kulshrestha',
+    image: Ila,
   },
   {
-    name: 'John Doe',
-    image: MedicalDoc,
+    name: 'Dr. Shambhavi Jaiman',
+    image: Jaiman,
   },
   {
-    name: 'John Doe',
-    image: MedicalDoc,
+    name: 'Ms. Akshita Shukla',
+    image: Akshita,
   },
   {
-    name: 'John Doe',
-    image: MedicalDoc,
-  },
-  {
-    name: 'John Doe',
-    image: MedicalDoc,
+    name: 'Sharmeen Kaur Khurana',
+    image: Sharmeen,
   },
 
 ];
