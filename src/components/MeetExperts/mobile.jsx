@@ -11,7 +11,7 @@ import Carousel from ".././Carousel/mobile";
 // Images
 import Samir_Kalani from "../../images/doctor/kalani.jpeg";
 import Ila from "../../images/doctor/ila.jpeg";
-import Jaiman from "../../images/doctor/Jaiman.jpeg";
+import Jaiman from "../../images/doctor/jaiman.jpeg";
 import Sharmeen from "../../images/doctor/Sharmeen.jpeg";
 import Akshita from "../../images/doctor/akshita.jpeg";
 import NursesImg from "../../images/physician_retail_web_2019-07-29/physician_retail_web.jpg";
