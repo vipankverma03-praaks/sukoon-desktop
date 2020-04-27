@@ -48,7 +48,7 @@ const QuickLinks = (props) =>{
           <li className="text-gray-600 list-none">
             <Link to="/faqs">FAQs</Link></li>
           <li className="text-gray-600 list-none">
-            <Link to="/">Blogs</Link></li>
+            <Link to="/blog">Blogs</Link></li>
           <li className="text-gray-600 list-none">
             <Link to="/contact">Contacts</Link></li>
         </FooterLinks>
@@ -76,16 +76,16 @@ const ReachUs = (props) =>{
   return(
     <div className="p-4">
       <h2 className="text-sukoon text-4xl  font-normal font-medium">Reach Us</h2>
-      <Para>
+      {/* <Para>
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.
-      </Para>
+      </Para> */}
       <div className="my-2 flex flex-wrap">
         <div className="text-sukoon mr-2 my-2 flex px-1">
-          <SVG display="inline-block" icon="helpline" width={'20px'} fill={'#12443e'}/>
+          <div className="fit"><SVG display="inline-block" icon="helpline" width={'20px'} fill={'#12443e'}/></div>          
           <a href="tel: +91 8448170041" className="ml-4">+91 8448170041</a>
         </div>
         <div className="text-sukoon mr-2 my-2 flex px-1">
-          <SVG display="inline-block" icon="landLine" width={'20px'} fill={'#12443e'}/>
+          <div className="fit"><SVG display="inline-block" icon="landLine" width={'20px'} fill={'#12443e'}/></div>          
           <a className="ml-4" href="tel:+91 7558640422">+91 7558640422</a>
         </div>
         <div className="text-sukoon mr-2 my-2 flex px-1">

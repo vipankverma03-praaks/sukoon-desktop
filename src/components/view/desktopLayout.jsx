@@ -174,7 +174,7 @@ const QuickLinks = (props) =>{
             <li className="text-gray-600 text-lg list-none">
               <Link to="/faqs">FAQs</Link></li>
             <li className="text-gray-600 text-lg list-none">
-              <Link to="/">Blogs</Link></li>
+              <Link to="/blog">Blogs</Link></li>
             <li className="text-gray-600 text-lg list-none">
               <Link to="/contact">Contacts</Link></li>
           </ul>
@@ -243,10 +243,13 @@ export default class DesktopLayout extends React.PureComponent{
                       <Link to="/doctors">Doctors</Link>
                     </li>
                     <li className="">
-                      <Link to="/">International Patients</Link>
+                      <Link to="/internationalPatient">International Patients</Link>
                     </li>
                     <li className="">
-                      <Link to="/">About</Link>
+                      <Link to="/about">About</Link>
+                    </li>
+                    <li className="">
+                      <Link to="/blog">Blog</Link>
                     </li>
                   </ul>
                 </div>

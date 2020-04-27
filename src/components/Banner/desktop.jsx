@@ -151,7 +151,7 @@ const LeftSpace = styled.div`
 `;
 
 const HeaderIntro = (props) => {
-
+  const isSinglePostOrNot = props.SinglePost;
   return (
     <Header id="header-intro" className="w-full mb-12">
       <div id="header-intro-container" className="flex relative">
@@ -189,17 +189,34 @@ const HeaderIntro = (props) => {
             >
               About
             </Link>
+            <Link
+              to="/blog"
+              className=" inline-block mt-0 no-underline"
+            >
+              Blog
+            </Link>
           </NavWrapper>
-          <BannerImage HeaderImg={props.HeaderImg} texture={props.texture} className="relative">
-            <BannerText marginLeft={props.marginLeft} width={props.width} inner={props.inner} id="header-intro-left" className="py-12">
-              <Heading captionLight={props.captionLight} captionBold={props.captionBold}/>
-              {props.booking ?
-                <Booking showHidePopUp={props.showHidePopUp} discover={props.discover}/>
-                : props.para ? <ParagraphSection para={props.bannerPara}/> :
-                  <ButtonSection showHidePopUp={props.showHidePopUp} bannerPara={props.bannerPara}/>
-              }
-            </BannerText>
-          </BannerImage>
+          
+          {isSinglePostOrNot ? (
+            <BannerImage HeaderImg={Texture}  className="relative">
+              <BannerText marginLeft={props.marginLeft} width={props.width} inner={props.inner} id="header-intro-left" className="py-12">
+              {/* <Heading captionLight={props.captionLight} captionBold={props.captionBold}/> */}
+              </BannerText>
+            </BannerImage>
+          ) : (
+            <BannerImage HeaderImg={props.HeaderImg} texture={props.texture} className="relative">
+              <BannerText marginLeft={props.marginLeft} width={props.width} inner={props.inner} id="header-intro-left" className="py-12">
+                <Heading captionLight={props.captionLight} captionBold={props.captionBold}/>
+                {props.booking ?
+                  <Booking showHidePopUp={props.showHidePopUp} discover={props.discover}/>
+                  : props.para ? <ParagraphSection para={props.bannerPara}/> :
+                    <ButtonSection showHidePopUp={props.showHidePopUp} bannerPara={props.bannerPara}/>
+                }
+              </BannerText>
+            </BannerImage>
+          )}
+         
+          
         </HeaderIntroRight>
       </div>
     </Header>

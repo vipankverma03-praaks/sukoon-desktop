@@ -141,11 +141,11 @@ function Header(props) {
               FAQS
             </Link>
             <Link
-              to="/"
+              to="/blog"
               className="inline-block mt-4 mt-0 mr-6 no-underline"
               onClick={()=>{NoScroll(true)}}
             >
-              Blogs
+              Blog
             </Link>
             <Link
               to="/contact"
