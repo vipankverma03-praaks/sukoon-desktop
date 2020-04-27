@@ -1,14 +1,25 @@
 import React  from "react";
 import "../css/style.css";
-import { graphql} from "gatsby";
+import { graphql, StaticQuery,Link } from "gatsby";
+import './css/blog.css'
+import './css/normalize.css'
+import './css/webflow.css'
 
 // Components
-import Mobile from "./Blog/BlogMobile";
-import Desktop from "./Blog/Blog";
+//import Mobile from "./Blog/BlogMobile";
+//import Desktop from "./Blog/Blog";
 import Layout from "../components/view/layout";
 import SEO from "../components/seo";
 import Loader from "../components/loader";
-import PaginationLinks from '../components/pagination-links'
+import Banner from "../components/Banner/desktop";
+import PostGridBlock from "../components/Blog grid/blog-grid"
+import BlogCategorySidebar from "../components/BlogCategorySection/BlogCategorySection";
+import RecentPosts from "../components/BlogRecentPosts/RecentPosts";
+//import PaginationLinks from "../../components/pagination-links"
+import Pagination from '../components/pagination'
+import BannerBg from "../images/Desktop-Header/pacientes-mejora.png";
+import BannerBgMobile from "../images/servicesBg.png";
+
 
 export default class About extends React.Component {
   constructor(props) {
@@ -35,6 +46,7 @@ export default class About extends React.Component {
   render() {
     const { data } = this.props;
     const {currentPage,numPages} = this.props.pageContext
+    
     if (this.state.loading !== 'undefined' && this.state.loading) {
       return (
         <div className={`flex`}>
@@ -50,9 +62,60 @@ export default class About extends React.Component {
             keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
           />
           {this.state.view === 'mobile' ?
-            <Mobile Data={data} currentPage={currentPage} numberOfPages={numPages} rootPage="/blog/" PageTitle="Most Recent Posts"/> :
-            <Desktop  Data={data} currentPage={currentPage} numberOfPages={numPages} rootPage="/blog/" PageTitle="Most Recent Posts"/>
+            <div>             
+                <Banner captionLight={`Blog`} captionBold={`Posts`} overlay={this.state.overlay} backgroundImg={BannerBgMobile}/>
+                    <h2 className="blog-page-heading">Most Recent Posts</h2>
+
+                    <div className="post-section">
+                      <div className="blog-block">
+                          {data.allWordpressPost.edges.map(({ node }) => (                           
+                              <PostGridBlock PostTitle={node.title} Description={node.excerpt} PostDate={node.date} Category={Object.values(node.categories)[0].name} Image={node.jetpack_featured_media_url} Path={node.slug} CategoryPath={Object.values(node.categories)[0].path}></PostGridBlock>                           
+                                 
+                          ))}
+                          
+                          <Pagination
+                                    rootPage='/blog/'
+                                    currentPage={currentPage}
+                                    numberOfPages={numPages}
+                                />
+                      </div>
+
+                      <div className="sidebar">
+                        <RecentPosts></RecentPosts>
+                        <BlogCategorySidebar> </BlogCategorySidebar>
+                      </div>
+                    </div>
+                    
+                </div>    :
+            
+          
+            <div>             
+                <Banner para width={`52vw`} marginLeft={`-30vw`} captionLight={`Blog`} captionBold={`Posts`}  inner texture HeaderImg={BannerBg}/>
+                    <h2 className="blog-page-heading">Most Recent Posts</h2>
+
+                    <div className="post-section">
+                      <div className="blog-block">
+                          {data.allWordpressPost.edges.map(({ node }) => (                           
+                              <PostGridBlock PostTitle={node.title} Description={node.excerpt} PostDate={node.date} Category={Object.values(node.categories)[0].name} Image={node.jetpack_featured_media_url} Path={node.slug} CategoryPath={Object.values(node.categories)[0].path}></PostGridBlock>                           
+                                 
+                          ))}
+                          
+                          <Pagination
+                                    rootPage='/blog/'
+                                    currentPage={currentPage}
+                                    numberOfPages={numPages}
+                                />
+                      </div>
+
+                      <div className="sidebar">
+                        <RecentPosts></RecentPosts>
+                        <BlogCategorySidebar> </BlogCategorySidebar>
+                      </div>
+                    </div>
+                    
+                </div>   
           }
+
         </Layout>
       )
     }

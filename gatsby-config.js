@@ -37,7 +37,7 @@ module.exports = {
           // Only fetches posts, tags and categories from the baseUrl.
           includedRoutes: ['**/posts', '**/tags', '**/categories'],
           // Not using ACF so putting it off.
-          useACF: true,
+          useACF: false,
           
       }
     },
