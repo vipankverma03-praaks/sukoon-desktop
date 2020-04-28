@@ -115,7 +115,7 @@ const Content5 = {
       title: 'Our Approach',
       para: `Our team creates a tailor-made treatment plan for the patients which includes detoxification, deaddiction, relapse prevention and rehabilitation. A multidisciplinary team involving a Psychiatrist, a Clinical Psychologist and an Art  based Therapist work towards assessing, diagnosing and managing the various kinds of habit addictions.`,
     
-        points:'<p>At Sukoon we give due emphasis to group and family sessions in addition to individual sessions. This is often required to resolve interpersonal relationship concerns. Our clinical team believes that resolving the difficulties faced by the families/caregiver is a crucial part of an individual’s recovery and prevents further relapses which is a hallmark of this illness.<p>'
+        points:'<p class="content-para">At Sukoon we give due emphasis to group and family sessions in addition to individual sessions. This is often required to resolve interpersonal relationship concerns. Our clinical team believes that resolving the difficulties faced by the families/caregiver is a crucial part of an individual’s recovery and prevents further relapses which is a hallmark of this illness.<p>'
     },
   ]
 };
@@ -136,7 +136,7 @@ const Content6 = {
       title: 'Our Approach',
       para: `Our team aims at providing effective pharmacological and psychological interventions for various mental health conditions. The treatment includes various assessments to prepare a tailor-made management plan in keeping with the patients specific needs. We also prioritize mental health care of the family and the caregivers.`,
     
-        points:'<p><i>Treatment objectives include reintegration into society, enhancing social skills, developing interpersonal skill development and fostering independent living.</i><p>'
+        points:'<p style="font-size:15px;color: #636363;"><i>Treatment objectives include reintegration into society, enhancing social skills, developing interpersonal skill development and fostering independent living.</i><p>'
     },
   ]
 };
@@ -198,7 +198,7 @@ const Content9 = {
     {
       para: `Sukoon offers residential and out-patient care services for children and adolescents requiring mental health treatment. A dedicated team of child Psychologists and Psychiatrists assist the child and their family in creating an individualised treatment plan after a thorough evaluation and clinical assessment of their academic, social, behavioural and emotional difficulties. A residential floor exclusively assigned for children and adolescents ensures a safe and nurturing environment for young individuals.`,
         
-      points: '<p>Sukoon is also a part of the nation-wide run Fortis School Mental Health Program. This program provides workshops, skill training and outreach services to school students, parents and teachers all year round with the aim of spreading awareness about positive child and adolescent mental health. </p>',
+      points: '<p class="content-para">Sukoon is also a part of the nation-wide run Fortis School Mental Health Program. This program provides workshops, skill training and outreach services to school students, parents and teachers all year round with the aim of spreading awareness about positive child and adolescent mental health. </p>',
         
     },
     {
@@ -284,7 +284,7 @@ const Content13 = {
     {
       para: `Repetitive Transcranial Magnetic Stimulation (rTMS) is a non-invasive and non-pharmacological  (no anaesthesia) treatment. It is an absolutely painless (both physical and psychological) alternative to traditional treatment methods. rTMS compared to other brain stimulation techniques (mECT, tDCS, CESS etc.) does not have any side effects. Since rTMS intervention does not require any pre or post session monitoring, it can be used as a convenient out-patient procedure.`,
         
-      points: '<p>At Sukoon we use world class rTMS machines to provide relief from psychiatric and organic conditions such as:</p>',
+      points: '<p class="content-para">At Sukoon we use world class rTMS machines to provide relief from psychiatric and organic conditions such as:</p>',
         
     },
     {
@@ -352,11 +352,11 @@ const Content16 = {
     {
       para: `Occupational therapy assists people in developing or improving their everyday activities in order to enhance their overall functioning and sense of accomplishment. It can be carried out individually, or in group settings. At Sukoon, we aid people from all ages and all abilities to gain independent functioning in all aspects of their lives.`,
         
-      points: '<p>Occupational therapy aims to build and strengthen cognitive, sensory and motor functioning and has been proven to be beneficial for:</p>',
+      points: '<p class="content-para">Occupational therapy aims to build and strengthen cognitive, sensory and motor functioning and has been proven to be beneficial for:</p>',
         
     },
       {
-          points: '<ul class="dot-list pb-2 mt-2"><li>Aiding children with developmental disorders </li><li>Modifying tasks and simplifying learning for children with special needs </li><li>Reducing the impact of arthritis</li><li>Improving movement range for those with motor constraints</li><li></li>Boosting memory and cognitive skills<li>Coping with chronic pain</li></ul>',
+          points: '<ul class="dot-list pb-2 mt-2"><li>Aiding children with developmental disorders </li><li>Modifying tasks and simplifying learning for children with special needs </li><li>Reducing the impact of arthritis</li><li>Improving movement range for those with motor constraints</li><li>Boosting memory and cognitive skills<li>Coping with chronic pain</li></ul>',
       },
     
       {
