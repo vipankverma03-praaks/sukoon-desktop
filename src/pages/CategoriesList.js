@@ -47,6 +47,7 @@ export default class About extends React.Component {
     const { data } = this.props;
     const postPerPage=2;
     let numberOfPages=Math.ceil(data.allWordpressPost.totalCount/postPerPage)
+    const {name} = this.props.pageContext
     if (this.state.loading !== 'undefined' && this.state.loading) {
       return (
         <div className={`flex`}>
@@ -64,7 +65,7 @@ export default class About extends React.Component {
           {this.state.view === 'mobile' ?
             <div>             
                 <Banner captionLight={`Blog`} captionBold={`Posts`} overlay={this.state.overlay} backgroundImg={BannerBgMobile}/>
-                    <h2 className="blog-page-heading">Category - </h2>
+                    <h2 className="blog-page-heading">Category - {name}</h2>
 
                     <div className="post-section">
                       <div className="blog-block">
@@ -91,7 +92,7 @@ export default class About extends React.Component {
           
             <div>             
                 <Banner para width={`52vw`} marginLeft={`-30vw`} captionLight={`Blog`} captionBold={`Posts`}  inner texture HeaderImg={BannerBg}/>
-                    <h2 className="blog-page-heading">Most Recent Posts</h2>
+                    <h2 className="blog-page-heading">Category - {name}</h2>
 
                     <div className="post-section">
                       <div className="blog-block">

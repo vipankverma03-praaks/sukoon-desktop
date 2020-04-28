@@ -44,7 +44,8 @@ export default class About extends React.Component {
     const { data } = this.props;
     const baseUrl = 'https://sukoonhealth.com/';
     const post = data.allWordpressPost.edges[0].node
-    const category=Object.values(post.categories)[0].name 
+    const category=Object.values(post.categories)[0].name
+    const title=post.title 
     const disqusShortname = "https-sukoonhealth-com" //found in your Disqus.com dashboard
     const disqusConfig = {
       url: baseUrl + post.slug, //this.props.pageUrl  baseUrl + post.slug
@@ -68,14 +69,14 @@ export default class About extends React.Component {
           {this.state.view === 'mobile' ?
             <div className="post-section single-post-page">
                   <div className="blog-block">
-                  <img  src={BannerBg} className="featured-image-post" alt=""/>
+                  <img  src={post.jetpack_featured_media_url} className="featured-image-post" alt=""/>
                   <div className="category-tag single-post">{category}</div>
                   <h1 className="single-post-title">{post.slug}</h1>
                   <div className="thumbnail-post-date">{post.date}</div>
                     <div className="post-content" dangerouslySetInnerHTML={{ __html: post.content }}>
 
                     </div>
-                    <SinglePostShare></SinglePostShare>
+                    <SinglePostShare Slug={post.slug} Title={post.title}></SinglePostShare>
                     <div className="comments-section">
                         <div className="discus-plugin">
                             <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
@@ -97,14 +98,14 @@ export default class About extends React.Component {
                 <Banner para width={`52vw`} marginLeft={`-30vw`} inner texture SinglePost="true"/>
                     <div className="post-section single-post-page">
                       <div className="blog-block">
-                      <img  src={BannerBg} className="featured-image-post" alt=""/>
+                      <img  src={post.jetpack_featured_media_url} className="featured-image-post" alt=""/>
                       <div className="category-tag single-post">{category}</div>
                       <h1 className="single-post-title">{post.title}</h1>
                       <div className="thumbnail-post-date">{post.date}</div>
                         <div className="post-content" dangerouslySetInnerHTML={{ __html: post.content }}>
                            
                         </div>
-                        <SinglePostShare></SinglePostShare>
+                        <SinglePostShare Slug={post.slug} Title={post.title}></SinglePostShare>
                         <div className="comments-section">
                             <div className="discus-plugin">
                                 <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />

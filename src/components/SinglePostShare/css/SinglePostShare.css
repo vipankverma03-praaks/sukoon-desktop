@@ -43,7 +43,7 @@ svg{
 .facebook-icon {
   width: 50px;
   height:100%;
-  max-width: 30px;
+  max-width: 50px;
   margin-right: 5%;
   margin-left: 5%;
   -webkit-box-flex: 0;
@@ -61,6 +61,7 @@ svg{
 .twitter-icon {
   width: 50px;
   height:100%;
+  max-width: 50px;
   margin-right: 5%;
   margin-left: 5%;
   color: #929496;
@@ -74,6 +75,7 @@ svg{
 .linkedin-icon {
   height:100%;
   width: 50px;
+  max-width: 50px;
   margin-right: 5%;
   margin-left: 5%;
   color: #929496;
@@ -87,6 +89,7 @@ svg{
 .instagram-icon {
   height:100%;
   width: 50px;
+  max-width: 50px;
   margin-right: 5%;
   margin-left: 5%;
   color: #929496;
@@ -100,6 +103,7 @@ svg{
 .whatsapp-icon {
   height:100%;
   width: 50px;
+  max-width: 50px;
   margin-right: 5%;
   margin-left: 5%;
   color: #929496;
