@@ -485,7 +485,7 @@ const CareService = (props) =>{
         <ServiceType className="service_content mt-2 overflow-x-hidden text-justify">
           {ListContent.items.map((content)=>{
             return(
-              <InfoSection title={content.title} content={content.para} />
+              <InfoSection title={content.title} content={content.para} points={content.points} />
                 
             )
           })}
