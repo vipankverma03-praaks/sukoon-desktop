@@ -211,7 +211,7 @@ const StickyMenu = styled.section`
 const Nav = styled.nav`
   
   ul > li{
-  margin-right: 5vw;
+  margin-right: 4.9vw;
   }
 `;
 
@@ -231,7 +231,7 @@ export default class DesktopLayout extends React.PureComponent{
             <Header logoHighlighter={this.props.logoHighlighter}/>
             <StickyMenu id="sticky-nav" className="hide">
               <Nav className="bg-sukoon text-white py-2 px-20 flex items-center">
-                <div className="w-4/5 font-semiBold text-xl">
+                <div className="w-4/5 font-semiBold text-base">
                   <ul className="flex">
                     <li className="">
                       <Link to="/services">Services</Link>

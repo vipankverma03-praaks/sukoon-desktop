@@ -441,12 +441,16 @@
   }
   
   .post-content {
-    padding-top: 5%;
+    padding-top: 1%;
     padding-bottom: 5%;
     border-bottom: 1px solid rgba(227, 231, 232, 0.7);
     font-family: Montserrat, sans-serif;
     color: #090606;
-    font-size: 14px;
+    font-size: 15px;
+    line-height:160%;
+  }
+  .post-content p{
+    margin-top: 1.25em;
   }
   
   .rich-text-block {

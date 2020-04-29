@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { graphql, StaticQuery,Link } from "gatsby";
 import './css/BlogRecentPosts.css';
-import './css/normalize.css';
-import './css/webflow.css';
+// import './css/normalize.css';
+// import './css/webflow.css';
 
 export default () => (
     <StaticQuery

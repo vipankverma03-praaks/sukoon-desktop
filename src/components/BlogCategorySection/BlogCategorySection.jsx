@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import './css/BlogCategorySection.css'
-import './css/normalize.css'
-import './css/webflow.css'
+// import './css/normalize.css'
+// import './css/webflow.css'
 import { graphql, StaticQuery,Link } from "gatsby";
 
 const Paragraph = styled.p`

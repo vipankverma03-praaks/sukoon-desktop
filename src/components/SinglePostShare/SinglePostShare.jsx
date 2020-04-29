@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { graphql, StaticQuery,Link } from "gatsby";
 import './css/SinglePostShare.css';
-import './css/normalize.css';
-import './css/webflow.css';
+// import './css/normalize.css';
+// import './css/webflow.css';
 function SinglePostShare(props) {
     const baseUrl = 'https://sukoonhealth.com';
     const slug=props.Slug

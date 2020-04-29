@@ -2,8 +2,8 @@ import React  from "react";
 import "../css/style.css";
 import { graphql, StaticQuery,Link } from "gatsby";
 import './css/blog.css'
-import './css/normalize.css'
-import './css/webflow.css'
+// import './css/normalize.css'
+// import './css/webflow.css'
 
 // Components
 //import Mobile from "./Blog/BlogMobile";
@@ -15,7 +15,6 @@ import Banner from "../components/Banner/desktop";
 import PostGridBlock from "../components/Blog grid/blog-grid"
 import BlogCategorySidebar from "../components/BlogCategorySection/BlogCategorySection";
 import RecentPosts from "../components/BlogRecentPosts/RecentPosts";
-//import PaginationLinks from "../../components/pagination-links"
 import Pagination from '../components/pagination'
 import BannerBg from "../images/Desktop-Header/pacientes-mejora.png";
 import BannerBgMobile from "../images/servicesBg.png";

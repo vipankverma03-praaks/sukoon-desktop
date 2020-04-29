@@ -2,8 +2,8 @@ import React  from "react";
 import "../css/style.css";
 import { graphql, StaticQuery,Link } from "gatsby";
 import './css/blog-post.css'
-import './css/normalize.css'
-import './css/webflow.css'
+// import './css/normalize.css'
+// import './css/webflow.css'
 import {DiscussionEmbed} from "disqus-react"
 
 // Components

@@ -8,7 +8,6 @@
     "@material-ui/core": "^4.3.2",
     "@material-ui/pickers": "^3.2.6",
     "babel-plugin-styled-components": "^1.10.6",
-    "bootstrap": "^4.4.1",
     "date-fns": "^2.0.0-beta.5",
     "disqus-react": "^1.0.8",
     "gatsby": "2.13.21",
@@ -19,7 +18,6 @@
     "gatsby-plugin-purgecss": "4.0.0",
     "gatsby-plugin-react-helmet": "3.1.2",
     "gatsby-plugin-styled-components": "^3.1.2",
-    "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-wordpress": "^3.2.5",
     "graphql": "14.4.2",
     "moment": "^2.24.0",
@@ -31,7 +29,6 @@
     "react-icons": "^3.10.0",
     "react-slick": "^0.24.0",
     "react-sticky": "^6.0.3",
-    "reactstrap": "^8.4.1",
     "slick-carousel": "^1.8.1",
     "styled-components": "^4.3.2",
     "styled-system": "^5.1.5"

@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import {Link} from "gatsby";
 import './css/blog-grid.css';
-import './css/normalize.css';
-import './css/webflow.css';
+// import './css/normalize.css';
+// import './css/webflow.css';
 
 // Images
 import postThumbnail from "./images/National-Power-by-Mohd-Aram-on-Unsplash.jpg";
