@@ -82,27 +82,21 @@ ul.dot-list li, ul.number-list{
 ul.number-list{
     list-style-image: url("../images/internationalpatient/sukoon_icon_16.png");
 }
-/*
-@media (max-width: 760px) { 
+
+@media screen and (max-width: 767px) {
     ul.dot-list{
-        color: #333;
-        font-size: .875rem;
-        line-height: 1.5;
-        font-weight: 500;
+        hyphens: manual;
+        text-align: left;
     }
     ul.number-list{
-        color: #333;
-        font-size: .875rem;
-        line-height: 1.5;
-        font-weight: 500;
+        hyphens: manual;
+        text-align: left;
     }
     .content-para{
-        color: #333;
-        font-size: .875rem;
-        line-height: 1.5;
-        font-weight: 500;
+        hyphens: manual;
+        text-align: left;
     }
-} */
+} 
 p {margin-bottom: 1.25em;}
 
 h1, h2, h3, h4, h5 {
