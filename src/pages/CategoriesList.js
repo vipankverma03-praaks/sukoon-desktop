@@ -63,7 +63,7 @@ export default class About extends React.Component {
           />
           {this.state.view === 'mobile' ?
             <div>             
-                <Banner captionLight={`Blog`} captionBold={`Posts`} overlay={this.state.overlay} backgroundImg={BannerBgMobile}/>
+                {/* <Banner captionLight={`Blog`} captionBold={`Posts`} overlay={this.state.overlay} backgroundImg={BannerBgMobile}/> */}
                     <h2 className="blog-page-heading">Category - {name}</h2>
 
                     <div className="post-section">
@@ -90,7 +90,7 @@ export default class About extends React.Component {
             
           
             <div>             
-                {/* <Banner para width={`52vw`} marginLeft={`-30vw`} captionLight={`Blog`} captionBold={`Posts`}  inner texture HeaderImg={BannerBg}/> */}
+                <Banner para width={`52vw`} marginLeft={`-30vw`} captionLight={`Blog`} captionBold={`Posts`}  inner texture HeaderImg={BannerBg}/>
                     <h2 className="blog-page-heading">Category - {name}</h2>
 
                     <div className="post-section">
