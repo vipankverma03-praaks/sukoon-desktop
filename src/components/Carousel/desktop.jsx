@@ -55,7 +55,7 @@ const Carousel = (props) => {
     speed: 500,
     slidesToShow: props.slidesToShow || 3,
     slidesToScroll: props.slidesToScroll || 1,
-    autoplaySpeed: 2500,
+    autoplaySpeed: 2000,
     autoplay: props.autoPlay || true,
   };
 
