@@ -590,6 +590,7 @@
       text-align: center;
     }
     .post-section.single-post-page {
+      padding-top: 1%;
     }
     .blog-page-heading {
       font-size: 25px;
@@ -673,7 +674,7 @@
       direction: ltr;
     }
     .post-section.single-post-page {
-      padding-top: 2%;
+      padding-top: 5%;
     }
     .sidebar {
       width: 100%;
@@ -759,7 +760,7 @@
       padding-left: 0%;
     }
     .post-section.single-post-page {
-      padding-top: 3%;
+      padding-top: 5%;
     }
     .content-wrap {
       width: 100%;

@@ -63,7 +63,7 @@ export default class About extends React.Component {
           {this.state.view === 'mobile' ?
             <div>             
                 {/* <Banner captionLight={`Blog`} captionBold={`Posts`} overlay={this.state.overlay} backgroundImg={BannerBgMobile}/> */}
-                    <h2 className="blog-page-heading" style={{"margin-top":"15px"}}>Most Recent Posts</h2>
+                    <h2 className="blog-page-heading" style={{"margin-top":"20px"}}>Most Recent Posts</h2>
 
                     <div className="post-section">
                       <div className="blog-block">
@@ -79,7 +79,7 @@ export default class About extends React.Component {
                                 />
                       </div>
 
-                      <div className="sidebar" style={{"margin-top":"15px"}}>
+                      <div className="sidebar" style={{"margin-top":"35px"}}>
                         <RecentPosts></RecentPosts>
                         <BlogCategorySidebar> </BlogCategorySidebar>
                       </div>

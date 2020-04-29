@@ -67,7 +67,7 @@ export default class About extends React.Component {
             keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
           />
           {this.state.view === 'mobile' ?
-            <div className="post-section single-post-page">
+            <div className="post-section single-post-page" style={{"margin-top":"25px"}}>
                   <div className="blog-block">
                   <img  src={post.jetpack_featured_media_url} className="featured-image-post" alt=""/>
                   <div className="category-tag single-post">{category}</div>
