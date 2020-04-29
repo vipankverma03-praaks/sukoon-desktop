@@ -72,7 +72,7 @@ export default class About extends React.Component {
                                  
                           ))}
                           
-                          <Pagination
+                          <Pagination className="mb-5"
                                     rootPage='/blog/'
                                     currentPage={currentPage}
                                     numberOfPages={numPages}
