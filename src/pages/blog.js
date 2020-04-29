@@ -63,7 +63,7 @@ export default class About extends React.Component {
           {this.state.view === 'mobile' ?
             <div>             
                 {/* <Banner captionLight={`Blog`} captionBold={`Posts`} overlay={this.state.overlay} backgroundImg={BannerBgMobile}/> */}
-                    <h2 className="blog-page-heading">Most Recent Posts</h2>
+                    <h2 className="blog-page-heading" style={{"margin-top":"15px"}}>Most Recent Posts</h2>
 
                     <div className="post-section">
                       <div className="blog-block">
@@ -72,14 +72,14 @@ export default class About extends React.Component {
                                  
                           ))}
                           
-                          <Pagination className="mb-5"
+                          <Pagination
                                     rootPage='/blog/'
                                     currentPage={1}
                                     numberOfPages={numberOfPages}
                                 />
                       </div>
 
-                      <div className="sidebar">
+                      <div className="sidebar" style={{"margin-top":"15px"}}>
                         <RecentPosts></RecentPosts>
                         <BlogCategorySidebar> </BlogCategorySidebar>
                       </div>

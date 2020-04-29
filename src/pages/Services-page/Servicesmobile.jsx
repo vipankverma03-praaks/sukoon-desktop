@@ -453,7 +453,7 @@ const InfoSection = (props) =>{
       <h3 className="font-gilroyMedium mt-3 text-left text-sukoon leading-none">{props.title}</h3>
       <Para>
         {props.content}</Para>
-        <div clasName="content" dangerouslySetInnerHTML={{__html: props.points}}></div>
+        <div clasName="content text-sm" dangerouslySetInnerHTML={{__html: props.points}}></div>
     </div>
   )
 };
