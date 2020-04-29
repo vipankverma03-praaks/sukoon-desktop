@@ -91,7 +91,7 @@ export default class About extends React.Component {
             
           
             <div>             
-                <Banner para width={`52vw`} marginLeft={`-30vw`} captionLight={`Blog`} captionBold={`Posts`}  inner texture HeaderImg={BannerBg}/>
+                {/* <Banner para width={`52vw`} marginLeft={`-30vw`} captionLight={`Blog`} captionBold={`Posts`}  inner texture HeaderImg={BannerBg}/> */}
                     <h2 className="blog-page-heading">Category - {name}</h2>
 
                     <div className="post-section">
@@ -101,7 +101,7 @@ export default class About extends React.Component {
                                  
                           ))}
                           
-                          <Pagination
+                          <Pagination className="mb-5"
                                     rootPage='/blog/'
                                     currentPage={1}
                                     numberOfPages={numberOfPages}
