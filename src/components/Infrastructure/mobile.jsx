@@ -182,7 +182,7 @@ const Infra = (props) =>{
     float: right;
     border-radius: 50%;
     width: 18px;
-    height: 18px;
+    height: 13px;
     background: #ffffff;
     }
     

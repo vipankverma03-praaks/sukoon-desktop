@@ -64,32 +64,32 @@ exports.createPages = ({ graphql, actions }) => {
           })
         })
        
+      
+    //     const postsPerPage = 2;
+    //     const numPages = Math.ceil(totalPosts/postsPerPage);
+    //     Array.from({ length: numPages }).forEach((_, index) => {
+    //         const isFirstPage = index === 0
+    //         const currentPage = index+1
 
-        const postsPerPage = 2;
-        const numPages = Math.ceil(totalPosts/postsPerPage);
-        Array.from({ length: numPages }).forEach((_, index) => {
-            const isFirstPage = index === 0
-            const currentPage = index+1
-
-            if(isFirstPage) return
+    //         if(isFirstPage) return
 
         
-        createPage({
-            // Decide URL structure
-            path: index === 0 ? '' : `/blog/${index + 1}`,
-            // path to template
-            component: path.resolve(`./src/pages/blogList.js`),
-            context: {
-            // This is the $slug variable
-            // passed to blog-post.js
-            limit:postsPerPage,
-                skip: index * postsPerPage,
-                currentPage,
-                numPages
+    //     createPage({
+    //         // Decide URL structure
+    //         path: index === 0 ? '' : `/blog/${index + 1}`,
+    //         // path to template
+    //         component: path.resolve(`./src/pages/blogList.js`),
+    //         context: {
+    //         // This is the $slug variable
+    //         // passed to blog-post.js
+    //         limit:postsPerPage,
+    //             skip: index * postsPerPage,
+    //             currentPage,
+    //             numPages
 
-            },
-        })
-     })
+    //         },
+    //     })
+    //  })
         
     })
 }

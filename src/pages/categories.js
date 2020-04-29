@@ -18,14 +18,17 @@ import RecentPosts from "../components/BlogRecentPosts/RecentPosts";
 import Pagination from '../components/pagination'
 import BannerBg from "../images/Desktop-Header/pacientes-mejora.png";
 import BannerBgMobile from "../images/servicesBg.png";
-
+import LoadMoreBtn from "../elements/LoadMoreBtn";
 
 export default class About extends React.Component {
   constructor(props) {
     super(props);
+    let postsToShow = 1
     this.state = {
       overlay: false,
       view: 'desktop',
+      showingMore: postsToShow > 1,
+      postsToShow,
     }
   }
 
@@ -44,6 +47,8 @@ export default class About extends React.Component {
 
   render() {
     const { data } = this.props;
+    const totalPosts = this.props.data.allWordpressPost.edges
+    const index = this.state.postsToShow;   
     const postPerPage=2;
     let numberOfPages=Math.ceil(data.allWordpressPost.totalCount/postPerPage)
     const {name} = this.props.pageContext
@@ -69,16 +74,24 @@ export default class About extends React.Component {
 
                     <div className="post-section">
                       <div className="blog-block">
-                          {data.allWordpressPost.edges.map(({ node }) => (                           
+                          {totalPosts.slice(0, index).map(({ node }) => (                         
                               <PostGridBlock PostTitle={node.title} Description={node.excerpt} PostDate={node.date} Category={Object.values(node.categories)[0].name} Image={node.jetpack_featured_media_url} Path={node.slug} CategoryPath={Object.values(node.categories)[0].path}></PostGridBlock>                           
                                  
                           ))}
-                          
-                          <Pagination className="mb-5"
+                          {this.state.postsToShow < this.props.data.allWordpressPost.edges.length &&
+                                <div onClick={() => {
+                                  this.setState({
+                                    postsToShow: this.state.postsToShow + 2,
+                                  })
+                                }}>
+                                  <LoadMoreBtn></LoadMoreBtn>
+                                </div>
+                              }
+                          {/* <Pagination className="mb-5"
                                     rootPage='/blog/'
                                     currentPage={1}
                                     numberOfPages={numberOfPages}
-                                />
+                                /> */}
                       </div>
 
                       <div className="sidebar" style={{"margin-top":"35px"}}>
@@ -96,16 +109,24 @@ export default class About extends React.Component {
 
                     <div className="post-section">
                       <div className="blog-block">
-                          {data.allWordpressPost.edges.map(({ node }) => (                           
+                          {totalPosts.slice(0, index).map(({ node }) => (                          
                               <PostGridBlock PostTitle={node.title} Description={node.excerpt} PostDate={node.date} Category={Object.values(node.categories)[0].name} Image={node.jetpack_featured_media_url} Path={node.slug} CategoryPath={Object.values(node.categories)[0].path}></PostGridBlock>                           
                                  
                           ))}
-                          
-                          <Pagination
+                          {this.state.postsToShow < this.props.data.allWordpressPost.edges.length &&
+                                <div onClick={() => {
+                                  this.setState({
+                                    postsToShow: this.state.postsToShow + 2,
+                                  })
+                                }}>
+                                  <LoadMoreBtn></LoadMoreBtn>
+                                </div>
+                              }
+                          {/* <Pagination
                                     rootPage='/blog/'
                                     currentPage={1}
                                     numberOfPages={numberOfPages}
-                                />
+                                /> */}
                       </div>
 
                       <div className="sidebar">
