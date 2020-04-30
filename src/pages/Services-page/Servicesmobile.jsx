@@ -288,7 +288,7 @@ const Content13 = {
         
     },
     {
-        points: '<ul class="dot-list text-sm pb-2 mt-2"><li>Depression</li><li>Anxiety Disorders</li><li>Obsessive Compulsive Disorder (OCD)</li><li>Addiction problems (for craving management)</li><li>Auditory hallucinations</li><li>Autism</li><li>Bipolar affective disorder</li><li>Chronic Schizophrenia</li><li>Attention Deficit Hyperactivity Disorder</li><li>Eating disorders</li><li>Chronic Tinnitus</li><li>Parkinson’s disease</li></ul>',
+        points: '<ul class="ml-10 dot-list text-sm pb-2 mt-2"><li>Depression</li><li>Anxiety Disorders</li><li>Obsessive Compulsive Disorder (OCD)</li><li>Addiction problems (for craving management)</li><li>Auditory hallucinations</li><li>Autism</li><li>Bipolar affective disorder</li><li>Chronic Schizophrenia</li><li>Attention Deficit Hyperactivity Disorder</li><li>Eating disorders</li><li>Chronic Tinnitus</li><li>Parkinson’s disease</li></ul>',
     },
       {
       title: 'Our Approach',
