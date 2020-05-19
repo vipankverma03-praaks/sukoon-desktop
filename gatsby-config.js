@@ -32,8 +32,8 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
           // Your WordPress source.
-          baseUrl: `ec2-18-221-15-188.us-east-2.compute.amazonaws.com`,
-          protocol: `http`,
+          baseUrl: `blog.sukoonhealth.com`,
+          protocol: `https`,
           // Only fetches posts, tags and categories from the baseUrl.
           includedRoutes: ['**/posts', '**/tags', '**/categories'],
           // Not using ACF so putting it off.
