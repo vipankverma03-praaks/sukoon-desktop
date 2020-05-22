@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-
+import axios from "axios";
 // Slick CSS files
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -466,7 +466,30 @@ const OutPatientServiceHeading = styled.div`
     `;
 
 const OutPatientServices = (props) => {
-
+  const headers = {
+    'Content-Type': 'application/json',
+    'request_handler_key': 'instaapi_efc3259e2de',
+  };
+  const options = {
+    headers: {'Content-Type': 'application/json','request_handler_key': 'instaapi_efc3259e2de'}
+  };
+  const call = {
+    method: 'get',
+    url: 'https://api.instahealthsolutions.com/demo/Customer/doctorscheduler.do',
+    headers: {'Content-Type': 'application/json','request_handler_key' : 'instaapi_efc3259e2de' },
+    params : {'_method': 'getDoctorAvailabilitySlots',
+    'resource_id': 'DOC0140',
+    'appointment_date' : '2020-05-25',
+    'center_id' : '1',
+    'booked_slot' : ''}
+  }
+  let res = axios(call)
+  console.log(res);
+  
+  const url = 'https://api.instahealthsolutions.com/demo/Customer/doctorscheduler.do?_method=getDoctorAvailabilitySlots&resource_id=DOC0140&appointment_date=2020-05-25&center_id=&booked_slot=';
+  axios.get(url, options).then(function (response) {
+    console.log(response.return_message);
+  })
   return (
     <section id="out-patient-services" className="relative py-12 mb-4">
       <OutPatientServiceHeading className="w-fit pt-12 absolute">
