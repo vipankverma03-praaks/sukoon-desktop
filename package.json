@@ -12,6 +12,7 @@
     "disqus-react": "^1.0.8",
     "gatsby": "2.13.21",
     "gatsby-plugin-google-analytics": "^2.1.23",
+    "gatsby-plugin-google-tagmanager": "^2.3.3",
     "gatsby-plugin-manifest": "^2.2.3",
     "gatsby-plugin-offline": "^2.2.9",
     "gatsby-plugin-postcss": "2.1.2",
@@ -75,5 +76,6 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "proxy": "https://api.instahealthsolutions.com"
 }

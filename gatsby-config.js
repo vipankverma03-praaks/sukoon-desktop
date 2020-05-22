@@ -12,6 +12,13 @@ module.exports = {
         trackingId: "UA-150722051-1",
       },
     },
+    {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+      id: "GTM-PM83DZT",
+      includeInDevelopment: false,
+      },
+    },
     `babel-preset-gatsby`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
@@ -25,7 +32,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#4dc0b5`,
         display: `standalone`,
-        icon: `src/images/sukoon-logo/logo_dark.png`
+        icon: `src/images/sukoon-logo/logo_dark.png`,
       }
     },
     {
