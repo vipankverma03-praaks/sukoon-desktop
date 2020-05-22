@@ -450,14 +450,21 @@
     line-height:160%;
   }
   .post-content p{
-    margin-top: 1.25em;
+    /* margin-top: 1.25em; */
   }
   
   .rich-text-block {
     color: #000;
     line-height: 16px;
   }
-  
+  .post-content a {
+    color: #cd2653;
+    transition: all 0.15s linear;
+    text-decoration: underline;
+  }
+  .post-content a:hover, .post-content a:focus {
+    text-decoration: none;
+}
   
   
   .share-this {
