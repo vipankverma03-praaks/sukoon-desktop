@@ -121,7 +121,7 @@
   color: #090606;
   font-size: 13px;
   line-height: 35px;
-  font-weight: 500;
+  font-weight: 400;
   cursor: pointer;
 }
 
@@ -238,7 +238,7 @@
   color: #000;
   font-size: 20px;
   line-height: 27px;
-  font-weight: 500;
+  font-weight: 400;
   text-align: left;
   letter-spacing: 2px;
 }
@@ -392,7 +392,7 @@
 .recent-post-title {
   font-family: Montserrat, sans-serif;
   color: #0e1b47;
-  font-weight: 500;
+  font-weight: 400;
   cursor: pointer;
 }
 
@@ -422,7 +422,7 @@
   font-family: Montserrat, sans-serif;
   color: #000;
   font-size: 24px;
-  font-weight: 500;
+  font-weight: 400;
   text-transform: uppercase;
 }
 .blog-page-heading::after {

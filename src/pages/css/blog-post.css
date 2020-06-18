@@ -68,13 +68,13 @@
     -webkit-align-items: flex-start;
     -ms-flex-align: start;
     align-items: flex-start;
-    border: 1px none #000;
+    border: 1px none #12443e;
   }
   
   .post-title {
     margin-bottom: 2px;
-    font-family: Montserrat, sans-serif;
-    color: #0e1b47;
+    font-family: Roboto, sans-serif;
+    color: #12443e;
     font-size: 16px;
     line-height: 21px;
     font-weight: 400;
@@ -89,8 +89,8 @@
     overflow: hidden;
     height: 110px;
     margin-top: 10px;
-    font-family: Montserrat, sans-serif;
-    color: #090606;
+    font-family: Roboto, sans-serif;
+    color:#12443e;
     font-size: 14px;
     line-height: 19px;
   }
@@ -107,9 +107,9 @@
     display: flex;
     margin-top: 0px;
     padding: 6px 13px;
-    border: 1px none #000;
-    font-family: Montserrat, sans-serif;
-    color: #090606;
+    border: 1px none #12443e;
+    font-family: Roboto, sans-serif;
+    color: #12443e;
     font-size: 12px;
     text-decoration: none;
     text-transform: uppercase;
@@ -118,10 +118,10 @@
   .post-author {
     width: auto;
     margin-right: 5px;
-    color: #090606;
+    color: #12443e;
     font-size: 13px;
     line-height: 35px;
-    font-weight: 500;
+    font-weight: 400;
     cursor: pointer;
   }
   
@@ -132,8 +132,8 @@
   .thumbnail-post-date {
     margin-bottom: 5px;
     margin-left: 0px;
-    font-family: Montserrat, sans-serif;
-    color: #090606;
+    font-family: Roboto, sans-serif;
+    color: #12443e;
     font-size: 12px;
     line-height: 35px;
     letter-spacing: 0.5px;
@@ -153,7 +153,7 @@
     padding: 0px 0px 3px;
     border-radius: 0px;
     background-color: transparent;
-    font-family: Montserrat, sans-serif;
+    font-family: Roboto, sans-serif;
     color: #000;
     font-size: 14px;
     line-height: 100%;
@@ -229,11 +229,11 @@
   .section-title {
     margin-top: 0px;
     margin-bottom: 0px;
-    font-family: Montserrat, sans-serif;
-    color: #000;
+    font-family: Roboto, sans-serif;
+    color: #12443e;
     font-size: 20px;
     line-height: 27px;
-    font-weight: 500;
+    font-weight: 400;
     text-align: left;
     letter-spacing: 2px;
   }
@@ -256,7 +256,7 @@
     margin-bottom: 6px;
     padding: 10px 6px;
     border-bottom: 1px solid rgba(227, 231, 232, 0.7);
-    font-family: Montserrat, sans-serif;
+    font-family: Roboto, sans-serif;
     color: #000;
     font-size: 14px;
     font-weight: 400;
@@ -382,16 +382,16 @@
   
   .recent-post-date {
     margin-bottom: 15px;
-    font-family: Montserrat, sans-serif;
+    font-family: Roboto, sans-serif;
     color: #000;
     font-size: 14px;
     text-transform: uppercase;
   }
   
   .recent-post-title {
-    font-family: Montserrat, sans-serif;
+    font-family: Roboto, sans-serif;
     color: #0e1b47;
-    font-weight: 500;
+    font-weight: 400;
     cursor: pointer;
   }
   
@@ -418,10 +418,10 @@
     margin-right: auto;
     margin-left: auto;
     padding-bottom: 0px;
-    font-family: Montserrat, sans-serif;
+    font-family: Roboto, sans-serif;
     color: #000;
     font-size: 24px;
-    font-weight: 500;
+    font-weight: 400;
     text-transform: uppercase;
   }
   
@@ -433,23 +433,24 @@
   
   .single-post-title {
     margin-top: 15px;
-    font-family: Montserrat, sans-serif;
+    font-family: Roboto, sans-serif;
     color: #0e1b47;
     font-size: 24px;
     line-height: 28px;
-    font-weight: 500;
+    font-weight: 400;
   }
   
   .post-content {
     padding-top: 1%;
     padding-bottom: 5%;
     border-bottom: 1px solid rgba(227, 231, 232, 0.7);
-    font-family: Montserrat, sans-serif;
+    font-family: Roboto, sans-serif;
     color: #090606;
     font-size: 15px;
     line-height:160%;
   }
   .post-content p{
+    font-weight:300;
     /* margin-top: 1.25em; */
   }
   
@@ -458,7 +459,8 @@
     line-height: 16px;
   }
   .post-content a {
-    color: #cd2653;
+    color: #12443e;
+    font-weight:600;
     transition: all 0.15s linear;
     text-decoration: underline;
   }
@@ -470,7 +472,7 @@
   .share-this {
     display: block;
     width: auto;
-    font-family: Montserrat, sans-serif;
+    font-family: Roboto, sans-serif;
     color: #090606;
     font-size: 16px;
     line-height: 20px;

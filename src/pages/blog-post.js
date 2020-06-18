@@ -5,6 +5,7 @@ import './css/blog-post.css'
 // import './css/normalize.css'
 // import './css/webflow.css'
 import {DiscussionEmbed} from "disqus-react"
+// import { FacebookProvider, Comments } from 'react-facebook';
 
 // Components
 import Banner from "../components/Banner/desktop";
@@ -63,14 +64,16 @@ export default class About extends React.Component {
       return (
         <Layout overlay={this.state.overlay} setOverlay={this.updateState}>
           <SEO
-            title="About"
+            title={title}
             keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
           />
           {this.state.view === 'mobile' ?
             <div className="post-section single-post-page" style={{"margin-top":"25px"}}>
                   <div className="blog-block">
                   <img  src={post.jetpack_featured_media_url} className="featured-image-post" alt=""/>
-                  <div className="category-tag single-post">{category}</div>
+                  <div className="category-tag single-post">
+                    <a href={'blog/category/'+category}>{category} </a>                   
+                  </div>
                   <h1 className="single-post-title">{post.slug}</h1>
                   <div className="thumbnail-post-date">{post.date}</div>
                     <div className="post-content" dangerouslySetInnerHTML={{ __html: post.content }}>
@@ -99,7 +102,9 @@ export default class About extends React.Component {
                     <div className="post-section single-post-page">
                       <div className="blog-block">
                       <img  src={post.jetpack_featured_media_url} className="featured-image-post" alt=""/>
-                      <div className="category-tag single-post">{category}</div>
+                      <div className="category-tag single-post">
+                        <a href={'blog/category/'+category}>{category} </a>                   
+                      </div>
                       <h1 className="single-post-title">{post.title}</h1>
                       <div className="thumbnail-post-date">{post.date}</div>
                         <div className="post-content" dangerouslySetInnerHTML={{ __html: post.content }}>
@@ -109,6 +114,9 @@ export default class About extends React.Component {
                         <div className="comments-section">
                             <div className="discus-plugin">
                                 <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+                                {/* <FacebookProvider appId="2739776969574912">
+                                  <Comments href="http://www.facebook.com" />
+                                </FacebookProvider> */}
                             </div>
                         </div>    
                            {/* {props.Data.allWordpressPost.edges.map(({ node }) => (                           

@@ -73,7 +73,7 @@
 
 .post-title {
   margin-bottom: 2px;
-  font-family: Montserrat, sans-serif;
+  font-family: Roboto, sans-serif;
   color: #0e1b47;
   font-size: 16px;
   line-height: 21px;
@@ -89,7 +89,7 @@
   overflow: hidden;
   height: 110px;
   margin-top: 10px;
-  font-family: Montserrat, sans-serif;
+  font-family: Roboto, sans-serif;
   color: #090606;
   font-size: 14px;
   line-height: 19px;
@@ -109,7 +109,7 @@
   margin-top: 0px;
   padding: 6px 13px;
   border: 1px none #000;
-  font-family: Montserrat, sans-serif;
+  font-family: Roboto, sans-serif;
   color: #090606;
   font-size: 12px;
   text-decoration: none;
@@ -122,7 +122,7 @@
   color: #090606;
   font-size: 13px;
   line-height: 35px;
-  font-weight: 500;
+  font-weight: 400;
   cursor: pointer;
 }
 
@@ -133,7 +133,7 @@
 .thumbnail-post-date {
   margin-bottom: 5px;
   margin-left: 0px;
-  font-family: Montserrat, sans-serif;
+  font-family: Roboto, sans-serif;
   color: #090606;
   font-size: 12px;
   line-height: 35px;
@@ -154,7 +154,7 @@
   padding: 0px 0px 3px;
   border-radius: 0px;
   background-color: transparent;
-  font-family: Montserrat, sans-serif;
+  font-family: Roboto, sans-serif;
   color: #000;
   font-size: 14px;
   line-height: 100%;
@@ -168,7 +168,7 @@
     content: "";
     left: 1px;
     bottom: 2px;
-    background-color: rgb(255, 210, 209);
+    background-color: rgb(197,215,201);
     width: 50px;
     height: 8px;
     z-index: -1;
@@ -236,11 +236,11 @@
 .section-title {
   margin-top: 0px;
   margin-bottom: 0px;
-  font-family: Montserrat, sans-serif;
+  font-family: Roboto, sans-serif;
   color: #000;
   font-size: 20px;
   line-height: 27px;
-  font-weight: 500;
+  font-weight: 400;
   text-align: left;
   letter-spacing: 2px;
 }
@@ -263,12 +263,16 @@
   margin-bottom: 6px;
   padding: 10px 6px;
   border-bottom: 1px solid rgba(227, 231, 232, 0.7);
-  font-family: Montserrat, sans-serif;
+  font-family: Roboto, sans-serif;
   color: #000;
   font-size: 14px;
   font-weight: 400;
   text-decoration: none;
   cursor: pointer;
+}
+.tag:hover{
+  color:#12443e;
+  font-weight: 700;
 }
 
 .tabs-block {
@@ -385,16 +389,16 @@
 
 .recent-post-date {
   margin-bottom: 15px;
-  font-family: Montserrat, sans-serif;
+  font-family: Roboto, sans-serif;
   color: #000;
   font-size: 13px;
   text-transform: uppercase;
 }
 
 .recent-post-title {
-  font-family: Montserrat, sans-serif;
+  font-family: Roboto, sans-serif;
   color: #0e1b47;
-  font-weight: 500;
+  font-weight: 400;
   cursor: pointer;
 }
 
@@ -421,10 +425,10 @@
   margin-right: auto;
   margin-left: auto;
   padding-bottom: 0px;
-  font-family: Montserrat, sans-serif;
+  font-family: Roboto, sans-serif;
   color: #000;
   font-size: 24px;
-  font-weight: 500;
+  font-weight: 400;
   text-transform: uppercase;
 }
 .blog-page-heading::after {
@@ -432,7 +436,7 @@
     content: "";
     left: 1px;
     bottom: 2px;
-    background-color: rgb(255, 210, 209);
+    background-color: rgb(197,215,201);
     width: 120px;
     height: 13px;
     z-index: -1;

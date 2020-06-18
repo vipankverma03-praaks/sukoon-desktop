@@ -134,7 +134,7 @@ function Preview (props) {
   return(
     <section className="pt-6 pb-16">
       <div className="ExperienceServices w-full">
-        <PreviewNav className="bg-white relative py-4  mr-12 w-10/12 shadow-lg">
+        <PreviewNav className="bg-white relative py-8  mr-12 w-11/12 shadow-lg">
           <ul className="text-xl font-gilroyMedium flex justify-around px-4 text-sukoon">
             <li className="">
               <NavItem name="consultingChambers"  className={`${view === ViewContent.consultingChambers ? 'selected' : ''}`} type="text" onClick={changeView}>

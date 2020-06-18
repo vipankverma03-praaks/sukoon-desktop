@@ -9,7 +9,7 @@ export default () => (
     <StaticQuery
     query={graphql`
     query {
-        allWordpressPost(sort: {order: DESC, fields: date}, filter: {date: {gt: ""}}) {
+      allWordpressPost(sort: {order: DESC, fields: date}, filter: {date: {gt: ""}}, limit: 5, skip: 4) {
             edges {
               node {
                 title
@@ -29,7 +29,7 @@ export default () => (
       render={data => (  
         <div className="sidebar-content-container recent-posts">
             <div className="section-heading">
-                <h2 className="section-title">Recent Posts</h2>
+                <h2 className="section-title">Basics</h2>
                 <div className="med-divider"></div>
             </div>
             <div className="tabs-block recent-posts">
@@ -37,7 +37,7 @@ export default () => (
                     <div className="recent-post-wrap">
                     <div className="recent-post-content-block">
                         <div className="recent-post-date">{node.date}</div>
-                        <div className="recent-post-title"><Link to={node.slug}>{node.title}</Link></div>
+                        <div className="recent-post-title"><Link to={'blog/'+node.slug}>{node.title}</Link></div>
                     </div>
                     <img src={node.jetpack_featured_media_url} className="recent-post-thumbnail"/>
                     </div>           
