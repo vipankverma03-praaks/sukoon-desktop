@@ -29,21 +29,23 @@ const useStyles = makeStyles({
 
 export default function MaterialUIPickers(props) {
   // The first commit of Material-UI
-  const [selectedDate, setSelectedDate] = React.useState(new Date());
-
+  const [selectedDate, setSelectedDate] = React.useState('');
   const classes = useStyles();
-
+  
   function handleDateChange(date) {
-    setSelectedDate(date);
+    setSelectedDate(date);    
+    props.getData(date);
   }
-
+  
   return (
+    
     <MuiPickersUtilsProvider utils={DateFnsUtils}>
       <Grid container className={classes.grid} justify="space-around">
         <KeyboardDatePicker
           margin="normal"
           id="mui-pickers-date"
-          label="Pick your Date"
+          label=""
+          minDate={new Date()}
           value={selectedDate}
           onChange={handleDateChange}
           KeyboardButtonProps={{

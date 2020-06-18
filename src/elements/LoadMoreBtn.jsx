@@ -11,15 +11,14 @@ padding-left:10px;
 padding-right:10px;
 line-height: 2rem;
 border-radius: 3px;
-border: 1px solid rgb(171, 171, 171);;
-color: rgb(171, 171, 171);;
+border: 1px solid rgb(197,215,201);
+color: #12443e;
 text-align: center;
 font-size: 15px;
-font-family: Montserrat, sans-serif;
-font-weight: 500;
+font-family: Roboto, sans-serif;
+font-weight: 400;
 &:hover{
-    color: rgb(248, 119, 124); 
-    border-color: rgb(248, 119, 124); 
+    border-color:#12443e
 }
 `;
 

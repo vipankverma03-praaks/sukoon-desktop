@@ -281,6 +281,9 @@ button.Circle_btn {
     border: 1px solid #969696;
     margin-right: 10px;
 }
+.text-sukoon{
+    color:#12443e !important;
+}
 button.Circle_btn.right {
     transform: rotate(180deg);
 }

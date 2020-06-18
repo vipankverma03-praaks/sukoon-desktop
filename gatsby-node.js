@@ -39,7 +39,7 @@ exports.createPages = ({ graphql, actions }) => {
             totalPosts=totalPosts+1
           createPage({
             // Decide URL structure
-            path: node.slug,
+            path: 'blog/'+node.slug,
             // path to template
             component: path.resolve(`./src/pages/blog-post.js`),
             context: {
@@ -52,14 +52,14 @@ exports.createPages = ({ graphql, actions }) => {
         result.data.cats.edges.forEach(({ node }) => {            
           createPage({
             // Decide URL structure
-            path: node.path,
+            path: 'blog/category/'+node.name,
             // path to template
             component: path.resolve(`./src/pages/categories.js`),
             context: {
               // This is the $slug variable
               // passed to categories.js
               name: node.name,
-              path:node.path
+              nodePath:node.path
             },
           })
         })

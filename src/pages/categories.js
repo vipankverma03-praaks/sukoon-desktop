@@ -64,7 +64,7 @@ export default class About extends React.Component {
       return (
         <Layout overlay={this.state.overlay} setOverlay={this.updateState}>
           <SEO
-            title="About"
+            title="Blog"
             keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
           />
           {this.state.view === 'mobile' ?
@@ -110,7 +110,7 @@ export default class About extends React.Component {
                     <div className="post-section">
                       <div className="blog-block">
                           {totalPosts.slice(0, index).map(({ node }) => (                          
-                              <PostGridBlock PostTitle={node.title} Description={node.excerpt} PostDate={node.date} Category={Object.values(node.categories)[0].name} Image={node.jetpack_featured_media_url} Path={node.slug} CategoryPath={Object.values(node.categories)[0].path}></PostGridBlock>                           
+                              <PostGridBlock PostTitle={node.title} Description={node.excerpt} PostDate={node.date} Category={Object.values(node.categories)[0].name} Image={node.jetpack_featured_media_url} Path={node.slug} CategoryPath={'blog/category/'+Object.values(node.categories)[0].name}></PostGridBlock>                           
                                  
                           ))}
                           {this.state.postsToShow < this.props.data.allWordpressPost.edges.length &&

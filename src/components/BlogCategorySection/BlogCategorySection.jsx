@@ -24,7 +24,7 @@ export default () => (
     <StaticQuery
       query={graphql`
       query {
-            allWordpressCategory {
+            allWordpressCategory(filter: {wordpress_parent: {eq: 0}}) {
                 edges {
                     node {
                         name
@@ -44,7 +44,7 @@ export default () => (
                 </div>
                 <div className="tabs-block">
                     {data.allWordpressCategory.edges.map(({ node }) => (
-                        <Link to={node.path}>
+                        <Link to={'blog/category/'+node.name}>
                             <div className="tag">{node.name}</div>                 
                         </Link>                    
                     ))}  

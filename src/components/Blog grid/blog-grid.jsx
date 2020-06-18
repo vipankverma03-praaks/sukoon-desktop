@@ -19,7 +19,7 @@ const ParagraphSection = (props) =>{
 const PostDetails = (props) =>{
     return(
       <div className="post-details">
-        <div className="post-author"><Link to={props.Path}>Read More</Link></div>
+        <div className="post-author"><Link to={'Blog/'+props.Path}>Read More</Link></div>
         <div className="html-embed w-embed"><img src="https://img.icons8.com/android/24/000000/circled-right.png"/></div>
       </div>
     )
@@ -27,8 +27,8 @@ const PostDetails = (props) =>{
 const ThumbnailText = (props) =>{
     return (
       <div className="thumbnail-text">
-        <div className="category-tag"><Link to={props.CategoryPath}>{props.Category} </Link></div>
-        <div className="post-title"><Link to={props.Path}> {props.PostTitle} </Link></div>
+        <div className="category-tag"><Link to={'blog/category/'+props.Category}>{props.Category} </Link></div>
+        <div className="post-title"><Link to={'blog/'+props.Path}> {props.PostTitle} </Link></div>
         <div className="thumbnail-post-date">{props.PostDate}</div>
         <div className="preview-text" dangerouslySetInnerHTML={{ __html: props.Description.substring(0,150)+"...." }} />
       </div>

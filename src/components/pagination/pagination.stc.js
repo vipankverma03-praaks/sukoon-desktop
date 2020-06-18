@@ -34,7 +34,7 @@ export const PaginationLink = styled(Anchor)`
     color: rgb(171, 171, 171);;
     text-align: center;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 400;
     &:hover{
         color: rgb(248, 119, 124); 
         border-color: rgb(248, 119, 124); 

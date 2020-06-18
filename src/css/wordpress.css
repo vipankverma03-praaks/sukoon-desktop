@@ -1,5 +1,5 @@
 .has-drop-cap:not(:focus)::first-letter {
-	color: #cd2653;
+	color: #12443e;
 	font-size: 5.1em;
 	font-weight: 800;
 	margin: 0.05em 0.1em 0 0;
@@ -150,7 +150,7 @@ blockquote::after {
 	content: "";
 }
 blockquote {
-	border-color: #cd2653;
+	border-color: #12443e;
 	border-style: solid;
 
 	/*rtl:ignore*/
@@ -211,7 +211,7 @@ blockquote p:last-child {
 }
 .wp-block-cover, .wp-block-cover-image {
     position: relative;
-    background-color: #000;
+    background-color: #12443e;
     background-size: cover;
     background-position: 50%;
     min-height: 430px;

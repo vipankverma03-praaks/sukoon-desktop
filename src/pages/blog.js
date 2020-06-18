@@ -24,11 +24,11 @@ import LoadMoreBtn from "../elements/LoadMoreBtn";
 export default class About extends React.Component {
   constructor(props) {
     super(props);
-    let postsToShow = 1
+    let postsToShow = 6
     this.state = {
       overlay: false,
       view: 'desktop',
-      showingMore: postsToShow > 1,
+      showingMore: postsToShow > 6,
       postsToShow,
     }
   }
@@ -66,7 +66,7 @@ export default class About extends React.Component {
       return (
         <Layout overlay={this.state.overlay} setOverlay={this.updateState}>
           <SEO
-            title="About"
+            title="Blog"
             keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
           />
           {this.state.view === 'mobile' ?
@@ -88,7 +88,7 @@ export default class About extends React.Component {
                               {this.state.postsToShow < this.props.data.allWordpressPost.edges.length &&
                                 <div onClick={() => {
                                   this.setState({
-                                    postsToShow: this.state.postsToShow + 2,
+                                    postsToShow: this.state.postsToShow + 6,
                                   })
                                 }}>
                                   <LoadMoreBtn></LoadMoreBtn>
@@ -106,7 +106,7 @@ export default class About extends React.Component {
             
           
             <div>             
-                <Banner para width={`52vw`} marginLeft={`-30vw`} captionLight={`Blog`} captionBold={`Posts`}  inner texture HeaderImg={BannerBg}/>
+                <Banner para width={`52vw`} marginLeft={`-30vw`} captionLight={`Mental Health`} captionBold={`Explained`}  inner texture HeaderImg={BannerBg}/>
                     <h2 className="blog-page-heading">Most Recent Posts</h2>
 
                     <div className="post-section">
@@ -118,7 +118,7 @@ export default class About extends React.Component {
                             {this.state.postsToShow < this.props.data.allWordpressPost.edges.length &&
                                 <div onClick={() => {
                                   this.setState({
-                                    postsToShow: this.state.postsToShow + 2,
+                                    postsToShow: this.state.postsToShow + 6,
                                   })
                                 }}>
                                   <LoadMoreBtn></LoadMoreBtn>

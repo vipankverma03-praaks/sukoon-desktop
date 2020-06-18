@@ -490,6 +490,7 @@ const OutPatientServices = (props) => {
   axios.get(url, options).then(function (response) {
     console.log(response.return_message);
   })
+  
   return (
     <section id="out-patient-services" className="relative py-12 mb-4">
       <OutPatientServiceHeading className="w-fit pt-12 absolute">
