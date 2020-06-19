@@ -5,7 +5,7 @@ import './css/blog-post.css'
 // import './css/normalize.css'
 // import './css/webflow.css'
 import {DiscussionEmbed} from "disqus-react"
-// import { FacebookProvider, Comments } from 'react-facebook';
+import { FacebookProvider, Comments } from 'react-facebook';
 
 // Components
 import Banner from "../components/Banner/desktop";
@@ -114,9 +114,9 @@ export default class About extends React.Component {
                         <div className="comments-section">
                             <div className="discus-plugin">
                                 <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
-                                {/* <FacebookProvider appId="2739776969574912">
+                                <FacebookProvider appId="2739776969574912">
                                   <Comments href="http://www.facebook.com" />
-                                </FacebookProvider> */}
+                                </FacebookProvider>
                             </div>
                         </div>    
                            {/* {props.Data.allWordpressPost.edges.map(({ node }) => (                           
