@@ -3,7 +3,13 @@ import styled from "styled-components";
 import TherapyView from "../images/exp/bg_2.jpg";
 import Para from "../elements/Para";
 
-
+import consultingChambersImg from "../../images/experience/consulting_chambers.jpg";
+import pharmacyImg from "../../images/experience/pharmacy.jpg";
+import rTMSImg from "../../images/exp/bg_2.jpg";
+import videoConsultImg from "../../images/experience/video_consult.jpeg";
+import cafeImg from "../../images/experience/cafetaria.jpg";
+import waitingImg from "../../images/experience/waiting_area.jpg";
+import artTherapyImg from "../../images/experience/art_therapy.png";
 const PreviewNav = styled.div`
     background: white;
     margin: -30px 3rem 0 auto;
@@ -33,7 +39,7 @@ const PreviewCard = styled.div`
 
 const ViewContent = {
   consultingChambers: {
-    image: TherapyView,
+    image: consultingChambersImg,
     Card: {
       about: 'opd',
       heading: 'consulting Chambers',

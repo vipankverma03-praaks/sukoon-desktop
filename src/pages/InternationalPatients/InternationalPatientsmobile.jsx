@@ -9,7 +9,8 @@ import MeetExperts from "../../components/MeetExperts/mobile";
 import BookBtn from "../../elements/BookNowBtn/mobile";
 
 // Images
-import HeaderBg from "../../images/mobile_header.jpg";
+import HeaderBg from "../../images/international_banner_img.jpg";
+
 import VirtualFormBg from "../../images/internationalpatient/form_bg.png";
 import PartnerHotel from "../../images/internationalpatient/partner_hotel.png";
 import SukoonBullets from "../../images/internationalpatient/sukoon_bullet.svg";
@@ -154,9 +155,7 @@ function InternationalPatient(props) {
           <PartnerHotelContent className="mx-5 p-5 shadow-lg">
             <Title subHeading={`Patient Care`} titleLight={`Partners Hotels`} wrapperClass={`text-sm`} titleBold={`Guest Houses`} display="inline-block"/>
             <Para width="100%">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Assumenda cum dicta facilis, iure mollitia numquam quae quis
-              tenetur voluptate voluptatibus! Distinctio minima non pariatur.
+              We have carefully hand picked trusted guest houses and hotel partners for your loved ones while you recover. Choose from numerous safe, convenient, and affordable options depending on your needs. 
             </Para>
           </PartnerHotelContent>
         </div>

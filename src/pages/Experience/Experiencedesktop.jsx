@@ -4,22 +4,25 @@ import { Link } from "gatsby";
 
 // Images
 import RoomView from "../../images/exp/room.jpg";
-import RoomOne from "../../images/exp/room_2.jpg";
-import RoomTwo from "../../images/exp/room_3.jpg";
-import RoomThree from "../../images/exp/room_4.jpg";
-import RoomFour from "../../images/exp/room_5.jpg";
-import PartyOne from "../../images/exp/party.jpg";
-import PartyTwo from "../../images/exp/party_2.jpg";
-import HighLightTherapy from "../../images/exp/bg.jpg";
-import HighLightTherapyTwo from "../../images/exp/bg_3.jpg";
-import RoomDining from "../../images/exp/room_dining.jpg";
+import RoomOne from "../../images/experience/room1.jpg";
+import RoomTwo from "../../images/experience/room2.jpg";
+import RoomThree from "../../images/experience/room3.jpg";
+import RoomFour from "../../images/experience/room4.jpg";
+import RoomFive from "../../images/experience/room5.jpg";
+
+import PartyTwo from "../../images/experience/resident_lounges1.jpg";
+import PartyOne from "../../images/experience/resident_lounges_2.jpg";
+
+import HighLightTherapy from "../../images/experience/ONFEP.jpg";
+import HighLightTherapyTwo from "../../images/experience/DDC.jpg";
+import RoomDining from "../../images/experience/inroom_dining_blur.jpg";
 import RoomSpa from "../../images/exp/room_spa.jpg";
-import RoomDiningMain from "../../images/exp/room_dining_main.jpg";
+import RoomDiningMain from "../../images/experience/inroom_dining.jpg";
 import RoomSpaMain from "../../images/exp/room_spa_main.jpg";
-import Breakfast from "../../images/exp/meal_1.jpg";
-import Lunch from "../../images/exp/meal_2.jpg";
-import Dinner from "../../images/exp/meal_3.jpg";
-import HeaderImg from "../../images/Desktop-Header/HomeBanner.jpg";
+import Lunch from "../../images/experience/delicousmeals1.jpeg";
+import Breakfast from "../../images/experience/deliciousmeals2.jpg";
+import Dinner from "../../images/experience/deliciousmeals3.jpeg";
+import HeaderImg from "../../images/experience/experience_banner.jpg";
 import SukoonBullets from "../../images/internationalpatient/sukoon_icon.png";
 
 // Components
@@ -100,6 +103,7 @@ const RoomFeatures = styled.ul`
   li{
     width: 25%;
     margin-bottom: 20px;
+
   }
   
   .last-el{
@@ -112,21 +116,21 @@ const Rooms = {
     type: 'deluxe rooms',
     description: 'lorem ipsum is just a dummy text lorem ipsum is just a dummy text lorem ipsum is just a dummy text',
     amenities:['Queen Bed','Smart TV (45”)','Private Balcony','AC & Heater','Mini Fridge','Spacious Closet','Lounge Seating','Writing Desk','Geyser','Wifi'],
-    previewImages: [RoomOne, RoomTwo, RoomThree, RoomFour],
+    previewImages: [RoomOne, RoomTwo, RoomThree, RoomFour,RoomFive],
     preview: RoomOne,
   },
   suiteRoom: {
     type: 'suite rooms',
     description: 'lorem ipsum is just a dummy text lorem ipsum is just a dummy text lorem ipsum is just a dummy text',
     amenities:['Queen Bed','Food Pantry','Smart TV (55”)','Private Balcony','Outdoor Seating','AC & Heater','Mini Fridge','Spacious Closet','Lounge Seating','Writing Desk' ,'Wifi','Geyser'],
-    previewImages: [RoomOne, RoomTwo, RoomThree, RoomFour],
+    previewImages: [RoomOne, RoomTwo, RoomThree, RoomFour,RoomFive],
     preview: RoomOne,
   },
   icuRoom: {
     type: 'Intensive Care Unit',
     description: 'lorem ipsum is just a dummy text lorem ipsum is just a dummy text lorem ipsum is just a dummy text',
     amenities:['24*7 Doctor','Dedicated Nurse','Soft-touch Walls','Gourmet Meals','Queen Bed','Private Balcony','AC & Heater','Spacious Closet','Luggage Rack','Furniture Padded'],
-    previewImages: [RoomOne, RoomTwo, RoomThree, RoomFour],
+    previewImages: [RoomOne, RoomTwo, RoomThree, RoomFour,RoomFive],
     preview: RoomOne,
   },
 };
@@ -146,7 +150,7 @@ const RoomIntro = ({room,...props}) =>{
       {/*<Para width="100%">*/}
       {/*  {room.description}*/}
       {/*</Para>*/}
-      <RoomFeatures className="font-gilroyMedium flex flex-wrap mb-8">
+      <RoomFeatures className="font-gilroyMedium flex text-sm flex-wrap mb-8">
         {amenities}
       </RoomFeatures>
       <div className="roomImg">

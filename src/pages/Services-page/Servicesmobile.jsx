@@ -9,7 +9,8 @@ import Banner from "../../components/Banner/mobile";
 import Tab from "../../elements/Tabs/TabsMobile";
 
 // Images
-import BannerBg from "../../images/servicesBg.png";
+import BannerBg from "../../images/pacientes-mejora_2019-08-02/service_banner.jpg";
+
 
 const ServiceType = styled.div`
 `;

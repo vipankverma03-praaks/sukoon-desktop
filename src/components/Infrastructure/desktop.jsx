@@ -7,11 +7,11 @@ import Para from "../../elements/Para/desktop";
 
 // Images
 import InfraBgImg from "../../images/InfraSectionbg.jpg";
-import GourmetMeals from "../../images/Infra/gourmet_meals.png";
-import ConsultingChambers from "../../images/exp/bg.jpg";
-import InHousePharmacy from "../../images/exp/bg_2.jpg";
-
-
+import GourmetMeals from "../../images/desktop/gourmet_meals.jpg";
+import ConsultingChambers from "../../images/desktop/consulting_chambers.jpg";
+import InHousePharmacy from "../../images/desktop/pharmacy.jpg";
+import ModernResidence from "../../images/desktop/modern_residences.jpg";
+import ActivityArea from "../../images/desktop/activity_areas.jpg";
 // Cards data
 const CardContent = {
   Card1: {
@@ -29,7 +29,7 @@ const CardContent = {
     para: 'You can always find your prescribed medications at Sukoon. No more running around the town to find them.',
   },
   Card3: {
-    bgImg:InfraBgImg,
+    bgImg:ModernResidence,
     caption: 'Modern Residences',
     titleLight: 'Modern',
     titleBold: 'Residences',
@@ -43,7 +43,7 @@ const CardContent = {
     para: 'Enjoy healthy meals that will delight your taste buds. You can also take advantage of our in-room dining menu.',
   },
   Card5: {
-    bgImg:InfraBgImg,
+    bgImg:ActivityArea,
     caption: 'Activity Areas',
     titleLight: 'Activity',
     titleBold: 'Areas',

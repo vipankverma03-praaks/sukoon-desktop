@@ -7,6 +7,13 @@ import Para from "../../elements/Para/desktop";
 // Images
 import TherapyView from "../../images/exp/bg_2.jpg";
 import Title from "../../elements/Heading/desktop";
+import consultingChambersImg from "../../images/experience/consulting_chambers.jpg";
+import pharmacyImg from "../../images/experience/pharmacy.jpg";
+import rTMSImg from "../../images/exp/bg_2.jpg";
+import videoConsultImg from "../../images/experience/video_consult.jpeg";
+import cafeImg from "../../images/experience/cafetaria.jpg";
+import waitingImg from "../../images/experience/waiting_area.jpg";
+import artTherapyImg from "../../images/experience/art_therapy.png";
 
 const PreviewNav = styled.div`
     background: white;
@@ -48,7 +55,7 @@ const PreviewCard = styled.div`
 
 const ViewContent = {
   consultingChambers: {
-    image: TherapyView,
+    image: consultingChambersImg,
     Card: {
       about: 'opd',
       heading: 'consulting Chambers',
@@ -56,7 +63,7 @@ const ViewContent = {
     }
   },
   pharmacy: {
-    image: TherapyView,
+    image: pharmacyImg,
     Card: {
       about: 'opd',
       heading: 'Pharmacy',
@@ -64,7 +71,7 @@ const ViewContent = {
     }
   },
   rtms: {
-    image: TherapyView,
+    image: rTMSImg,
     Card: {
       about: 'opd',
       heading: 'rtms',
@@ -72,7 +79,7 @@ const ViewContent = {
     }
   },
   virtualTherapy: {
-    image: TherapyView,
+    image: videoConsultImg,
     Card: {
       about: 'opd',
       heading: 'Video Consultation',
@@ -80,7 +87,7 @@ const ViewContent = {
     }
   },
   cafeteria: {
-    image: TherapyView,
+    image: cafeImg,
     Card: {
       about: 'opd',
       heading: 'cafeteria',
@@ -88,7 +95,7 @@ const ViewContent = {
     }
   },
   lounge: {
-    image: TherapyView,
+    image: waitingImg,
     Card: {
       about: 'opd',
       heading: 'Waiting Area',
@@ -96,7 +103,7 @@ const ViewContent = {
     }
   },
   artTherapy: {
-    image: TherapyView,
+    image: artTherapyImg,
     Card: {
       about: 'opd',
       heading: 'art therapy',

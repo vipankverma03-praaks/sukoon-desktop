@@ -11,7 +11,7 @@ import Input from "../../elements/Input/desktop";
 import Title from "../../elements/Heading/mobile";
 
 // Images
-import HeaderImg from "../../images/Desktop-Header/HomeBanner.jpg";
+import HeaderImg from "../../images/international_banner_img.jpg";
 import SukoonBgLogo from "../../images/sukoon-bg-logo/logo@2x.jpg";
 import VirtualFormBg from "../../images/internationalpatient/form_bg.png";
 import PartnerHotel from "../../images/internationalpatient/partner_hotel.png";
@@ -182,9 +182,7 @@ function InternationalPatient(props) {
         <PartnerHotelContent className="shadow-lg w-1/3">
           <Title subHeading={`Patient Care`} titleLight={`Partners Hotels`} wrapperClass={`text-sm mb-4`} titleBold={`Guest Houses`}/>
           <Para width="100%">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda
-            cum dicta facilis, iure mollitia numquam quae quis tenetur voluptate
-            voluptatibus! Distinctio minima non pariatur.
+          We have carefully hand picked trusted guest houses and hotel partners for your loved ones while you recover. Choose from numerous safe, convenient, and affordable options depending on your needs. 
           </Para>
         </PartnerHotelContent>
       </PartnerHotelInfo>

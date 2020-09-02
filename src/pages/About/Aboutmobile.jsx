@@ -7,7 +7,8 @@ import Para from "../../elements/Para/mobile"
 import Banner from "../../components/Banner/mobile";
 
 // Images
-import BannerBg from "../../images/servicesBg.png";
+import BannerBg from "../../images/international_banner_img.jpg";
+
 
 const ServiceType = styled.div`
 `;

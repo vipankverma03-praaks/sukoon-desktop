@@ -6,10 +6,14 @@ import Title from "../../elements/Heading/mobile";
 import Para from "../../elements/Para/mobile";
 
 // Images
-import ConsultingChambers from "../../images/exp/bg.jpg";
-import InHousePharmacy from "../../images/exp/bg_2.jpg";
-
+import InfraBgImg from "../../images/InfraSectionbg.jpg";
+import GourmetMeals from "../../images/desktop/gourmet_meals.jpg";
+import ConsultingChambers from "../../images/desktop/consulting_chambers.jpg";
+import InHousePharmacy from "../../images/desktop/pharmacy.jpg";
+import ModernResidence from "../../images/desktop/modern_residences.jpg";
+import ActivityArea from "../../images/desktop/activity_areas.jpg";
 // Cards data
+
 const CardContent = {
   Card1: {
     bgImg:ConsultingChambers,
@@ -26,28 +30,28 @@ const CardContent = {
     para: 'You can always find your prescribed medications at Sukoon. No more running around the town to find them.',
   },
   Card3: {
-    bgImg:ConsultingChambers,
+    bgImg:ModernResidence,
     caption: 'Modern Residences',
     titleLight: 'Modern',
     titleBold: 'Residences',
-    para: 'Stay in premium, well-lit, comfortably furnished rooms designed to provide a calming, warm, and safe environment. ',
+    para: 'Stay in premium, well-lit, comfortably furnished rooms designed to provide a calming, warm, and safe environment.',
   },
   Card4: {
-    bgImg:InHousePharmacy,
+    bgImg:GourmetMeals,
     caption: 'Gourmet Meals',
     titleLight: 'Gourmet',
     titleBold: 'Meals',
     para: 'Enjoy healthy meals that will delight your taste buds. You can also take advantage of our in-room dining menu.',
   },
   Card5: {
-    bgImg:ConsultingChambers,
+    bgImg:ActivityArea,
     caption: 'Activity Areas',
     titleLight: 'Activity',
     titleBold: 'Areas',
-    para: 'Never be limited by space! Undergo alternative therapy programs in our fitness area, art studio, and independent floor lounges',
+    para: 'Never be limited by space! Undergo alternative therapy programs in our fitness area, art studio, and independent floor lounges.',
   },
   Card6: {
-    bgImg:InHousePharmacy,
+    bgImg:InfraBgImg,
     caption: 'World-Class Amenities',
     titleLight: 'World-Class',
     titleBold: 'Amenities',

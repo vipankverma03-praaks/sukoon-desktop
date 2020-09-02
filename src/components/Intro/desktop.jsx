@@ -7,12 +7,13 @@ import Title from "../../elements/Heading/desktop";
 
 const Caption = (props) => {
   return (
-    <div className="pt-8 pr-4">
+    <div className="pt-8 pr-4" style={{"width":"33.33%"}}>
       <h2 className="text-sukoon text-3xl pb-4 font-gilroyBold block">
         {props.subHeading || ''}
       </h2>
       <Para width="100%" className="py-2 pr-16">
-        {props.para || ''}
+      <div dangerouslySetInnerHTML={{__html: props.para}} ></div>
+        {/* {props.para || ''} */}
       </Para>
     </div>
 

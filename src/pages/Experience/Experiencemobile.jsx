@@ -14,19 +14,30 @@ import Tab from "../../elements/Tabs/TabsMobile";
 // Images
 import RoomImg from "../../images/exp/room.jpg";
 import FloorAct from "../../images/exp/party.jpg";
-import Therapy from "../../images/exp/bg_2.jpg";
+import consultingChambersImg from "../../images/experience/consulting_chambers.jpg";
+import pharmacyImg from "../../images/experience/pharmacy.jpg";
+import rTMSImg from "../../images/exp/bg_2.jpg";
+import videoConsultImg from "../../images/experience/video_consult.jpeg";
+import cafeImg from "../../images/experience/cafetaria.jpg";
+import waitingImg from "../../images/experience/waiting_area.jpg";
+import artTherapyImg from "../../images/experience/art_therapy.png";
 import Highlight from "../../images/exp/bg.jpg";
 import FacOneBg from "../../images/exp/room_dining.jpg";
 import FacOneBgSec from "../../images/exp/room_spa.jpg";
 import HighlightSecond from "../../images/exp/bg_3.jpg";
-import BannerBg from "../../images/servicesBg.png";
-import RoomOne from "../../images/exp/room_2.jpg";
-import RoomTwo from "../../images/exp/room_3.jpg";
-import RoomThree from "../../images/exp/room_4.jpg";
-import RoomFour from "../../images/exp/room_5.jpg";
-import Breakfast from "../../images/exp/meal_1.jpg";
-import Lunch from "../../images/exp/meal_2.jpg";
-import Dinner from "../../images/exp/meal_3.jpg";
+
+import BannerBg from "../../images/experience/experience_banner.jpg";
+import RoomOne from "../../images/experience/room1.jpg";
+import RoomTwo from "../../images/experience/room2.jpg";
+import RoomThree from "../../images/experience/room3.jpg";
+import RoomFour from "../../images/experience/room4.jpg";
+import RoomFive from "../../images/experience/room5.jpg";
+
+import PartyTwo from "../../images/experience/resident_lounges1.jpg";
+import PartyOne from "../../images/experience/resident_lounges_2.jpg";
+import Lunch from "../../images/experience/delicousmeals1.jpeg";
+import Breakfast from "../../images/experience/deliciousmeals2.jpg";
+import Dinner from "../../images/experience/deliciousmeals3.jpeg";
 
 const HighlightSection = styled.div(props=>{
 
@@ -74,24 +85,24 @@ const OverCard = styled.div`
 
 const Rooms = {
   deluxeRoom: {
-    type: 'Deluxe room',
-    description: 'lorem ipsum is just a dummy text',
+    type: 'deluxe rooms',
+    description: 'lorem ipsum is just a dummy text lorem ipsum is just a dummy text lorem ipsum is just a dummy text',
     amenities:['Queen Bed','Smart TV (45”)','Private Balcony','AC & Heater','Mini Fridge','Spacious Closet','Lounge Seating','Writing Desk','Geyser','Wifi'],
-    previewImages: [RoomOne, RoomTwo, RoomThree, RoomFour],
+    previewImages: [RoomOne, RoomTwo, RoomThree, RoomFour,RoomFive],
     preview: RoomOne,
   },
   suiteRoom: {
-    type: 'suite room',
-    description: 'lorem ipsum is just a dummy text',
+    type: 'suite rooms',
+    description: 'lorem ipsum is just a dummy text lorem ipsum is just a dummy text lorem ipsum is just a dummy text',
     amenities:['Queen Bed','Food Pantry','Smart TV (55”)','Private Balcony','Outdoor Seating','AC & Heater','Mini Fridge','Spacious Closet','Lounge Seating','Writing Desk' ,'Wifi','Geyser'],
-    previewImages: [RoomOne, RoomTwo, RoomThree, RoomFour],
+    previewImages: [RoomOne, RoomTwo, RoomThree, RoomFour,RoomFive],
     preview: RoomOne,
   },
   icuRoom: {
     type: 'Intensive Care Unit',
-    description: 'lorem ipsum is just a dummy text',
-    amenities:['24*7 Doctor','Dedicated Nurse','Soft-touch Walls','Padded Furniture','Personalised Meals','Queen Bed','Private Balcony','AC & Heater','Spacious Closet','Luggage Rack'],
-    previewImages: [RoomOne, RoomTwo, RoomThree, RoomFour],
+    description: 'lorem ipsum is just a dummy text lorem ipsum is just a dummy text lorem ipsum is just a dummy text',
+    amenities:['24*7 Doctor','Dedicated Nurse','Soft-touch Walls','Gourmet Meals','Queen Bed','Private Balcony','AC & Heater','Spacious Closet','Luggage Rack','Furniture Padded'],
+    previewImages: [RoomOne, RoomTwo, RoomThree, RoomFour,RoomFive],
     preview: RoomOne,
   },
 };
@@ -177,7 +188,7 @@ const TabList = styled.ul`
 // Fitness Therapy Content
 const ConsultingChambers = {
   tab: "Consulting Chambers",
-  image: Therapy,
+  image: consultingChambersImg,
   description: `
   Speak with your doctor in a private and comfortable environment. With sophisticated details such as wooden floors and lounge seating, our chambers are designed to have a calming effect. 
   `
@@ -185,7 +196,7 @@ const ConsultingChambers = {
 
 const Pharmacy = {
   tab: "Pharmacy",
-  image: Therapy,
+  image: pharmacyImg,
   description: `
 You can always find your prescribed medications at Sukoon. No more running around the town to find them. We truly are a one-stop destination for all your psychiatric and mental health needs. 
 
@@ -194,7 +205,7 @@ You can always find your prescribed medications at Sukoon. No more running aroun
 
 const RTMS = {
   tab: "RTMS",
-  image: Therapy,
+  image: rTMSImg,
   description: `
 Receive repetitive Transcranial Magnetic Stimulation therapy in a plush room. We only work with the latest equipment to offer you an India-first world class treatment for all behavioural and emotional disorders
 
@@ -203,7 +214,7 @@ Receive repetitive Transcranial Magnetic Stimulation therapy in a plush room. We
 
 const VideoConsultation = {
   tab: "Video Consultation",
-  image: Therapy,
+  image: videoConsultImg,
   description: `
 Connect with your psychiatric, psychologist, therapist, counsellor, or doctor no matter where you are. Continue your treatment plan and receive expert psychiatric care via chat, phone calls, or video calls
 
@@ -212,7 +223,7 @@ Connect with your psychiatric, psychologist, therapist, counsellor, or doctor no
 
 const Cafeteria = {
   tab: "Cafeteria",
-  image: Therapy,
+  image: cafeImg,
   description: `
 Take advantage of any of our two fully-equipped cafeterias that serve Indian and Continental cuisines.  Indulge in some delicious snacks, or grab a cup of coffee while you wait. 
 
@@ -221,7 +232,7 @@ Take advantage of any of our two fully-equipped cafeterias that serve Indian and
 
 const WaitingArea = {
   tab: "Waiting Area",
-  image: Therapy,
+  image: waitingImg,
   description: `
 At Sukoon, your healing begins the moment you walk in. Get inspired by some great art, or relax in the lush-green environment. Our waiting areas will make you feel right at home!
 
@@ -230,7 +241,7 @@ At Sukoon, your healing begins the moment you walk in. Get inspired by some grea
 
 const ArtTherapy = {
   tab: "Art Therapy",
-  image: Therapy,
+  image: artTherapyImg,
   description: `
 Our doctors actively advocate alternate forms of therapy for a sustain healing process. We have licensed art therapists that have developed an effective clinical program. 
 

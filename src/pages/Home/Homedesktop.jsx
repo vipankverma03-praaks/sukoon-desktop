@@ -18,7 +18,7 @@ import PopUp from "../../elements/PopUp/popUpDesktop"
 
 // Images
 import BlogImg  from "../../images/iStock-968194620_2019-07-17/blogImg.jpg";
-import HeaderImg from "../../images/Desktop-Header/HomeBanner.jpg";
+import HeaderImg from "../../images/desktop/homepage_banner.jpg";
 import SukoonBgLogo from "../../images/sukoon-bg-logo/logo@2x.jpg";
 import SukoonLogo from "../../images/sukoon-bg-logo/logo.jpg";
 import General from "../../components/common/general";
@@ -512,7 +512,7 @@ const IntroContent = {
     },
     {
       heading: "Get personalised care 24*7",
-      para: "Powered by Fortis Healthcare, Sukoon is India’s first super-specialty psychiatric center. We have leading psychiatric, deaddiction, rehabilitation, and mental health treatments for both inpatients and outpatients. We are a one-of-a-kind healthcare provider for all your psychiatric and mental well-being needs."
+      para: 'Clinically governed by <a href="https://www.fortishealthcare.com/india/clinical-speciality/mental-health-and-behavioural-sciences-268" target="_blank" style="color: #636363;font-weight: 700;">Dept. of Mental Health and Behavioral Sciences, Fortis Hospitals Ltd</a>, Sukoon offers psychiatric, deaddiction, rehabilitation, and mental health treatments for both inpatients and outpatients. We are a one-of-a-kind healthcare provider for all your psychiatric and mental well-being needs.'
     },
     { heading: "Recover in premium facilities", para: "Enhance your recovery in a calming, positive, and comfortable world-class environment. With residential care tailor-made to your mental and psychological health, recovery and better days are just around the corner." }
   ]

@@ -13,7 +13,7 @@ import Para from "../../elements/Para/mobile";
 
 // Images
 import BlogImg  from "../../images/iStock-968194620_2019-07-17/blogImg.jpg";
-import HeaderBg from "../../images/mobile_home_banner_with_logo.jpg";
+import HeaderBg from "../../images/desktop/homepage_banner.jpg";
 
 const Caption = (props) => {
   return (
@@ -22,7 +22,7 @@ const Caption = (props) => {
         {props.subHeading || ''}
       </h3>
       <Para wrapperClass={`mb-0`}>
-        {props.para || ''}
+      <div dangerouslySetInnerHTML={{__html: props.para}} ></div>
       </Para>
     </div>
 
@@ -36,7 +36,7 @@ const WhySukoon = (props) => {
       <Caption subHeading="Consult the best doctors"
                para="Get expert advice from an experienced team of psychiatrists, clinical psychologists, counsellors, and art-based therapists that ensure holistic care. We take doctor-patient confidentiality with utmost seriousness."/>
       <Caption subHeading="Get personalised care 24*7"
-               para="Powered by Fortis Healthcare, Sukoon is India’s first super-specialty psychiatric center. We have leading deaddiction, psychiatric, mental health, and rehabilitation treatments for inpatients and outpatients."/>
+               para="Clinically governed by <a href='https://www.fortishealthcare.com/india/clinical-speciality/mental-health-and-behavioural-sciences-268' target='_blank' style='color: #636363;font-weight: 700;'>Dept. of Mental Health and Behavioral Sciences, Fortis Hospitals Ltd</a>, Sukoon offers psychiatric, deaddiction, rehabilitation, and mental health treatments for both inpatients and outpatients. We are a one-of-a-kind healthcare provider for all your psychiatric and mental well-being needs." />
       <Caption WrapperClass={`my-0`} subHeading="Recover in premium facilities"
                para="Enhance your recovery in a calming, positive, and comfortable world-class environment. With residential care tailor-made to your mental and psychological health, recovery and better days are just around the corner."/>
     </section>

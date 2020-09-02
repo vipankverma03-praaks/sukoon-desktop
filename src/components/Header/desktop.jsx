@@ -7,7 +7,8 @@ import styled from "styled-components";
 import SVG from "../../elements/SVG/desktop";
 
 // Images
-import SukoonLogo from "../../images/sukoon-logo/sukoon_logo.svg"
+import SukoonLogo from "../../images/sukoon-logo/Logo_CB_NoText.png"
+
 // import Tooltip from "../../elements/Tooltip/tooltip";
 
 const NavItem = styled.nav`
@@ -31,7 +32,8 @@ const LogoLink = styled(Link)((props)=>{
             width: 90px;
             transform: rotate(90deg);
             top: 118px;
-            right: -14px; 
+            right: auto; 
+            left:-20px;
               
           }
           
@@ -43,7 +45,8 @@ const LogoLink = styled(Link)((props)=>{
             letter-spacing: 5px;
             top: 280px;
             width: 250px;
-            right: -92px;
+            right: auto; 
+            left:-100px;
             color: #8E8E8D;
             
           }
@@ -63,10 +66,14 @@ function Header(props) {
     <NavItem className="">
       <div className="flex flex-wrap items-center justify-between mx-auto p-4 ">
         <div className="w-full sukoon-top-logo flex justify-between">
-          <LogoLink to="/" logoHighlighter={props.logoHighlighter} className="flex w-16 relative  items-center no-underline ">
-            <img src={SukoonLogo} className="" alt="Sukoon Logo"/>
-            <h2 className="text-sukoon text-v3xl font-accanthisRegular ml-4">Sukoon</h2>
-          </LogoLink>
+          <div>
+            <LogoLink to="/" logoHighlighter={props.logoHighlighter} className="flex relative  items-center no-underline ">
+              <img src={SukoonLogo} className="" style={{"width":"16em"}} alt="Sukoon Logo"/>            
+              {/* <h2 className="text-sukoon text-v3xl font-accanthisRegular ml-4">Sukoon</h2>
+              <img src={logoPart} className="" alt="Sukoon Logo"/> */}
+            </LogoLink>
+          </div>
+          
           <div className="text-sukoon my-auto flex justify-end px-1">
             <div className="flex ">
               <div className="fit">

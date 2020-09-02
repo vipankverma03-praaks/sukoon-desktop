@@ -12,7 +12,7 @@ import SVG from "../../elements/SVG/desktop";
 import SukoonBullets from "../../images/internationalpatient/sukoon_icon.png";
 
 // Images
-import HeaderImg from "../../images/pacientes-mejora_2019-08-02/pacientes-mejora@3x.jpg";
+import HeaderImg from "../../images/pacientes-mejora_2019-08-02/service_banner.jpg";
 
 const Content = {
   Main: 'Acute Psychiatric Care',

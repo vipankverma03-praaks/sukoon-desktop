@@ -7,7 +7,7 @@ import Para from "../../elements/Para/desktop"
 import Banner from "../../components/Banner/desktop";
 
 // Images
-import BannerBg from "../../images/Desktop-Header/pacientes-mejora.png";
+import BannerBg from "../../images/international_banner_img.jpg";
 import PopUp from "../../elements/PopUp/popUpDesktop";
 import General from "../../components/common/general";
 

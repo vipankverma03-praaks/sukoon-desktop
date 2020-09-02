@@ -10,7 +10,7 @@ const Caption = (props) => {
         {props.subHeading || ''}
       </h2>
       <Para width="100%" className="py-2 pr-16">
-        {props.para || ''}
+        <div dangerouslySetInnerHTML={{__html: props.para}} ></div>
       </Para>
     </div>
 
