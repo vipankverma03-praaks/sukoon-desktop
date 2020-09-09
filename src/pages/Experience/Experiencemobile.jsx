@@ -10,7 +10,10 @@ import Details from "../../elements/Details/mobile";
 import Carousel from "../../components/Carousel/mobile";
 import Tab from "../../elements/Tabs/TabsMobile";
 
-
+import RoomDining from "../../images/experience/inroom_dining_blur.jpg";
+import RoomSpa from "../../images/exp/room_spa.jpg";
+import RoomDiningMain from "../../images/experience/inroom_dining.jpg";
+import RoomSpaMain from "../../images/exp/room_spa_main.jpg";
 // Images
 import RoomImg from "../../images/exp/room.jpg";
 import FloorAct from "../../images/exp/party.jpg";
@@ -25,6 +28,8 @@ import Highlight from "../../images/exp/bg.jpg";
 import FacOneBg from "../../images/exp/room_dining.jpg";
 import FacOneBgSec from "../../images/exp/room_spa.jpg";
 import HighlightSecond from "../../images/exp/bg_3.jpg";
+import HighLightTherapy from "../../images/experience/ONFEP.jpg";
+import HighLightTherapyTwo from "../../images/experience/DDC.jpg";
 
 import BannerBg from "../../images/experience/experience_banner.jpg";
 import RoomOne from "../../images/experience/room1.jpg";
@@ -110,7 +115,7 @@ const Rooms = {
 const RoomDetailFn = (Room) =>{
   return(
     <div className="">
-      <img className="mt-3 mb-4" src={RoomImg} alt=""/>
+      <img className="mt-3 mb-4" src={RoomOne} alt=""/>
       <Para>{Room.description}</Para>
         <ul className="flex flex-no-wrap w-full justify-between">
           <div className={`left-amenities`}>
@@ -316,7 +321,7 @@ function Experience(props) {
         </div>
       </section>
       <section className="facilities Exp px-5 my-1">
-        <Details  open  content={RoomDetailFn} arguments={Rooms.deluxeRoom}border summaryClass="border-gray-700" summaryTextClass="text-xl" summary="Deluxe Room"/>
+        <Details  open  content={RoomDetailFn} arguments={Rooms.deluxeRoom} border summaryClass="border-gray-700" summaryTextClass="text-xl" summary="Deluxe Room"/>
         <Details  content={RoomDetailFn} arguments={Rooms.suiteRoom} border summaryClass="border-gray-700" summaryTextClass="text-xl" summary="Suite Room"/>
         <Details content={RoomDetailFn} arguments={Rooms.icuRoom} border summaryClass="border-gray-700" summaryTextClass="text-xl" summary="Intensive  Care Unit"/>
       </section>
@@ -324,7 +329,7 @@ function Experience(props) {
         <span className="facilities  mb-2 block">Spacious Activity Areas</span>
         <Details open padding="0" summaryClass="border-gray-700"  summary="Resident Lounges">
           <div className="">
-            <img className="mt-3 mb-4" src={FloorAct} alt=""/>
+            <img className="mt-3 mb-4" src={PartyTwo} alt=""/>
             <Para>At Sukoon, every floor has a modern resident lounge that comprises of a
               dining area, movie lounge, and board game tables. These versatile spaces are also used for art-based
               therapy, wellness classes, and group therapy.
@@ -347,7 +352,7 @@ function Experience(props) {
         </Details>
         <Details padding="0"  summaryClass="border-gray-700"  summary="Terrace Garden">
           <div className="">
-            <img className="mt-3 mb-4" src={FloorAct} alt=""/>
+            <img className="mt-3 mb-4" src={PartyOne} alt=""/>
             <Para>Being surrounded by nature reduces stress, and increases positive emotions. At Sukoon, you can unwind and rejuvenate  in our terrace garden that is lush-green, spacious, and secure.
             </Para>
           </div>
@@ -356,14 +361,14 @@ function Experience(props) {
           Enquiry
         </BookBtn>
       </div>
-      <HighlightSection BgImg={Highlight} className="highlightSection px-5 py-5 mt-5">
+      <HighlightSection BgImg={HighLightTherapy} className="highlightSection px-5 py-5 mt-5">
         <div className="highlight">
           <Title headingClass={``} HeadingTag={`h3`} titleLight={`One nurse for`} titleBold={`For every patient`}/>
           <Para>Our promise of holistic care is delivered via an unmatched nurse to patient ratio. At Sukoon, you and your loves ones are given individual attention for a speedy recovery</Para>
         </div>
       </HighlightSection>
       <FitnessTherapy />
-      <HighlightSection BgImg={HighlightSecond} className="highlightSection second px-5 py-5 mt-5 mb-24">
+      <HighlightSection BgImg={HighLightTherapyTwo} className="highlightSection second px-5 py-5 mt-5 mb-24">
         <div className="highlight">
           <Title headingClass={``} HeadingTag={`h3`} subHeading={`Patient Care`} titleLight={`Daily Doctor Consults`}/>
           <Para>Depending on your needs our psychiatrists, psychologists, counsellors, and therapists will ensure that you receive personalised medical care via daily individual attention.</Para>
@@ -371,7 +376,7 @@ function Experience(props) {
       </HighlightSection>
       <div className="">
         <div className="relative">
-          <Face Img={FacOneBg} className="w-full" />
+          <Face Img={RoomDiningMain} className="w-full" />
           <OverCard>
             <h2 className="text-sukoon">In Room Dining</h2>
             <Para>Indulge in some freshly prepared food whenever your heart desires. Our room service menu consists of both Indian and Continental dishes to satisfy all your cravings.</Para>
