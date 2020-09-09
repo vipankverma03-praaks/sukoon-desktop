@@ -101,21 +101,21 @@ const Rooms = {
     description: 'lorem ipsum is just a dummy text lorem ipsum is just a dummy text lorem ipsum is just a dummy text',
     amenities:['Queen Bed','Food Pantry','Smart TV (55”)','Private Balcony','Outdoor Seating','AC & Heater','Mini Fridge','Spacious Closet','Lounge Seating','Writing Desk' ,'Wifi','Geyser'],
     previewImages: [RoomOne, RoomTwo, RoomThree, RoomFour,RoomFive],
-    preview: RoomOne,
+    preview: RoomTwo,
   },
   icuRoom: {
     type: 'Intensive Care Unit',
     description: 'lorem ipsum is just a dummy text lorem ipsum is just a dummy text lorem ipsum is just a dummy text',
     amenities:['24*7 Doctor','Dedicated Nurse','Soft-touch Walls','Gourmet Meals','Queen Bed','Private Balcony','AC & Heater','Spacious Closet','Luggage Rack','Furniture Padded'],
     previewImages: [RoomOne, RoomTwo, RoomThree, RoomFour,RoomFive],
-    preview: RoomOne,
+    preview: RoomThree,
   },
 };
 
 const RoomDetailFn = (Room) =>{
   return(
     <div className="">
-      <img className="mt-3 mb-4" src={RoomOne} alt=""/>
+      <img className="mt-3 mb-4" src={Room.preview} alt=""/>
       <Para>{Room.description}</Para>
         <ul className="flex flex-no-wrap w-full justify-between">
           <div className={`left-amenities`}>
