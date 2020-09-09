@@ -72,7 +72,7 @@ export default class About extends React.Component {
                   <div className="blog-block">
                   <img  src={post.jetpack_featured_media_url} className="featured-image-post" alt=""/>
                   <div className="category-tag single-post">
-                    <a href={'blog/category/'+category}>{category} </a>                   
+                  <a href={'/blog/category/'+category}>{category} </a>                  
                   </div>
                   <h1 className="single-post-title">{post.slug}</h1>
                   <div className="thumbnail-post-date">{post.date}</div>
@@ -103,7 +103,7 @@ export default class About extends React.Component {
                       <div className="blog-block">
                       <img  src={post.jetpack_featured_media_url} className="featured-image-post" alt=""/>
                       <div className="category-tag single-post">
-                        <a href={'blog/category/'+category}>{category} </a>                   
+                      <a href={'/blog/category/'+category}>{category} </a>                
                       </div>
                       <h1 className="single-post-title">{post.title}</h1>
                       <div className="thumbnail-post-date">{post.date}</div>
@@ -156,6 +156,8 @@ export const query = graphql`
                 date(formatString: "MMMM DD, YYYY")
                 categories {          
                   name
+                  slug
+                  path
                 }
             }
         }

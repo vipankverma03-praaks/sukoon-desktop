@@ -19,7 +19,7 @@ const ParagraphSection = (props) =>{
 const PostDetails = (props) =>{
     return(
       <div className="post-details">
-        <div className="post-author"><Link to={'Blog/'+props.Path}>Read More</Link></div>
+        <div className="post-author"><Link to={'blog/'+props.Category+'/'+props.Path}>Read More</Link></div>
         <div className="html-embed w-embed"><img src="https://img.icons8.com/android/24/000000/circled-right.png"/></div>
       </div>
     )
@@ -28,7 +28,7 @@ const ThumbnailText = (props) =>{
     return (
       <div className="thumbnail-text">
         <div className="category-tag"><Link to={'blog/category/'+props.Category}>{props.Category} </Link></div>
-        <div className="post-title"><Link to={'blog/'+props.Path}> {props.PostTitle} </Link></div>
+        <div className="post-title"><Link to={'blog/'+props.Category+'/'+props.Path}> {props.PostTitle} </Link></div>
         <div className="thumbnail-post-date">{props.PostDate}</div>
         <div className="preview-text" dangerouslySetInnerHTML={{ __html: props.Description.substring(0,150)+"...." }} />
       </div>
@@ -41,13 +41,13 @@ const ThumbnailBlock = (props) =>{
 };
 
 const PostGridBlock = (props) => {
-
+  console.log(props.CategorySlug)
   return (
     <div className="blog-post-wrapper">
     <ThumbnailBlock Image={props.Image}></ThumbnailBlock>
     <div className="content-wrap">
-      <ThumbnailText Category={props.Category} CategoryPath={props.CategoryPath} PostTitle={props.PostTitle} PostDate={props.PostDate} Description={props.Description} Path={props.Path}></ThumbnailText>      
-      <PostDetails Path={props.Path}></PostDetails>
+      <ThumbnailText Category={props.Category} CategoryPath={props.CategoryPath} CategorySlug={props.CategorySlug} PostTitle={props.PostTitle} PostDate={props.PostDate} Description={props.Description} Path={props.Path}></ThumbnailText>      
+      <PostDetails Category={props.Category} Path={props.Path} CategoryPath={props.CategoryPath} CategorySlug={props.CategorySlug}></PostDetails>
     </div>
   </div>   
   )

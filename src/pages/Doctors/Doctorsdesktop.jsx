@@ -271,6 +271,10 @@ function DoctorsPage(props) {
           <div id="doctors-team-table" className="flex flex-col py-12">
             <TeamRow setDoctor={setDoctor} changeView={setView}/>
           </div>
+          <Title singleLine titleLight="Meet The" titleBold="Experts" subHeading='our team'/>
+          <div id="doctors-team-table" className="flex flex-col py-12">
+            <TeamRow setDoctor={setDoctor} changeView={setView}/>
+          </div>
         </Team> }
       {/*{*/}
       {/*  doctorInfo ?*/}

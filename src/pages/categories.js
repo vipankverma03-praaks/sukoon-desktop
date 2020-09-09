@@ -75,7 +75,7 @@ export default class About extends React.Component {
                     <div className="post-section">
                       <div className="blog-block">
                           {totalPosts.slice(0, index).map(({ node }) => (                         
-                              <PostGridBlock PostTitle={node.title} Description={node.excerpt} PostDate={node.date} Category={Object.values(node.categories)[0].name} Image={node.jetpack_featured_media_url} Path={node.slug} CategoryPath={Object.values(node.categories)[0].path}></PostGridBlock>                           
+                              <PostGridBlock PostTitle={node.title} Description={node.excerpt} PostDate={node.date} Category={Object.values(node.categories)[0].name} Image={node.jetpack_featured_media_url} Path={node.slug} CategoryPath={Object.values(node.categories)[0].path} CategorySlug={Object.values(node.categories)[0].slug}></PostGridBlock>                           
                                  
                           ))}
                           {this.state.postsToShow < this.props.data.allWordpressPost.edges.length &&
@@ -110,7 +110,7 @@ export default class About extends React.Component {
                     <div className="post-section">
                       <div className="blog-block">
                           {totalPosts.slice(0, index).map(({ node }) => (                          
-                              <PostGridBlock PostTitle={node.title} Description={node.excerpt} PostDate={node.date} Category={Object.values(node.categories)[0].name} Image={node.jetpack_featured_media_url} Path={node.slug} CategoryPath={'blog/category/'+Object.values(node.categories)[0].name}></PostGridBlock>                           
+                              <PostGridBlock PostTitle={node.title} Description={node.excerpt} PostDate={node.date} Category={Object.values(node.categories)[0].name} CategorySlug={Object.values(node.categories)[0].slug} Image={node.jetpack_featured_media_url} Path={node.slug} CategoryPath={'blog/category/'+Object.values(node.categories)[0].name}></PostGridBlock>                           
                                  
                           ))}
                           {this.state.postsToShow < this.props.data.allWordpressPost.edges.length &&
@@ -161,6 +161,8 @@ export const query = graphql`
                 date(formatString: "MMMM DD, YYYY")
                 categories {          
                   name
+                  path
+                  slug
                 }
             }
         }

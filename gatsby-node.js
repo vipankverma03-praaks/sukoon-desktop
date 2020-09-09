@@ -15,6 +15,11 @@ exports.createPages = ({ graphql, actions }) => {
           {
               path
               slug
+              categories {
+                slug
+                path
+                name
+              }
           }
         }
       } 
@@ -39,7 +44,7 @@ exports.createPages = ({ graphql, actions }) => {
             totalPosts=totalPosts+1
           createPage({
             // Decide URL structure
-            path: 'blog/'+node.slug,
+            path: 'blog/'+node.categories[0].name+'/'+node.slug,
             // path to template
             component: path.resolve(`./src/pages/blog-post.js`),
             context: {

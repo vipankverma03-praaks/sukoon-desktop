@@ -20,6 +20,7 @@ import Pagination from '../components/pagination'
 import BannerBg from "../images/Desktop-Header/pacientes-mejora.png";
 import BannerBgMobile from "../images/servicesBg.png";
 import LoadMoreBtn from "../elements/LoadMoreBtn";
+import HeaderBg from "../images/mobile_header.jpg";
 
 export default class About extends React.Component {
   constructor(props) {
@@ -49,6 +50,7 @@ export default class About extends React.Component {
 
   render() {
     const { data } = this.props;
+    console.log(data)
 
     const totalPosts = this.props.data.allWordpressPost.edges
     const index = this.state.postsToShow;    
@@ -70,13 +72,13 @@ export default class About extends React.Component {
             keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
           />
           {this.state.view === 'mobile' ?
-            <div>             
-                {/* <Banner captionLight={`Blog`} captionBold={`Posts`} overlay={this.state.overlay} backgroundImg={BannerBgMobile}/> */}
+            <div>       
+                <Banner captionLight={`Our`} captionBold={`Blog`} overlay={this.state.overlay} backgroundImg={HeaderBg}/>
                     <h2 className="blog-page-heading" style={{"margin-top":"20px"}}>Most Recent Posts</h2>
                     <div className="post-section">
                       <div className="blog-block">
-                          {totalPosts.slice(0, index).map(({ node }) => (                       
-                              <PostGridBlock PostTitle={node.title} Description={node.excerpt} PostDate={node.date} Category={Object.values(node.categories)[0].name} Image={node.jetpack_featured_media_url} Path={node.slug} CategoryPath={Object.values(node.categories)[0].path}></PostGridBlock>        
+                          {totalPosts.slice(0, index).map(({ node }) => (                                              
+                              <PostGridBlock PostTitle={node.title} CategorySlug={Object.values(node.categories)[0].slug} Description={node.excerpt} PostDate={node.date} Category={Object.values(node.categories)[0].name} Image={node.jetpack_featured_media_url} Path={node.slug} CategoryPath={Object.values(node.categories)[0].path}></PostGridBlock>        
                                                
                           ))}
                           
@@ -112,7 +114,15 @@ export default class About extends React.Component {
                     <div className="post-section">
                       <div className="blog-block">
                       {totalPosts.slice(0, index).map(({ node }) => (                            
-                              <PostGridBlock PostTitle={node.title} Description={node.excerpt} PostDate={node.date} Category={Object.values(node.categories)[0].name} Image={node.jetpack_featured_media_url} Path={node.slug} CategoryPath={Object.values(node.categories)[0].path}></PostGridBlock>                           
+                              <PostGridBlock PostTitle={node.title}
+                               Description={node.excerpt} 
+                               PostDate={node.date} 
+                               Category={Object.values(node.categories)[0].name} 
+                               Image={node.jetpack_featured_media_url} 
+                               Path={node.slug} 
+                               CategoryPath={Object.values(node.categories)[0].path}
+                                CategorySlug={Object.values(node.categories)[0].slug}>
+                               </PostGridBlock>                           
                                  
                           ))}
                             {this.state.postsToShow < this.props.data.allWordpressPost.edges.length &&
@@ -159,6 +169,7 @@ export const query = graphql`query{
         categories {          
           name
           path
+          slug
         }
       }
     }

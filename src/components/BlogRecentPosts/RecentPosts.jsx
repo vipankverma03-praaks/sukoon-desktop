@@ -19,6 +19,8 @@ export default () => (
                 date(formatString: "MMMM DD, YYYY")
                 categories {          
                   name
+                  path
+                  slug
                 }
               }
             }
@@ -37,7 +39,7 @@ export default () => (
                     <div className="recent-post-wrap">
                     <div className="recent-post-content-block">
                         <div className="recent-post-date">{node.date}</div>
-                        <div className="recent-post-title"><Link to={'blog/'+node.slug}>{node.title}</Link></div>
+                        <div className="recent-post-title"><Link to={'blog/'+node.categories[0].name+'/'+node.slug}>{node.title}</Link></div>
                     </div>
                     <img src={node.jetpack_featured_media_url} className="recent-post-thumbnail"/>
                     </div>           

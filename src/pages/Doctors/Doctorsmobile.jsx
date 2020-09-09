@@ -111,6 +111,7 @@ function DoctorsPage(props) {
       </section>
       {/* <InPatientServices/> */}
       <MeetExperts/>
+      <MeetExperts/>
     </>
   );
 }
