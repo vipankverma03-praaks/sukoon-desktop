@@ -14,6 +14,8 @@ import Ila from "../../images/doctor/ila.jpeg";
 import Jaiman from "../../images/doctor/jaiman.jpeg";
 import Sharmeen from "../../images/doctor/Sharmeen.jpeg";
 import Akshita from "../../images/doctor/akshita.jpeg";
+import Chandni from "../../images/cs.jpeg";
+import Mantosh from "../../images/mk.jpeg";
 import NursesImg from "../../images/physician_retail_web_2019-07-29/physician_retail_web.jpg";
 
 const MeetExpertsWrapper = styled.section`
@@ -25,6 +27,10 @@ const Doctors = [
   {
     name: 'Dr. Sameer Kalani',
     image: Samir_Kalani,
+  },
+  {
+    name: 'Dr. Mantosh Kumar',
+    image: Mantosh,
   },
   {
     name: 'Ms. Ila Kulshrestha',
@@ -41,6 +47,10 @@ const Doctors = [
   {
     name: 'Sharmeen Kaur Khurana',
     image: Sharmeen,
+  },
+  {
+    name: 'Chandni Sharma',
+    image: Chandni,
   },
 ];
 

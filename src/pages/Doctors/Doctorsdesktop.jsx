@@ -16,6 +16,8 @@ import Ila from "../../images/doctor/ila.jpeg";
 import Jaiman from "../../images/doctor/jaiman.jpeg";
 import Sharmeen from "../../images/doctor/Sharmeen.jpeg";
 import Akshita from "../../images/doctor/akshita.jpeg";
+import Chandni from "../../images/cs.jpeg";
+import Mantosh from "../../images/mk.jpeg";
 
 const Intro = styled.div`
     .director-row{
@@ -79,12 +81,26 @@ const Content = [
         }
       },
       {
+        name: "Dr. Mantosh Kumar",
+        image: Mantosh,
+        designation: {
+          titleLight: "Consultant",
+          titleBold: "Psychiatrist",
+          title: "Sr.  Consultant Psychiatrist"
+        },
+        // qualification: "MD (Psychiatry)",
+        bio: {
+          intro: `Dr. Mantosh Kumar is a Psychiatrist by profession, with over ten years of clinical and research experience. He has worked in Dept. of Psychiatry at <a href="http://ihbas.delhigovt.nic.in/wps/wcm/connect/DOIT_IHBAS1/ihbas/home" target="_blank" style="color: #636363;font-weight: 700;">IHBAS</a> (New Delhi) and as a Consultant in <a href="https://nayatihealthcare.com/about-nayati/vimhans-nayati-super-speciality-hospital-new-delhi" target="_blank" style="color: #636363;font-weight: 700;">VIMHANS</a> (New Delhi), both being pioneer centres in treating patients with mental illness and drug addictions. He has also had an experience in drug trials in psychiatry as a medical monitor supervising the trial of the drug in sixteen centres across India.`,
+          summary: `Currently working with Sukoon Healthcare, he aims to make mental healthcare an accessible experience for both national and international patients.`
+        }
+      },
+      {
         name: "Dr. Shambhavi Jaiman",
         image: Jaiman,
         designation: {
-          titleLight: "Clinical",
+          titleLight: "Consultant",
           titleBold: "Psychologist",
-          title: "Consultant, Clinical Psychologist"
+          title: "Consultant Psychologist"
         },
         qualification: "MD (Psychiatry)",
         bio: {
@@ -125,14 +141,28 @@ const Content = [
         name: "Sharmeen Kaur Khurana",
         image: Sharmeen,
         designation: {
-          titleLight: "Clinical",
-          titleBold: "Psychologist",
-          title: "Consultant, Clinical Psychologist"
+          titleLight: "Consultant",
+          titleBold: "Art Based Therapist",
+          title: "Consultant, Art Based Therapist"
         },
         // qualification: "M. Phil. Clinical Psychology",
         bio: {
           intro: `Sharmeen Kaur Khurana is an Art Based Therapist certified by <a href="https://www.baat.org/" target="_blank" style="color: #636363;font-weight: 700;">British Association of ArtTherapy</a> and CID - UNESCO. She is a registered member of the <a href="https://www.hcpc-uk.org/" target="_blank" style="color: #636363;font-weight: 700;">Health and Care Professions Council (UK)</a> and The Art Therapy Association (India). She uses different modes of art such as visual arts, music, storytelling, creative writing, and movement in her therapeutic practice. Sharmeen has experience working with therapeutic groups in open studio approach in varied settings of art museums, schools and refugee charities.`,
           summary: `She is keen to contribute by creating a safe environment that gives an individual the power to strive and deal with their problems effectively, thus helping them improve their overall well-being.`
+        }
+      },
+      {
+        name: "Chandni Sharma",
+        image: Chandni,
+        designation: {
+          titleLight: "Consultant",
+          titleBold: "Art Based Therapist",
+          title: "Consultant, Art Based Therapist"
+        },
+        // qualification: "M. Phil. Clinical Psychology",
+        bio: {
+          intro: `Chandni Sharma is a certified arts based therapist, a UNESCO - CID certified movement therapist and holds an M.A. in Clinical Psychology. She integrates her practice of the arts like drama, movement, dance, visual art, music, story telling and writing into psychotherapy. She believes in empowering and directing individuals to heal themselves through the integration of the mind and body. Healthy expression and processing are at the core of her inclusive practice of psychotherapy.`,
+          summary: `She has experience in working with trauma, children and adults with psychiatric illnesses & adjustment issues and prisons.`
         }
       },
     ]
@@ -145,10 +175,10 @@ const TeamRow = (props)=>{
   return (Content.map((item,index) =>{
 
       return(
-        <div id={`row-${index}`} className="flex flex-nowrap pb-8">
+        <div id={`row-${index}`} className="pb-8">
           {item.doctors.map(doctor=>{
             return(
-              <div  className="flex flex-col mr-12">
+              <div  className="flex flex-col mr-12 mt-5" style={{"width":"15%","display":"inline-block"}}>
                 <DoctorProfile src={doctor.image} onClick={()=>{props.setDoctor(doctor); document.getElementById("doctor-info").scrollIntoView();}} alt="doctor" className=""/>
                 <div className="text-white bg-sukoon text-center py-4">
                   <h3 className="text-vxl">{doctor.name}</h3>

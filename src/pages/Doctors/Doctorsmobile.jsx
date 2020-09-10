@@ -17,6 +17,8 @@ import Ila from "../../images/doctor/ila.jpeg";
 import Jaiman from "../../images/doctor/jaiman.jpeg";
 import Sharmeen from "../../images/doctor/Sharmeen.jpeg";
 import Akshita from "../../images/doctor/akshita.jpeg";
+import Chandni from "../../images/cs.jpeg";
+import Mantosh from "../../images/mk.jpeg";
 
 
 const Caption = (props) => {
@@ -52,6 +54,10 @@ const Doctors = [
     image: Samir_Kalani,
   },
   {
+    name: 'Dr. Mantosh Kumar',
+    image: Mantosh,
+  },
+  {
     name: 'Ms. Ila Kulshrestha',
     image: Ila,
   },
@@ -67,7 +73,10 @@ const Doctors = [
     name: 'Sharmeen Kaur Khurana',
     image: Sharmeen,
   },
-
+  {
+    name: 'Chandni Sharma',
+    image: Chandni,
+  },
 ];
 
 const CarouselItems = (item) =>{

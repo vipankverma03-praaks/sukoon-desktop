@@ -13,6 +13,7 @@ import Layout from "../components/view/layout";
 import SEO from "../components/seo";
 import Loader from "../components/loader";
 import Banner from "../components/Banner/desktop";
+import BannerMobile from "../components/Banner/mobile";
 import PostGridBlock from "../components/Blog grid/blog-grid"
 import BlogCategorySidebar from "../components/BlogCategorySection/BlogCategorySection";
 import RecentPosts from "../components/BlogRecentPosts/RecentPosts";
@@ -73,7 +74,7 @@ export default class About extends React.Component {
           />
           {this.state.view === 'mobile' ?
             <div>       
-                <Banner captionLight={`Our`} captionBold={`Blog`} overlay={this.state.overlay} backgroundImg={HeaderBg}/>
+                <BannerMobile captionLight={`Our`} captionBold={`Blog`} overlay={this.state.overlay} backgroundImg={HeaderBg}/>
                     <h2 className="blog-page-heading" style={{"margin-top":"20px"}}>Most Recent Posts</h2>
                     <div className="post-section">
                       <div className="blog-block">
