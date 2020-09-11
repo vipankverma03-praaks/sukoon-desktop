@@ -74,7 +74,7 @@ export default class About extends React.Component {
           />
           {this.state.view === 'mobile' ?
             <div>       
-                <BannerMobile captionLight={`Our`} captionBold={`Blog`} overlay={this.state.overlay} backgroundImg={HeaderBg}/>
+                {/* <BannerMobile captionLight={`Our`} captionBold={`Blog`} overlay={this.state.overlay} backgroundImg={HeaderBg}/> */}
                     <h2 className="blog-page-heading" style={{"margin-top":"20px"}}>Most Recent Posts</h2>
                     <div className="post-section">
                       <div className="blog-block">
