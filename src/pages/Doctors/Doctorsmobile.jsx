@@ -10,7 +10,7 @@ import BookBtn from "../../elements/BookNowBtn/mobile";
 import MeetExperts from "../../components/MeetExperts/mobile";
 
 // Images
-import HeaderBg from "../../images/mobile_header.jpg";
+import HeaderBg from "../../images/team-pic.jpg";
 import MedicalDoc from "../../images/doctor/doctor1.jpg";
 import Samir_Kalani from "../../images/doctor/kalani.jpeg";
 import Ila from "../../images/doctor/ila.jpeg";
@@ -19,6 +19,14 @@ import Sharmeen from "../../images/doctor/Sharmeen.jpeg";
 import Akshita from "../../images/doctor/akshita.jpeg";
 import Chandni from "../../images/cs.jpeg";
 import Mantosh from "../../images/mk.jpeg";
+
+import Kamna from "../../images/fortis-team/Kamna.jpg"
+import Divya from "../../images/fortis-team/Divya.jpg"
+import Mimansa from "../../images/fortis-team/Mimansa.jpg"
+import Nishtha from "../../images/fortis-team/Nishtha.jpg"
+import Aditi from "../../images/fortis-team/Aditi.jpg"
+import Tara from "../../images/fortis-team/Tara.jpg"
+import Samir from "../../images/fortis-team/Samir.jpg"
 
 
 const Caption = (props) => {
@@ -48,6 +56,36 @@ const DocCard = styled.div`
     margin-right: 20px;
 `;
 
+const FortisDoctors = [
+  {
+    name: 'Dr. Samir Parikh',
+    image: Samir,
+  },
+  {
+    name: 'Kamna Chhibber',
+    image: Kamna,
+  },
+  {
+    name: 'Divya Jain',
+    image: Divya,
+  },
+  {
+    name: 'Mimansa Singh Tanwar',
+    image: Mimansa,
+  },
+  {
+    name: 'Nishtha Narula',
+    image: Nishtha,
+  },
+  {
+    name: 'Aditi Kaul',
+    image: Aditi,
+  },
+  {
+    name: 'Tara Mehta',
+    image: Tara,
+  },
+];
 const Doctors = [
   {
     name: 'Dr. Sameer Kalani',
@@ -95,8 +133,10 @@ const InPatientServices = (props) => {
 
   return (
     <section id="inpatient-services" className="p-4">
-      <Title singleLine subHeading="Meet" titleLight="Our" titleBold="Doctors" display="block"/>
+      <Title singleLine subHeading="Meet" titleLight="The" titleBold="Experts" display="block"/>
       <Carousel container  cardFn={CarouselItems} content={Doctors}/>
+      <Title singleLine subHeading="Meet" titleLight="The" titleBold="Fortis Team" display="block"/>
+      <Carousel container  cardFn={CarouselItems} content={FortisDoctors}/>
     </section>
   )
 };
@@ -118,9 +158,9 @@ function DoctorsPage(props) {
           <Para>He has been leading the field of Neurosciences with his experience in Repetitive Tran cranial Magnetic Stimulation (rTMS) treatment modality, currently being used in very few centres all over India.</Para>
         </div>
       </section>
-      {/* <InPatientServices/> */}
-      <MeetExperts/>
-      <MeetExperts/>
+      <InPatientServices/>
+      {/* <MeetExperts/>
+      <MeetExperts/> */}
     </>
   );
 }

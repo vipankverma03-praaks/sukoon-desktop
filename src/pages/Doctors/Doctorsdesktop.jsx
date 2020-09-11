@@ -10,7 +10,7 @@ import BookBtn from "../../elements/BookNowBtn/desktop";
 import ArrowButton from "../../elements/ArrowButton/desktop";
 
 // Images
-import HeaderImg from "../../images/pacientes-mejora_2019-08-02/pacientes-mejora@3x.jpg";
+import HeaderImg from "../../images/team-pic.jpg";
 import Doctor from "../../images/doctor/kalani.jpeg";
 import Ila from "../../images/doctor/ila.jpeg";
 import Jaiman from "../../images/doctor/jaiman.jpeg";
@@ -18,6 +18,14 @@ import Sharmeen from "../../images/doctor/Sharmeen.jpeg";
 import Akshita from "../../images/doctor/akshita.jpeg";
 import Chandni from "../../images/cs.jpeg";
 import Mantosh from "../../images/mk.jpeg";
+
+import Kamna from "../../images/fortis-team/Kamna.jpg"
+import Divya from "../../images/fortis-team/Divya.jpg"
+import Mimansa from "../../images/fortis-team/Mimansa.jpg"
+import Nishtha from "../../images/fortis-team/Nishtha.jpg"
+import Aditi from "../../images/fortis-team/Aditi.jpg"
+import Tara from "../../images/fortis-team/Tara.jpg"
+import Samir from "../../images/fortis-team/Samir.jpg"
 
 const Intro = styled.div`
     .director-row{
@@ -62,7 +70,110 @@ const FollowUs = (props) =>{
     </div>
   )
 };
-
+const FortisContent = [
+  {
+    doctors:[
+      {
+        name: "Dr. Samir Parikh",
+        image: Samir,
+        designation: {
+          titleLight: "Director",
+          titleBold: "Mental Health & Behavioural Sciences, Fortis Healthcare",
+          title: "Director - Mental Health & Behavioural Sciences, Fortis Healthcare"
+        },
+        qualification: "MD (Psychiatry)",
+        bio: {
+          intro: `Dr. Samir Parikh is an eminent Psychiatrist and the Director of <a href="https://www.fortishealthcare.com/india/clinical-speciality/mental-health-and-behavioural-sciences-268" target="_blank" style="color: #636363;font-weight: 700;">Dept. of Mental Health and Behavioural Sciences</a>, Fortis Healthcare. He is one of the leading academic experts in the field of mental health and conducts training programmes and courses for doctors, Psychologists and allied specialities, and has initiated several awareness campaigns for the community. He is a very well known speaker, due to his expressive communicative style and in-depth knowledge of mental health and Indian culture with comprehensive experience in the field of clinical and community mental health, he has been a speaker at various national and international forums on mental health issues.`,
+          summary: `Dr. Samir Parikh also has a prominent presence in the media with various columns in newspapers and a presence on television channels and websites. He has played a key role in enhancing the image of mental health in the country and his views are widely appreciated. `
+        }
+      },
+      {
+        name: "Kamna Chhibber",
+        image: Kamna,
+        designation: {
+          titleLight: "Head",
+          titleBold: "Mental Health",
+          title: "Head - Mental Health"
+        },
+        qualification: "M. Phil. Clinical Psychology",
+        bio: {
+          intro: `Kamna Chhibber, M.Phil in Clinical Psychology is a Cognitive Behaviour Therapist with the <a href="https://www.fortishealthcare.com/india/clinical-speciality/mental-health-and-behavioural-sciences-268" target="_blank" style="color: #636363;font-weight: 700;">Dept. of Mental Health and Behavioural Sciences</a>, Fortis Healthcare. She has a particular interest in relationships, trauma, abuse and the impact of personality related variables on mental health. She works extensively with schools, corporate organizations and NGO’s and has a strong focus on generating awareness relating to mental health. Through her writing, blogs and media interactions she is working towards the larger goals of inclusiveness, removal of stigma and busting of misconceptions relating to mental health.`,
+          // summary: `Dr. Samir Parikh also has a prominent presence in the media with various columns in newspapers and a presence on television channels and websites. He has played a key role in enhancing the image of mental health in the country and his views are widely appreciated. `
+        }
+      },
+      {
+        name: "Divya Jain",
+        image: Divya,
+        designation: {
+          titleLight: "Head",
+          titleBold: "Psychological Services",
+          title: "Head - Psychological Services"
+        },
+        qualification: "MA Psychology, Board Certified Sport Psychologist",
+        bio: {
+          intro: `Divya Jain is the Head of Psychological Services for the <a href="https://www.fortishealthcare.com/india/clinical-speciality/mental-health-and-behavioural-sciences-268" target="_blank" style="color: #636363;font-weight: 700;">Dept. of Mental Health and Behavioural Sciences</a>, Fortis National Mental Health Program. She holds a Master’s Degree in Clinical Psychology from the University of Delhi and is a Board-Certified Sport Psychologist from the <a href="http://americanboardofsportpsychology.org/" target="_blank" style="color: #636363;font-weight: 700;">American Board of Sport Psychology.</a> She works within an eclectic framework for the treatment of clinical as well as stress and lifestyle related problems. She also specializes in psychological skills training for performance enhancement and mentoring for elite and young sportspersons and is an Instructor with the American Board of Sport Psychology.`,
+          // summary: `Dr. Samir Parikh also has a prominent presence in the media with various columns in newspapers and a presence on television channels and websites. He has played a key role in enhancing the image of mental health in the country and his views are widely appreciated. `
+        }
+      },
+      {
+        name: "Mimansa Singh Tanwar",
+        image: Mimansa,
+        designation: {
+          titleLight: "Coordinator",
+          titleBold: "Fortis School Mental Health Program",
+          title: "Coordinator, Fortis School Mental Health Program"
+        },
+        qualification: "M. Phil. Clinical Psychology",
+        bio: {
+          intro: `Mimansa Singh Tanwar has an M.Phil degree in Clinical Psychology. She is a Cognitive Behavioural Therapist with a keen interest in adolescent mental health. She takes parent and teacher training workshops on addressing adolescent related issues. She also conducts academic workshops for students of psychology and mental health practitioners. She is the coordinator for the <a href="https://www.fortishealthcare.com/school-mental-health-programme" target="_blank" style="color: #636363;font-weight: 700;">Fortis School Mental Health Program.</a>`,
+          // summary: `Dr. Samir Parikh also has a prominent presence in the media with various columns in newspapers and a presence on television channels and websites. He has played a key role in enhancing the image of mental health in the country and his views are widely appreciated. `
+        }
+      },
+      {
+        name: "Nishtha Narula",
+        image: Nishtha,
+        designation: {
+          titleLight: "Program Manager",
+          titleBold: "Fortis National Mental Health Program",
+          title: "Program Manager - Fortis National Mental Health Program"
+        },
+        qualification: "Lead - Counselling Psychology ",
+        bio: {
+          // intro: `Mimansa Singh Tanwar has an M.Phil degree in Clinical Psychology. She is a Cognitive Behavioural Therapist with a keen interest in adolescent mental health. She takes parent and teacher training workshops on addressing adolescent related issues. She also conducts academic workshops for students of psychology and mental health practitioners. She is the coordinator for the <a href="https://www.fortishealthcare.com/school-mental-health-programme" target="_blank" style="color: #636363;font-weight: 700;">Fortis School Mental Health Program.</a>`,
+          // summary: `Dr. Samir Parikh also has a prominent presence in the media with various columns in newspapers and a presence on television channels and websites. He has played a key role in enhancing the image of mental health in the country and his views are widely appreciated. `
+        }
+      },
+      {
+        name: "Aditi Kaul",
+        image: Aditi,
+        designation: {
+          titleLight: "",
+          titleBold: "",
+          title: ""
+        },
+        // qualification: "",
+        bio: {
+          intro: `Aditi Kaul completed her Post-Graduation in Counselling from the Tata Institute of Social Sciences, and is a UNESCO and CID certified creative arts therapist with a focus in movement based work. Using art, movement, drama, writing and music, she works with both children and adults.`,
+          // summary: `Dr. Samir Parikh also has a prominent presence in the media with various columns in newspapers and a presence on television channels and websites. He has played a key role in enhancing the image of mental health in the country and his views are widely appreciated. `
+        }
+      },
+      {
+        name: "Tara Mehta",
+        image: Tara,
+        designation: {
+          titleLight: "",
+          titleBold: "",
+          title: ""
+        },
+        qualification: "M. Phil. Clinical Psychology",
+        bio: {
+          intro: `Ms. Tara Mehta  has M. Phil in Clinical Psychology and over a decade of experience under her belt.  She works with people to improve their decision making and stress management, giving each individual her undivided attention. Tara Mehta also helps in developing skills to improve both the personal and professional lives of people.`,
+          // summary: `Dr. Samir Parikh also has a prominent presence in the media with various columns in newspapers and a presence on television channels and websites. He has played a key role in enhancing the image of mental health in the country and his views are widely appreciated. `
+        }
+      },
+    ]
+  }
+]
 const Content = [
   {
     doctors: [
@@ -72,12 +183,12 @@ const Content = [
         designation: {
           titleLight: "Center",
           titleBold: "Head",
-          title: "Sr. Consultant Psychiatrist"
+          title: "Director - Mental Health & Behavioural Sciences, Fortis Healthcare"
         },
         qualification: "MD (Psychiatry)",
         bio: {
-          intro: `Dr. Sameer Kalani is a Psychiatrist by profession, helping people work out their emotional and behavioural difficulties. He predominantly works with children, adolescents and elderly. He treats patients with conditions like anxiety disorder, panic disorder, social phobia, specific phobia, post-traumatic stress disorder, bipolar disorder, Alzheimer’s disease, vascular dementia, anorexia nervosa, bulimia nervosa, major depressive disorder, stuttering, schizophrenia, and hyperactivity disorder.  He strongly believes that being free from mental illness is not just enough; we must strive towards a better and healthy state of mind and body. He has been blessed to have worked with the top most experts of India in the field of mental health and well-being in Mumbai and Delhi.`,
-          summary: `He is an enthusiastic person with a keenness to keep himself up-to-date regarding new technological developments in the field of Psychiatry.`
+          intro: `Dr. Samir Parikh is an eminent Psychiatrist and the Director of <a href="https://www.fortishealthcare.com/india/clinical-speciality/mental-health-and-behavioural-sciences-268" target="_blank" style="color: #636363;font-weight: 700;">Dept. of Mental Health and Behavioural Sciences</a>, Fortis Healthcare. He is one of the leading academic experts in the field of mental health and conducts training programmes and courses for doctors, Psychologists and allied specialities, and has initiated several awareness campaigns for the community. He is a very well known speaker, due to his expressive communicative style and in-depth knowledge of mental health and Indian culture with comprehensive experience in the field of clinical and community mental health, he has been a speaker at various national and international forums on mental health issues.`,
+          summary: `Dr. Samir Parikh also has a prominent presence in the media with various columns in newspapers and a presence on television channels and websites. He has played a key role in enhancing the image of mental health in the country and his views are widely appreciated. `
         }
       },
       {
@@ -175,12 +286,34 @@ const TeamRow = (props)=>{
   return (Content.map((item,index) =>{
 
       return(
+        <div id={`row-${index}`} className="">
+          {item.doctors.map(doctor=>{
+            return(
+              <div  className="flex flex-col mr-10 mb-5" style={{"width":"12.5%","display":"inline-block"}}>
+                <DoctorProfile src={doctor.image} onClick={()=>{props.setDoctor(doctor); document.getElementById("doctor-info").scrollIntoView();}} alt="doctor" className=""/>
+                <div className="text-white bg-sukoon text-center flex flex-col" style={{"margin":"auto","padding":"10px","height":"4em"}}>
+                  <h3 className="text-vxl" >{doctor.name}</h3>
+                </div>
+                {/* <BookBtn wrapperClass="mx-auto my-4" theme="green">Book Now</BookBtn> */}
+              </div>
+            )
+          })}
+        </div>
+      )
+    })
+  );
+};
+const FortisTeamRow = (props)=>{
+
+  return (FortisContent.map((item,index) =>{
+
+      return(
         <div id={`row-${index}`} className="pb-8">
           {item.doctors.map(doctor=>{
             return(
-              <div  className="flex flex-col mr-12 mt-5" style={{"width":"15%","display":"inline-block"}}>
-                <DoctorProfile src={doctor.image} onClick={()=>{props.setDoctor(doctor); document.getElementById("doctor-info").scrollIntoView();}} alt="doctor" className=""/>
-                <div className="text-white bg-sukoon text-center py-4">
+              <div className="flex flex-col mr-10 mb-5" style={{"width":"12.5%","display":"inline-block"}}>
+                <DoctorProfile src={doctor.image} onClick={()=>{props.setDoctor(doctor); document.getElementById("doctor-info-fortis").scrollIntoView();}} alt="doctor" className="" style={{"height":"15vw"}}/>
+                <div className="text-white bg-sukoon text-center flex flex-col" style={{"margin":"auto","padding":"10px","height":"4em"}}>
                   <h3 className="text-vxl">{doctor.name}</h3>
                 </div>
                 {/* <BookBtn wrapperClass="mx-auto my-4" theme="green">Book Now</BookBtn> */}
@@ -192,12 +325,54 @@ const TeamRow = (props)=>{
     })
   );
 };
-
 const DoctorBio = ({doctor}) =>{
 
   if(doctor && doctor.designation){
     return(
       <section id="doctor-info" className="pl-20 py-12">
+        <Title singleLine titleLight={doctor.designation.titleLight} titleBold={doctor.designation.titleBold} subHeading="MEET THE"/>
+        <Intro className="">
+          <div className="director-row flex">
+            <div id="doctor-intro-image" className="w-30% mr-24">
+              <DoctorImageContainer className="">
+                <DoctorImage src={doctor.image} alt="doctor" className=""/>
+              </DoctorImageContainer>
+            </div>
+            <div id="doctor-info" className="doctor-info pr-16 flex flex-col justify-between w-70%">
+              <div>
+                <h2 className="text-sukoon font-gilroyBold text-v5xl">{doctor.name}</h2>
+                <h3 className='text-sukoon text-v3xl font-gilroyMedium mt-4'>{doctor.qualification}</h3>
+                <h4 Class="mt-4 text-gray-600 text-v2xl">{doctor.designation.title}</h4>
+                <Para Class="mt-4" padding="15px 4rem 0 0">
+                  {/* {doctor.bio.intro}  */}
+                  <div dangerouslySetInnerHTML={{__html: doctor.bio.intro}} ></div>
+                  
+                  <br/>
+                  {doctor.bio.summary}
+                </Para>
+                <BookBtn wrapperClass="mt-5" theme="green">Book Now</BookBtn>
+                {/* <div className="flex mt-8">
+                  <Link to="/" className="text-lg text-sukoon font-gilroyRegular">Know More </Link>
+                  <ArrowButton border={false} margin="0 12px"/>
+                </div> */}
+              </div>
+              {/* <FollowUs /> */}
+            </div>
+          </div>
+        </Intro>
+      </section>
+    )
+  }
+  else {
+    return null;
+  }
+
+};
+const FortisDoctorBio = ({doctor}) =>{
+
+  if(doctor && doctor.designation){
+    return(
+      <section id="doctor-info-fortis" className="pl-20 pt-4 pb-10">
         <Title singleLine titleLight={doctor.designation.titleLight} titleBold={doctor.designation.titleBold} subHeading="MEET THE"/>
         <Intro className="">
           <div className="director-row flex">
@@ -286,10 +461,26 @@ function DoctorsPage(props) {
     bio: {
       intro: `Dr. Sameer Kalani is a Psychiatrist by profession, helping people work out their emotional and behavioural difficulties. He predominantly works with children, adolescents and elderly. He treats patients with conditions like anxiety disorder, panic disorder, social phobia, specific phobia, post-traumatic stress disorder, bipolar disorder, Alzheimer’s disease, vascular dementia, anorexia nervosa, bulimia nervosa, major depressive disorder, stuttering, schizophrenia, and hyperactivity disorder.`,
       summary: `He has been leading the field of Neurosciences with his experience in Repetitive Tran cranial Magnetic Stimulation (rTMS) treatment modality, currently being used in very few centres all over India.`
-    }
+    }    
+  };
+  let temFortisObj = {
+    name: "Dr. Samir Parikh",
+        image: Samir,
+        designation: {
+          titleLight: "Director",
+          titleBold: "Mental Health & Behavioural Sciences, Fortis Healthcare",
+          title: "Director - Mental Health & Behavioural Sciences, Fortis Healthcare"
+        },
+        qualification: "MD (Psychiatry)",
+        bio: {
+          intro: `Dr. Samir Parikh is an eminent Psychiatrist and the Director of <a href="https://www.fortishealthcare.com/india/clinical-speciality/mental-health-and-behavioural-sciences-268" target="_blank" style="color: #636363;font-weight: 700;">Dept. of Mental Health and Behavioural Sciences</a>, Fortis Healthcare. He is one of the leading academic experts in the field of mental health and conducts training programmes and courses for doctors, Psychologists and allied specialities, and has initiated several awareness campaigns for the community. He is a very well known speaker, due to his expressive communicative style and in-depth knowledge of mental health and Indian culture with comprehensive experience in the field of clinical and community mental health, he has been a speaker at various national and international forums on mental health issues.`,
+          summary: `Dr. Samir Parikh also has a prominent presence in the media with various columns in newspapers and a presence on television channels and websites. He has played a key role in enhancing the image of mental health in the country and his views are widely appreciated. `
+        }
   };
   const[SelectedDoctor, setDoctor] = useState(temObj);
   const[doctorInfo, setView] = useState(false);
+  const[SelectedFortisDoctor, setFortisDoctor] = useState(temFortisObj);
+  const[doctorInfoFortis, setViewFortis] = useState(false);
 
   return (
     <>
@@ -301,9 +492,13 @@ function DoctorsPage(props) {
           <div id="doctors-team-table" className="flex flex-col py-12">
             <TeamRow setDoctor={setDoctor} changeView={setView}/>
           </div>
-          <Title singleLine titleLight="Meet The" titleBold="Experts" subHeading='our team'/>
+        </Team> }
+        <FortisDoctorBio doctor={SelectedFortisDoctor}/>
+        {doctorInfoFortis ? null :
+        <Team className="doctors-team py-12 pl-20">
+          <Title singleLine titleLight="Meet The" titleBold="Fortis Team" subHeading='our team'/>
           <div id="doctors-team-table" className="flex flex-col py-12">
-            <TeamRow setDoctor={setDoctor} changeView={setView}/>
+            <FortisTeamRow setDoctor={setFortisDoctor} changeView={setViewFortis}/>
           </div>
         </Team> }
       {/*{*/}
