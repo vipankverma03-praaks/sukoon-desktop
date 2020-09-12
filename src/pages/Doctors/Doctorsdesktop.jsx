@@ -10,7 +10,7 @@ import BookBtn from "../../elements/BookNowBtn/desktop";
 import ArrowButton from "../../elements/ArrowButton/desktop";
 
 // Images
-import HeaderImg from "../../images/team-pic.jpg";
+import HeaderImg from "../../images/teamimage_db.jpg";
 import Doctor from "../../images/doctor/kalani.jpeg";
 import Ila from "../../images/doctor/ila.jpeg";
 import Jaiman from "../../images/doctor/jaiman.jpeg";
@@ -195,9 +195,9 @@ const Content = [
         name: "Dr. Mantosh Kumar",
         image: Mantosh,
         designation: {
-          titleLight: "Consultant",
+          titleLight: "Sr. Consultant",
           titleBold: "Psychiatrist",
-          title: "Sr.  Consultant Psychiatrist"
+          title: "Sr. Consultant Psychiatrist"
         },
         // qualification: "MD (Psychiatry)",
         bio: {
@@ -230,7 +230,7 @@ const Content = [
         qualification: "M. Phil. Clinical Psychology",
         bio: {
           intro: `Ms. Ila Kulshrestha is a licensed clinical psychologist recognized by <a href="http://www.rehabcouncil.nic.in/" target="_blank" style="color: #636363;font-weight: 700;">Rehabilitation Council of India</a> and a CID- UNESCO certified Arts based Therapist. She uses an eclectic framework of psychotherapy to devise a personalized treatment plan for each individual. She is proficient in providing various psychological assessments including psycho-diagnostics, personality, neuropsychological, developmental and IQ assessments.`,
-          summary: `She uses assessments, psychotherapy and expressive arts to work with adolescents and adults on a wide range of clinical, emotional, psychological, behavioural and adjustment issues. She recognizes the role intersectionality plays in an individual’s mental health and is passionate to work with LGBTQIA+ identities to help address their mental health concerns.Over the course of her career, she has worked with individuals, parents, couples and families to improve their quality of life and enhance their sense of wellbeing.`
+          summary: `She uses assessments, psychotherapy and expressive arts to work with adolescents and adults on a wide range of clinical, emotional, psychological, behavioural and adjustment issues. She recognizes the role intersectionality plays in an individual’s mental health and is passionate to work with LGBTQIA+ identities to help address their mental health concerns.`
         }
       },
       {
@@ -289,12 +289,12 @@ const TeamRow = (props)=>{
         <div id={`row-${index}`} className="">
           {item.doctors.map(doctor=>{
             return(
-              <div  className="flex flex-col mr-10 mb-5" style={{"width":"12.5%","display":"inline-block"}}>
+              <div  className="flex flex-col mr-8 mb-5" style={{"width":"16.5%","display":"inline-block"}}>
                 <DoctorProfile src={doctor.image} onClick={()=>{props.setDoctor(doctor); document.getElementById("doctor-info").scrollIntoView();}} alt="doctor" className=""/>
-                <div className="text-white bg-sukoon text-center flex flex-col" style={{"margin":"auto","padding":"10px","height":"4em"}}>
+                <div className="text-white bg-sukoon text-center flex flex-col" style={{"margin":"auto","flex-direction":"column","height":"3.5em","justify-content":"center"}}>
                   <h3 className="text-vxl" >{doctor.name}</h3>
                 </div>
-                {/* <BookBtn wrapperClass="mx-auto my-4" theme="green">Book Now</BookBtn> */}
+                <BookBtn wrapperClass="mx-auto my-4" theme="green">Book Now</BookBtn>
               </div>
             )
           })}
@@ -311,9 +311,9 @@ const FortisTeamRow = (props)=>{
         <div id={`row-${index}`} className="pb-8">
           {item.doctors.map(doctor=>{
             return(
-              <div className="flex flex-col mr-10 mb-5" style={{"width":"12.5%","display":"inline-block"}}>
+              <div className="flex flex-col mr-8 mb-5" style={{"width":"17%","display":"inline-block"}}>
                 <DoctorProfile src={doctor.image} onClick={()=>{props.setDoctor(doctor); document.getElementById("doctor-info-fortis").scrollIntoView();}} alt="doctor" className="" style={{"height":"15vw"}}/>
-                <div className="text-white bg-sukoon text-center flex flex-col" style={{"margin":"auto","padding":"10px","height":"4em"}}>
+                <div className="text-white bg-sukoon text-center flex flex-col" style={{"margin":"auto","flex-direction":"column","height":"3.5em","justify-content":"center"}}>
                   <h3 className="text-vxl">{doctor.name}</h3>
                 </div>
                 {/* <BookBtn wrapperClass="mx-auto my-4" theme="green">Book Now</BookBtn> */}
@@ -373,7 +373,7 @@ const FortisDoctorBio = ({doctor}) =>{
   if(doctor && doctor.designation){
     return(
       <section id="doctor-info-fortis" className="pl-20 pt-4 pb-10">
-        <Title singleLine titleLight={doctor.designation.titleLight} titleBold={doctor.designation.titleBold} subHeading="MEET THE"/>
+        <Title singleLine titleLight="Fortis" titleBold="Team" subHeading="MEET THE"/>
         <Intro className="">
           <div className="director-row flex">
             <div id="doctor-intro-image" className="w-30% mr-24">
@@ -393,7 +393,7 @@ const FortisDoctorBio = ({doctor}) =>{
                   <br/>
                   {doctor.bio.summary}
                 </Para>
-                <BookBtn wrapperClass="mt-5" theme="green">Book Now</BookBtn>
+                {/* <BookBtn wrapperClass="mt-5" theme="green">Book Now</BookBtn> */}
                 {/* <div className="flex mt-8">
                   <Link to="/" className="text-lg text-sukoon font-gilroyRegular">Know More </Link>
                   <ArrowButton border={false} margin="0 12px"/>
@@ -484,7 +484,7 @@ function DoctorsPage(props) {
 
   return (
     <>
-      <Banner para inner texture HeaderImg={HeaderImg}/>
+      <Banner para inner texture HeaderImg={HeaderImg} style={{"height":"80vh"}}/>
       <DoctorBio doctor={SelectedDoctor}/>
       {doctorInfo ? null :
         <Team className="doctors-team py-12 pl-20">

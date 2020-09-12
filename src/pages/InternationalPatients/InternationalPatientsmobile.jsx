@@ -83,7 +83,7 @@ function InternationalPatient(props) {
         discover
         backgroundImg={HeaderBg}
       />
-      <Intro />
+      {/* <Intro /> */}
       <form className="VirtualConsForm p-4">
         <div className="FormHead border-b border-yellow-500 bg-sukoon px-4 py-2">
           <h2 className="text-white text-lg">Free Virtual Consultation</h2>
@@ -160,7 +160,7 @@ function InternationalPatient(props) {
           </PartnerHotelContent>
         </div>
       </section>
-      <section className="Stats pt-0">
+      {/* <section className="Stats pt-0">
         <div className="Steps p-5 bg-paleMintLight">
           <h2 className="text-sukoon font-semibold text-3xl">Process</h2>
           <ul className="mt-2">
@@ -229,7 +229,7 @@ function InternationalPatient(props) {
             </li>
           </ul>
         </div>
-      </section>
+      </section> */}
       <MeetExperts />
     </>
   );
