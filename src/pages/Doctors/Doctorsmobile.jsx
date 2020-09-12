@@ -135,7 +135,7 @@ const InPatientServices = (props) => {
     <section id="inpatient-services" className="p-4">
       <Title singleLine subHeading="Meet The" titleLight="" titleBold="Experts" display="block"/>
       <Carousel container  cardFn={CarouselItems} content={Doctors}/>
-      <div className="MedicalDocImg">
+      <div className="MedicalDocImg mt-4">
           <img src={Samir} />
         </div>
       <div className="MedicalDocInfo pt-4">
