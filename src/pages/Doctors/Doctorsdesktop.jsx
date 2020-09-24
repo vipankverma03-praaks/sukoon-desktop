@@ -187,9 +187,9 @@ const Content = [
         },
         qualification: "MD (Psychiatry)",
         bio: {
-          intro: `Dr. Samir Parikh is an eminent Psychiatrist and the Director of <a href="https://www.fortishealthcare.com/india/clinical-speciality/mental-health-and-behavioural-sciences-268" target="_blank" style="color: #636363;font-weight: 700;">Dept. of Mental Health and Behavioural Sciences</a>, Fortis Healthcare. He is one of the leading academic experts in the field of mental health and conducts training programmes and courses for doctors, Psychologists and allied specialities, and has initiated several awareness campaigns for the community. He is a very well known speaker, due to his expressive communicative style and in-depth knowledge of mental health and Indian culture with comprehensive experience in the field of clinical and community mental health, he has been a speaker at various national and international forums on mental health issues.`,
-          summary: `Dr. Samir Parikh also has a prominent presence in the media with various columns in newspapers and a presence on television channels and websites. He has played a key role in enhancing the image of mental health in the country and his views are widely appreciated. `
-        }
+          intro: `Dr. Sameer Kalani is a Psychiatrist by profession, helping people work out their emotional and behavioural difficulties. He predominantly works with children, adolescents and elderly. He treats patients with conditions like anxiety disorder, panic disorder, social phobia, specific phobia, post-traumatic stress disorder, bipolar disorder, Alzheimer’s disease, vascular dementia, anorexia nervosa, bulimia nervosa, major depressive disorder, stuttering, schizophrenia, and hyperactivity disorder.`,
+          summary: `He has been leading the field of Neurosciences with his experience in Repetitive Tran cranial Magnetic Stimulation (rTMS) treatment modality, currently being used in very few centres all over India.`
+        }   
       },
       {
         name: "Dr. Mantosh Kumar",
