@@ -312,7 +312,7 @@ const FortisTeamRow = (props)=>{
           {item.doctors.map(doctor=>{
             return(
               <div className="flex flex-col mr-8 mb-5" style={{"width":"17%","display":"inline-block"}}>
-                <DoctorProfile src={doctor.image} onClick={()=>{props.setDoctor(doctor); document.getElementById("doctor-info-fortis").scrollIntoView();}} alt="doctor" className="" style={{"height":"15vw"}}/>
+                <DoctorProfile src={doctor.image} onClick={()=>{props.setDoctor(doctor); document.getElementById("doctor-info-fortis").scrollIntoView();}} alt="doctor" className="" />
                 <div className="text-white bg-sukoon text-center flex flex-col" style={{"margin":"auto","flex-direction":"column","height":"3.5em","justify-content":"center"}}>
                   <h3 className="text-vxl">{doctor.name}</h3>
                 </div>
