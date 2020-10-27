@@ -63,7 +63,7 @@ const Booking = (props) =>{
             <span onClick={()=>props.showHidePopUp(true)}>Book Now</span>
           </BookBtn>
         </div>
-        <Link to="/" className="text-sukoon ml-4  text-lg">or Call at <span className={`border-b-2 border-sukoon`}>+91 7558640422</span></Link>
+        <Link to="/" className="text-sukoon ml-4  text-lg">or Call at <span className={`border-b-2 border-sukoon`}>+91 124 4265238</span></Link>
       </div>
     </div>
 
