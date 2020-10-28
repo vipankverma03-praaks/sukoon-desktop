@@ -86,7 +86,7 @@ const ReachUs = (props) =>{
         </div>
         <div className="text-sukoon mr-2 my-2 flex px-1">
           <div className="fit"><SVG display="inline-block" icon="landLine" width={'20px'} fill={'#12443e'}/></div>          
-          <a className="ml-4" href="tel:+91 7558640422">+91 7558640422</a>
+          <a className="ml-4" href="tel:+91 124 4265238">+91 124 4265238</a>
         </div>
         <div className="text-sukoon mr-2 my-2 flex px-1">
           <div className="fit"><img src={MailIcon} className="w-4" alt="Help Icon"/></div>
