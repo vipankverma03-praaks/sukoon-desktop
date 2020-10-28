@@ -95,7 +95,7 @@ function Header(props) {
             </div>
             <div className="">
               <img src={Call} className="w-4 inline-block" alt="Contact Sukoon"/>
-              <a href="tel:+91 7558640422" className="ml-2">+91 7558640422</a>
+              <a href="tel:+91 124 4265238" className="ml-2">+91 124 4265238</a>
             </div>
           </div>
           <div className="text-lg ml-6 text-sukoon flex flex-col">
