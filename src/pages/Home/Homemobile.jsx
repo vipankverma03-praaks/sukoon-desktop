@@ -266,6 +266,7 @@ const OutPatientServices = (props) => {
     <section id="" className="p-4">
       <Title subHeading="OPD" titleLight="Out Patient" titleBold="Care Services" display="block"/>
       <Carousel content={OutPatientCareServices}/>
+      <iframe width="100%" height="400" src="https://www.youtube.com/embed/Qhcs14NnoFI?controls=0&autoplay=0&rel=0" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </section>
   )
 };
