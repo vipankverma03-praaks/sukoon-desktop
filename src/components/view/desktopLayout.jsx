@@ -113,7 +113,7 @@ const FollowUs = (props) =>{
         </div>
         <div className="text-sukoon mr-4 my-2 items-center flex pr-1">
             <SVG display="inline-block" icon="landLine" width={'20px'} fill={'#12443e'}/>
-          <span className="ml-2">+91 7558640422</span>
+          <span className="ml-2">+91 124 4265238</span>
         </div>
         <div className="text-sukoon my-2 flex items-center pr-1">
           <div className="fit"><img src={Mail} className="w-4" alt="Help Icon"/></div>
