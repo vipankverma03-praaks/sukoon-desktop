@@ -304,7 +304,7 @@ const PopUp = (props) =>{
         <div className={`body bg-white px-8 py-4 text-lg`}>
           <h6 className={`my-2`}>Unfortunately, we aren't able to accept appointments online at the time being.</h6>
           <h6 className={`my-4`}>Kindly call us at <span className={`tracking-widest font-bold border-gray-600 border-b-2`}><a
-            href="tel:+91 7558640422">7558640422</a></span> to book one. Thank you! We regret the inconvenience caused.</h6>
+            href="tel:+91 124 4265238">0124 4265238</a></span> to book one. Thank you! We regret the inconvenience caused.</h6>
         </div>
         <div className={`footer`}>
 
