@@ -1,0 +1,1 @@
+self.__BUILD_MANIFEST = (function(a,b){return {"/":[a,b],"/index":[a,b],"/online-theraphy":[a,b],"/online-theraphy-thankyou":[a]}}("static\u002Fchunks\u002F6a538d4edd959f2ace2bba824e20dabd96a9343d.21f7c6293ee45689f559.js","static\u002Fchunks\u002F52db3979fbbb6844d1dde8688155a5d0785a5cdd.08b0e4e7fa90a53ca1a8.js"));self.__BUILD_MANIFEST_CB && self.__BUILD_MANIFEST_CB()
