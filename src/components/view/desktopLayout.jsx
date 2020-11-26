@@ -161,8 +161,8 @@ const QuickLinks = (props) =>{
               <Link to="/about">About Us</Link></li>
             <li className="text-gray-600 text-lg my-1 list-none">
               <Link to="/services">Services</Link></li>
-            <li className="text-gray-600 text-lg my-1 list-none">
-              <Link to="/infrastructure">Infrastructure</Link></li>
+            {/* <li className="text-gray-600 text-lg my-1 list-none">
+              <Link to="/infrastructure">Infrastructure</Link></li> */}
             <li className="text-gray-600 text-lg my-1 list-none">
               <Link to="/">Amenities</Link></li>
             <li className="text-gray-600 text-lg my-1 list-none">
