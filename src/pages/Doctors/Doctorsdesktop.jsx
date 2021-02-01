@@ -18,6 +18,10 @@ import Jaiman from "../../images/doctor/jaiman.jpeg";
 import Sharmeen from "../../images/doctor/Sharmeen.jpeg";
 import Akshita from "../../images/doctor/akshita.jpeg";
 import Chandni from "../../images/cs.jpeg";
+import Kritika from "../../images/doctor/Kritika.jpeg";
+import Gayatri from "../../images/doctor/Gayatri.jpeg";
+import Kritik from "../../images/doctor/Kritika Saxena.jpeg";
+import Kamana from "../../images/doctor/Kamna Sarin.jpg";
 import Mantosh from "../../images/mk.jpeg";
 
 import Kamna from "../../images/fortis-team/Kamna.jpg"
@@ -293,6 +297,70 @@ const Content = [
           summary: `She has experience in working with trauma, children and adults with psychiatric illnesses & adjustment issues and prisons.`
         }
       },
+
+      {
+        name: "Ms. Kritika Zutshi",
+        image: Kritika,
+        designation: {
+          titleLight: "Consultant",
+          titleBold: "Clinical Psychologist",
+          title: "Consultant, Clinical Psychologist"
+        },
+        // qualification: "M. Phil. Clinical Psychology",
+        bio: {
+          intro: `Ms. Kritika Zutshi is a registered clinical psychologist at Sukoon Health. She has completed her M.phil in Clinical Psychology from Central Institute of Psychiatry. She is well trained in diagnostic assessments, brief interventions and a range of therapies including behaviour therapy, cognitive behaviour therapy, relapse prevention, dialectical behaviour therapy. Her areas of interest lie in addiction psychiatry, personality disorders and mood disorders. She has a passion for working in the field and bringing about stability in the lives of people dealing with stressors and facilitating the process of finding healthy perceptions of themselves.`,
+          //summary: `She has experience in working with trauma, children and adults with psychiatric illnesses & adjustment issues and prisons.`
+        }
+      },
+
+      {
+        name: "Ms. Gayatri Baroota",
+        image: Gayatri,
+        designation: {
+          titleLight: "Clinical",
+          titleBold: "Social Worker",
+          title: "Clinical Social Worker"
+        },
+        // qualification: "M. Phil. Clinical Psychology",
+        bio: {
+          intro: `Ms. Gayatri Broota is a Licensed Clinical Social Worker recognized by the Australian Association of Social Workers. She has worked with Austin Hospital, ONG centre and Merri Health,Melbourne,Australia. Her expertise in family intervention & lifestyle counselling helps in overcoming obstacles faced by the individual in their family. She is keen to contribute to the society for ending the stigma on mental health by creating a safe environment that gives an individual and their family a relationship on the basis of empathy, identifying strengths & promoting medication compliance, thus helping them improve their holistic well-being.`,
+          //summary: `She has experience in working with trauma, children and adults with psychiatric illnesses & adjustment issues and prisons.`
+        }
+      },
+
+      {
+        name: "Kritika Saxena",
+        image: Kritik,
+        designation: {
+          titleLight: "Consultant",
+          titleBold: "Lead - Psychological Services",
+          title: "Consultant, Clinical Psychologist ,Lead - Psychological Services"
+        },
+        // qualification: "M. Phil. Clinical Psychology",
+        bio: {
+          intro: `Kritika Saxena is a consultant clinical psychologist and the lead for psychological services at Sukoon health. In her practice as a RCI licensed clinical psychologist, she uses an eclectic approach wherein she incorporates techniques of various psychotherapies. She believes that mental health is as important as physical health and aims to make mental health a priority for all. `,
+          //summary: `She has experience in working with trauma, children and adults with psychiatric illnesses & adjustment issues and prisons.`
+        }
+      },
+
+
+      {
+        name: "Ms. Kamna Sarin",
+        image: Kamana,
+        designation: {
+          titleLight: "Consultant",
+          titleBold: "Clinical Psychologist",
+          title: "Consultant, Clinical Psychologist"
+        },
+        // qualification: "M. Phil. Clinical Psychology",
+        bio: {
+          intro: `Ms. Kamna Sarin is a licensed clinical psychologist recognized by the Rehabilitation Council of India. <br>She believes in emphasizing a more integrative, dynamic, and holistic approach to mental health with a keen interest in adolescents and young adults.  She is well versed in providing various psychological assessments including psycho-diagnostics, personality, neuropsychological, developmental and IQ assessments. `,
+          summary: `She uses a number of therapeutic modalities including but not limited to Cognitive Behavior Therapy, Dialectic Behaviour Therapy, Motivational Interviewing, and Family Systems Theory to work on a wide range of clinical, emotional, psychological, behavioural and adjustment issues.  Her practice is guided by a person-centred approach to provide a self- sustaining and safe environment through compassion and empathy.`
+        }
+      },
+
+      
+
     ]
   },
 ];
