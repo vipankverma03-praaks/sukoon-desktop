@@ -95,10 +95,10 @@ const Doctors = [
     name: 'Dr. Mantosh Kumar',
     image: Mantosh,
   },
-  {
-    name: 'Ms. Ila Kulshrestha',
-    image: Ila,
-  },
+  // {
+  //   name: 'Ms. Ila Kulshrestha',
+  //   image: Ila,
+  // },
   {
     name: 'Dr. Shambhavi Jaiman',
     image: Jaiman,
@@ -107,10 +107,10 @@ const Doctors = [
     name: 'Ms. Akshita Shukla',
     image: Akshita,
   },
-  {
-    name: 'Sharmeen Kaur Khurana',
-    image: Sharmeen,
-  },
+  // {
+  //   name: 'Sharmeen Kaur Khurana',
+  //   image: Sharmeen,
+  // },
   {
     name: 'Chandni Sharma',
     image: Chandni,
