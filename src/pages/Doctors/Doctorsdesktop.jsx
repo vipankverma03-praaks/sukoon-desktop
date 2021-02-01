@@ -13,6 +13,7 @@ import ArrowButton from "../../elements/ArrowButton/desktop";
 import HeaderImg from "../../images/teamimage_db.jpg";
 import Doctor from "../../images/doctor/kalani.jpeg";
 import Ila from "../../images/doctor/ila.jpeg";
+import Deepika from "../../images/doctor/Deepika.jpeg";
 import Jaiman from "../../images/doctor/jaiman.jpeg";
 import Sharmeen from "../../images/doctor/Sharmeen.jpeg";
 import Akshita from "../../images/doctor/akshita.jpeg";
@@ -233,6 +234,22 @@ const Content = [
       //     summary: `She uses assessments, psychotherapy and expressive arts to work with adolescents and adults on a wide range of clinical, emotional, psychological, behavioural and adjustment issues. She recognizes the role intersectionality plays in an individual’s mental health and is passionate to work with LGBTQIA+ identities to help address their mental health concerns.`
       //   }
       // },
+
+      {
+        name: "Dr. Deepika Singh",
+        image: Deepika,
+        designation: {
+          titleLight: "Consultant",
+          titleBold: "Psychiatrist",
+          title: "Consultant Psychiatrist"
+        },
+        qualification: "MD (Psychiatry)",
+        bio: {
+          intro: `Dr. Deepika Singh is a renowned psychiatrist who has worked at the premier hospitals of the country. She has pursued an International ECP Fellowship from Ain Shams University, Cairo and  a Diploma in Evidence-Based Medicine from Lundbeck Institute, Skodsborg, Denmark. We are happy to have a psychiatrist amongst us who has been awarded the 'Young Psychiatry Research Investigator' at Rebamp, Taiwan.<br>She has 9+ years of experience & holds an MD in Psychiatry from the prestigious Seth GS Medical College & King Edward Memorial Hospital (KEM), Mumbai.She is a member of Psychiatry Academy, Massacheusetts General hospital, Boston, USA as well as Indian Psychiatric Society and Indian Association for Geriatric Mental Health. She has an extensive experience in dealing with patients of depression, anxiety, substance abuse, psychotic disorder & childhood onset disorders. `,
+          summary: `She has done many interviews on current mental health issues with different digital media platforms and is actively involved in mental health awareness activities by collaborating with NGOs, corporate houses and schools.`
+        }
+      },
+
       {
         name: "Ms. Akshita Shukla",
         image: Akshita,
