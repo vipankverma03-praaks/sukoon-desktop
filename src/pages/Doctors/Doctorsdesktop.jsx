@@ -219,20 +219,20 @@ const Content = [
           summary: `Her gentle and empathetic manner makes her a great asset in the clinical team for both her patients as well as their caregivers.`
         }
       },
-      {
-        name: "Ms. Ila Kulshrestha",
-        image: Ila,
-        designation: {
-          titleLight: "Clinical",
-          titleBold: "Psychologist",
-          title: "Consultant, Clinical Psychologist"
-        },
-        qualification: "M. Phil. Clinical Psychology",
-        bio: {
-          intro: `Ms. Ila Kulshrestha is a licensed clinical psychologist recognized by <a href="http://www.rehabcouncil.nic.in/" target="_blank" style="color: #636363;font-weight: 700;">Rehabilitation Council of India</a> and a CID- UNESCO certified Arts based Therapist. She uses an eclectic framework of psychotherapy to devise a personalized treatment plan for each individual. She is proficient in providing various psychological assessments including psycho-diagnostics, personality, neuropsychological, developmental and IQ assessments.`,
-          summary: `She uses assessments, psychotherapy and expressive arts to work with adolescents and adults on a wide range of clinical, emotional, psychological, behavioural and adjustment issues. She recognizes the role intersectionality plays in an individual’s mental health and is passionate to work with LGBTQIA+ identities to help address their mental health concerns.`
-        }
-      },
+      // {
+      //   name: "Ms. Ila Kulshrestha",
+      //   image: Ila,
+      //   designation: {
+      //     titleLight: "Clinical",
+      //     titleBold: "Psychologist",
+      //     title: "Consultant, Clinical Psychologist"
+      //   },
+      //   qualification: "M. Phil. Clinical Psychology",
+      //   bio: {
+      //     intro: `Ms. Ila Kulshrestha is a licensed clinical psychologist recognized by <a href="http://www.rehabcouncil.nic.in/" target="_blank" style="color: #636363;font-weight: 700;">Rehabilitation Council of India</a> and a CID- UNESCO certified Arts based Therapist. She uses an eclectic framework of psychotherapy to devise a personalized treatment plan for each individual. She is proficient in providing various psychological assessments including psycho-diagnostics, personality, neuropsychological, developmental and IQ assessments.`,
+      //     summary: `She uses assessments, psychotherapy and expressive arts to work with adolescents and adults on a wide range of clinical, emotional, psychological, behavioural and adjustment issues. She recognizes the role intersectionality plays in an individual’s mental health and is passionate to work with LGBTQIA+ identities to help address their mental health concerns.`
+      //   }
+      // },
       {
         name: "Ms. Akshita Shukla",
         image: Akshita,
@@ -248,20 +248,20 @@ const Content = [
           summary: `She is keen to contribute by creating a safe environment that gives an individual the power to strive and deal with their problems effectively, thus helping them improve their overall well-being.`
         }
       },
-      {
-        name: "Sharmeen Kaur Khurana",
-        image: Sharmeen,
-        designation: {
-          titleLight: "Consultant",
-          titleBold: "Art Based Therapist",
-          title: "Consultant, Art Based Therapist"
-        },
-        // qualification: "M. Phil. Clinical Psychology",
-        bio: {
-          intro: `Sharmeen Kaur Khurana is an Art Based Therapist certified by <a href="https://www.baat.org/" target="_blank" style="color: #636363;font-weight: 700;">British Association of ArtTherapy</a> and CID - UNESCO. She is a registered member of the <a href="https://www.hcpc-uk.org/" target="_blank" style="color: #636363;font-weight: 700;">Health and Care Professions Council (UK)</a> and The Art Therapy Association (India). She uses different modes of art such as visual arts, music, storytelling, creative writing, and movement in her therapeutic practice. Sharmeen has experience working with therapeutic groups in open studio approach in varied settings of art museums, schools and refugee charities.`,
-          summary: `She is keen to contribute by creating a safe environment that gives an individual the power to strive and deal with their problems effectively, thus helping them improve their overall well-being.`
-        }
-      },
+      // {
+      //   name: "Sharmeen Kaur Khurana",
+      //   image: Sharmeen,
+      //   designation: {
+      //     titleLight: "Consultant",
+      //     titleBold: "Art Based Therapist",
+      //     title: "Consultant, Art Based Therapist"
+      //   },
+      //   // qualification: "M. Phil. Clinical Psychology",
+      //   bio: {
+      //     intro: `Sharmeen Kaur Khurana is an Art Based Therapist certified by <a href="https://www.baat.org/" target="_blank" style="color: #636363;font-weight: 700;">British Association of ArtTherapy</a> and CID - UNESCO. She is a registered member of the <a href="https://www.hcpc-uk.org/" target="_blank" style="color: #636363;font-weight: 700;">Health and Care Professions Council (UK)</a> and The Art Therapy Association (India). She uses different modes of art such as visual arts, music, storytelling, creative writing, and movement in her therapeutic practice. Sharmeen has experience working with therapeutic groups in open studio approach in varied settings of art museums, schools and refugee charities.`,
+      //     summary: `She is keen to contribute by creating a safe environment that gives an individual the power to strive and deal with their problems effectively, thus helping them improve their overall well-being.`
+      //   }
+      // },
       {
         name: "Chandni Sharma",
         image: Chandni,
