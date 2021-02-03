@@ -379,7 +379,7 @@ const TeamRow = (props)=>{
                 <div className="text-white bg-sukoon text-center flex flex-col" style={{"margin":"auto","flex-direction":"column","height":"3.5em","justify-content":"center"}}>
                   <h3 className="text-vxl" >{doctor.name}</h3>
                 </div>
-                <BookBtn wrapperClass="mx-auto my-4" theme="green">Book Now</BookBtn>
+                {/* <BookBtn wrapperClass="mx-auto my-4" theme="green">Book Now</BookBtn> */}
               </div>
             )
           })}
@@ -435,7 +435,7 @@ const DoctorBio = ({doctor}) =>{
                   <br/>
                   {doctor.bio.summary}
                 </Para>
-                <BookBtn wrapperClass="mt-5" theme="green">Book Now</BookBtn>
+                {/* <BookBtn wrapperClass="mt-5" theme="green">Book Now</BookBtn> */}
                 {/* <div className="flex mt-8">
                   <Link to="/" className="text-lg text-sukoon font-gilroyRegular">Know More </Link>
                   <ArrowButton border={false} margin="0 12px"/>
