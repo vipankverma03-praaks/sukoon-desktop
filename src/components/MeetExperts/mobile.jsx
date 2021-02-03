@@ -10,11 +10,16 @@ import Carousel from ".././Carousel/mobile";
 
 // Images
 import Samir_Kalani from "../../images/doctor/kalani.jpeg";
-import Ila from "../../images/doctor/ila.jpeg";
+//import Ila from "../../images/doctor/ila.jpeg";
 import Jaiman from "../../images/doctor/jaiman.jpeg";
-import Sharmeen from "../../images/doctor/Sharmeen.jpeg";
+import Deepika from "../../images/doctor/Deepika.jpeg";
+//import Sharmeen from "../../images/doctor/Sharmeen.jpeg";
 import Akshita from "../../images/doctor/akshita.jpeg";
 import Chandni from "../../images/cs.jpeg";
+import Kritika from "../../images/doctor/Kritika.jpeg";
+import Gayatri from "../../images/doctor/Gayatri.jpeg";
+import Kritik from "../../images/doctor/Kritika Saxena.jpeg";
+import Kamana from "../../images/doctor/Kamna Sarin.jpg";
 import Mantosh from "../../images/mk.jpeg";
 import NursesImg from "../../images/physician_retail_web_2019-07-29/physician_retail_web.jpg";
 
@@ -32,25 +37,48 @@ const Doctors = [
     name: 'Dr. Mantosh Kumar',
     image: Mantosh,
   },
-  {
-    name: 'Ms. Ila Kulshrestha',
-    image: Ila,
-  },
+  // {
+  //   name: 'Ms. Ila Kulshrestha',
+  //   image: Ila,
+  // },
   {
     name: 'Dr. Shambhavi Jaiman',
     image: Jaiman,
   },
   {
+    name: 'Dr. Deepika Singh',
+    image: Deepika,
+  },
+  {
     name: 'Ms. Akshita Shukla',
     image: Akshita,
   },
-  {
-    name: 'Sharmeen Kaur Khurana',
-    image: Sharmeen,
-  },
+  // {
+  //   name: 'Sharmeen Kaur Khurana',
+  //   image: Sharmeen,
+  // },
   {
     name: 'Chandni Sharma',
     image: Chandni,
+  },
+  {
+    name: 'Ms. Kritika Zutshi',
+    image: Kritika,
+  },
+
+  {
+    name: 'Ms. Gayatri Baroota',
+    image: Gayatri,
+  },
+
+  {
+    name: 'Kritika Saxena',
+    image: Kritik,
+  },
+
+  {
+    name: 'Ms. Kamna Sarin',
+    image: Kamana,
   },
 ];
 
