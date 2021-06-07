@@ -260,7 +260,7 @@ export default class DesktopLayout extends React.PureComponent{
                     </Tooltip>
                   </div>
                   <div className="w-8 h-8 mx-4">
-                    <Tooltip toolTipText={`+91 7558640422`} toolTipBottomTxt={`Contact Us`}>
+                    <Tooltip toolTipText={`+91 124 4265238`} toolTipBottomTxt={`Contact Us`}>
                       <SVG display="inline-block" icon="landLine" width={'22px'} fill={'#fff'}/>
                     </Tooltip>
                   </div>
