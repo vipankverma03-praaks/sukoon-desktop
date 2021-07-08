@@ -20,6 +20,7 @@ import Akshita from "../../images/doctor/akshita.jpeg";
 import Chandni from "../../images/cs.jpeg";
 import Kritika from "../../images/doctor/Kritika.jpeg";
 import Gayatri from "../../images/doctor/Gayatri.jpeg";
+import Varsha from "../../images/doctor/Varsha.jpg";
 import Kritik from "../../images/doctor/Kritika Saxena.jpeg";
 import Kamana from "../../images/doctor/Kamna Sarin.jpg";
 import Mantosh from "../../images/mk.jpeg";
@@ -283,18 +284,33 @@ const Content = [
       //     summary: `She is keen to contribute by creating a safe environment that gives an individual the power to strive and deal with their problems effectively, thus helping them improve their overall well-being.`
       //   }
       // },
+      // {
+      //   name: "Chandni Sharma",
+      //   image: Chandni,
+      //   designation: {
+      //     titleLight: "Consultant",
+      //     titleBold: "Art Based Therapist",
+      //     title: "Consultant, Art Based Therapist"
+      //   },
+      //   // qualification: "M. Phil. Clinical Psychology",
+      //   bio: {
+      //     intro: `Chandni Sharma is a certified arts based therapist, a UNESCO - CID certified movement therapist and holds an M.A. in Clinical Psychology. She integrates her practice of the arts like drama, movement, dance, visual art, music, story telling and writing into psychotherapy. She believes in empowering and directing individuals to heal themselves through the integration of the mind and body. Healthy expression and processing are at the core of her inclusive practice of psychotherapy.`,
+      //     summary: `She has experience in working with trauma, children and adults with psychiatric illnesses & adjustment issues and prisons.`
+      //   }
+      // },
+
       {
-        name: "Chandni Sharma",
-        image: Chandni,
+        name: "Varsha Punarvasu",
+        image: Varsha,
         designation: {
-          titleLight: "Consultant",
+          //titleLight: "Consultant",
           titleBold: "Art Based Therapist",
-          title: "Consultant, Art Based Therapist"
+          title: "Art Based Therapist"
         },
         // qualification: "M. Phil. Clinical Psychology",
         bio: {
-          intro: `Chandni Sharma is a certified arts based therapist, a UNESCO - CID certified movement therapist and holds an M.A. in Clinical Psychology. She integrates her practice of the arts like drama, movement, dance, visual art, music, story telling and writing into psychotherapy. She believes in empowering and directing individuals to heal themselves through the integration of the mind and body. Healthy expression and processing are at the core of her inclusive practice of psychotherapy.`,
-          summary: `She has experience in working with trauma, children and adults with psychiatric illnesses & adjustment issues and prisons.`
+          intro: `A CID-UNESCO certified Art-based Therapist, Counselling Psychologist and Social Worker. In the past few years, she has been working with individuals from varied age groups who have mental health concerns.`,
+          summary: `She has conducted various workshops on expressive arts therapy, stress management, developmental psychology, emotional regulation, team building, corporate off-site activities and mindfulness.`
         }
       },
 
