@@ -14,7 +14,7 @@ import HeaderBg from "../../images/team-pic.jpg";
 import MedicalDoc from "../../images/doctor/doctor1.jpg";
 import Samir_Kalani from "../../images/doctor/kalani.jpeg";
 import Ila from "../../images/doctor/ila.jpeg";
-import Deepika from "../../images/doctor/Deepika.jpeg";
+import DrNavyaSaluja from "../../images/doctor/DrNavyaSaluja.jpeg";
 import Jaiman from "../../images/doctor/jaiman.jpeg";
 import Sharmeen from "../../images/doctor/Sharmeen.jpeg";
 import Akshita from "../../images/doctor/akshita.jpeg";
@@ -110,8 +110,8 @@ const Doctors = [
     image: Jaiman,
   },
   {
-    name: 'Dr. Deepika Singh',
-    image: Deepika,
+    name: 'Dr. Navya Saluja',
+    image: DrNavyaSaluja,
   },
   {
     name: 'Ms. Akshita Shukla',

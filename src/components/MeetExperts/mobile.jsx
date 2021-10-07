@@ -12,7 +12,7 @@ import Carousel from ".././Carousel/mobile";
 import Samir_Kalani from "../../images/doctor/kalani.jpeg";
 //import Ila from "../../images/doctor/ila.jpeg";
 import Jaiman from "../../images/doctor/jaiman.jpeg";
-import Deepika from "../../images/doctor/Deepika.jpeg";
+import DrNavyaSaluja from "../../images/doctor/DrNavyaSaluja.jpeg";
 //import Sharmeen from "../../images/doctor/Sharmeen.jpeg";
 import Akshita from "../../images/doctor/akshita.jpeg";
 import Chandni from "../../images/cs.jpeg";
@@ -47,8 +47,8 @@ const Doctors = [
     image: Jaiman,
   },
   {
-    name: 'Dr. Deepika Singh',
-    image: Deepika,
+    name: 'Dr. Navya Saluja',
+    image: DrNavyaSaluja,
   },
   {
     name: 'Ms. Akshita Shukla',
