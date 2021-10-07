@@ -54,7 +54,7 @@ const Doctors = [
   //   image: Ila,
   // },
   {
-    name: 'Dr Navya Saluja',
+    name: 'Dr. Navya Saluja',
     image: DrNavyaSaluja,
   },
   
