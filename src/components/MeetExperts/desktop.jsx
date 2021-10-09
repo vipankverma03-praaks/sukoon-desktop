@@ -12,7 +12,7 @@ import Samir_Kalani from "../../images/doctor/kalani.jpeg";
 //import Ila from "../../images/doctor/ila.jpeg";
 import Jaiman from "../../images/doctor/jaiman.jpeg";
 import DrNavyaSaluja from "../../images/doctor/DrNavyaSaluja.jpeg";
-//import Sharmeen from "../../images/doctor/Sharmeen.jpeg";
+import Rupika from "../../images/doctor/Rupika.jpg";
 import Akshita from "../../images/doctor/akshita.jpeg";
 import Chandni from "../../images/cs.jpeg";
 import Kritika from "../../images/doctor/Kritika.jpeg";
@@ -62,6 +62,12 @@ const Doctors = [
     name: 'Dr. Shambhavi Jaiman',
     image: Jaiman,
   },
+
+  {
+    name: 'Dr. Rupika Dhurjati',
+    image: Rupika,
+  },
+
   {
     name: 'Ms. Akshita Shukla',
     image: Akshita,

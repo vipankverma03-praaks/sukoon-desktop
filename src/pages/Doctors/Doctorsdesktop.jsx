@@ -19,6 +19,7 @@ import Sharmeen from "../../images/doctor/Sharmeen.jpeg";
 import Akshita from "../../images/doctor/akshita.jpeg";
 import Chandni from "../../images/cs.jpeg";
 import Kritika from "../../images/doctor/Kritika.jpeg";
+import Rupika from "../../images/doctor/Rupika.jpg";
 import Gayatri from "../../images/doctor/Gayatri.jpeg";
 import Varsha from "../../images/doctor/Varsha.jpg";
 import Kritik from "../../images/doctor/Kritika Saxena.jpeg";
@@ -252,6 +253,21 @@ const Content = [
         bio: {
           intro: `Dr Navya Saluja is a psychiatrist by profession with over five years of experience. She has worked at the leading institutes of the country like Pt. B.D. Sharma Institute of Medical Sciences, Rohtak and Assam Medical College, Dibrugarh (Assam). `,
           summary: `She is fluent in English, Hindi, Assamese, and Punjabi. She believes in reducing stigma by spreading the knowledge about mental illness and providing mental health services to one and all.`
+        }
+      },
+
+      {
+        name: "Dr. Rupika Dhurjati",
+        image: Rupika,
+        designation: {
+          titleLight: "Consultant",
+          titleBold: "Psychiatrist",
+          title: "Consultant Psychiatrist"
+        },
+        //qualification: "MD (Psychiatry)",
+        bio: {
+          intro: `Dr. Rupika Dhurjati is a Psychiatrist by profession, with over five years of clinical experience. She has trained and worked in Lady Hardinge Medical College, Delhi, and Central Institute of Psychiatry, Ranchi, a premier mental health hospital and research institute. She also holds certification in Addictive disorders from NIMHANS, specializing in drug and behavioral addictions.`,
+          summary: `Currently working with Sukoon Healthcare, she aims to provide compassionate care and to make the conversations about mental health a comforting affair.`
         }
       },
 

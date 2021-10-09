@@ -21,6 +21,7 @@ import Akshita from "../../images/doctor/akshita.jpeg";
 import Chandni from "../../images/cs.jpeg";
 import Kritika from "../../images/doctor/Kritika.jpeg";
 import Gayatri from "../../images/doctor/Gayatri.jpeg";
+import Rupika from "../../images/doctor/Rupika.jpg";
 import Varsha from "../../images/doctor/Varsha.jpg";
 import Kritik from "../../images/doctor/Kritika Saxena.jpeg";
 import Kamana from "../../images/doctor/Kamna Sarin.jpg";
@@ -112,6 +113,10 @@ const Doctors = [
   {
     name: 'Dr. Navya Saluja',
     image: DrNavyaSaluja,
+  },
+  {
+    name: 'Dr. Rupika Dhurjati',
+    image: Rupika,
   },
   {
     name: 'Ms. Akshita Shukla',
