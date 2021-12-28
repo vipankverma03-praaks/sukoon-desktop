@@ -19,7 +19,8 @@ import Jaiman from "../../images/doctor/jaiman.jpeg";
 import Sharmeen from "../../images/doctor/Sharmeen.jpeg";
 import Akshita from "../../images/doctor/akshita.jpeg";
 import Chandni from "../../images/cs.jpeg";
-import Kritika from "../../images/doctor/Kritika.jpeg";
+//import Kritika from "../../images/doctor/Kritika.jpeg";
+import Neha from "../../images/doctor/Neha.jpeg";
 import Gayatri from "../../images/doctor/Gayatri.jpeg";
 import Rupika from "../../images/doctor/Rupika.jpg";
 import Varsha from "../../images/doctor/Varsha.jpg";
@@ -135,8 +136,8 @@ const Doctors = [
     image: Varsha,
   },
   {
-    name: 'Ms. Kritika Zutshi',
-    image: Kritika,
+    name: 'Ms Neha Rao',
+    image: Neha,
   },
 
   {

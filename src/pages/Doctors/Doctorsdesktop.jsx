@@ -18,7 +18,8 @@ import Jaiman from "../../images/doctor/jaiman.jpeg";
 import Sharmeen from "../../images/doctor/Sharmeen.jpeg";
 import Akshita from "../../images/doctor/akshita.jpeg";
 import Chandni from "../../images/cs.jpeg";
-import Kritika from "../../images/doctor/Kritika.jpeg";
+//import Kritika from "../../images/doctor/Kritika.jpeg";
+import Neha from "../../images/doctor/Neha.jpeg";
 import Rupika from "../../images/doctor/Rupika.jpg";
 import Gayatri from "../../images/doctor/Gayatri.jpeg";
 import Varsha from "../../images/doctor/Varsha.jpg";
@@ -331,8 +332,8 @@ const Content = [
       },
 
       {
-        name: "Ms. Kritika Zutshi",
-        image: Kritika,
+        name: "Ms Neha Rao",
+        image: Neha,
         designation: {
           titleLight: "Consultant",
           titleBold: "Clinical Psychologist",
@@ -340,8 +341,8 @@ const Content = [
         },
         // qualification: "M. Phil. Clinical Psychology",
         bio: {
-          intro: `Ms. Kritika Zutshi is a registered clinical psychologist at Sukoon Health. She has completed her M.phil in Clinical Psychology from Central Institute of Psychiatry. She is well trained in diagnostic assessments, brief interventions and a range of therapies including behaviour therapy, cognitive behaviour therapy, relapse prevention, dialectical behaviour therapy. Her areas of interest lie in addiction psychiatry, personality disorders and mood disorders. She has a passion for working in the field and bringing about stability in the lives of people dealing with stressors and facilitating the process of finding healthy perceptions of themselves.`,
-          //summary: `She has experience in working with trauma, children and adults with psychiatric illnesses & adjustment issues and prisons.`
+          intro: `Neha Rao is a licensed clinical psychologist registered with the Rehabilitation Council of India. She has experience in various settings including an outpatient clinic, de-addiction centre, school, inpatient psychiatric facilities, and non-profit organizations. Her approach emphasizes the mutual development of goals for therapy while providing a holistic evaluation of the treatment process. `,
+          summary: `She is trained in Cognitive Behavioral Therapy and Solution Focused Brief Therapy. She specializes in seeing children, adolescents, adults and couples by utilizing a wide range of orientations and techniques that can provide every client with an individualized experience."`
         }
       },
 
