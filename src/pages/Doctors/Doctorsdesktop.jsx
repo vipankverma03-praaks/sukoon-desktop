@@ -18,10 +18,10 @@ import Jaiman from "../../images/doctor/jaiman.jpeg";
 import Sharmeen from "../../images/doctor/Sharmeen.jpeg";
 import Akshita from "../../images/doctor/akshita.jpeg";
 import Chandni from "../../images/cs.jpeg";
-//import Kritika from "../../images/doctor/Kritika.jpeg";
+
 import Neha from "../../images/doctor/Neha.jpeg";
 import Rupika from "../../images/doctor/Rupika.jpg";
-//import Gayatri from "../../images/doctor/Gayatri.jpeg";
+
 import Shivika from "../../images/doctor/Shivika.jpg";
 import Varsha from "../../images/doctor/Varsha.jpg";
 import Kritik from "../../images/doctor/Kritika Saxena.jpeg";
