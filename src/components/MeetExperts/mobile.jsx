@@ -19,7 +19,7 @@ import Rupika from "../../images/doctor/Rupika.jpg";
 import Chandni from "../../images/cs.jpeg";
 //import Kritika from "../../images/doctor/Kritika.jpeg";
 import Neha from "../../images/doctor/Neha.jpeg";
-//import Gayatri from "../../images/doctor/Gayatri.jpeg";
+
 import Shivika from "../../images/doctor/Shivika.jpg";
 import Varsha from "../../images/doctor/Varsha.jpg";
 import Kritik from "../../images/doctor/Kritika Saxena.jpeg";
@@ -78,10 +78,7 @@ const Doctors = [
     image: Neha,
   },
 
-  //{
-    //name: 'Ms. Gayatri Broota',
-    //image: Gayatri,
-  //},
+
 
   {
     name: 'Ms Shivika Chopra',
