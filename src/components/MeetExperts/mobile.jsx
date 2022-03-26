@@ -20,7 +20,7 @@ import Chandni from "../../images/cs.jpeg";
 //import Kritika from "../../images/doctor/Kritika.jpeg";
 import Neha from "../../images/doctor/Neha.jpeg";
 
-import Shivika from "../../images/doctor/Shivika.jpg";
+import Shivika from "../../images/doctor/Shivika1.jpg";
 import Varsha from "../../images/doctor/Varsha.jpg";
 import Kritik from "../../images/doctor/Kritika Saxena.jpeg";
 import Kamana from "../../images/doctor/Kamna Sarin.jpg";
